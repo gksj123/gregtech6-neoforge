@@ -1,0 +1,25 @@
+{
+  "materials": 1115,
+  "materials_with_resolved_heat": 492,
+  "heat_confidence": {
+    "constructor_parameter": 156,
+    "default_unverified": 623,
+    "explicit_chain": 306,
+    "stolen_reference": 30
+  },
+  "materials_with_tool_stats": 381,
+  "tool_confidence": {
+    "default_unverified": 690,
+    "explicit_chain": 403,
+    "stolen_reference": 22
+  },
+  "density_confidence": {
+    "constructor_parameter": 156,
+    "default_unverified": 862,
+    "explicit_chain": 38,
+    "stolen_reference": 59
+  },
+  "machines": 1366,
+  "machines_with_known_block_sound": 1366,
+  "sound_profiles": 78
+}

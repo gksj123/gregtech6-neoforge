@@ -1,0 +1,78 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'gregtech'
+version = project.mod_version
+
+def minecraftHome = file(providers.gradleProperty('minecraft_home').get())
+def minecraftLibraries = new File(minecraftHome, 'libraries')
+def neoforgeVersion = '21.1.227'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+    withSourcesJar()
+}
+
+repositories {
+    // This port intentionally has no remote build dependencies. The supplied
+    // 1.21.1 runtime already contains the exact NeoForge artifacts we target.
+}
+
+dependencies {
+    // The NeoForge client jar contains the patched, deobfuscated Minecraft
+    // classes. It must precede the ordinary library tree because the launcher
+    // directory also contains an SRG-named duplicate of Minecraft.
+    compileOnly files(
+        new File(minecraftLibraries, "net/neoforged/neoforge/${neoforgeVersion}/neoforge-${neoforgeVersion}-universal.jar"),
+        new File(minecraftLibraries, "net/neoforged/neoforge/${neoforgeVersion}/neoforge-${neoforgeVersion}-client.jar")
+    )
+    // The SRG jar supplies the common Minecraft classes that are not duplicated
+    // in the client patch jar. It comes last so the official-named client
+    // classes always win when both jars define the same type.
+    compileOnly fileTree(dir: minecraftLibraries, include: '**/*.jar')
+}
+
+base {
+    archivesName = 'gregtech-neoforge-1.21.1'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+tasks.withType(ProcessResources).configureEach {
+    inputs.property('version', project.version)
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand(
+            mod_version: project.version,
+            minecraft_version: '1.21.1',
+            neo_version: neoforgeVersion
+        )
+    }
+}
+
+tasks.register('coreTest', JavaExec) {
+    group = 'verification'
+    description = 'Runs dependency-free tests for the GT6 simulation core.'
+    classpath = sourceSets.test.runtimeClasspath
+    mainClass = 'gregtech.neo.core.CoreSelfTest'
+}
+
+tasks.named('check') {
+    dependsOn tasks.named('coreTest')
+}
+
+jar {
+    manifest {
+        attributes(
+            'Implementation-Title': 'GregTech 6 NeoForge Port',
+            'Implementation-Version': project.version,
+            'Minecraft-Version': '1.21.1',
+            'NeoForge-Version': neoforgeVersion
+        )
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "gregtech:machine_casing"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "W": {
+      "item": "minecraft:copper_ingot"
+    },
+    "G": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "pattern": [
+    "WIW",
+    "GCG",
+    "WIW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gregtech:electric_motor"
+  }
+}

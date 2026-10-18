@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "gregtech:machine_casing",
+    "gregtech:machine_port",
+    "gregtech:large_crusher",
+    "gregtech:basic_crusher",
+    "gregtech:basic_machine",
+    "gregtech:lv_generator",
+    "gregtech:manual_crank",
+    "gregtech:electric_motor",
+    "gregtech:electric_engine",
+    "gregtech:rotation_engine",
+    "gregtech:axle",
+    "gregtech:tin_cable",
+    "gregtech:copper_cable"
+  ]
+}

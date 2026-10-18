@@ -1,0 +1,30 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "LGPL-3.0"
+issueTrackerURL = "https://github.com/GregTech6/gregtech6/issues"
+
+[[mods]]
+modId = "gregtech"
+version = "${mod_version}"
+displayName = "GregTech 6: NeoForge"
+authors = "GregTech-6 Team and NeoForge port contributors"
+description = '''
+An in-progress port of GregTech 6 to Minecraft 1.21.1 on NeoForge.
+
+The current vertical slice focuses on GUI-free machine control, packet-based
+energy with voltage/amperage/loss, and formed multiblock machines.
+'''
+
+[[dependencies.gregtech]]
+modId = "neoforge"
+type = "required"
+versionRange = "[${neo_version},)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.gregtech]]
+modId = "minecraft"
+type = "required"
+versionRange = "[${minecraft_version},1.22)"
+ordering = "NONE"
+side = "BOTH"

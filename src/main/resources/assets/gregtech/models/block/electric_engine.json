@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "gregtech:block/electric_engine_side",
+    "down": "gregtech:block/electric_engine_back",
+    "up": "gregtech:block/electric_engine_back",
+    "north": "gregtech:block/electric_engine_front",
+    "south": "gregtech:block/electric_engine_back",
+    "west": "gregtech:block/electric_engine_side",
+    "east": "gregtech:block/electric_engine_side"
+  }
+}

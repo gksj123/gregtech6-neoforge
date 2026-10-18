@@ -1,0 +1,42 @@
+[
+  {
+    "id": "gt6_smash_1",
+    "map": "Crusher",
+    "inputs": [
+      {
+        "item": "minecraft:stone",
+        "count": 1
+      }
+    ],
+    "outputs": [
+      {
+        "item": "minecraft:cobblestone",
+        "count": 1
+      }
+    ],
+    "eut": 16,
+    "duration": 32,
+    "source": "gregtech/loaders/c/Loader_Recipes_Vanilla.java",
+    "line": 541
+  },
+  {
+    "id": "gt6_smash_2",
+    "map": "Crusher",
+    "inputs": [
+      {
+        "item": "minecraft:cobblestone",
+        "count": 1
+      }
+    ],
+    "outputs": [
+      {
+        "item": "minecraft:gravel",
+        "count": 1
+      }
+    ],
+    "eut": 16,
+    "duration": 32,
+    "source": "gregtech/loaders/c/Loader_Recipes_Vanilla.java",
+    "line": 545
+  }
+]

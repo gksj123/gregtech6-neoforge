@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "gregtech:block/lv_generator_side",
+    "down": "gregtech:block/lv_generator_top",
+    "up": "gregtech:block/lv_generator_top",
+    "north": "gregtech:block/lv_generator_front",
+    "south": "gregtech:block/lv_generator_side",
+    "west": "gregtech:block/lv_generator_side",
+    "east": "gregtech:block/lv_generator_side"
+  }
+}

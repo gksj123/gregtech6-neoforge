@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gregtech:block/manual_crank"
+    },
+    "facing=east": {
+      "model": "gregtech:block/manual_crank",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gregtech:block/manual_crank",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gregtech:block/manual_crank",
+      "y": 270
+    }
+  }
+}

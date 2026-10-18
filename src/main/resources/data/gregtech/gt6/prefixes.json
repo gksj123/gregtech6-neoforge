@@ -1,0 +1,2284 @@
+[
+  {
+    "field": "armor",
+    "id": "armor",
+    "category": "Armor Parts",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "armorBoots",
+    "id": "armorBoots",
+    "category": "Boots",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "armorChestplate",
+    "id": "armorChestplate",
+    "category": "Chestplates",
+    "amount": 5189184000,
+    "amount_expression": "U * 8"
+  },
+  {
+    "field": "armorHelmet",
+    "id": "armorHelmet",
+    "category": "Helmets",
+    "amount": 3243240000,
+    "amount_expression": "U * 5"
+  },
+  {
+    "field": "armorLeggings",
+    "id": "armorLeggings",
+    "category": "Leggings",
+    "amount": 4540536000,
+    "amount_expression": "U * 7"
+  },
+  {
+    "field": "arrow",
+    "id": "arrow",
+    "category": "Arrows",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "arrowGtPlastic",
+    "id": "arrowGtPlastic",
+    "category": "Light Arrows",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "arrowGtWood",
+    "id": "arrowGtWood",
+    "category": "Regular Arrows",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "battery",
+    "id": "battery",
+    "category": "Reusable Batteries",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "batterySingleuse",
+    "id": "batterySingleuse",
+    "category": "Single Use Batteries",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "beam",
+    "id": "beam",
+    "category": "Beams",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "billet",
+    "id": "billet",
+    "category": "Billets",
+    "amount": 432432000,
+    "amount_expression": "U3* 2"
+  },
+  {
+    "field": "block",
+    "id": "block",
+    "category": "Random Blocks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "blockBamboo",
+    "id": "blockBamboo",
+    "category": "Bamboo Blocks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "blockDust",
+    "id": "blockDust",
+    "category": "Blocks of Dusts",
+    "amount": 5837832000,
+    "amount_expression": "U * 9"
+  },
+  {
+    "field": "blockGem",
+    "id": "blockGem",
+    "category": "Blocks of Gems",
+    "amount": 5837832000,
+    "amount_expression": "U * 9"
+  },
+  {
+    "field": "blockGlass",
+    "id": "blockGlass",
+    "category": "Glass Blocks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "blockIngot",
+    "id": "blockIngot",
+    "category": "Blocks of Ingots",
+    "amount": 5837832000,
+    "amount_expression": "U * 9"
+  },
+  {
+    "field": "blockPlate",
+    "id": "blockPlate",
+    "category": "Blocks of Plates",
+    "amount": 5837832000,
+    "amount_expression": "U * 9"
+  },
+  {
+    "field": "blockPlateGem",
+    "id": "blockPlateGem",
+    "category": "Blocks of Gem Plates",
+    "amount": 5837832000,
+    "amount_expression": "U * 9"
+  },
+  {
+    "field": "blockRaw",
+    "id": "blockRaw",
+    "category": "Blocks of Ore",
+    "amount": 0,
+    "amount_expression": "-1, U * 18"
+  },
+  {
+    "field": "blockSolid",
+    "id": "blockSolid",
+    "category": "Blocks of Cast Metal",
+    "amount": 5837832000,
+    "amount_expression": "U * 9"
+  },
+  {
+    "field": "blockWool",
+    "id": "blockWool",
+    "category": "Wool Blocks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "block_",
+    "id": "block_",
+    "category": "Random Blocks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "bolt",
+    "id": "bolt",
+    "category": "Bolts",
+    "amount": 81081000,
+    "amount_expression": "U8"
+  },
+  {
+    "field": "book",
+    "id": "book",
+    "category": "Books",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "bottle",
+    "id": "bottle",
+    "category": "Bottles",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "bouleGt",
+    "id": "bouleGt",
+    "category": "Boules",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "bucket",
+    "id": "bucket",
+    "category": "Buckets",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "bulletGtLarge",
+    "id": "bulletGtLarge",
+    "category": "Large Bullets",
+    "amount": 216216000,
+    "amount_expression": "U3"
+  },
+  {
+    "field": "bulletGtMedium",
+    "id": "bulletGtMedium",
+    "category": "Medium Bullets",
+    "amount": 144144000,
+    "amount_expression": "2 *U9"
+  },
+  {
+    "field": "bulletGtSmall",
+    "id": "bulletGtSmall",
+    "category": "Small Bullets",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "cableGt01",
+    "id": "cableGt01",
+    "category": "1x Cables",
+    "amount": 324324000,
+    "amount_expression": "U2"
+  },
+  {
+    "field": "cableGt02",
+    "id": "cableGt02",
+    "category": "2x Cables",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "cableGt04",
+    "id": "cableGt04",
+    "category": "4x Cables",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "cableGt08",
+    "id": "cableGt08",
+    "category": "8x Cables",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "cableGt12",
+    "id": "cableGt12",
+    "category": "12x Cables",
+    "amount": 3891888000,
+    "amount_expression": "U * 6"
+  },
+  {
+    "field": "capcellcon",
+    "id": "capcellcon",
+    "category": "Capsule Cell Containers",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "capsule",
+    "id": "capsule",
+    "category": "Capsules",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "casingMachine",
+    "id": "casingMachine",
+    "category": "Machine Casings",
+    "amount": 5189184000,
+    "amount_expression": "U * 8"
+  },
+  {
+    "field": "casingMachineDense",
+    "id": "casingMachineDense",
+    "category": "Dense Machine Casings",
+    "amount": 36324288000,
+    "amount_expression": "U *56"
+  },
+  {
+    "field": "casingMachineDouble",
+    "id": "casingMachineDouble",
+    "category": "Robust Machine Casings",
+    "amount": 9081072000,
+    "amount_expression": "U *14"
+  },
+  {
+    "field": "casingMachineQuadruple",
+    "id": "casingMachineQuadruple",
+    "category": "Reinforced Machine Casings",
+    "amount": 16864848000,
+    "amount_expression": "U *26"
+  },
+  {
+    "field": "casingSmall",
+    "id": "casingSmall",
+    "category": "Item Casings",
+    "amount": 324324000,
+    "amount_expression": "U2"
+  },
+  {
+    "field": "cell",
+    "id": "cell",
+    "category": "Cells",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "chain",
+    "id": "chain",
+    "category": "Chains",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "chemtube",
+    "id": "chemtube",
+    "category": "Glass Tubes",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "chunk",
+    "id": "chunk",
+    "category": "Chunks",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "chunkGt",
+    "id": "chunkGt",
+    "category": "Chunks",
+    "amount": 162162000,
+    "amount_expression": "U4"
+  },
+  {
+    "field": "circuit",
+    "id": "circuit",
+    "category": "Circuits",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "cleanGravel",
+    "id": "cleanGravel",
+    "category": "Clean Gravels",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "clump",
+    "id": "clump",
+    "category": "Clumps",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "cluster",
+    "id": "cluster",
+    "category": "Native Clusters",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "cobblestone",
+    "id": "cobblestone",
+    "category": "Cobblestones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "compressed",
+    "id": "compressed",
+    "category": "Compressed Materials",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "compressedCobblestone",
+    "id": "compressedCobblestone",
+    "category": "9^X Compressed Cobblestones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "compressedDirt",
+    "id": "compressedDirt",
+    "category": "9^X Compressed Dirt",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "compressedGravel",
+    "id": "compressedGravel",
+    "category": "9^X Compressed Gravel",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "compressedSand",
+    "id": "compressedSand",
+    "category": "9^X Compressed Sand",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "compressedStone",
+    "id": "compressedStone",
+    "category": "9^X Compressed Stones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "computer",
+    "id": "computer",
+    "category": "Computers",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "craft",
+    "id": "craft",
+    "category": "Crafting Stuff?",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "crafting",
+    "id": "crafting",
+    "category": "Crafting Ingredients",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "craftingTool",
+    "id": "craftingTool",
+    "category": "Crafting Tools",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "crateGt64Dust",
+    "id": "crateGt64Dust",
+    "category": "Crates of Dust",
+    "amount": 41513472000,
+    "amount_expression": "U *64"
+  },
+  {
+    "field": "crateGt64Gem",
+    "id": "crateGt64Gem",
+    "category": "Crates of Gems",
+    "amount": 41513472000,
+    "amount_expression": "U *64"
+  },
+  {
+    "field": "crateGt64Ingot",
+    "id": "crateGt64Ingot",
+    "category": "Crates of Ingots",
+    "amount": 41513472000,
+    "amount_expression": "U *64"
+  },
+  {
+    "field": "crateGt64Plate",
+    "id": "crateGt64Plate",
+    "category": "Crates of Plates",
+    "amount": 41513472000,
+    "amount_expression": "U *64"
+  },
+  {
+    "field": "crateGt64PlateGem",
+    "id": "crateGt64PlateGem",
+    "category": "Crates of Gem Plates",
+    "amount": 41513472000,
+    "amount_expression": "U *64"
+  },
+  {
+    "field": "crateGt64Raw",
+    "id": "crateGt64Raw",
+    "category": "Crates of Ore",
+    "amount": 0,
+    "amount_expression": "-1, U *128"
+  },
+  {
+    "field": "crateGtDust",
+    "id": "crateGtDust",
+    "category": "Crates of Dust",
+    "amount": 10378368000,
+    "amount_expression": "U *16"
+  },
+  {
+    "field": "crateGtGem",
+    "id": "crateGtGem",
+    "category": "Crates of Gems",
+    "amount": 10378368000,
+    "amount_expression": "U *16"
+  },
+  {
+    "field": "crateGtIngot",
+    "id": "crateGtIngot",
+    "category": "Crates of Ingots",
+    "amount": 10378368000,
+    "amount_expression": "U *16"
+  },
+  {
+    "field": "crateGtPlate",
+    "id": "crateGtPlate",
+    "category": "Crates of Plates",
+    "amount": 10378368000,
+    "amount_expression": "U *16"
+  },
+  {
+    "field": "crateGtPlateGem",
+    "id": "crateGtPlateGem",
+    "category": "Crates of Gem Plates",
+    "amount": 10378368000,
+    "amount_expression": "U *16"
+  },
+  {
+    "field": "crateGtRaw",
+    "id": "crateGtRaw",
+    "category": "Crates of Ore",
+    "amount": 0,
+    "amount_expression": "-1, U * 32"
+  },
+  {
+    "field": "crushed",
+    "id": "crushed",
+    "category": "Crushed Ores",
+    "amount": 729729000,
+    "amount_expression": "9*U8"
+  },
+  {
+    "field": "crushedCentrifuged",
+    "id": "crushedCentrifuged",
+    "category": "Refined Ores",
+    "amount": 891891000,
+    "amount_expression": "11*U8"
+  },
+  {
+    "field": "crushedCentrifugedTiny",
+    "id": "crushedCentrifugedTiny",
+    "category": "Tiny Refined Ores",
+    "amount": 99099000,
+    "amount_expression": "11*U72"
+  },
+  {
+    "field": "crushedPurified",
+    "id": "crushedPurified",
+    "category": "Purified Ores",
+    "amount": 810810000,
+    "amount_expression": "10*U8"
+  },
+  {
+    "field": "crushedPurifiedTiny",
+    "id": "crushedPurifiedTiny",
+    "category": "Tiny Purified Ores",
+    "amount": 90090000,
+    "amount_expression": "10*U72"
+  },
+  {
+    "field": "crushedTiny",
+    "id": "crushedTiny",
+    "category": "Tiny Crushed Ores",
+    "amount": 81081000,
+    "amount_expression": "9*U72"
+  },
+  {
+    "field": "crystal",
+    "id": "crystal",
+    "category": "Crystals",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "crystalPure",
+    "id": "crystalPure",
+    "category": "Pure Crystals",
+    "amount": 324324000,
+    "amount_expression": "U2"
+  },
+  {
+    "field": "crystalline",
+    "id": "crystalline",
+    "category": "Crystallised Metals",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "dirtyGravel",
+    "id": "dirtyGravel",
+    "category": "Dirty Gravels",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "dust",
+    "id": "dust",
+    "category": "Dusts",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "dustDiv72",
+    "id": "dustDiv72",
+    "category": "1/72nd Dusts",
+    "amount": 9009000,
+    "amount_expression": "U72"
+  },
+  {
+    "field": "dustImpure",
+    "id": "dustImpure",
+    "category": "Impure Dusts",
+    "amount": 720720000,
+    "amount_expression": "U9*10"
+  },
+  {
+    "field": "dustPure",
+    "id": "dustPure",
+    "category": "Purified Dusts",
+    "amount": 792792000,
+    "amount_expression": "U9*11"
+  },
+  {
+    "field": "dustRefined",
+    "id": "dustRefined",
+    "category": "Refined Dusts",
+    "amount": 864864000,
+    "amount_expression": "U9*12"
+  },
+  {
+    "field": "dustSmall",
+    "id": "dustSmall",
+    "category": "Small Dusts",
+    "amount": 162162000,
+    "amount_expression": "U4"
+  },
+  {
+    "field": "dustTiny",
+    "id": "dustTiny",
+    "category": "Tiny Dusts",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "dye",
+    "id": "dye",
+    "category": "Dyes",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "dyeCeramic",
+    "id": "dyeCeramic",
+    "category": "Ceramic Dyes",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "dyeMixable",
+    "id": "dyeMixable",
+    "category": "Mixable Dyes",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "fence",
+    "id": "fence",
+    "category": "Fences",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "foil",
+    "id": "foil",
+    "category": "Foils",
+    "amount": 162162000,
+    "amount_expression": "U4"
+  },
+  {
+    "field": "frameGt",
+    "id": "frameGt",
+    "category": "Frame Boxes",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "gearGt",
+    "id": "gearGt",
+    "category": "Gears",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "gearGtSmall",
+    "id": "gearGtSmall",
+    "category": "Small Gears",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "gem",
+    "id": "gem",
+    "category": "Gemstones",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "gemChipped",
+    "id": "gemChipped",
+    "category": "Chipped Gemstones",
+    "amount": 162162000,
+    "amount_expression": "U4"
+  },
+  {
+    "field": "gemExquisite",
+    "id": "gemExquisite",
+    "category": "Exquisite Gemstones",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "gemFlawed",
+    "id": "gemFlawed",
+    "category": "Flawed Gemstones",
+    "amount": 324324000,
+    "amount_expression": "U2"
+  },
+  {
+    "field": "gemFlawless",
+    "id": "gemFlawless",
+    "category": "Flawless Gemstones",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "gemLegendary",
+    "id": "gemLegendary",
+    "category": "Legendary Gemstones",
+    "amount": 5189184000,
+    "amount_expression": "U * 8"
+  },
+  {
+    "field": "gemOre",
+    "id": "gemOre",
+    "category": "Gemstone Ores",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "gemPolished",
+    "id": "gemPolished",
+    "category": "Polished Gemstones",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "gemRaw",
+    "id": "gemRaw",
+    "category": "Raw Gemstones",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "gemUncut",
+    "id": "gemUncut",
+    "category": "Uncut Gemstones",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "glass",
+    "id": "glass",
+    "category": "Glasses",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "ingot",
+    "id": "ingot",
+    "category": "Ingots",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "ingotDouble",
+    "id": "ingotDouble",
+    "category": "2x Ingots",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "ingotHot",
+    "id": "ingotHot",
+    "category": "Hot Ingots",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "ingotQuadruple",
+    "id": "ingotQuadruple",
+    "category": "4x Ingots",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "ingotQuintuple",
+    "id": "ingotQuintuple",
+    "category": "5x Ingots",
+    "amount": 3243240000,
+    "amount_expression": "U * 5"
+  },
+  {
+    "field": "ingotTriple",
+    "id": "ingotTriple",
+    "category": "3x Ingots",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "item",
+    "id": "item",
+    "category": "Items",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "item_",
+    "id": "item_",
+    "category": "Items",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "lens",
+    "id": "lens",
+    "category": "Lenses",
+    "amount": 486486000,
+    "amount_expression": "U4* 3"
+  },
+  {
+    "field": "log",
+    "id": "log",
+    "category": "Logs",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "minecartWheels",
+    "id": "minecartWheels",
+    "category": "Cart Wheels",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "nugget",
+    "id": "nugget",
+    "category": "Nuggets",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "ore",
+    "id": "ore",
+    "category": "Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreAndesite",
+    "id": "oreAndesite",
+    "category": "Andesite Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreBasalt",
+    "id": "oreBasalt",
+    "category": "Basalt Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreBedrock",
+    "id": "oreBedrock",
+    "category": "Bedrock Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreBetweenstone",
+    "id": "oreBetweenstone",
+    "category": "Betweenstone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreBlackgranite",
+    "id": "oreBlackgranite",
+    "category": "Black Granite Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreBlackstone",
+    "id": "oreBlackstone",
+    "category": "Blackstone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreBlueschist",
+    "id": "oreBlueschist",
+    "category": "Blue Schist Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreCallisto",
+    "id": "oreCallisto",
+    "category": "Callisto Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreCeres",
+    "id": "oreCeres",
+    "category": "Ceres Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreDarkprismarine",
+    "id": "oreDarkprismarine",
+    "category": "Dark Prismarine Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreDeadrock",
+    "id": "oreDeadrock",
+    "category": "Deadrock Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreDeepslate",
+    "id": "oreDeepslate",
+    "category": "Deepslate Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreDeimos",
+    "id": "oreDeimos",
+    "category": "Deimos Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreDense",
+    "id": "oreDense",
+    "category": "Dense Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreDiorite",
+    "id": "oreDiorite",
+    "category": "Diorite Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreEnd",
+    "id": "oreEnd",
+    "category": "End Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreEndstone",
+    "id": "oreEndstone",
+    "category": "Endstone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreEris",
+    "id": "oreEris",
+    "category": "Eris Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreEuropa",
+    "id": "oreEuropa",
+    "category": "Europa Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreGanymede",
+    "id": "oreGanymede",
+    "category": "Ganymede Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreGneiss",
+    "id": "oreGneiss",
+    "category": "Gneiss Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreGravel",
+    "id": "oreGravel",
+    "category": "Gravel Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreGrayschist",
+    "id": "oreGrayschist",
+    "category": "Gray Schist Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreGreenschist",
+    "id": "oreGreenschist",
+    "category": "Green Schist Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreHolystone",
+    "id": "oreHolystone",
+    "category": "Holystone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreIapetus",
+    "id": "oreIapetus",
+    "category": "Iapetus Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreIo",
+    "id": "oreIo",
+    "category": "Io Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreJupiter",
+    "id": "oreJupiter",
+    "category": "Jupiter Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreKepler22b",
+    "id": "oreKepler22b",
+    "category": "Kepler22b Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreKimberlite",
+    "id": "oreKimberlite",
+    "category": "Kimberlite Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreKomatiite",
+    "id": "oreKomatiite",
+    "category": "Komatiite Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreLightprismarine",
+    "id": "oreLightprismarine",
+    "category": "Light Prismarine Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreLimestone",
+    "id": "oreLimestone",
+    "category": "Limestone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreLivingrock",
+    "id": "oreLivingrock",
+    "category": "Livingrock Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreMarble",
+    "id": "oreMarble",
+    "category": "Marble Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreMars",
+    "id": "oreMars",
+    "category": "Mars Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreMercury",
+    "id": "oreMercury",
+    "category": "Mercury Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreMoon",
+    "id": "oreMoon",
+    "category": "Moon Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreMud",
+    "id": "oreMud",
+    "category": "Mud Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreNeptune",
+    "id": "oreNeptune",
+    "category": "Neptune Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreNether",
+    "id": "oreNether",
+    "category": "Nether Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreNetherrack",
+    "id": "oreNetherrack",
+    "category": "Netherrack Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreNormal",
+    "id": "oreNormal",
+    "category": "Normal Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreOberon",
+    "id": "oreOberon",
+    "category": "Oberon Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "orePhobos",
+    "id": "orePhobos",
+    "category": "Phobos Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "orePinkschist",
+    "id": "orePinkschist",
+    "category": "Pink Schist Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "orePitstone",
+    "id": "orePitstone",
+    "category": "Pitstone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "orePluto",
+    "id": "orePluto",
+    "category": "Pluto Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "orePoor",
+    "id": "orePoor",
+    "category": "Poor Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreQuartzite",
+    "id": "oreQuartzite",
+    "category": "Quartzite Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreRaw",
+    "id": "oreRaw",
+    "category": "Raw Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreRedSand",
+    "id": "oreRedSand",
+    "category": "Red Sand Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreRedgranite",
+    "id": "oreRedgranite",
+    "category": "Red Granite Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreRhea",
+    "id": "oreRhea",
+    "category": "Rhea Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreRich",
+    "id": "oreRich",
+    "category": "Rich Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreSand",
+    "id": "oreSand",
+    "category": "Sand Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreSandstone",
+    "id": "oreSandstone",
+    "category": "Sandstone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreSaturn",
+    "id": "oreSaturn",
+    "category": "Saturn Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreShale",
+    "id": "oreShale",
+    "category": "Shale Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreSiltstone",
+    "id": "oreSiltstone",
+    "category": "Siltstone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreSlate",
+    "id": "oreSlate",
+    "category": "Slate Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreSmall",
+    "id": "oreSmall",
+    "category": "Small Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreSpace",
+    "id": "oreSpace",
+    "category": "Space Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreStrangesand",
+    "id": "oreStrangesand",
+    "category": "Strange Sand Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreTitan",
+    "id": "oreTitan",
+    "category": "Titan Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreTitania",
+    "id": "oreTitania",
+    "category": "Titania Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreTriton",
+    "id": "oreTriton",
+    "category": "Triton Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreUmberstone",
+    "id": "oreUmberstone",
+    "category": "Umberstone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreUranus",
+    "id": "oreUranus",
+    "category": "Uranus Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreVanillagranite",
+    "id": "oreVanillagranite",
+    "category": "Granite Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreVanillastone",
+    "id": "oreVanillastone",
+    "category": "Stone Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreVenus",
+    "id": "oreVenus",
+    "category": "Venus Ores",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "oreberry",
+    "id": "oreberry",
+    "category": "Ore Berries",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "orebush",
+    "id": "orebush",
+    "category": "Ore Bushes",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "paneGlass",
+    "id": "paneGlass",
+    "category": "Glass Panes",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "paper",
+    "id": "paper",
+    "category": "Papers",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "pebbles",
+    "id": "pebbles",
+    "category": "Pebbles",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "pipe",
+    "id": "pipe",
+    "category": "Pipes",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "pipeHuge",
+    "id": "pipeHuge",
+    "category": "Huge Pipes",
+    "amount": 7783776000,
+    "amount_expression": "U *12"
+  },
+  {
+    "field": "pipeLarge",
+    "id": "pipeLarge",
+    "category": "Large pipes",
+    "amount": 3891888000,
+    "amount_expression": "U * 6"
+  },
+  {
+    "field": "pipeMedium",
+    "id": "pipeMedium",
+    "category": "Medium Pipes",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "pipeNonuple",
+    "id": "pipeNonuple",
+    "category": "Nonuple Pipes",
+    "amount": 5837832000,
+    "amount_expression": "U * 9"
+  },
+  {
+    "field": "pipeQuadruple",
+    "id": "pipeQuadruple",
+    "category": "Quadruple Pipes",
+    "amount": 7783776000,
+    "amount_expression": "U *12"
+  },
+  {
+    "field": "pipeRestrictiveHuge",
+    "id": "pipeRestrictiveHuge",
+    "category": "Huge Restrictive Pipes",
+    "amount": 7783776000,
+    "amount_expression": "U *12"
+  },
+  {
+    "field": "pipeRestrictiveLarge",
+    "id": "pipeRestrictiveLarge",
+    "category": "Large Restrictive Pipes",
+    "amount": 3891888000,
+    "amount_expression": "U * 6"
+  },
+  {
+    "field": "pipeRestrictiveMedium",
+    "id": "pipeRestrictiveMedium",
+    "category": "Medium Restrictive Pipes",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "pipeRestrictiveSmall",
+    "id": "pipeRestrictiveSmall",
+    "category": "Small Restrictive Pipes",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "pipeRestrictiveTiny",
+    "id": "pipeRestrictiveTiny",
+    "category": "Tiny Restrictive Pipes",
+    "amount": 324324000,
+    "amount_expression": "U2"
+  },
+  {
+    "field": "pipeSmall",
+    "id": "pipeSmall",
+    "category": "Small Pipes",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "pipeTiny",
+    "id": "pipeTiny",
+    "category": "Tiny Pipes",
+    "amount": 324324000,
+    "amount_expression": "U2"
+  },
+  {
+    "field": "plank",
+    "id": "plank",
+    "category": "Planks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "plantGtBerry",
+    "id": "plantGtBerry",
+    "category": "Berries",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "plantGtBlossom",
+    "id": "plantGtBlossom",
+    "category": "Blossoms",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "plantGtFiber",
+    "id": "plantGtFiber",
+    "category": "Fibers",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "plantGtTwig",
+    "id": "plantGtTwig",
+    "category": "Twigs",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "plantGtWart",
+    "id": "plantGtWart",
+    "category": "Warts",
+    "amount": 162162000,
+    "amount_expression": "U4"
+  },
+  {
+    "field": "plate",
+    "id": "plate",
+    "category": "Plates",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "plateCurved",
+    "id": "plateCurved",
+    "category": "Curved Plates",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "plateDense",
+    "id": "plateDense",
+    "category": "Dense Plates",
+    "amount": 5837832000,
+    "amount_expression": "U * 9"
+  },
+  {
+    "field": "plateDouble",
+    "id": "plateDouble",
+    "category": "2x Plates",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "plateGem",
+    "id": "plateGem",
+    "category": "Gem Plates",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "plateGemTiny",
+    "id": "plateGemTiny",
+    "category": "Tiny Gem Plates",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "plateQuadruple",
+    "id": "plateQuadruple",
+    "category": "4x Plates",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "plateQuintuple",
+    "id": "plateQuintuple",
+    "category": "5x Plates",
+    "amount": 3243240000,
+    "amount_expression": "U * 5"
+  },
+  {
+    "field": "plateSteamcraft",
+    "id": "plateSteamcraft",
+    "category": "Thin Plates",
+    "amount": 432432000,
+    "amount_expression": "U3* 2"
+  },
+  {
+    "field": "plateTiny",
+    "id": "plateTiny",
+    "category": "Tiny Plates",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "plateTriple",
+    "id": "plateTriple",
+    "category": "3x Plates",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "railGt",
+    "id": "railGt",
+    "category": "Single Rails",
+    "amount": 162162000,
+    "amount_expression": "U4"
+  },
+  {
+    "field": "rawOreChunk",
+    "id": "rawOreChunk",
+    "category": "Raw Ore Chunks",
+    "amount": 243243000,
+    "amount_expression": "27*U72"
+  },
+  {
+    "field": "record",
+    "id": "record",
+    "category": "Records",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "reduced",
+    "id": "reduced",
+    "category": "Reduced Gravels",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "ring",
+    "id": "ring",
+    "category": "Rings",
+    "amount": 162162000,
+    "amount_expression": "U4"
+  },
+  {
+    "field": "rock",
+    "id": "rock",
+    "category": "Rocks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "rockGt",
+    "id": "rockGt",
+    "category": "Rocks",
+    "amount": 1459458000,
+    "amount_expression": "9*U4"
+  },
+  {
+    "field": "rotor",
+    "id": "rotor",
+    "category": "Rotors",
+    "amount": 2756754000,
+    "amount_expression": "U*4+U4"
+  },
+  {
+    "field": "round",
+    "id": "round",
+    "category": "Rounds",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "rubble",
+    "id": "rubble",
+    "category": "Rubble",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "scrap",
+    "id": "scrap",
+    "category": "Scraps",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "scrapGt",
+    "id": "scrapGt",
+    "category": "Scrap",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "scraps",
+    "id": "scraps",
+    "category": "Scraps",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "screw",
+    "id": "screw",
+    "category": "Screws",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "sheetGt",
+    "id": "sheetGt",
+    "category": "Flat Sheets",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "slab",
+    "id": "slab",
+    "category": "Slabs",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "spring",
+    "id": "spring",
+    "category": "Springs",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "springSmall",
+    "id": "springSmall",
+    "category": "Small Springs",
+    "amount": 162162000,
+    "amount_expression": "U4"
+  },
+  {
+    "field": "stainedClay",
+    "id": "stainedClay",
+    "category": "Stained Clays",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stair",
+    "id": "stair",
+    "category": "Stairs",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stick",
+    "id": "stick",
+    "category": "Sticks/Rods",
+    "amount": 324324000,
+    "amount_expression": "U2"
+  },
+  {
+    "field": "stickLong",
+    "id": "stickLong",
+    "category": "Long Sticks/Rods",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "stone",
+    "id": "stone",
+    "category": "Stones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stoneBricks",
+    "id": "stoneBricks",
+    "category": "Stone Bricks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stoneChiseled",
+    "id": "stoneChiseled",
+    "category": "Chiseled Stones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stoneCobble",
+    "id": "stoneCobble",
+    "category": "Cobblestones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stoneCracked",
+    "id": "stoneCracked",
+    "category": "Cracked Stones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stoneMossy",
+    "id": "stoneMossy",
+    "category": "Mossy Stones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stoneMossyBricks",
+    "id": "stoneMossyBricks",
+    "category": "mossy Stone Bricks",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stonePolished",
+    "id": "stonePolished",
+    "category": "Polished Stones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "stoneSmooth",
+    "id": "stoneSmooth",
+    "category": "Smoothstones",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "tool",
+    "id": "tool",
+    "category": "Tools",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "toolAxe",
+    "id": "toolAxe",
+    "category": "Axes",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "toolHeadArrow",
+    "id": "toolHeadArrow",
+    "category": "Arrow Heads",
+    "amount": 72072000,
+    "amount_expression": "U9"
+  },
+  {
+    "field": "toolHeadAxe",
+    "id": "toolHeadAxe",
+    "category": "Axe Heads",
+    "amount": 1873872000,
+    "amount_expression": "U * 3 -U9"
+  },
+  {
+    "field": "toolHeadAxeDouble",
+    "id": "toolHeadAxeDouble",
+    "category": "Double Axe Heads",
+    "amount": 3099096000,
+    "amount_expression": "U*5-2 *U9"
+  },
+  {
+    "field": "toolHeadBuilderwand",
+    "id": "toolHeadBuilderwand",
+    "category": "Builder's Wand Caps",
+    "amount": 648648000,
+    "amount_expression": "U * 1"
+  },
+  {
+    "field": "toolHeadBuzzSaw",
+    "id": "toolHeadBuzzSaw",
+    "category": "Buzzsaw Blades",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "toolHeadChainsaw",
+    "id": "toolHeadChainsaw",
+    "category": "Chainsaw Tips",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "toolHeadChisel",
+    "id": "toolHeadChisel",
+    "category": "Chisel Heads",
+    "amount": 900900000,
+    "amount_expression": "3 *U2 -U9"
+  },
+  {
+    "field": "toolHeadConstructionPickaxe",
+    "id": "toolHeadConstructionPickaxe",
+    "category": "Construction Pickaxe Heads",
+    "amount": 1873872000,
+    "amount_expression": "U * 3 -U9"
+  },
+  {
+    "field": "toolHeadDrill",
+    "id": "toolHeadDrill",
+    "category": "Drill Tips",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "toolHeadFile",
+    "id": "toolHeadFile",
+    "category": "File Heads",
+    "amount": 972972000,
+    "amount_expression": "3 *U2"
+  },
+  {
+    "field": "toolHeadHammer",
+    "id": "toolHeadHammer",
+    "category": "Hammer Heads",
+    "amount": 3891888000,
+    "amount_expression": "U * 6"
+  },
+  {
+    "field": "toolHeadHoe",
+    "id": "toolHeadHoe",
+    "category": "Hoe Heads",
+    "amount": 1225224000,
+    "amount_expression": "U * 2 -U9"
+  },
+  {
+    "field": "toolHeadPickaxe",
+    "id": "toolHeadPickaxe",
+    "category": "Pickaxe Heads",
+    "amount": 1873872000,
+    "amount_expression": "U * 3 -U9"
+  },
+  {
+    "field": "toolHeadPickaxeGem",
+    "id": "toolHeadPickaxeGem",
+    "category": "Gem tipped Pickaxe Heads",
+    "amount": 648648000,
+    "amount_expression": "U * 1"
+  },
+  {
+    "field": "toolHeadPlow",
+    "id": "toolHeadPlow",
+    "category": "Plow Heads",
+    "amount": 2522520000,
+    "amount_expression": "U * 4 -U9"
+  },
+  {
+    "field": "toolHeadRawArrow",
+    "id": "toolHeadRawArrow",
+    "category": "Raw Arrow Heads",
+    "amount": 81081000,
+    "amount_expression": "U8"
+  },
+  {
+    "field": "toolHeadRawAxe",
+    "id": "toolHeadRawAxe",
+    "category": "Raw Axe Heads",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "toolHeadRawAxeDouble",
+    "id": "toolHeadRawAxeDouble",
+    "category": "Raw Double Axe Heads",
+    "amount": 3243240000,
+    "amount_expression": "U * 5"
+  },
+  {
+    "field": "toolHeadRawChisel",
+    "id": "toolHeadRawChisel",
+    "category": "Raw Chisel Heads",
+    "amount": 972972000,
+    "amount_expression": "3 *U2"
+  },
+  {
+    "field": "toolHeadRawHoe",
+    "id": "toolHeadRawHoe",
+    "category": "Raw Hoe Heads",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "toolHeadRawPickaxe",
+    "id": "toolHeadRawPickaxe",
+    "category": "Raw Pickaxe Heads",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "toolHeadRawPlow",
+    "id": "toolHeadRawPlow",
+    "category": "Raw Plow Heads",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "toolHeadRawSaw",
+    "id": "toolHeadRawSaw",
+    "category": "Raw Saw Blades",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "toolHeadRawSense",
+    "id": "toolHeadRawSense",
+    "category": "Raw Sense Blades",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "toolHeadRawShovel",
+    "id": "toolHeadRawShovel",
+    "category": "Raw Shovel Heads",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "toolHeadRawSpade",
+    "id": "toolHeadRawSpade",
+    "category": "Raw Spade Heads",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "toolHeadRawSword",
+    "id": "toolHeadRawSword",
+    "category": "Raw Sword Blades",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "toolHeadRawUniversalSpade",
+    "id": "toolHeadRawUniversalSpade",
+    "category": "Raw Universal Spade Heads",
+    "amount": 576576000,
+    "amount_expression": "U     -U9"
+  },
+  {
+    "field": "toolHeadSaw",
+    "id": "toolHeadSaw",
+    "category": "Saw Blades",
+    "amount": 1225224000,
+    "amount_expression": "U * 2 -U9"
+  },
+  {
+    "field": "toolHeadScrewdriver",
+    "id": "toolHeadScrewdriver",
+    "category": "Screwdriver Tips",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "toolHeadSense",
+    "id": "toolHeadSense",
+    "category": "Sense Blades",
+    "amount": 1873872000,
+    "amount_expression": "U * 3 -U9"
+  },
+  {
+    "field": "toolHeadShovel",
+    "id": "toolHeadShovel",
+    "category": "Shovel Heads",
+    "amount": 576576000,
+    "amount_expression": "U     -U9"
+  },
+  {
+    "field": "toolHeadSpade",
+    "id": "toolHeadSpade",
+    "category": "Spade Heads",
+    "amount": 576576000,
+    "amount_expression": "U     -U9"
+  },
+  {
+    "field": "toolHeadSword",
+    "id": "toolHeadSword",
+    "category": "Sword Blades",
+    "amount": 1225224000,
+    "amount_expression": "U * 2 -U9"
+  },
+  {
+    "field": "toolHeadUniversalSpade",
+    "id": "toolHeadUniversalSpade",
+    "category": "Universal Spade Heads",
+    "amount": 504504000,
+    "amount_expression": "U  -2 *U9"
+  },
+  {
+    "field": "toolHeadWrench",
+    "id": "toolHeadWrench",
+    "category": "Wrench Tips",
+    "amount": 2594592000,
+    "amount_expression": "U * 4"
+  },
+  {
+    "field": "toolHoe",
+    "id": "toolHoe",
+    "category": "Hoes",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "toolPickaxe",
+    "id": "toolPickaxe",
+    "category": "Pickaxes",
+    "amount": 1945944000,
+    "amount_expression": "U * 3"
+  },
+  {
+    "field": "toolShears",
+    "id": "toolShears",
+    "category": "Shears",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "toolShovel",
+    "id": "toolShovel",
+    "category": "Shovels",
+    "amount": 648648000,
+    "amount_expression": "U"
+  },
+  {
+    "field": "toolSword",
+    "id": "toolSword",
+    "category": "Swords",
+    "amount": 1297296000,
+    "amount_expression": "U * 2"
+  },
+  {
+    "field": "tree",
+    "id": "tree",
+    "category": "Tree Parts",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "treeLeaves",
+    "id": "treeLeaves",
+    "category": "Leaves",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "treeSapling",
+    "id": "treeSapling",
+    "category": "Saplings",
+    "amount": 0,
+    "amount_expression": ""
+  },
+  {
+    "field": "wireFine",
+    "id": "wireFine",
+    "category": "Fine Wires",
+    "amount": 81081000,
+    "amount_expression": "U8"
+  },
+  {
+    "field": "wireGt01",
+    "id": "wireGt01",
+    "category": "1x Wires",
+    "amount": 324324000,
+    "amount_expression": "U2* 1"
+  },
+  {
+    "field": "wireGt02",
+    "id": "wireGt02",
+    "category": "2x Wires",
+    "amount": 648648000,
+    "amount_expression": "U2* 2"
+  },
+  {
+    "field": "wireGt03",
+    "id": "wireGt03",
+    "category": "3x Wires",
+    "amount": 972972000,
+    "amount_expression": "U2* 3"
+  },
+  {
+    "field": "wireGt04",
+    "id": "wireGt04",
+    "category": "4x Wires",
+    "amount": 1297296000,
+    "amount_expression": "U2* 4"
+  },
+  {
+    "field": "wireGt05",
+    "id": "wireGt05",
+    "category": "5x Wires",
+    "amount": 1621620000,
+    "amount_expression": "U2* 5"
+  },
+  {
+    "field": "wireGt06",
+    "id": "wireGt06",
+    "category": "6x Wires",
+    "amount": 1945944000,
+    "amount_expression": "U2* 6"
+  },
+  {
+    "field": "wireGt07",
+    "id": "wireGt07",
+    "category": "7x Wires",
+    "amount": 2270268000,
+    "amount_expression": "U2* 7"
+  },
+  {
+    "field": "wireGt08",
+    "id": "wireGt08",
+    "category": "8x Wires",
+    "amount": 2594592000,
+    "amount_expression": "U2* 8"
+  },
+  {
+    "field": "wireGt09",
+    "id": "wireGt09",
+    "category": "9x Wires",
+    "amount": 2918916000,
+    "amount_expression": "U2* 9"
+  },
+  {
+    "field": "wireGt10",
+    "id": "wireGt10",
+    "category": "10x Wires",
+    "amount": 3243240000,
+    "amount_expression": "U2*10"
+  },
+  {
+    "field": "wireGt11",
+    "id": "wireGt11",
+    "category": "11x Wires",
+    "amount": 3567564000,
+    "amount_expression": "U2*11"
+  },
+  {
+    "field": "wireGt12",
+    "id": "wireGt12",
+    "category": "12x Wires",
+    "amount": 3891888000,
+    "amount_expression": "U2*12"
+  },
+  {
+    "field": "wireGt13",
+    "id": "wireGt13",
+    "category": "13x Wires",
+    "amount": 4216212000,
+    "amount_expression": "U2*13"
+  },
+  {
+    "field": "wireGt14",
+    "id": "wireGt14",
+    "category": "14x Wires",
+    "amount": 4540536000,
+    "amount_expression": "U2*14"
+  },
+  {
+    "field": "wireGt15",
+    "id": "wireGt15",
+    "category": "15x Wires",
+    "amount": 4864860000,
+    "amount_expression": "U2*15"
+  },
+  {
+    "field": "wireGt16",
+    "id": "wireGt16",
+    "category": "16x Wires",
+    "amount": 5189184000,
+    "amount_expression": "U2*16"
+  }
+]

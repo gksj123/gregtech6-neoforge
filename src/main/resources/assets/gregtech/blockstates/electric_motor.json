@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "gregtech:block/electric_motor"
+    },
+    "facing=east": {
+      "model": "gregtech:block/electric_motor",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "gregtech:block/electric_motor",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "gregtech:block/electric_motor",
+      "y": 270
+    }
+  }
+}

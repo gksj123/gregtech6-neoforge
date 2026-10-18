@@ -1,0 +1,2312 @@
+[
+  {
+    "class": "AbstractCoverAttachmentTorch",
+    "source": "java/gregapi/cover/covers/AbstractCoverAttachmentTorch.java",
+    "events": [
+      {
+        "method": "onCoverPlaced",
+        "sound_expression": "SFX.MC_DIG_WOOD",
+        "sound_ids": [
+          "dig.wood"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 41
+      },
+      {
+        "method": "onAfterCrowbar",
+        "sound_expression": "SFX.MC_DIG_WOOD",
+        "sound_ids": [
+          "dig.wood"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 46
+      }
+    ]
+  },
+  {
+    "class": "AbstractCoverDefault",
+    "source": "java/gregapi/cover/covers/AbstractCoverDefault.java",
+    "events": [
+      {
+        "method": "onCoverPlaced",
+        "sound_expression": "SFX.GT_SCREWDRIVER",
+        "sound_ids": [
+          "GT_SCREWDRIVER"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 53
+      },
+      {
+        "method": "onAfterCrowbar",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 74
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Builderwand",
+    "source": "java/gregtech/items/behaviors/Behavior_Builderwand.java",
+    "events": [
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_XP",
+        "sound_ids": [
+          "random.orb"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 67
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Drop_Loot",
+    "source": "java/gregapi/item/multiitem/behaviors/Behavior_Drop_Loot.java",
+    "events": [
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_CLOTH",
+        "sound_ids": [
+          "dig.cloth"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 52
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Duct_Tape",
+    "source": "java/gregtech/items/behaviors/Behavior_Duct_Tape.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_DIG_CLOTH",
+        "sound_ids": [
+          "dig.cloth"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 71
+      }
+    ]
+  },
+  {
+    "class": "Behavior_FlintAndTinder",
+    "source": "java/gregtech/items/behaviors/Behavior_FlintAndTinder.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_IGNITE",
+        "sound_ids": [
+          "fire.ignite"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 59
+      },
+      {
+        "method": "onLeftClickEntity",
+        "sound_expression": "SFX.MC_IGNITE",
+        "sound_ids": [
+          "fire.ignite"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 73
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Gun",
+    "source": "java/gregtech/items/behaviors/Behavior_Gun.java",
+    "events": [
+      {
+        "method": "shoot",
+        "sound_expression": "SFX.MC_LIQUID_SPLASH",
+        "sound_ids": [
+          "game.neutral.swim"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 156
+      },
+      {
+        "method": "onItemRightClick",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 16.0,
+        "pitch": null,
+        "line": 343
+      },
+      {
+        "method": "onItemRightClick",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 16.0,
+        "pitch": null,
+        "line": 348
+      },
+      {
+        "method": "onItemRightClick",
+        "sound_expression": "SFX.MC_FIREWORK_BLAST_FAR",
+        "sound_ids": [
+          "fireworks.blast_far"
+        ],
+        "volume": 128.0,
+        "pitch": null,
+        "line": 353
+      },
+      {
+        "method": "reloadGun",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 16.0,
+        "pitch": null,
+        "line": 382
+      },
+      {
+        "method": "reloadGun",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 16.0,
+        "pitch": null,
+        "line": 394
+      },
+      {
+        "method": "reloadGun",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 16.0,
+        "pitch": null,
+        "line": 401
+      },
+      {
+        "method": "reloadGun",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 16.0,
+        "pitch": null,
+        "line": 408
+      },
+      {
+        "method": "reloadGun",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 16.0,
+        "pitch": null,
+        "line": 418
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Lighter",
+    "source": "java/gregtech/items/behaviors/Behavior_Lighter.java",
+    "events": [
+      {
+        "method": "onLeftClickEntity",
+        "sound_expression": "SFX.MC_IGNITE",
+        "sound_ids": [
+          "fire.ignite"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 70
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_IGNITE",
+        "sound_ids": [
+          "fire.ignite"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 87
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_IGNITE",
+        "sound_ids": [
+          "fire.ignite"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 101
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Place_Paddy",
+    "source": "java/gregapi/item/multiitem/behaviors/Behavior_Place_Paddy.java",
+    "events": [
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 50
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Place_Path",
+    "source": "java/gregapi/item/multiitem/behaviors/Behavior_Place_Path.java",
+    "events": [
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 60
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 68
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 78
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 91
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 101
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 111
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 121
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 131
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 141
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 151
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 161
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 171
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 181
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Plunger_Essentia",
+    "source": "java/gregtech/items/behaviors/Behavior_Plunger_Essentia.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.IC_TRAMPOLINE",
+        "sound_ids": [
+          "IC_TRAMPOLINE"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 54
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Plunger_Fluid",
+    "source": "java/gregtech/items/behaviors/Behavior_Plunger_Fluid.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.IC_TRAMPOLINE",
+        "sound_ids": [
+          "IC_TRAMPOLINE"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 56
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Remote",
+    "source": "java/gregtech/items/behaviors/Behavior_Remote.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.GT_BEEP",
+        "sound_ids": [
+          "GT_BEEP"
+        ],
+        "volume": 0.5,
+        "pitch": 1.0,
+        "line": 54
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.GT_BEEP",
+        "sound_ids": [
+          "GT_BEEP"
+        ],
+        "volume": 0.5,
+        "pitch": 0.5,
+        "line": 58
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.GT_BEEP",
+        "sound_ids": [
+          "GT_BEEP"
+        ],
+        "volume": 0.5,
+        "pitch": 1.0,
+        "line": 63
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.GT_BEEP",
+        "sound_ids": [
+          "GT_BEEP"
+        ],
+        "volume": 0.5,
+        "pitch": 0.5,
+        "line": 67
+      },
+      {
+        "method": "onItemRightClick",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 88
+      },
+      {
+        "method": "addCoords",
+        "sound_expression": "SFX.GT_BEEP",
+        "sound_ids": [
+          "GT_BEEP"
+        ],
+        "volume": 0.5,
+        "pitch": 1.0,
+        "line": 100
+      },
+      {
+        "method": "addCoords",
+        "sound_expression": "SFX.GT_BEEP",
+        "sound_ids": [
+          "GT_BEEP"
+        ],
+        "volume": 0.5,
+        "pitch": 0.5,
+        "line": 106
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Spray_Color",
+    "source": "java/gregtech/items/behaviors/Behavior_Spray_Color.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 77
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Spray_Color_Remover",
+    "source": "java/gregtech/items/behaviors/Behavior_Spray_Color_Remover.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 76
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Spray_Extinguisher",
+    "source": "java/gregtech/items/behaviors/Behavior_Spray_Extinguisher.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 74
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": 1.5,
+        "line": 75
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Spray_Foam",
+    "source": "java/gregtech/items/behaviors/Behavior_Spray_Foam.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 86
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Spray_Foam_Hardener",
+    "source": "java/gregtech/items/behaviors/Behavior_Spray_Foam_Hardener.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 75
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Spray_Foam_Remover",
+    "source": "java/gregtech/items/behaviors/Behavior_Spray_Foam_Remover.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": 1.5,
+        "line": 75
+      }
+    ]
+  },
+  {
+    "class": "Behavior_TripwireCutting",
+    "source": "java/gregapi/item/multiitem/behaviors/Behavior_TripwireCutting.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_SHEARS",
+        "sound_ids": [
+          "mob.sheep.shear"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 55
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Unlock_Item_Aspects",
+    "source": "java/gregapi/item/multiitem/behaviors/Behavior_Unlock_Item_Aspects.java",
+    "events": [
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_HMM",
+        "sound_ids": [
+          "mob.villager.idle"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 59
+      },
+      {
+        "method": "onItemUse",
+        "sound_expression": "SFX.MC_XP",
+        "sound_ids": [
+          "random.orb"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 104
+      }
+    ]
+  },
+  {
+    "class": "Behavior_Watering_Crops",
+    "source": "java/gregtech/items/behaviors/Behavior_Watering_Crops.java",
+    "events": [
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 55
+      }
+    ]
+  },
+  {
+    "class": "BlockBaseSpike",
+    "source": "java/gregapi/block/misc/BlockBaseSpike.java",
+    "events": [
+      {
+        "method": "onBlockAdded2",
+        "sound_expression": "SFX.MC_ANVIL_LAND",
+        "sound_ids": [
+          "random.anvil_land"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 105
+      }
+    ]
+  },
+  {
+    "class": "CoverDrain",
+    "source": "java/gregapi/cover/covers/CoverDrain.java",
+    "events": [
+      {
+        "method": "onTickPre",
+        "sound_expression": "SFX.MC_XP",
+        "sound_ids": [
+          "random.orb"
+        ],
+        "volume": 0.1,
+        "pitch": null,
+        "line": 92
+      },
+      {
+        "method": "onTickPre",
+        "sound_expression": "SFX.MC_XP",
+        "sound_ids": [
+          "random.orb"
+        ],
+        "volume": 0.1,
+        "pitch": null,
+        "line": 100
+      },
+      {
+        "method": "onWalkOver",
+        "sound_expression": "SFX.MC_XP",
+        "sound_ids": [
+          "random.orb"
+        ],
+        "volume": 0.1,
+        "pitch": null,
+        "line": 172
+      }
+    ]
+  },
+  {
+    "class": "CoverFilterFluid",
+    "source": "java/gregapi/cover/covers/CoverFilterFluid.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 107
+      }
+    ]
+  },
+  {
+    "class": "CoverFilterItem",
+    "source": "java/gregapi/cover/covers/CoverFilterItem.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 96
+      },
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 101
+      },
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 105
+      }
+    ]
+  },
+  {
+    "class": "CoverLogisticsFluidExport",
+    "source": "java/gregapi/cover/covers/CoverLogisticsFluidExport.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 100
+      }
+    ]
+  },
+  {
+    "class": "CoverLogisticsFluidImport",
+    "source": "java/gregapi/cover/covers/CoverLogisticsFluidImport.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 100
+      }
+    ]
+  },
+  {
+    "class": "CoverLogisticsFluidStorage",
+    "source": "java/gregapi/cover/covers/CoverLogisticsFluidStorage.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 100
+      }
+    ]
+  },
+  {
+    "class": "CoverLogisticsItemExport",
+    "source": "java/gregapi/cover/covers/CoverLogisticsItemExport.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 94
+      }
+    ]
+  },
+  {
+    "class": "CoverLogisticsItemImport",
+    "source": "java/gregapi/cover/covers/CoverLogisticsItemImport.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 94
+      }
+    ]
+  },
+  {
+    "class": "CoverLogisticsItemStorage",
+    "source": "java/gregapi/cover/covers/CoverLogisticsItemStorage.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 88
+      }
+    ]
+  },
+  {
+    "class": "CoverPressureValve",
+    "source": "java/gregapi/cover/covers/CoverPressureValve.java",
+    "events": [
+      {
+        "method": "onTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 58
+      }
+    ]
+  },
+  {
+    "class": "CoverRetrieverItem",
+    "source": "java/gregapi/cover/covers/CoverRetrieverItem.java",
+    "events": [
+      {
+        "method": "onCoverClickedRight",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 130
+      }
+    ]
+  },
+  {
+    "class": "CoverTextureCanvas",
+    "source": "java/gregapi/cover/covers/CoverTextureCanvas.java",
+    "events": [
+      {
+        "method": "onCoverPlaced",
+        "sound_expression": "SFX.MC_DIG_CLOTH",
+        "sound_ids": [
+          "dig.cloth"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 52
+      },
+      {
+        "method": "onAfterCrowbar",
+        "sound_expression": "SFX.MC_DIG_CLOTH",
+        "sound_ids": [
+          "dig.cloth"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 55
+      }
+    ]
+  },
+  {
+    "class": "CoverTextureMulti",
+    "source": "java/gregapi/cover/covers/CoverTextureMulti.java",
+    "events": [
+      {
+        "method": "onCoverPlaced",
+        "sound_expression": "mSound == null ? SFX.GT_SCREWDRIVER : mSound",
+        "sound_ids": [
+          "GT_SCREWDRIVER"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 74
+      },
+      {
+        "method": "onAfterCrowbar",
+        "sound_expression": "mSound == null ? SFX.MC_BREAK : mSound",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 75
+      }
+    ]
+  },
+  {
+    "class": "CoverTextureSimple",
+    "source": "java/gregapi/cover/covers/CoverTextureSimple.java",
+    "events": [
+      {
+        "method": "onCoverPlaced",
+        "sound_expression": "mSound == null ? SFX.GT_SCREWDRIVER : mSound",
+        "sound_ids": [
+          "GT_SCREWDRIVER"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 53
+      },
+      {
+        "method": "onAfterCrowbar",
+        "sound_expression": "mSound == null ? SFX.MC_BREAK : mSound",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 54
+      }
+    ]
+  },
+  {
+    "class": "Enchantment_WerewolfDamage",
+    "source": "java/gregapi/enchants/Enchantment_WerewolfDamage.java",
+    "events": [
+      {
+        "method": "func_151367_b",
+        "sound_expression": "SFX.MC_FIREWORK_LARGE",
+        "sound_ids": [
+          "fireworks.largeBlast"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 95
+      }
+    ]
+  },
+  {
+    "class": "GT_API_Proxy",
+    "source": "java/gregapi/GT_API_Proxy.java",
+    "events": [
+      {
+        "method": "onLivingUpdate",
+        "sound_expression": "SFX.MC_DIG_GRAVEL",
+        "sound_ids": [
+          "dig.gravel"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 571
+      },
+      {
+        "method": "onLivingUpdate",
+        "sound_expression": "SFX.MC_DIG_GRASS",
+        "sound_ids": [
+          "dig.grass"
+        ],
+        "volume": 0.5,
+        "pitch": 0.5,
+        "line": 577
+      },
+      {
+        "method": "onLivingUpdate",
+        "sound_expression": "SFX.MC_DIG_WOOD",
+        "sound_ids": [
+          "dig.wood"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 591
+      },
+      {
+        "method": "onPlayerTickEvent",
+        "sound_expression": "SFX.MC_HMM",
+        "sound_ids": [
+          "mob.villager.idle"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 849
+      },
+      {
+        "method": "onPlayerInteraction",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 1105
+      },
+      {
+        "method": "onPlayerInteraction",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 1117
+      },
+      {
+        "method": "onPlayerInteraction",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 1129
+      },
+      {
+        "method": "onPlayerInteraction",
+        "sound_expression": "SFX.MC_IGNITE",
+        "sound_ids": [
+          "fire.ignite"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 1166
+      },
+      {
+        "method": "onBlockHarvestingEvent",
+        "sound_expression": "SFX.MC_COLLECT",
+        "sound_ids": [
+          "random.pop"
+        ],
+        "volume": 0.2,
+        "pitch": null,
+        "line": 1361
+      }
+    ]
+  },
+  {
+    "class": "GT_Proxy",
+    "source": "java/gregtech/GT_Proxy.java",
+    "events": [
+      {
+        "method": "onPlayerInteraction",
+        "sound_expression": "SFX.MC_IGNITE",
+        "sound_ids": [
+          "fire.ignite"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 281
+      },
+      {
+        "method": "onPlayerInteraction",
+        "sound_expression": "SFX.MC_IGNITE",
+        "sound_ids": [
+          "fire.ignite"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 341
+      }
+    ]
+  },
+  {
+    "class": "ITileEntityMultiBlockController",
+    "source": "java/gregapi/tileentity/multiblocks/ITileEntityMultiBlockController.java",
+    "events": [
+      {
+        "method": "checkAndSetTarget",
+        "sound_expression": "SFX.MC_XP",
+        "sound_ids": [
+          "random.orb"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 56
+      },
+      {
+        "method": "checkAndSetTarget",
+        "sound_expression": "SFX.MC_XP",
+        "sound_ids": [
+          "random.orb"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 62
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityAnvil",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityAnvil.java",
+    "events": [
+      {
+        "method": "onToolClick2",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 127
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityAxle",
+    "source": "java/gregapi/tileentity/connectors/MultiTileEntityAxle.java",
+    "events": [
+      {
+        "method": "addToEnergyTransferred",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 126
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityBasicMachine",
+    "source": "java/gregapi/tileentity/machines/MultiTileEntityBasicMachine.java",
+    "events": [
+      {
+        "method": "doSoundInterrupt",
+        "sound_expression": "mRequiresIgnition?SFX.MC_FIZZ:mNoConstantEnergy?SFX.IC_MACHINE_INTERRUPT:SFX.MC_CLICK",
+        "sound_ids": [
+          "random.fizz",
+          "random.break",
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 959
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityButtonAdvanced",
+    "source": "java/gregtech/tileentity/redstone/MultiTileEntityButtonAdvanced.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 191
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 220
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityChest",
+    "source": "java/gregapi/block/multitileentity/example/MultiTileEntityChest.java",
+    "events": [
+      {
+        "method": "onToolClick",
+        "sound_expression": "SFX.MC_COLLECT",
+        "sound_ids": [
+          "random.pop"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 226
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityCrank",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityCrank.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_MINECART",
+        "sound_ids": [
+          "minecart.base"
+        ],
+        "volume": 0.5,
+        "pitch": null,
+        "line": 108
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityCrucible",
+    "source": "java/gregtech/tileentity/multiblocks/MultiTileEntityCrucible.java",
+    "events": [
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 212
+      },
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 303
+      },
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 306
+      },
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 318
+      },
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 368
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityDynamite",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityDynamite.java",
+    "events": [
+      {
+        "method": "onToolClick2",
+        "sound_expression": "SFX.MC_TNT_IGNITE",
+        "sound_ids": [
+          "game.tnt.primed"
+        ],
+        "volume": 1.0,
+        "pitch": 0.5,
+        "line": 100
+      },
+      {
+        "method": "onToolClick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": 0.5,
+        "line": 101
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityEngineSteam",
+    "source": "java/gregtech/tileentity/energy/converters/MultiTileEntityEngineSteam.java",
+    "events": [
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 157
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityFaucet",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityFaucet.java",
+    "events": [
+      {
+        "method": "fillMold",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 114
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityFluidCapNozzle",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityFluidCapNozzle.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 78
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 84
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityFluidFunnel",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityFluidFunnel.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 78
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 84
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityFluidNozzle",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityFluidNozzle.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 77
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 120
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityFluidTap",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityFluidTap.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 83
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 105
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 106
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 115
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 116
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 125
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.IC_SPRAY",
+        "sound_ids": [
+          "IC_SPRAY"
+        ],
+        "volume": 1.0,
+        "pitch": 2.0,
+        "line": 167
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityGearBox",
+    "source": "java/gregtech/tileentity/energy/transformers/MultiTileEntityGearBox.java",
+    "events": [
+      {
+        "method": "doInject",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 359
+      },
+      {
+        "method": "doInject",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 385
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityImplosionCompressor",
+    "source": "java/gregtech/tileentity/multiblocks/MultiTileEntityImplosionCompressor.java",
+    "events": [
+      {
+        "method": "onProcessStarted",
+        "sound_expression": "SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 62
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityJuicer",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityJuicer.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_SLIME_BIG",
+        "sound_ids": [
+          "mob.slime.big"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 147
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityLocker",
+    "source": "java/gregtech/tileentity/inventories/MultiTileEntityLocker.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 75
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityMassStorage",
+    "source": "java/gregapi/tileentity/inventories/MultiTileEntityMassStorage.java",
+    "events": [
+      {
+        "method": "onToolClick2",
+        "sound_expression": "SFX.MC_COLLECT",
+        "sound_ids": [
+          "random.pop"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 146
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityMold",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityMold.java",
+    "events": [
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 180
+      },
+      {
+        "method": "onToolClick2",
+        "sound_expression": "SFX.MC_DIG_ROCK",
+        "sound_ids": [
+          "dig.stone"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 331
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityMoldCoinage",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityMoldCoinage.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 119
+      },
+      {
+        "method": "onToolClick2",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 141
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityMortar",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityMortar.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_DIG_ROCK",
+        "sound_ids": [
+          "dig.stone"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 92
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityPipeFluid",
+    "source": "java/gregapi/tileentity/connectors/MultiTileEntityPipeFluid.java",
+    "events": [
+      {
+        "method": "onServerTickPre",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 287
+      },
+      {
+        "method": "onServerTickPre",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 298
+      },
+      {
+        "method": "onServerTickPre",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 304
+      },
+      {
+        "method": "onServerTickPre",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 310
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityReactorCore",
+    "source": "java/gregtech/tileentity/energy/reactors/MultiTileEntityReactorCore.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 218
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityReactorCore1x1",
+    "source": "java/gregtech/tileentity/energy/reactors/MultiTileEntityReactorCore1x1.java",
+    "events": [
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 174
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 259
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityReactorCore2x2",
+    "source": "java/gregtech/tileentity/energy/reactors/MultiTileEntityReactorCore2x2.java",
+    "events": [
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 201
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 288
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityRope",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntityRope.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_DIG_CLOTH",
+        "sound_ids": [
+          "dig.cloth"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 65
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntitySafeKeyLocked",
+    "source": "java/gregtech/tileentity/inventories/MultiTileEntitySafeKeyLocked.java",
+    "events": [
+      {
+        "method": "useKey",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": 0.25,
+        "line": 86
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntitySmeltery",
+    "source": "java/gregtech/tileentity/tools/MultiTileEntitySmeltery.java",
+    "events": [
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 162
+      },
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 253
+      },
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 256
+      },
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 268
+      },
+      {
+        "method": "onServerTickPost",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 316
+      },
+      {
+        "method": "removedByPlayer",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 394
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityTank3x3x3",
+    "source": "java/gregtech/tileentity/multiblocks/MultiTileEntityTank3x3x3.java",
+    "events": [
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 92
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 102
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 113
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 117
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 121
+      }
+    ]
+  },
+  {
+    "class": "MultiTileEntityTank5x5x5",
+    "source": "java/gregtech/tileentity/multiblocks/MultiTileEntityTank5x5x5.java",
+    "events": [
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 92
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 102
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 113
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 117
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 121
+      }
+    ]
+  },
+  {
+    "class": "TileEntityBase01Root",
+    "source": "java/gregapi/tileentity/base/TileEntityBase01Root.java",
+    "events": [
+      {
+        "method": "updateEntity",
+        "sound_expression": "SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 423
+      },
+      {
+        "method": "explode",
+        "sound_expression": "SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 487
+      },
+      {
+        "method": "overcharge",
+        "sound_expression": "TD.Energy.ALL_ELECTRIC.contains(aEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(aEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode",
+          "random.break",
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 506
+      },
+      {
+        "method": "playClick",
+        "sound_expression": "SFX.MC_CLICK",
+        "sound_ids": [
+          "random.click"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 546
+      },
+      {
+        "method": "playCollect",
+        "sound_expression": "SFX.MC_COLLECT",
+        "sound_ids": [
+          "random.pop"
+        ],
+        "volume": 0.2,
+        "pitch": null,
+        "line": 547
+      },
+      {
+        "method": "doDefaultStructuralChecks",
+        "sound_expression": "TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode",
+          "random.break",
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 782
+      },
+      {
+        "method": "doDefaultStructuralChecks",
+        "sound_expression": "TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode",
+          "random.break",
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 792
+      },
+      {
+        "method": "doDefaultStructuralChecks",
+        "sound_expression": "TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode",
+          "random.break",
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 800
+      },
+      {
+        "method": "doDefaultStructuralChecks",
+        "sound_expression": "TD.Energy.ALL_ELECTRIC.contains(tEnergyType)?SFX.IC_MACHINE_OVERLOAD:TD.Energy.ALL_KINETIC.contains(tEnergyType)?SFX.IC_MACHINE_INTERRUPT:SFX.MC_EXPLODE",
+        "sound_ids": [
+          "random.explode",
+          "random.break",
+          "random.explode"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 810
+      }
+    ]
+  },
+  {
+    "class": "TileEntityBase04Covers",
+    "source": "java/gregapi/tileentity/notick/TileEntityBase04Covers.java",
+    "events": [
+      {
+        "method": "checkCoverValidity",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 223
+      }
+    ]
+  },
+  {
+    "class": "TileEntityBase06Covers",
+    "source": "java/gregapi/tileentity/base/TileEntityBase06Covers.java",
+    "events": [
+      {
+        "method": "checkCoverValidity",
+        "sound_expression": "SFX.MC_BREAK",
+        "sound_ids": [
+          "random.break"
+        ],
+        "volume": 1.0,
+        "pitch": -1.0,
+        "line": 212
+      }
+    ]
+  },
+  {
+    "class": "TileEntityBase08Barrel",
+    "source": "java/gregapi/tileentity/tank/TileEntityBase08Barrel.java",
+    "events": [
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 165
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 171
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 177
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 181
+      },
+      {
+        "method": "onTick2",
+        "sound_expression": "SFX.MC_FIZZ",
+        "sound_ids": [
+          "random.fizz"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 185
+      }
+    ]
+  },
+  {
+    "class": "TileEntityBase08FluidContainer",
+    "source": "java/gregapi/tileentity/tank/TileEntityBase08FluidContainer.java",
+    "events": [
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_EAT",
+        "sound_ids": [
+          "random.eat"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 163
+      },
+      {
+        "method": "onBlockActivated3",
+        "sound_expression": "SFX.MC_DRINK",
+        "sound_ids": [
+          "random.drink"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 164
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 223
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 233
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 243
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 257
+      },
+      {
+        "method": "onItemUseFirst",
+        "sound_expression": "SFX.MC_LIQUID_WATER",
+        "sound_ids": [
+          "liquid.water"
+        ],
+        "volume": 1.0,
+        "pitch": null,
+        "line": 264
+      }
+    ]
+  },
+  {
+    "class": "ToolCompat",
+    "source": "java/gregapi/block/ToolCompat.java",
+    "events": [
+      {
+        "method": "onToolClick",
+        "sound_expression": "SFX.MC_COLLECT",
+        "sound_ids": [
+          "random.pop"
+        ],
+        "volume": 0.2,
+        "pitch": null,
+        "line": 178
+      },
+      {
+        "method": "onToolClick",
+        "sound_expression": "SFX.MC_COLLECT",
+        "sound_ids": [
+          "random.pop"
+        ],
+        "volume": 0.2,
+        "pitch": null,
+        "line": 194
+      }
+    ]
+  }
+]

@@ -1,0 +1,271 @@
+# GregTech 6: NeoForge 1.21.1
+
+This directory is the modern port workspace for GregTech 6. The legacy 1.7.10 source remains unmodified in the repository root so it can continue to serve as the gameplay reference.
+
+## Current Status
+
+This is a runnable **vertical slice**, not a complete GregTech 6 port. It deliberately prioritizes the three defining systems requested for the modern version:
+
+1. GUI-free in-world machine control.
+2. Packet-based energy with separate size/amount, voltage tiers, amperage, loss, and overload.
+3. A formed multiblock machine that can be assembled and operated in survival.
+
+The first playable machines are:
+
+- A single-block **Kinetic Crusher** that accepts only KU.
+- A source-shaped 5x5x3 **Large Crusher** that accepts only RU.
+- A source-shaped 3x3x3 **Large Crucible** with material thermal mass.
+- GUI-free solid-fuel **Burning Boxes** that emit HU.
+
+GT6's energy families are kept separate. RU, KU, EU, and LU are not interchangeable scalar values. Converters explicitly transform one family into another and apply their own losses.
+
+## Content Migration Foundation
+
+The port now loads a generated inventory of the legacy source at startup:
+
+- 1112 unique material-name keys
+- 326 material prefixes/forms
+- 324 registered material-form items
+- 11 generic material block families
+- 1366 multitile machine registrations indexed for migration
+- 430 recipe-map handler registrations extracted from the legacy source
+- 40 initial source handlers enabled only when their conditions are provably safe
+- Explicit vanilla smashing recipes extracted from GT6's recipe loader
+- Modern item capabilities for machine inputs, outputs, and configured ports
+
+Material items use one modern data component to store the original material and prefix instead of reviving 1.7.10 metadata. Material blocks use a block entity so the same block family can represent many materials without thousands of Java classes.
+
+The generated migration inventory is documented in [SOURCE_OF_TRUTH.md](SOURCE_OF_TRUTH.md) and produced by `tools/inventory_gt6.py`.
+
+Repeated gameplay properties are generated separately:
+
+```sh
+python3 tools/inventory_gt6.py
+python3 tools/export_gameplay_properties.py
+```
+
+The gameplay extractor currently resolves:
+
+- 492 of 1115 materials to explicit/constructor/inherited heat values.
+- 381 materials with non-default tool types.
+- Hardness and resistance for all 1366 multitile registrations.
+- Block sound classification for all 1366 registrations.
+- Event sound profiles for 78 source classes.
+
+Unresolved computed or default values remain marked in JSON instead of being
+silently guessed.
+
+## Verified Environment
+
+- Minecraft 1.21.1
+- NeoForge 21.1.227
+- Java 21
+- Gradle wrapper 8.14.2
+- Isolated runtime client launched and entered the world
+- Runtime self-test formed the exact 5x5x3 crusher, transferred RU/KU, and produced
+  3 gravel through each crusher path plus 9 material outputs through the generic KU machine
+
+The build intentionally compiles against the supplied local Minecraft installation. It does not need a global Gradle installation and does not currently download NeoGradle dependencies.
+
+## Build
+
+```sh
+cd neo21
+./gradlew build
+```
+
+The main artifact is:
+
+```text
+neo21/build/libs/gregtech-neoforge-1.21.1-6.17.06-alpha.1.jar
+```
+
+If the Minecraft installation is somewhere else, change `minecraft_home` in `gradle.properties`.
+
+## Isolated Development Client
+
+```sh
+./gradlew build
+python3 tools/run_client.py
+```
+
+This uses a separate `run-client` directory and does not add the development jar to the existing Create modpack. The launcher assumes the supplied `.minecraft/versions/create` runtime by default. Override paths with:
+
+```sh
+GT6_MINECRAFT_HOME=/path/to/.minecraft \
+GT6_MINECRAFT_VERSION=create \
+python3 tools/run_client.py
+```
+
+## Runtime Self-Test
+
+The automation opens the prepared save named `world`, builds a complete machine, fuels the generator, inserts cobblestone, and expects gravel:
+
+```sh
+GT6_JVM_ARGS='-Dgregtech.runtimeSelfTest=true' python3 tools/run_client.py
+```
+
+A successful run ends with:
+
+```text
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1906K
+```
+
+The runtime test requires `run-client/saves/world`. A flat test world can be generated using the vanilla 1.21.1 server jar; the copied world should be placed in that location.
+
+## In-World Controls
+
+No machine menu is opened.
+
+| Tool or action | Result |
+| --- | --- |
+| Screwdriver on a controller | Toggle machine on/off |
+| Screwdriver on a port | Cycle energy/item/fluid port mode |
+| Wrench on a controller | Rotate the facing and request a structure check |
+| Soft hammer | Reset a port or force a structure check |
+| Magnifying glass or electrometer | Print machine, cable, and energy diagnostics |
+| Right-click an `ITEM_IN` port with an item | Insert into the controller input bus |
+| Right-click an `ITEM_OUT` port with an empty hand | Extract from the controller output bus |
+| Right-click the generator with fuel | Insert solid fuel |
+| Right-click the manual crank | Emit RU 16 to its facing side |
+| Right-click without a tool | Print compact machine status |
+
+## Large Crusher Assembly
+
+The source shape is a 5x5x3 basin, matching `MultiTileEntityCrusher`:
+
+- Place the controller at the center of the bottom side, facing outward.
+- The bottom layer is a full 5x5 wall of Machine Casings, with ports allowed in place of casings.
+- The middle and top layers have a 5x5 casing perimeter.
+- Their shared 3x3 interior is filled with 18 Crusher Wheels.
+- The source structure uses 56 Tungstensteel walls plus the controller; the current port block can replace walls.
+- Set one boundary port to `ENERGY_IN` with a screwdriver.
+- Set one boundary port to `ITEM_IN` and another to `ITEM_OUT`.
+- Connect an RU source to the energy port using axles.
+- The LV electric motor currently produces only RU 16, so it does not yet meet the Large Crusher's original RU 512 minimum.
+
+The controller checks its structure every second. The soft hammer forces an immediate check.
+
+## Energy Model
+
+GT6 energy is not a single scalar. `EnergyPacket` stores:
+
+- `kind`: EU, RU, KU, HU, CU, LU, MU, NU, QU, TU, or SU.
+- `size`: voltage for electricity, speed for rotation, pressure for air, and so on.
+- `amount`: amperage for electricity or the corresponding packet count for another type.
+
+All energy packets follow GT6's core size/amount convention. The family-specific implementations are:
+
+- EU: size is voltage, amount is amperage.
+- RU: size is rotational speed, amount is packet count. RU travels through axles.
+- KU: size is push/pull, amount is packet count. KU is delivered directly to the facing block and cannot travel through electric cable.
+- LU: size is beam size and amount is frequency. LU is reserved for laser machines and is not accepted by crushers.
+
+The original machine mapping is preserved:
+
+- Normal Crusher IDs 20021–20024: KU, size 16–64, recommended 32.
+- Large Crusher ID 17108: RU, size 512–4096, recommended 512, 50% efficiency.
+- Electric Engine: EU → KU, 50% energy loss.
+- Electric Motor: EU → RU, 50% energy loss.
+- Rotation Engine: RU → KU, 50% energy loss.
+- Manual Crank: RU 16 per turn.
+
+EU cables do not accept RU or KU. They cannot become a hidden universal-energy bridge.
+
+Tin cable: 32 EU voltage, 2 A, 1 V/block loss.
+
+Copper cable: 64 EU voltage, 4 A, 1 V/block loss.
+
+## Kinetic Crusher Example
+
+The single-block Kinetic Crusher is the easiest working energy chain.
+
+Electric route:
+
+```text
+LV Generator (EU 32 × 2)
+  -> Electric Engine, facing the crusher (EU -> KU 16, 50% loss)
+  -> Kinetic Crusher (KU only)
+```
+
+Manual route:
+
+```text
+Manual Crank (RU 16 per turn)
+  -> one or more Axles (RU only)
+  -> Rotation Engine, facing the crusher (RU -> KU 16, 50% loss)
+  -> Kinetic Crusher (KU only)
+```
+
+Right-click the crank repeatedly. The rotation engine needs 32 RU buffered before it emits one 16 KU packet. Right-click the crusher with an input item and right-click it empty-handed to extract output.
+
+## Recipe Engine
+
+The machine recipe layer reads generated data from the GT6 source rather than a
+GT5/GTCEu voltage table:
+
+- `data/gregtech/gt6/recipe_handlers.json` stores every extracted handler registration.
+- `data/gregtech/gt6/recipes.json` stores source-backed explicit item recipes.
+- Material handlers are enabled only when their output stays in the same material,
+  no fluid or extra item is required, and the source condition only contains
+  trivially true checks such as `ANTIMATTER.NOT` or `MT.Empty.NOT`.
+- Handler duration uses the source prefix material amounts and the extracted
+  duration/multiplier fallback. Material tool-quality-dependent duration is not
+  yet extracted, so complex conditional recipes remain disabled.
+- Generic basic machines have 9 input and 9 output slots, source parallelism,
+  `parallel_duration`, efficiency, and cheap-overclocking flags.
+
+## Heat, Burning Boxes, and Crucible
+
+The burning box implementation reads its source registration instead of using a
+single hard-coded heat value. For example, the Steel Solid Burning Box is source
+line 528: it emits HU 32, has efficiency 7000/10000, and uses the Furnace fuel map.
+Only Furnace-map boxes are currently exposed as playable variants; gas and
+fluidized-bed maps remain pending fluid support.
+
+The large crucible follows `MultiTileEntityCrucible`:
+
+- 3x3x3 hollow arrangement.
+- Bottom-center controller.
+- Eight Crucible Walls on each of the three horizontal layers.
+- Empty 1x1 vertical center.
+- HU input from the burning box directly below the controller.
+- Right-click the controller with a material-form item to add one item.
+
+Temperature uses source-derived thermal mass:
+
+```text
+material mass = density × 111.111111 × material units / U
+required HU per K = 1 + floor(total thermal mass / 100)
+```
+
+The total mass includes the steel crucible body and every inserted material.
+Melting, boiling, evaporation, environmental cooling, and a wall-material
+temperature limit are checked separately. Material density, heat, and tool data
+come from `materials_gameplay.json`; unresolved density values remain marked
+with their confidence field.
+
+## Current Port Limits
+
+- Energy transfer is implemented through a bounded packet flood.
+- RU transmission is implemented through axle networks.
+- KU is direct-facing only.
+- Item ports support direct player insertion/extraction.
+- Fluid port modes are represented in the UI-free state machine but fluid transfer is not implemented yet.
+- Hoppers and other mods cannot yet discover item ports through a NeoForge capability.
+- Recipe values are currently built into `CrusherRecipe`; GT6's full recipe map has not been migrated.
+
+## Next Porting Phases
+
+1. Add NeoForge item/fluid/energy capabilities to ports and machine controllers.
+2. Port the 251 Basic Machine registrations onto one data-driven machine block and recipe-map engine.
+3. Replace hard-coded structures with a data-driven pattern and rotation engine.
+4. Port the large boiler and steam turbine to provide an authentic high-output RU source.
+5. Port covers, side configuration, shutters, conveyor and pump modules.
+6. Migrate GT6 ores, cables, circuits, and all recipe loader families.
+7. Rebuild NEI-like recipe inspection without reintroducing machine GUIs.
+8. Add progression data and world generation after the machine framework stabilizes.
+
+## Licensing
+
+Port source code is LGPL-3.0, matching GregTech 6. Reused casing, multiblock, and machine textures originate from the GregTech 6 CC0 asset set. New cable and tool textures in this directory are generated placeholders and may be replaced as the art pass proceeds.

@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "mode=disabled": {
+      "model": "gregtech:block/machine_port"
+    },
+    "mode=energy_in": {
+      "model": "gregtech:block/machine_port"
+    },
+    "mode=item_in": {
+      "model": "gregtech:block/machine_port"
+    },
+    "mode=item_out": {
+      "model": "gregtech:block/machine_port"
+    },
+    "mode=fluid_in": {
+      "model": "gregtech:block/machine_port"
+    },
+    "mode=fluid_out": {
+      "model": "gregtech:block/machine_port"
+    }
+  }
+}

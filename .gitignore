@@ -1,0 +1,11 @@
+.gradle/
+build/
+run/
+run-client/
+run-vanilla/
+run-data/
+*.iml
+.idea/
+.DS_Store
+__pycache__/
+*.pyc

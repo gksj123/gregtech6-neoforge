@@ -1,0 +1,7807 @@
+[
+  {
+    "id": -1,
+    "name": "NULL",
+    "symbol": "",
+    "constructor": "create",
+    "color": ""
+  },
+  {
+    "id": 0,
+    "name": "Ametrine",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#B68D95"
+  },
+  {
+    "id": 0,
+    "name": "Angelite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#60778B"
+  },
+  {
+    "id": 0,
+    "name": "Basanite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#323028"
+  },
+  {
+    "id": 0,
+    "name": "Black Beryl",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#393939"
+  },
+  {
+    "id": 0,
+    "name": "Bloodstone",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#476246"
+  },
+  {
+    "id": 0,
+    "name": "Carnelian",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#88280E"
+  },
+  {
+    "id": 0,
+    "name": "Charoite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#7D5FA1"
+  },
+  {
+    "id": 0,
+    "name": "Chrysocolla",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#5FB3B4"
+  },
+  {
+    "id": 0,
+    "name": "Chrysoprase",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#445D31"
+  },
+  {
+    "id": 0,
+    "name": "Coral",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#982826"
+  },
+  {
+    "id": 0,
+    "name": "Dumortierite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#363964"
+  },
+  {
+    "id": 0,
+    "name": "Empty",
+    "symbol": "",
+    "constructor": "create",
+    "color": ""
+  },
+  {
+    "id": 0,
+    "name": "Jet",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#272727"
+  },
+  {
+    "id": 0,
+    "name": "Kunzite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#BDA6C0"
+  },
+  {
+    "id": 0,
+    "name": "Labradorite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#1B8598"
+  },
+  {
+    "id": 0,
+    "name": "Lapis Lazuli",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#2C3465"
+  },
+  {
+    "id": 0,
+    "name": "Larimar",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#81C4C4"
+  },
+  {
+    "id": 0,
+    "name": "Moissanite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#A4A5A5"
+  },
+  {
+    "id": 0,
+    "name": "Mookaite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#8F501D"
+  },
+  {
+    "id": 0,
+    "name": "Moonstone",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#A6AEAB"
+  },
+  {
+    "id": 0,
+    "name": "Pietersite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#7F6175"
+  },
+  {
+    "id": 0,
+    "name": "Rhodonite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#B27987"
+  },
+  {
+    "id": 0,
+    "name": "Scapolite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#A7A882"
+  },
+  {
+    "id": 0,
+    "name": "Selenite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#A8A8A8"
+  },
+  {
+    "id": 0,
+    "name": "Snowflake Obsidian",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#46423F"
+  },
+  {
+    "id": 0,
+    "name": "Sunstone",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#C2886C"
+  },
+  {
+    "id": 0,
+    "name": "Unakite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#998C61"
+  },
+  {
+    "id": 0,
+    "name": "Wonderstone",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#A68873"
+  },
+  {
+    "id": 1,
+    "name": "Photon",
+    "symbol": "",
+    "constructor": "create",
+    "color": ""
+  },
+  {
+    "id": 2,
+    "name": "Neutrino",
+    "symbol": "",
+    "constructor": "create",
+    "color": ""
+  },
+  {
+    "id": 3,
+    "name": "Neutron",
+    "symbol": "",
+    "constructor": "create",
+    "color": ""
+  },
+  {
+    "id": 4,
+    "name": "Proton",
+    "symbol": "",
+    "constructor": "create",
+    "color": ""
+  },
+  {
+    "id": 5,
+    "name": "Electron",
+    "symbol": "",
+    "constructor": "create",
+    "color": ""
+  },
+  {
+    "id": 10,
+    "name": "Hydrogen",
+    "symbol": "H",
+    "constructor": "diatomicgas",
+    "color": "#0000FF"
+  },
+  {
+    "id": 11,
+    "name": "Deuterium",
+    "symbol": "D",
+    "constructor": "diatomicgas",
+    "color": "#FFFF00"
+  },
+  {
+    "id": 12,
+    "name": "Tritium",
+    "symbol": "T",
+    "constructor": "diatomicgas",
+    "color": "#FF0000"
+  },
+  {
+    "id": 20,
+    "name": "Helium",
+    "symbol": "He",
+    "constructor": "noblegas",
+    "color": "#FFFF78"
+  },
+  {
+    "id": 21,
+    "name": "Helium-3",
+    "symbol": "He-3",
+    "constructor": "noblegas",
+    "color": "#FFFF8C"
+  },
+  {
+    "id": 30,
+    "name": "Lithium",
+    "symbol": "Li",
+    "constructor": "alkali",
+    "color": "#E1DCFF"
+  },
+  {
+    "id": 31,
+    "name": "Lithium-6",
+    "symbol": "Li-6",
+    "constructor": "alkali",
+    "color": "#E6E1FF"
+  },
+  {
+    "id": 40,
+    "name": "Beryllium",
+    "symbol": "Be",
+    "constructor": "alkaline",
+    "color": "#64B464"
+  },
+  {
+    "id": 41,
+    "name": "Beryllium-7",
+    "symbol": "Be-7",
+    "constructor": "alkaline",
+    "color": "#6EBE6E"
+  },
+  {
+    "id": 42,
+    "name": "Beryllium-8",
+    "symbol": "Be-8",
+    "constructor": "alkaline",
+    "color": "#6EC86E"
+  },
+  {
+    "id": 50,
+    "name": "Boron",
+    "symbol": "B",
+    "constructor": "metalloid",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 51,
+    "name": "Boron-11",
+    "symbol": "B-11",
+    "constructor": "metalloid",
+    "color": "#F0F0F0"
+  },
+  {
+    "id": 60,
+    "name": "Carbon",
+    "symbol": "C",
+    "constructor": "polyatomic",
+    "color": "#141414"
+  },
+  {
+    "id": 61,
+    "name": "Carbon-13",
+    "symbol": "C-13",
+    "constructor": "polyatomic",
+    "color": "#191919"
+  },
+  {
+    "id": 62,
+    "name": "Carbon-14",
+    "symbol": "C-14",
+    "constructor": "polyatomic",
+    "color": "#1E1E1E"
+  },
+  {
+    "id": 70,
+    "name": "Nitrogen",
+    "symbol": "N",
+    "constructor": "diatomicgas",
+    "color": "#0096C8"
+  },
+  {
+    "id": 80,
+    "name": "Oxygen",
+    "symbol": "O",
+    "constructor": "diatomicgas",
+    "color": "#0064C8"
+  },
+  {
+    "id": 90,
+    "name": "Fluorine",
+    "symbol": "F",
+    "constructor": "diatomicgas",
+    "color": "#40C000"
+  },
+  {
+    "id": 100,
+    "name": "Neon",
+    "symbol": "Ne",
+    "constructor": "noblegas",
+    "color": "#FAB4B4"
+  },
+  {
+    "id": 110,
+    "name": "Sodium",
+    "symbol": "Na",
+    "constructor": "alkali",
+    "color": "#000096"
+  },
+  {
+    "id": 120,
+    "name": "Magnesium",
+    "symbol": "Mg",
+    "constructor": "alkaline",
+    "color": "#FFC8C8"
+  },
+  {
+    "id": 130,
+    "name": "Aluminium",
+    "symbol": "Al",
+    "constructor": "posttrans",
+    "color": "#80C8F0"
+  },
+  {
+    "id": 140,
+    "name": "Silicon",
+    "symbol": "Si",
+    "constructor": "metalloid",
+    "color": "#3C3C50"
+  },
+  {
+    "id": 150,
+    "name": "Phosphor",
+    "symbol": "P",
+    "constructor": "polyatomic",
+    "color": "#FFFF00"
+  },
+  {
+    "id": 160,
+    "name": "Sulfur",
+    "symbol": "S",
+    "constructor": "polyatomic",
+    "color": "#EAEA00"
+  },
+  {
+    "id": 170,
+    "name": "Chlorine",
+    "symbol": "Cl",
+    "constructor": "diatomicgas",
+    "color": "#00F0FF"
+  },
+  {
+    "id": 180,
+    "name": "Argon",
+    "symbol": "Ar",
+    "constructor": "noblegas",
+    "color": "#00FF00"
+  },
+  {
+    "id": 190,
+    "name": "Potassium",
+    "symbol": "K",
+    "constructor": "alkali",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 200,
+    "name": "Calcium",
+    "symbol": "Ca",
+    "constructor": "alkaline",
+    "color": "#FFF5F5"
+  },
+  {
+    "id": 210,
+    "name": "Scandium",
+    "symbol": "Sc",
+    "constructor": "transmetal",
+    "color": ""
+  },
+  {
+    "id": 220,
+    "name": "Titanium",
+    "symbol": "Ti",
+    "constructor": "refractmetal",
+    "color": "#DCA0F0"
+  },
+  {
+    "id": 230,
+    "name": "Vanadium",
+    "symbol": "V",
+    "constructor": "refractmetal",
+    "color": "#323232"
+  },
+  {
+    "id": 240,
+    "name": "Chromium",
+    "symbol": "Cr",
+    "constructor": "refractmetal",
+    "color": "#FFE6E6"
+  },
+  {
+    "id": 250,
+    "name": "Manganese",
+    "symbol": "Mn",
+    "constructor": "transmetal",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 260,
+    "name": "Iron",
+    "symbol": "Fe",
+    "constructor": "transmetal",
+    "color": "#C8C8C8"
+  },
+  {
+    "id": 270,
+    "name": "Cobalt",
+    "symbol": "Co",
+    "constructor": "transmetal",
+    "color": "#5050FA"
+  },
+  {
+    "id": 278,
+    "name": "Cobalt-60",
+    "symbol": "Co-60",
+    "constructor": "transmetal",
+    "color": "#5A5AFA"
+  },
+  {
+    "id": 280,
+    "name": "Nickel",
+    "symbol": "Ni",
+    "constructor": "transmetal",
+    "color": "#FAFAC8"
+  },
+  {
+    "id": 290,
+    "name": "Copper",
+    "symbol": "Cu",
+    "constructor": "noblemetal",
+    "color": "#FF825A"
+  },
+  {
+    "id": 300,
+    "name": "Zinc",
+    "symbol": "Zn",
+    "constructor": "transmetal",
+    "color": "#FAF0F0"
+  },
+  {
+    "id": 310,
+    "name": "Gallium",
+    "symbol": "Ga",
+    "constructor": "posttrans",
+    "color": "#DCDCFF"
+  },
+  {
+    "id": 320,
+    "name": "Germanium",
+    "symbol": "Ge",
+    "constructor": "metalloid",
+    "color": "#D4D4D4"
+  },
+  {
+    "id": 330,
+    "name": "Arsenic",
+    "symbol": "As",
+    "constructor": "metalloid",
+    "color": "#676756"
+  },
+  {
+    "id": 340,
+    "name": "Selenium",
+    "symbol": "Se",
+    "constructor": "polyatomic",
+    "color": "#6F1414"
+  },
+  {
+    "id": 350,
+    "name": "Bromine",
+    "symbol": "Br",
+    "constructor": "diatomic",
+    "color": "#500A0A"
+  },
+  {
+    "id": 360,
+    "name": "Krypton",
+    "symbol": "Kr",
+    "constructor": "noblegas",
+    "color": "#80FF80"
+  },
+  {
+    "id": 370,
+    "name": "Rubidium",
+    "symbol": "Rb",
+    "constructor": "alkali",
+    "color": "#F01E1E"
+  },
+  {
+    "id": 380,
+    "name": "Strontium",
+    "symbol": "Sr",
+    "constructor": "alkaline",
+    "color": "#C8C8C8"
+  },
+  {
+    "id": 390,
+    "name": "Yttrium",
+    "symbol": "Y",
+    "constructor": "transmetal",
+    "color": "#DCFADC"
+  },
+  {
+    "id": 400,
+    "name": "Zirconium",
+    "symbol": "Zr",
+    "constructor": "refractmetal",
+    "color": "#C8FFFF"
+  },
+  {
+    "id": 410,
+    "name": "Niobium",
+    "symbol": "Nb",
+    "constructor": "refractmetal",
+    "color": "#BEB4C8"
+  },
+  {
+    "id": 420,
+    "name": "Molybdenum",
+    "symbol": "Mo",
+    "constructor": "refractmetal",
+    "color": "#B4B4DC"
+  },
+  {
+    "id": 430,
+    "name": "Technetium",
+    "symbol": "Tc",
+    "constructor": "transmetal",
+    "color": "#424263"
+  },
+  {
+    "id": 440,
+    "name": "Ruthenium",
+    "symbol": "Ru",
+    "constructor": "platingroup",
+    "color": "#9B9B9B"
+  },
+  {
+    "id": 450,
+    "name": "Rhodium",
+    "symbol": "Rh",
+    "constructor": "platingroup",
+    "color": "#909090"
+  },
+  {
+    "id": 460,
+    "name": "Palladium",
+    "symbol": "Pd",
+    "constructor": "platingroup",
+    "color": "#808080"
+  },
+  {
+    "id": 470,
+    "name": "Silver",
+    "symbol": "Ag",
+    "constructor": "noblemetal",
+    "color": "#DCDCFF"
+  },
+  {
+    "id": 480,
+    "name": "Cadmium",
+    "symbol": "Cd",
+    "constructor": "transmetal",
+    "color": "#32323C"
+  },
+  {
+    "id": 490,
+    "name": "Indium",
+    "symbol": "In",
+    "constructor": "posttrans",
+    "color": "#400080"
+  },
+  {
+    "id": 500,
+    "name": "Tin",
+    "symbol": "Sn",
+    "constructor": "posttrans",
+    "color": "#DCDCDC"
+  },
+  {
+    "id": 510,
+    "name": "Antimony",
+    "symbol": "Sb",
+    "constructor": "metalloid",
+    "color": "#DCDCF0"
+  },
+  {
+    "id": 520,
+    "name": "Tellurium",
+    "symbol": "Te",
+    "constructor": "metalloid",
+    "color": ""
+  },
+  {
+    "id": 530,
+    "name": "Iodine",
+    "symbol": "I",
+    "constructor": "diatomic",
+    "color": "#FFF0F0"
+  },
+  {
+    "id": 540,
+    "name": "Xenon",
+    "symbol": "Xe",
+    "constructor": "noblegas",
+    "color": "#00FFFF"
+  },
+  {
+    "id": 550,
+    "name": "Caesium",
+    "symbol": "Cs",
+    "constructor": "alkali",
+    "color": "#80620B"
+  },
+  {
+    "id": 560,
+    "name": "Barium",
+    "symbol": "Ba",
+    "constructor": "alkaline",
+    "color": "#83824C"
+  },
+  {
+    "id": 570,
+    "name": "Lanthanium",
+    "symbol": "La",
+    "constructor": "lanthanide",
+    "color": "#5D7575"
+  },
+  {
+    "id": 580,
+    "name": "Cerium",
+    "symbol": "Ce",
+    "constructor": "lanthanide",
+    "color": "#FFFFBE"
+  },
+  {
+    "id": 590,
+    "name": "Praseodymium",
+    "symbol": "Pr",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 600,
+    "name": "Neodymium",
+    "symbol": "Nd",
+    "constructor": "lanthanide",
+    "color": "#646464"
+  },
+  {
+    "id": 610,
+    "name": "Promethium",
+    "symbol": "Pm",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 620,
+    "name": "Samarium",
+    "symbol": "Sm",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 630,
+    "name": "Europium",
+    "symbol": "Eu",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 640,
+    "name": "Gadolinium",
+    "symbol": "Gd",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 650,
+    "name": "Terbium",
+    "symbol": "Tb",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 660,
+    "name": "Dysprosium",
+    "symbol": "Dy",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 670,
+    "name": "Holmium",
+    "symbol": "Ho",
+    "constructor": "lanthanide",
+    "color": "#C4969F"
+  },
+  {
+    "id": 680,
+    "name": "Erbium",
+    "symbol": "Er",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 690,
+    "name": "Thulium",
+    "symbol": "Tm",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 700,
+    "name": "Ytterbium",
+    "symbol": "Yb",
+    "constructor": "lanthanide",
+    "color": "#A7A7A7"
+  },
+  {
+    "id": 710,
+    "name": "Lutetium",
+    "symbol": "Lu",
+    "constructor": "lanthanide",
+    "color": ""
+  },
+  {
+    "id": 720,
+    "name": "Hafnium",
+    "symbol": "Hf",
+    "constructor": "refractmetal",
+    "color": "#8C8C96"
+  },
+  {
+    "id": 730,
+    "name": "Tantalum",
+    "symbol": "Ta",
+    "constructor": "refractmetal",
+    "color": "#78788C"
+  },
+  {
+    "id": 740,
+    "name": "Tungsten",
+    "symbol": "W",
+    "constructor": "refractmetal",
+    "color": "#323232"
+  },
+  {
+    "id": 750,
+    "name": "Rhenium",
+    "symbol": "Re",
+    "constructor": "precmetal",
+    "color": "#FFFFC8"
+  },
+  {
+    "id": 760,
+    "name": "OsmiumElemental",
+    "symbol": "Os",
+    "constructor": "platingroup",
+    "color": "#3232FF"
+  },
+  {
+    "id": 770,
+    "name": "Iridium",
+    "symbol": "Ir",
+    "constructor": "platingroup",
+    "color": "#F0F0F5"
+  },
+  {
+    "id": 780,
+    "name": "Platinum",
+    "symbol": "Pt",
+    "constructor": "platingroup",
+    "color": "#64B4FA"
+  },
+  {
+    "id": 790,
+    "name": "Gold",
+    "symbol": "Au",
+    "constructor": "noblemetal",
+    "color": "#FFE650"
+  },
+  {
+    "id": 791,
+    "name": "Gold-198",
+    "symbol": "Au-198",
+    "constructor": "noblemetal",
+    "color": "#FFE650"
+  },
+  {
+    "id": 800,
+    "name": "Mercury",
+    "symbol": "Hg",
+    "constructor": "precmetal",
+    "color": "#E6DCDC"
+  },
+  {
+    "id": 810,
+    "name": "Thallium",
+    "symbol": "Tl",
+    "constructor": "posttrans",
+    "color": ""
+  },
+  {
+    "id": 820,
+    "name": "Lead",
+    "symbol": "Pb",
+    "constructor": "posttrans",
+    "color": "#3C286E"
+  },
+  {
+    "id": 830,
+    "name": "Bismuth",
+    "symbol": "Bi",
+    "constructor": "posttrans",
+    "color": "#64A0A0"
+  },
+  {
+    "id": 840,
+    "name": "Polonium",
+    "symbol": "Po",
+    "constructor": "posttrans",
+    "color": ""
+  },
+  {
+    "id": 850,
+    "name": "Astatine",
+    "symbol": "At",
+    "constructor": "metalloid",
+    "color": "#212121"
+  },
+  {
+    "id": 860,
+    "name": "Radon",
+    "symbol": "Rn",
+    "constructor": "noblegas",
+    "color": "#FF00FF"
+  },
+  {
+    "id": 870,
+    "name": "Francium",
+    "symbol": "Fr",
+    "constructor": "alkali",
+    "color": ""
+  },
+  {
+    "id": 880,
+    "name": "Radium",
+    "symbol": "Ra",
+    "constructor": "alkaline",
+    "color": "#FFFFCD"
+  },
+  {
+    "id": 890,
+    "name": "Actinium",
+    "symbol": "Ac",
+    "constructor": "actinide",
+    "color": "#7D7171"
+  },
+  {
+    "id": 900,
+    "name": "Thorium",
+    "symbol": "Th",
+    "constructor": "actinide",
+    "color": "#001E00"
+  },
+  {
+    "id": 910,
+    "name": "Protactinium",
+    "symbol": "Pa",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 920,
+    "name": "Uranium",
+    "symbol": "U",
+    "constructor": "actinide",
+    "color": "#32F032"
+  },
+  {
+    "id": 921,
+    "name": "Uranium-235",
+    "symbol": "U-235",
+    "constructor": "actinide",
+    "color": "#46FA46"
+  },
+  {
+    "id": 922,
+    "name": "Uranium-233",
+    "symbol": "U-233",
+    "constructor": "actinide",
+    "color": "#46FA32"
+  },
+  {
+    "id": 930,
+    "name": "Neptunium",
+    "symbol": "Np",
+    "constructor": "actinide",
+    "color": "#4E5A4E"
+  },
+  {
+    "id": 940,
+    "name": "Plutonium",
+    "symbol": "Pu",
+    "constructor": "actinide",
+    "color": "#F03232"
+  },
+  {
+    "id": 942,
+    "name": "Plutonium-240",
+    "symbol": "Pu-240",
+    "constructor": "actinide",
+    "color": "#EB1E1E"
+  },
+  {
+    "id": 943,
+    "name": "Plutonium-241",
+    "symbol": "Pu-241",
+    "constructor": "actinide",
+    "color": "#F54646"
+  },
+  {
+    "id": 945,
+    "name": "Plutonium-243",
+    "symbol": "Pu-243",
+    "constructor": "actinide",
+    "color": "#FA4646"
+  },
+  {
+    "id": 946,
+    "name": "Plutonium-238",
+    "symbol": "Pu-238",
+    "constructor": "actinide",
+    "color": "#FA1E1E"
+  },
+  {
+    "id": 947,
+    "name": "Plutonium-239",
+    "symbol": "Pu-239",
+    "constructor": "actinide",
+    "color": "#EB3232"
+  },
+  {
+    "id": 950,
+    "name": "Americium",
+    "symbol": "Am",
+    "constructor": "actinide",
+    "color": "#C8C8C8"
+  },
+  {
+    "id": 951,
+    "name": "Americium-241",
+    "symbol": "Am-241",
+    "constructor": "actinide",
+    "color": "#D2D2D2"
+  },
+  {
+    "id": 952,
+    "name": "Americium-242",
+    "symbol": "Am-242",
+    "constructor": "actinide",
+    "color": "#D2D2D2"
+  },
+  {
+    "id": 960,
+    "name": "Curium",
+    "symbol": "Cm",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 970,
+    "name": "Berkelium",
+    "symbol": "Bk",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 980,
+    "name": "Californium",
+    "symbol": "Cf",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 990,
+    "name": "Einsteinium",
+    "symbol": "Es",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 1000,
+    "name": "Fermium",
+    "symbol": "Fm",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 1010,
+    "name": "Mendelevium",
+    "symbol": "Md",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 1020,
+    "name": "Nobelium",
+    "symbol": "No",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 1030,
+    "name": "Lawrencium",
+    "symbol": "Lr",
+    "constructor": "actinide",
+    "color": ""
+  },
+  {
+    "id": 1040,
+    "name": "Rutherfordium",
+    "symbol": "Rf",
+    "constructor": "transmetal",
+    "color": ""
+  },
+  {
+    "id": 1050,
+    "name": "Dubnium",
+    "symbol": "Db",
+    "constructor": "transmetal",
+    "color": ""
+  },
+  {
+    "id": 1060,
+    "name": "Seaborgium",
+    "symbol": "Sg",
+    "constructor": "transmetal",
+    "color": ""
+  },
+  {
+    "id": 1070,
+    "name": "Bohrium",
+    "symbol": "Bh",
+    "constructor": "transmetal",
+    "color": ""
+  },
+  {
+    "id": 1080,
+    "name": "Hassium",
+    "symbol": "Hs",
+    "constructor": "transmetal",
+    "color": ""
+  },
+  {
+    "id": 1090,
+    "name": "Meitnerium",
+    "symbol": "Mt",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1100,
+    "name": "Darmstadtium",
+    "symbol": "Ds",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1110,
+    "name": "Roentgenium",
+    "symbol": "Rg",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1120,
+    "name": "Copernicium",
+    "symbol": "Cn",
+    "constructor": "transmetal",
+    "color": ""
+  },
+  {
+    "id": 1130,
+    "name": "Nihonium",
+    "symbol": "Nh",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1140,
+    "name": "Flerovium",
+    "symbol": "Fl",
+    "constructor": "posttrans",
+    "color": ""
+  },
+  {
+    "id": 1148,
+    "name": "Flerovium-298",
+    "symbol": "Fl-298",
+    "constructor": "posttrans",
+    "color": ""
+  },
+  {
+    "id": 1150,
+    "name": "Moscovium",
+    "symbol": "Mc",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1160,
+    "name": "Livermorium",
+    "symbol": "Lv",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1170,
+    "name": "Farnsium",
+    "symbol": "Fa",
+    "constructor": "element",
+    "color": "#3C4650"
+  },
+  {
+    "id": 1180,
+    "name": "Oganesson",
+    "symbol": "Og",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1190,
+    "name": "Ununennium",
+    "symbol": "Uue",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1200,
+    "name": "Unbinilium",
+    "symbol": "Ubn",
+    "constructor": "element",
+    "color": ""
+  },
+  {
+    "id": 1250,
+    "name": "TritaniumElemental",
+    "symbol": "Tn",
+    "constructor": "element",
+    "color": "#379B9B"
+  },
+  {
+    "id": 1260,
+    "name": "Trinium",
+    "symbol": "Ke",
+    "constructor": "element",
+    "color": "#EAEAEA"
+  },
+  {
+    "id": 1450,
+    "name": "DuraniumElemental",
+    "symbol": "Dn",
+    "constructor": "element",
+    "color": "#4BAFAF"
+  },
+  {
+    "id": 1520,
+    "name": "Vibranium",
+    "symbol": "Vb",
+    "constructor": "element",
+    "color": "#C880FF"
+  },
+  {
+    "id": 1740,
+    "name": "Naquadah",
+    "symbol": "Nq",
+    "constructor": "element",
+    "color": "#323232"
+  },
+  {
+    "id": 1741,
+    "name": "Naquadah-Enriched",
+    "symbol": "Nq-528",
+    "constructor": "element",
+    "color": "#3C3C3C"
+  },
+  {
+    "id": 1742,
+    "name": "Naquadria",
+    "symbol": "Nq-522",
+    "constructor": "element",
+    "color": "#1E1E1E"
+  },
+  {
+    "id": 1850,
+    "name": "Abyssalnite",
+    "symbol": "An",
+    "constructor": "element",
+    "color": "#5A28AA"
+  },
+  {
+    "id": 1860,
+    "name": "Coralium",
+    "symbol": "Cor",
+    "constructor": "element",
+    "color": "#14A06E"
+  },
+  {
+    "id": 1870,
+    "name": "Dreadium",
+    "symbol": "Dr",
+    "constructor": "element",
+    "color": "#AA0000"
+  },
+  {
+    "id": 1880,
+    "name": "Ethaxium",
+    "symbol": "Etx",
+    "constructor": "element",
+    "color": "#A0AA96"
+  },
+  {
+    "id": 2210,
+    "name": "Atlarus",
+    "symbol": "Atl",
+    "constructor": "element",
+    "color": "#CCB300"
+  },
+  {
+    "id": 2220,
+    "name": "Adamantium",
+    "symbol": "Ad",
+    "constructor": "element",
+    "color": "#FFFFFF"
+  },
+  {
+    "id": 2390,
+    "name": "Mac-Guffium",
+    "symbol": "Mcg",
+    "constructor": "element",
+    "color": "#C83296"
+  },
+  {
+    "id": 3720,
+    "name": "Gravitonium",
+    "symbol": "Gt",
+    "constructor": "element",
+    "color": "#003200"
+  },
+  {
+    "id": 4000,
+    "name": "Magic",
+    "symbol": "",
+    "constructor": "create",
+    "color": ""
+  },
+  {
+    "id": 8000,
+    "name": "Silicon Dioxide",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C8C8C8"
+  },
+  {
+    "id": 8001,
+    "name": "Glass",
+    "symbol": "",
+    "constructor": "gemcent",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 8002,
+    "name": "Flint",
+    "symbol": "",
+    "constructor": "cent",
+    "color": "#002040"
+  },
+  {
+    "id": 8003,
+    "name": "Carborundum",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": "#4D4D4D"
+  },
+  {
+    "id": 8004,
+    "name": "Lithium Oxide",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#DEDEEA"
+  },
+  {
+    "id": 8005,
+    "name": "Ferrite",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": "#787882"
+  },
+  {
+    "id": 8006,
+    "name": "Datolite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#DEFFDE"
+  },
+  {
+    "id": 8007,
+    "name": "Hydrogen Borate",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#EAEAFF"
+  },
+  {
+    "id": 8008,
+    "name": "Alumina",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#78C3EB"
+  },
+  {
+    "id": 8009,
+    "name": "Cryolite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C8BEBE"
+  },
+  {
+    "id": 8010,
+    "name": "Aluminium Fluoride",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#C8BEBE"
+  },
+  {
+    "id": 8011,
+    "name": "Hexafluorosilicic Acid",
+    "symbol": "",
+    "constructor": "lqudacidelec",
+    "color": ""
+  },
+  {
+    "id": 8012,
+    "name": "Sodium Aluminate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#E6E6FA"
+  },
+  {
+    "id": 8013,
+    "name": "Sodium Carbonate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#E6E6E6"
+  },
+  {
+    "id": 8014,
+    "name": "Aluminium Hydroxide",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#BEBEC8"
+  },
+  {
+    "id": 8015,
+    "name": "Potassium Hydroxide",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#FADCDC"
+  },
+  {
+    "id": 8016,
+    "name": "Magnesium Carbonate",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#F0E6E6"
+  },
+  {
+    "id": 8017,
+    "name": "Ferric Chloride",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#B4B478"
+  },
+  {
+    "id": 8018,
+    "name": "Magnesium Chloride",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#EBEBFA"
+  },
+  {
+    "id": 8019,
+    "name": "Sodium Nitrate",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#E6E6E6"
+  },
+  {
+    "id": 8020,
+    "name": "Potassium Carbonate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#E6E1E1"
+  },
+  {
+    "id": 8021,
+    "name": "Potassium Sulfite",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#8CBEBE"
+  },
+  {
+    "id": 8022,
+    "name": "Potassium Persulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#FAB482"
+  },
+  {
+    "id": 8023,
+    "name": "Potassium Aluminate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#FAE6E6"
+  },
+  {
+    "id": 8024,
+    "name": "Hydrosulfuric Acid",
+    "symbol": "",
+    "constructor": "gasaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8025,
+    "name": "Ammonia",
+    "symbol": "",
+    "constructor": "gasaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8026,
+    "name": "Tungsten Trioxide",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C7D300"
+  },
+  {
+    "id": 8027,
+    "name": "Tungstic Acid",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#BCC800"
+  },
+  {
+    "id": 8028,
+    "name": "Calcium Chloride",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#EBEBFA"
+  },
+  {
+    "id": 8029,
+    "name": "Lithium Chloride",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#DEDEFA"
+  },
+  {
+    "id": 8030,
+    "name": "Ferrous Chloride",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#C7E9C7"
+  },
+  {
+    "id": 8031,
+    "name": "Manganese Chloride",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#FFD5D5"
+  },
+  {
+    "id": 8032,
+    "name": "Lithium Hydroxide",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#DECAFA"
+  },
+  {
+    "id": 8033,
+    "name": "Lithium Chlorate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#DEE9FA"
+  },
+  {
+    "id": 8034,
+    "name": "Lithium Perchlorate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#DEF4FA"
+  },
+  {
+    "id": 8035,
+    "name": "Ferric Oxyhydroxide",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#893E28"
+  },
+  {
+    "id": 8036,
+    "name": "Potassium Fluoride",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#C840E1"
+  },
+  {
+    "id": 8037,
+    "name": "Sodium Fluoride",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#40C8E1"
+  },
+  {
+    "id": 8038,
+    "name": "Potassium Heptafluorotantalate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#A4C8E1"
+  },
+  {
+    "id": 8039,
+    "name": "Sodium Hydrogencarbonate",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#E6EBF0"
+  },
+  {
+    "id": 8100,
+    "name": "Sand",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#FAFAC8"
+  },
+  {
+    "id": 8101,
+    "name": "Soulsand",
+    "symbol": "",
+    "constructor": "oredust",
+    "color": "#646450"
+  },
+  {
+    "id": 8102,
+    "name": "Sluice Sand",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#A5A578"
+  },
+  {
+    "id": 8103,
+    "name": "Platinum Group Sludge",
+    "symbol": "",
+    "constructor": "oredust",
+    "color": "#323250"
+  },
+  {
+    "id": 8104,
+    "name": "Red Sand",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#AA5623"
+  },
+  {
+    "id": 8105,
+    "name": "White End Sand",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#E6FAFA"
+  },
+  {
+    "id": 8106,
+    "name": "Black End Sand",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#283C3C"
+  },
+  {
+    "id": 8196,
+    "name": "Teflon",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#505050"
+  },
+  {
+    "id": 8197,
+    "name": "PVC",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#FAFA32"
+  },
+  {
+    "id": 8198,
+    "name": "Bakelite",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#C93940"
+  },
+  {
+    "id": 8199,
+    "name": "Hard Plastic",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#B4B4B4"
+  },
+  {
+    "id": 8200,
+    "name": "Ashes",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#787878"
+  },
+  {
+    "id": 8201,
+    "name": "Dark Ashes",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#323232"
+  },
+  {
+    "id": 8202,
+    "name": "Volcanic Ashes",
+    "symbol": "",
+    "constructor": "dustcent",
+    "color": "#3C3232"
+  },
+  {
+    "id": 8203,
+    "name": "Sylvite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#F0C8C8"
+  },
+  {
+    "id": 8204,
+    "name": "Salt",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 8205,
+    "name": "Potassium Nitrate",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#E6E6E6"
+  },
+  {
+    "id": 8206,
+    "name": "Niter",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#FFC8C8"
+  },
+  {
+    "id": 8207,
+    "name": "Phosphate",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#FFFF00"
+  },
+  {
+    "id": 8208,
+    "name": "Phosphorus",
+    "symbol": "",
+    "constructor": "cent",
+    "color": "#FFFF00"
+  },
+  {
+    "id": 8209,
+    "name": "Apatite",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#78B4FA"
+  },
+  {
+    "id": 8210,
+    "name": "Blizz",
+    "symbol": "",
+    "constructor": "blaze",
+    "color": ""
+  },
+  {
+    "id": 8211,
+    "name": "Blaze",
+    "symbol": "",
+    "constructor": "blaze",
+    "color": ""
+  },
+  {
+    "id": 8212,
+    "name": "Pyrotheum",
+    "symbol": "",
+    "constructor": "mixdust",
+    "color": "#FFC83C"
+  },
+  {
+    "id": 8213,
+    "name": "Cryotheum",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#64DCFF"
+  },
+  {
+    "id": 8214,
+    "name": "Obsidian",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#503264"
+  },
+  {
+    "id": 8215,
+    "name": "Clay",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C8C8DC"
+  },
+  {
+    "id": 8216,
+    "name": "Paper",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 8217,
+    "name": "Rubber",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#141414"
+  },
+  {
+    "id": 8218,
+    "name": "Plastic",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#C8C8C8"
+  },
+  {
+    "id": 8219,
+    "name": "Bone",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 8220,
+    "name": "Gunpowder",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#808080"
+  },
+  {
+    "id": 8221,
+    "name": "Wood",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8222,
+    "name": "WoodTreated",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8223,
+    "name": "LiveRoot",
+    "symbol": "",
+    "constructor": "dustcent",
+    "color": "#DCC800"
+  },
+  {
+    "id": 8224,
+    "name": "WoodRubber",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8225,
+    "name": "Ceramic",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#DC8246"
+  },
+  {
+    "id": 8226,
+    "name": "Phosphorite",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#323241"
+  },
+  {
+    "id": 8227,
+    "name": "Peanut Wood",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8228,
+    "name": "Indigo",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#FF80FF"
+  },
+  {
+    "id": 8229,
+    "name": "Cobalt Hexahydrate",
+    "symbol": "",
+    "constructor": "dustcent",
+    "color": "#5050FA"
+  },
+  {
+    "id": 8230,
+    "name": "Sodium Bisulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#F0F0FF"
+  },
+  {
+    "id": 8231,
+    "name": "Sodium Pyrosulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#F0F0FF"
+  },
+  {
+    "id": 8232,
+    "name": "Potassium Bisulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#FFF0F0"
+  },
+  {
+    "id": 8233,
+    "name": "Potassium Pyrosulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#FFF0F0"
+  },
+  {
+    "id": 8234,
+    "name": "Vanadium Pentoxide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#323232"
+  },
+  {
+    "id": 8235,
+    "name": "Wax",
+    "symbol": "",
+    "constructor": "wax",
+    "color": ""
+  },
+  {
+    "id": 8236,
+    "name": "WaxBee",
+    "symbol": "",
+    "constructor": "wax",
+    "color": ""
+  },
+  {
+    "id": 8237,
+    "name": "WaxRefractory",
+    "symbol": "",
+    "constructor": "wax",
+    "color": ""
+  },
+  {
+    "id": 8238,
+    "name": "WaxParaffin",
+    "symbol": "",
+    "constructor": "wax",
+    "color": ""
+  },
+  {
+    "id": 8239,
+    "name": "WaxPlant",
+    "symbol": "",
+    "constructor": "wax",
+    "color": ""
+  },
+  {
+    "id": 8240,
+    "name": "WaxMagic",
+    "symbol": "",
+    "constructor": "wax",
+    "color": ""
+  },
+  {
+    "id": 8241,
+    "name": "Leather",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#8D4125"
+  },
+  {
+    "id": 8242,
+    "name": "Iodine Salt",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#F0C8F0"
+  },
+  {
+    "id": 8243,
+    "name": "Silver Iodide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#F0C864"
+  },
+  {
+    "id": 8244,
+    "name": "Tallow",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#DCC864"
+  },
+  {
+    "id": 8245,
+    "name": "Petrotheum",
+    "symbol": "",
+    "constructor": "mixdust",
+    "color": "#564C52"
+  },
+  {
+    "id": 8246,
+    "name": "Aerotheum",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#FAE253"
+  },
+  {
+    "id": 8247,
+    "name": "Basalz",
+    "symbol": "",
+    "constructor": "blaze",
+    "color": ""
+  },
+  {
+    "id": 8248,
+    "name": "Blitz",
+    "symbol": "",
+    "constructor": "blaze",
+    "color": ""
+  },
+  {
+    "id": 8249,
+    "name": "Dynamite",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#6F836F"
+  },
+  {
+    "id": 8250,
+    "name": "Black",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8251,
+    "name": "Red",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8252,
+    "name": "Green",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8253,
+    "name": "Brown",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8254,
+    "name": "Blue",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8255,
+    "name": "Purple",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8256,
+    "name": "Cyan",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8257,
+    "name": "Light Gray",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8258,
+    "name": "Gray",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8259,
+    "name": "Pink",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8260,
+    "name": "Lime",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8261,
+    "name": "Yellow",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8262,
+    "name": "Light Blue",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8263,
+    "name": "Magenta",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8264,
+    "name": "Orange",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8265,
+    "name": "White",
+    "symbol": "",
+    "constructor": "dye",
+    "color": ""
+  },
+  {
+    "id": 8266,
+    "name": "Asphalt",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#585863"
+  },
+  {
+    "id": 8267,
+    "name": "WoodPolished",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8268,
+    "name": "Sodium Hydroxide",
+    "symbol": "",
+    "constructor": "dustelec",
+    "color": "#DCFADC"
+  },
+  {
+    "id": 8269,
+    "name": "Sodium Sulfite",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#BEBE8C"
+  },
+  {
+    "id": 8270,
+    "name": "Sodium Sulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#BEBE8C"
+  },
+  {
+    "id": 8271,
+    "name": "Potassium Sulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#8CBEBE"
+  },
+  {
+    "id": 8272,
+    "name": "Potassium Sulfide",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#64DCDC"
+  },
+  {
+    "id": 8273,
+    "name": "Porcelain",
+    "symbol": "",
+    "constructor": "mixdust",
+    "color": "#EBEBF5"
+  },
+  {
+    "id": 8274,
+    "name": "Calcium Sulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#F0DCD2"
+  },
+  {
+    "id": 8275,
+    "name": "Bark",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#502800"
+  },
+  {
+    "id": 8276,
+    "name": "ClayBrown",
+    "symbol": "",
+    "constructor": "clay",
+    "color": ""
+  },
+  {
+    "id": 8277,
+    "name": "Petrified Wood",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#6E3223"
+  },
+  {
+    "id": 8278,
+    "name": "Mana Diamond",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8279,
+    "name": "Elven Dragonstone",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8280,
+    "name": "WaxAmnesic",
+    "symbol": "",
+    "constructor": "wax",
+    "color": ""
+  },
+  {
+    "id": 8281,
+    "name": "WaxSoulful",
+    "symbol": "",
+    "constructor": "wax",
+    "color": ""
+  },
+  {
+    "id": 8282,
+    "name": "Crimson Middle",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#F03232"
+  },
+  {
+    "id": 8283,
+    "name": "Green Middle",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#32F032"
+  },
+  {
+    "id": 8284,
+    "name": "Aqua Middle",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#3232F0"
+  },
+  {
+    "id": 8285,
+    "name": "Valonite",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#FFCDF0"
+  },
+  {
+    "id": 8286,
+    "name": "Weedwood",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8287,
+    "name": "Slimy Bone",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#E6FAE6"
+  },
+  {
+    "id": 8288,
+    "name": "Scabyst",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#6EA5A5"
+  },
+  {
+    "id": 8289,
+    "name": "Livingwood",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8290,
+    "name": "Dreamwood",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8291,
+    "name": "Skyroot",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8292,
+    "name": "Zanite",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#9249FF"
+  },
+  {
+    "id": 8293,
+    "name": "Ambrosium",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#F4F260"
+  },
+  {
+    "id": 8294,
+    "name": "Gravitite",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8295,
+    "name": "Continuum",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#DE8128"
+  },
+  {
+    "id": 8296,
+    "name": "Greatwood",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8297,
+    "name": "Silverwood",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8298,
+    "name": "EnergiumRed",
+    "symbol": "",
+    "constructor": "crystalcent",
+    "color": "#FF0000"
+  },
+  {
+    "id": 8299,
+    "name": "EnergiumCyan",
+    "symbol": "",
+    "constructor": "crystalcent",
+    "color": "#00FFFF"
+  },
+  {
+    "id": 8300,
+    "name": "Diamond",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8301,
+    "name": "Emerald",
+    "symbol": "",
+    "constructor": "emerald",
+    "color": ""
+  },
+  {
+    "id": 8302,
+    "name": "Ruby",
+    "symbol": "",
+    "constructor": "sapphire",
+    "color": ""
+  },
+  {
+    "id": 8303,
+    "name": "Balas Ruby",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#FF6464"
+  },
+  {
+    "id": 8304,
+    "name": "Sapphire",
+    "symbol": "",
+    "constructor": "sapphire",
+    "color": ""
+  },
+  {
+    "id": 8305,
+    "name": "Green Sapphire",
+    "symbol": "",
+    "constructor": "sapphire",
+    "color": ""
+  },
+  {
+    "id": 8306,
+    "name": "Topaz",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#FF8000"
+  },
+  {
+    "id": 8307,
+    "name": "Blue Topaz",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#7B96DC"
+  },
+  {
+    "id": 8308,
+    "name": "Tanzanite",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#4000C8"
+  },
+  {
+    "id": 8309,
+    "name": "Red Jasper",
+    "symbol": "",
+    "constructor": "jasper",
+    "color": ""
+  },
+  {
+    "id": 8310,
+    "name": "Amber",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#FFB400"
+  },
+  {
+    "id": 8311,
+    "name": "Peridot",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#96FF96"
+  },
+  {
+    "id": 8312,
+    "name": "Opal",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#0000FF"
+  },
+  {
+    "id": 8313,
+    "name": "Amethyst",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#A678F1"
+  },
+  {
+    "id": 8314,
+    "name": "Orange Sapphire",
+    "symbol": "",
+    "constructor": "sapphire",
+    "color": ""
+  },
+  {
+    "id": 8315,
+    "name": "Yellow Sapphire",
+    "symbol": "",
+    "constructor": "sapphire",
+    "color": ""
+  },
+  {
+    "id": 8316,
+    "name": "Vinteum",
+    "symbol": "",
+    "constructor": "dcmp",
+    "color": "#5050FF"
+  },
+  {
+    "id": 8317,
+    "name": "Dilithium",
+    "symbol": "",
+    "constructor": "crystal",
+    "color": "#99FFFF"
+  },
+  {
+    "id": 8318,
+    "name": "EnderPearl",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#6CDCC8"
+  },
+  {
+    "id": 8319,
+    "name": "EnderEye",
+    "symbol": "",
+    "constructor": "cent",
+    "color": "#A0FAE6"
+  },
+  {
+    "id": 8320,
+    "name": "Nether Star",
+    "symbol": "",
+    "constructor": "crystal",
+    "color": "#FFFFFF"
+  },
+  {
+    "id": 8321,
+    "name": "Jade",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#64FF7D"
+  },
+  {
+    "id": 8322,
+    "name": "Craponite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#FFAAB9"
+  },
+  {
+    "id": 8323,
+    "name": "Aquamarine",
+    "symbol": "",
+    "constructor": "emerald",
+    "color": ""
+  },
+  {
+    "id": 8324,
+    "name": "Morganite",
+    "symbol": "",
+    "constructor": "emerald",
+    "color": ""
+  },
+  {
+    "id": 8325,
+    "name": "Dioptase",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#00B4B4"
+  },
+  {
+    "id": 8326,
+    "name": "Spinel",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#006400"
+  },
+  {
+    "id": 8327,
+    "name": "VinteumPurified",
+    "symbol": "",
+    "constructor": "dcmp",
+    "color": "#E664FF"
+  },
+  {
+    "id": 8328,
+    "name": "Blue Sapphire",
+    "symbol": "",
+    "constructor": "sapphire",
+    "color": ""
+  },
+  {
+    "id": 8329,
+    "name": "AmethystEnder",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#D232D2"
+  },
+  {
+    "id": 8330,
+    "name": "Lazurite",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#6478FF"
+  },
+  {
+    "id": 8331,
+    "name": "Sodalite",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#1414FF"
+  },
+  {
+    "id": 8332,
+    "name": "Lapis",
+    "symbol": "",
+    "constructor": "cent",
+    "color": "#4646DC"
+  },
+  {
+    "id": 8333,
+    "name": "Redstone",
+    "symbol": "",
+    "constructor": "redstone",
+    "color": "#C80000"
+  },
+  {
+    "id": 8334,
+    "name": "Coal",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#464646"
+  },
+  {
+    "id": 8335,
+    "name": "Hydrated Coal",
+    "symbol": "",
+    "constructor": "mixdust",
+    "color": "#464664"
+  },
+  {
+    "id": 8336,
+    "name": "Charcoal",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#644646"
+  },
+  {
+    "id": 8337,
+    "name": "Lignite",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#644646"
+  },
+  {
+    "id": 8338,
+    "name": "Monazite",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#324632"
+  },
+  {
+    "id": 8340,
+    "name": "Nikolite",
+    "symbol": "",
+    "constructor": "redstone",
+    "color": "#3CB4C8"
+  },
+  {
+    "id": 8341,
+    "name": "Glowstone",
+    "symbol": "",
+    "constructor": "glowstone",
+    "color": "#FFFF00"
+  },
+  {
+    "id": 8342,
+    "name": "Firestone",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#C81400"
+  },
+  {
+    "id": 8343,
+    "name": "Force",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#FFFF00"
+  },
+  {
+    "id": 8344,
+    "name": "Forcicium",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#323246"
+  },
+  {
+    "id": 8345,
+    "name": "Forcillium",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#323246"
+  },
+  {
+    "id": 8346,
+    "name": "Nether Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8347,
+    "name": "Certus Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8348,
+    "name": "Charged Certus Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8349,
+    "name": "Coal Coke",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#8C8CAA"
+  },
+  {
+    "id": 8350,
+    "name": "Infused Dull",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8351,
+    "name": "Infused Vis",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8352,
+    "name": "Infused Air",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8353,
+    "name": "Infused Fire",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8354,
+    "name": "Infused Earth",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8355,
+    "name": "Infused Water",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8356,
+    "name": "Infused Entropy",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8357,
+    "name": "Infused Order",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8358,
+    "name": "Infused Balance",
+    "symbol": "",
+    "constructor": "crystal_tc",
+    "color": ""
+  },
+  {
+    "id": 8360,
+    "name": "Peat",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#40280E"
+  },
+  {
+    "id": 8361,
+    "name": "PeatBituminous",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#50280A"
+  },
+  {
+    "id": 8362,
+    "name": "Anthracite",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#5A5A5A"
+  },
+  {
+    "id": 8363,
+    "name": "Prismane",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#736E6E"
+  },
+  {
+    "id": 8364,
+    "name": "Lonsdaleite",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#8C8282"
+  },
+  {
+    "id": 8365,
+    "name": "Lignite Coke",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#8C6464"
+  },
+  {
+    "id": 8366,
+    "name": "Arcane Compound",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#B48C32"
+  },
+  {
+    "id": 8367,
+    "name": "Arcane Ashes",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#9632B4"
+  },
+  {
+    "id": 8368,
+    "name": "GlowstoneCeres",
+    "symbol": "",
+    "constructor": "glowstone",
+    "color": "#465A46"
+  },
+  {
+    "id": 8369,
+    "name": "GlowstoneIo",
+    "symbol": "",
+    "constructor": "glowstone",
+    "color": "#B41400"
+  },
+  {
+    "id": 8370,
+    "name": "GlowstoneEnceladus",
+    "symbol": "",
+    "constructor": "glowstone",
+    "color": "#00FAFA"
+  },
+  {
+    "id": 8371,
+    "name": "GlowstoneProteus",
+    "symbol": "",
+    "constructor": "glowstone",
+    "color": "#3E3E3E"
+  },
+  {
+    "id": 8372,
+    "name": "GlowstonePluto",
+    "symbol": "",
+    "constructor": "glowstone",
+    "color": "#7B96DC"
+  },
+  {
+    "id": 8373,
+    "name": "Ectoplasm",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#DCFFFF"
+  },
+  {
+    "id": 8374,
+    "name": "QuartzBlack",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8375,
+    "name": "Redstonia",
+    "symbol": "",
+    "constructor": "gem_aa",
+    "color": "#FF0000"
+  },
+  {
+    "id": 8376,
+    "name": "Palis",
+    "symbol": "",
+    "constructor": "gem_aa",
+    "color": "#0000FF"
+  },
+  {
+    "id": 8377,
+    "name": "Diamantine",
+    "symbol": "",
+    "constructor": "gem_aa",
+    "color": "#8080FF"
+  },
+  {
+    "id": 8378,
+    "name": "VoidCrystal",
+    "symbol": "",
+    "constructor": "gem_aa",
+    "color": "#0A0A0A"
+  },
+  {
+    "id": 8379,
+    "name": "Emeradic",
+    "symbol": "",
+    "constructor": "gem_aa",
+    "color": "#00FF00"
+  },
+  {
+    "id": 8380,
+    "name": "Enori",
+    "symbol": "",
+    "constructor": "gem_aa",
+    "color": "#FFFFFF"
+  },
+  {
+    "id": 8381,
+    "name": "Dark Matter",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#281428"
+  },
+  {
+    "id": 8382,
+    "name": "Red Matter",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#FF0000"
+  },
+  {
+    "id": 8383,
+    "name": "Purple Sapphire",
+    "symbol": "",
+    "constructor": "sapphire",
+    "color": ""
+  },
+  {
+    "id": 8384,
+    "name": "Heliodor",
+    "symbol": "",
+    "constructor": "emerald",
+    "color": ""
+  },
+  {
+    "id": 8385,
+    "name": "Goshenite",
+    "symbol": "",
+    "constructor": "emerald",
+    "color": ""
+  },
+  {
+    "id": 8386,
+    "name": "Bixbite",
+    "symbol": "",
+    "constructor": "emerald",
+    "color": ""
+  },
+  {
+    "id": 8387,
+    "name": "Maxixe",
+    "symbol": "",
+    "constructor": "emerald",
+    "color": ""
+  },
+  {
+    "id": 8388,
+    "name": "Alexandrite",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#C8FFAA"
+  },
+  {
+    "id": 8389,
+    "name": "Fluix",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8390,
+    "name": "Petroleum Coke",
+    "symbol": "",
+    "constructor": "coal",
+    "color": "#9696B4"
+  },
+  {
+    "id": 8391,
+    "name": "Frezarite",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#FFFFFF"
+  },
+  {
+    "id": 8392,
+    "name": "Red Meteor",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#FF3C3C"
+  },
+  {
+    "id": 8393,
+    "name": "Sunny Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8394,
+    "name": "Lavender Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8395,
+    "name": "Red Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8396,
+    "name": "Blaze Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8397,
+    "name": "Smokey Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8398,
+    "name": "Mana Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8399,
+    "name": "Elven Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8400,
+    "name": "Chloroauric Acid",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8401,
+    "name": "Chloroplatinic Acid",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8402,
+    "name": "Stannic Chloride",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8403,
+    "name": "Black Vitriol",
+    "symbol": "",
+    "constructor": "lqudacidelec",
+    "color": ""
+  },
+  {
+    "id": 8404,
+    "name": "Blue Vitriol",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8405,
+    "name": "Green Vitriol",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8406,
+    "name": "Red Vitriol",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8407,
+    "name": "Pink Vitriol",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8408,
+    "name": "Cyan Vitriol",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8409,
+    "name": "White Vitriol",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8410,
+    "name": "Gray Vitriol",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8411,
+    "name": "Martian Vitriol",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8412,
+    "name": "Vitriol Of Clay",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8413,
+    "name": "Titanium Tetrachloride",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 8414,
+    "name": "Shimmerwood",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8415,
+    "name": "OnyxRed",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#FF584D"
+  },
+  {
+    "id": 8416,
+    "name": "OnyxBlack",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#323232"
+  },
+  {
+    "id": 8417,
+    "name": "Amazonite",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#47F1AA"
+  },
+  {
+    "id": 8418,
+    "name": "Bamboo",
+    "symbol": "",
+    "constructor": "wood",
+    "color": ""
+  },
+  {
+    "id": 8419,
+    "name": "Zircon",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#63181D"
+  },
+  {
+    "id": 8420,
+    "name": "Azurite",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#6DA4F7"
+  },
+  {
+    "id": 8421,
+    "name": "Eudialyte",
+    "symbol": "",
+    "constructor": "dcmp",
+    "color": "#9B6072"
+  },
+  {
+    "id": 8422,
+    "name": "Dominican Amber",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#5050F0"
+  },
+  {
+    "id": 8423,
+    "name": "DiamondIndustrial",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8424,
+    "name": "Pink Diamond",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8425,
+    "name": "Ocean Jasper",
+    "symbol": "",
+    "constructor": "jasper",
+    "color": ""
+  },
+  {
+    "id": 8426,
+    "name": "Rainforest Jasper",
+    "symbol": "",
+    "constructor": "jasper",
+    "color": ""
+  },
+  {
+    "id": 8427,
+    "name": "Blue Jasper",
+    "symbol": "",
+    "constructor": "jasper",
+    "color": ""
+  },
+  {
+    "id": 8428,
+    "name": "Green Jasper",
+    "symbol": "",
+    "constructor": "jasper",
+    "color": ""
+  },
+  {
+    "id": 8429,
+    "name": "Yellow Jasper",
+    "symbol": "",
+    "constructor": "jasper",
+    "color": ""
+  },
+  {
+    "id": 8430,
+    "name": "Tiger Eye",
+    "symbol": "",
+    "constructor": "tigereye",
+    "color": ""
+  },
+  {
+    "id": 8431,
+    "name": "Cat's Eye",
+    "symbol": "",
+    "constructor": "tigereye",
+    "color": ""
+  },
+  {
+    "id": 8432,
+    "name": "Dragon Eye",
+    "symbol": "",
+    "constructor": "tigereye",
+    "color": ""
+  },
+  {
+    "id": 8433,
+    "name": "Hawk's Eye",
+    "symbol": "",
+    "constructor": "tigereye",
+    "color": ""
+  },
+  {
+    "id": 8434,
+    "name": "Black Eye",
+    "symbol": "",
+    "constructor": "tigereye",
+    "color": ""
+  },
+  {
+    "id": 8435,
+    "name": "Tiger Iron",
+    "symbol": "",
+    "constructor": "tigereye",
+    "color": ""
+  },
+  {
+    "id": 8436,
+    "name": "Red Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8437,
+    "name": "Pink Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8438,
+    "name": "Blue Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8439,
+    "name": "Green Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8440,
+    "name": "Black Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8441,
+    "name": "White Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8442,
+    "name": "Yellow Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8443,
+    "name": "Orange Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8444,
+    "name": "Magenta Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 8445,
+    "name": "Milky Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8446,
+    "name": "Brown Aventurine",
+    "symbol": "",
+    "constructor": "aventurine",
+    "color": ""
+  },
+  {
+    "id": 8447,
+    "name": "Yellow Aventurine",
+    "symbol": "",
+    "constructor": "aventurine",
+    "color": ""
+  },
+  {
+    "id": 8448,
+    "name": "Green Aventurine",
+    "symbol": "",
+    "constructor": "aventurine",
+    "color": ""
+  },
+  {
+    "id": 8449,
+    "name": "Black Aventurine",
+    "symbol": "",
+    "constructor": "aventurine",
+    "color": ""
+  },
+  {
+    "id": 8450,
+    "name": "Blue Aventurine",
+    "symbol": "",
+    "constructor": "aventurine",
+    "color": ""
+  },
+  {
+    "id": 8451,
+    "name": "Red Aventurine",
+    "symbol": "",
+    "constructor": "aventurine",
+    "color": ""
+  },
+  {
+    "id": 8452,
+    "name": "Moonstone",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#D2D2FF"
+  },
+  {
+    "id": 8453,
+    "name": "Sunstone",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#FF9600"
+  },
+  {
+    "id": 8454,
+    "name": "Chimerite",
+    "symbol": "",
+    "constructor": "gem",
+    "color": "#FFFFFF"
+  },
+  {
+    "id": 8455,
+    "name": "ClayRed",
+    "symbol": "",
+    "constructor": "clay",
+    "color": ""
+  },
+  {
+    "id": 8456,
+    "name": "Gloomstone",
+    "symbol": "",
+    "constructor": "glowstone",
+    "color": "#13FAFF"
+  },
+  {
+    "id": 8457,
+    "name": "Void Quartz",
+    "symbol": "",
+    "constructor": "quartz",
+    "color": ""
+  },
+  {
+    "id": 8458,
+    "name": "Blue Phosphorus",
+    "symbol": "",
+    "constructor": "cent",
+    "color": "#9BE3E4"
+  },
+  {
+    "id": 8459,
+    "name": "Red Phosphorus",
+    "symbol": "",
+    "constructor": "cent",
+    "color": "#77040E"
+  },
+  {
+    "id": 8460,
+    "name": "White Phosphorus",
+    "symbol": "",
+    "constructor": "cent",
+    "color": "#ECEADD"
+  },
+  {
+    "id": 8461,
+    "name": "Niobium Pentoxide",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#32400A"
+  },
+  {
+    "id": 8462,
+    "name": "Tantalum Pentoxide",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#40320A"
+  },
+  {
+    "id": 8463,
+    "name": "Sugilite",
+    "symbol": "",
+    "constructor": "valgemelec",
+    "color": "#9964C4"
+  },
+  {
+    "id": 8464,
+    "name": "Blue Diamond",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8465,
+    "name": "Green Diamond",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8466,
+    "name": "Purple Diamond",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8467,
+    "name": "Red Diamond",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8468,
+    "name": "Yellow Diamond",
+    "symbol": "",
+    "constructor": "diamond",
+    "color": ""
+  },
+  {
+    "id": 8469,
+    "name": "Golden Amber",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#FFE650"
+  },
+  {
+    "id": 8470,
+    "name": "Carminite",
+    "symbol": "",
+    "constructor": "valgem",
+    "color": "#960000"
+  },
+  {
+    "id": 8471,
+    "name": "Breeze",
+    "symbol": "",
+    "constructor": "blaze",
+    "color": ""
+  },
+  {
+    "id": 8500,
+    "name": "Stone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8501,
+    "name": "Concrete",
+    "symbol": "",
+    "constructor": "stone",
+    "color": "#646464"
+  },
+  {
+    "id": 8502,
+    "name": "Netherrack",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8503,
+    "name": "Nether Brick",
+    "symbol": "",
+    "constructor": "stone",
+    "color": "#640000"
+  },
+  {
+    "id": 8504,
+    "name": "Endstone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8505,
+    "name": "Basalt",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": ""
+  },
+  {
+    "id": 8506,
+    "name": "Marble",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": ""
+  },
+  {
+    "id": 8507,
+    "name": "GraniteRed",
+    "symbol": "",
+    "constructor": "stoneelec",
+    "color": ""
+  },
+  {
+    "id": 8508,
+    "name": "GraniteBlack",
+    "symbol": "",
+    "constructor": "stoneelec",
+    "color": ""
+  },
+  {
+    "id": 8509,
+    "name": "Redrock",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": ""
+  },
+  {
+    "id": 8511,
+    "name": "Diorite",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8512,
+    "name": "Space Stone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": "#636363"
+  },
+  {
+    "id": 8513,
+    "name": "Moon Stone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8514,
+    "name": "Moon Turf",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8515,
+    "name": "Mars Stone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8516,
+    "name": "Mars Sand",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8517,
+    "name": "Umber",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8518,
+    "name": "Granite",
+    "symbol": "",
+    "constructor": "stoneelec",
+    "color": ""
+  },
+  {
+    "id": 8519,
+    "name": "Betweenstone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8520,
+    "name": "Pitstone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8521,
+    "name": "Livingrock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8522,
+    "name": "Holystone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8523,
+    "name": "Deadrock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8524,
+    "name": "Cragrock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 8525,
+    "name": "Templerock",
+    "symbol": "",
+    "constructor": "brick",
+    "color": ""
+  },
+  {
+    "id": 8526,
+    "name": "Mazestone",
+    "symbol": "",
+    "constructor": "brick",
+    "color": ""
+  },
+  {
+    "id": 8527,
+    "name": "Castlerock",
+    "symbol": "",
+    "constructor": "brick",
+    "color": ""
+  },
+  {
+    "id": 8528,
+    "name": "Sky Stone",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": ""
+  },
+  {
+    "id": 8599,
+    "name": "Bedrock",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#404040"
+  },
+  {
+    "id": 8600,
+    "name": "Electrum",
+    "symbol": "",
+    "constructor": "slloymachore",
+    "color": ""
+  },
+  {
+    "id": 8601,
+    "name": "Sterling Silver",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8602,
+    "name": "Rose Gold",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8603,
+    "name": "Angmallen",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8604,
+    "name": "GoldInductive",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8605,
+    "name": "Cd-In-Ag-Alloy",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8606,
+    "name": "Gilded Iron",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8610,
+    "name": "Bronze",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8611,
+    "name": "Black Bronze",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8612,
+    "name": "Bismuth Bronze",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8613,
+    "name": "Hepatizon",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8614,
+    "name": "Arsenic Copper",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8615,
+    "name": "Arsenic Bronze",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8620,
+    "name": "Brass",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8621,
+    "name": "Cobalt Brass",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8622,
+    "name": "Aluminium Alloy",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8630,
+    "name": "Steel",
+    "symbol": "",
+    "constructor": "alloymachore",
+    "color": ""
+  },
+  {
+    "id": 8631,
+    "name": "Black Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8632,
+    "name": "Blue Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8633,
+    "name": "Red Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8634,
+    "name": "Damascus Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8635,
+    "name": "Tungstensteel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8636,
+    "name": "Stainless Steel",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8637,
+    "name": "HSLA-Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8638,
+    "name": "Tungsten Carbide",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8639,
+    "name": "HSLA-Spring-Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8640,
+    "name": "Annealed Copper",
+    "symbol": "",
+    "constructor": "metalmachnd",
+    "color": "#FF6400"
+  },
+  {
+    "id": 8641,
+    "name": "Deep Iron",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8642,
+    "name": "Pig Iron",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": ""
+  },
+  {
+    "id": 8643,
+    "name": "Wrought Iron",
+    "symbol": "",
+    "constructor": "metalmachnd",
+    "color": "#C8B4B4"
+  },
+  {
+    "id": 8644,
+    "name": "IronCompressed",
+    "symbol": "",
+    "constructor": "alloymachnd",
+    "color": "#808080"
+  },
+  {
+    "id": 8645,
+    "name": "IronMagnetic",
+    "symbol": "",
+    "constructor": "metalmachnd",
+    "color": "#C8C8C8"
+  },
+  {
+    "id": 8646,
+    "name": "SteelMagnetic",
+    "symbol": "",
+    "constructor": "metalmachnd",
+    "color": "#808080"
+  },
+  {
+    "id": 8647,
+    "name": "NeodymiumMagnetic",
+    "symbol": "",
+    "constructor": "metalmachnd",
+    "color": "#646464"
+  },
+  {
+    "id": 8648,
+    "name": "Dark Iron",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": "#37283C"
+  },
+  {
+    "id": 8649,
+    "name": "Meteoric Iron",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": "#968C78"
+  },
+  {
+    "id": 8650,
+    "name": "Meteoric Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#827864"
+  },
+  {
+    "id": 8651,
+    "name": "SteelGalvanized",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8652,
+    "name": "TungstenSintered",
+    "symbol": "",
+    "constructor": "alloymachnd",
+    "color": "#464646"
+  },
+  {
+    "id": 8653,
+    "name": "VanadiumSteel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8654,
+    "name": "Titanium-Gold",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8657,
+    "name": "Purple Alloy",
+    "symbol": "",
+    "constructor": "clloy",
+    "color": ""
+  },
+  {
+    "id": 8658,
+    "name": "Electrotine Alloy",
+    "symbol": "",
+    "constructor": "clloy",
+    "color": ""
+  },
+  {
+    "id": 8659,
+    "name": "Blue Alloy",
+    "symbol": "",
+    "constructor": "clloy",
+    "color": ""
+  },
+  {
+    "id": 8660,
+    "name": "Red Alloy",
+    "symbol": "",
+    "constructor": "clloy",
+    "color": ""
+  },
+  {
+    "id": 8661,
+    "name": "Invar",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8662,
+    "name": "Constantan",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8663,
+    "name": "Nichrome",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8664,
+    "name": "Kanthal",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8665,
+    "name": "Magnalium",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#C8BEFF"
+  },
+  {
+    "id": 8666,
+    "name": "Ultimet",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8667,
+    "name": "Tin Alloy",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8668,
+    "name": "Battery Alloy",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#9C7CA0"
+  },
+  {
+    "id": 8669,
+    "name": "Soldering Alloy",
+    "symbol": "",
+    "constructor": "clloy",
+    "color": ""
+  },
+  {
+    "id": 8670,
+    "name": "Shadow Iron",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8671,
+    "name": "Shadow Steel",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8672,
+    "name": "Ironwood",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#968C6E"
+  },
+  {
+    "id": 8673,
+    "name": "Steeleaf",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#327F32"
+  },
+  {
+    "id": 8674,
+    "name": "Knightmetal",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8675,
+    "name": "Fiery Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#400000"
+  },
+  {
+    "id": 8676,
+    "name": "Astral Silver",
+    "symbol": "",
+    "constructor": "slloymachore",
+    "color": ""
+  },
+  {
+    "id": 8677,
+    "name": "Midasium",
+    "symbol": "",
+    "constructor": "slloymachore",
+    "color": ""
+  },
+  {
+    "id": 8678,
+    "name": "Mithril",
+    "symbol": "",
+    "constructor": "slloymachore",
+    "color": ""
+  },
+  {
+    "id": 8679,
+    "name": "Thaumium",
+    "symbol": "",
+    "constructor": "alloymachore",
+    "color": ""
+  },
+  {
+    "id": 8680,
+    "name": "Dark Thaumium",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8681,
+    "name": "Void Metal",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8682,
+    "name": "Osmiridium",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8683,
+    "name": "Sunnarium",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8684,
+    "name": "Trinaquadalloy",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8685,
+    "name": "Chromium Dioxide",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#0A140A"
+  },
+  {
+    "id": 8686,
+    "name": "Vanadium-Gallium",
+    "symbol": "",
+    "constructor": "slloy",
+    "color": ""
+  },
+  {
+    "id": 8687,
+    "name": "Yttrium-Barium-Cuprate",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8688,
+    "name": "Niobium Nitride",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#1D291D"
+  },
+  {
+    "id": 8689,
+    "name": "Niobium Titanium",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#1D1D29"
+  },
+  {
+    "id": 8690,
+    "name": "Meteoric Black Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8691,
+    "name": "Meteoric Blue Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8692,
+    "name": "Meteoric Red Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8693,
+    "name": "Meteoflame Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#827864"
+  },
+  {
+    "id": 8694,
+    "name": "Meteoflame Black Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#555555"
+  },
+  {
+    "id": 8695,
+    "name": "Meteoflame Blue Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#5F5F87"
+  },
+  {
+    "id": 8696,
+    "name": "Meteoflame Red Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#875F5F"
+  },
+  {
+    "id": 8697,
+    "name": "Flamascus Steel",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#6E6E6E"
+  },
+  {
+    "id": 8698,
+    "name": "Fireleaf",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#7F3232"
+  },
+  {
+    "id": 8700,
+    "name": "Aluminium Brass",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8701,
+    "name": "Aredrite",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8702,
+    "name": "Alumite",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8703,
+    "name": "Manyullyn",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8704,
+    "name": "Vibranium Steel",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8705,
+    "name": "Vibranium Silver",
+    "symbol": "",
+    "constructor": "slloy",
+    "color": ""
+  },
+  {
+    "id": 8706,
+    "name": "Vibramantium",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8707,
+    "name": "Ardite",
+    "symbol": "",
+    "constructor": "cetalore",
+    "color": ""
+  },
+  {
+    "id": 8708,
+    "name": "Signalum",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8709,
+    "name": "Lumium",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8710,
+    "name": "Enderium",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8711,
+    "name": "Electrum Flux",
+    "symbol": "",
+    "constructor": "slloy",
+    "color": ""
+  },
+  {
+    "id": 8712,
+    "name": "Infused Gold",
+    "symbol": "",
+    "constructor": "slloymachore",
+    "color": ""
+  },
+  {
+    "id": 8713,
+    "name": "GlowstoneRefined",
+    "symbol": "",
+    "constructor": "alloynd",
+    "color": "#FFF064"
+  },
+  {
+    "id": 8714,
+    "name": "ObsidianRefined",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#785A8C"
+  },
+  {
+    "id": 8715,
+    "name": "Yellorium",
+    "symbol": "",
+    "constructor": "setalore",
+    "color": ""
+  },
+  {
+    "id": 8716,
+    "name": "Blutonium",
+    "symbol": "",
+    "constructor": "setalore",
+    "color": ""
+  },
+  {
+    "id": 8717,
+    "name": "Cyanite",
+    "symbol": "",
+    "constructor": "setalore",
+    "color": ""
+  },
+  {
+    "id": 8718,
+    "name": "Bedrock-HSLA-Alloy",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#404040"
+  },
+  {
+    "id": 8720,
+    "name": "Manasteel",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8721,
+    "name": "Terrasteel",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8722,
+    "name": "Elven Elementium",
+    "symbol": "",
+    "constructor": "slloymachore",
+    "color": ""
+  },
+  {
+    "id": 8723,
+    "name": "Ludicrite",
+    "symbol": "",
+    "constructor": "setalore",
+    "color": ""
+  },
+  {
+    "id": 8724,
+    "name": "Yellorite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#968C28"
+  },
+  {
+    "id": 8725,
+    "name": "Pulsating Iron",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8726,
+    "name": "Vibrant Alloy",
+    "symbol": "",
+    "constructor": "slloy",
+    "color": ""
+  },
+  {
+    "id": 8727,
+    "name": "Conductive Iron",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8728,
+    "name": "Energetic Alloy",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#C87832"
+  },
+  {
+    "id": 8729,
+    "name": "Enderium Base",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8730,
+    "name": "Electrical Steel",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8731,
+    "name": "Obsidian Steel",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8732,
+    "name": "Soularium",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#5A4632"
+  },
+  {
+    "id": 8733,
+    "name": "Redstone Alloy",
+    "symbol": "",
+    "constructor": "clloy",
+    "color": ""
+  },
+  {
+    "id": 8734,
+    "name": "Spectre Iron",
+    "symbol": "",
+    "constructor": "clloymachine_",
+    "color": ""
+  },
+  {
+    "id": 8735,
+    "name": "Gaia Spirit",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8736,
+    "name": "Endium",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": "#A9D7FE"
+  },
+  {
+    "id": 8737,
+    "name": "Nikoline Alloy",
+    "symbol": "",
+    "constructor": "clloy",
+    "color": ""
+  },
+  {
+    "id": 8739,
+    "name": "Mauftrium",
+    "symbol": "",
+    "constructor": "slloymachore",
+    "color": ""
+  },
+  {
+    "id": 8740,
+    "name": "Elvorium",
+    "symbol": "",
+    "constructor": "slloymachore",
+    "color": ""
+  },
+  {
+    "id": 8741,
+    "name": "Niflheim Power",
+    "symbol": "",
+    "constructor": "slloy",
+    "color": ""
+  },
+  {
+    "id": 8742,
+    "name": "Muspelheim Power",
+    "symbol": "",
+    "constructor": "slloy",
+    "color": ""
+  },
+  {
+    "id": 8743,
+    "name": "Iffesal",
+    "symbol": "",
+    "constructor": "oredust",
+    "color": "#0E19AB"
+  },
+  {
+    "id": 8744,
+    "name": "Ancient Debris",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": "#6E505A"
+  },
+  {
+    "id": 8745,
+    "name": "Netherite",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8746,
+    "name": "Netherized Diamond",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#5A505A"
+  },
+  {
+    "id": 8747,
+    "name": "Efrine",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8750,
+    "name": "Desh",
+    "symbol": "",
+    "constructor": "alloymachore",
+    "color": "#282828"
+  },
+  {
+    "id": 8751,
+    "name": "Duranium",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8752,
+    "name": "Tritanium",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8753,
+    "name": "Dolamide",
+    "symbol": "",
+    "constructor": "oredust",
+    "color": "#BC647A"
+  },
+  {
+    "id": 8754,
+    "name": "Oriharukon",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": ""
+  },
+  {
+    "id": 8755,
+    "name": "Adamantite",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": ""
+  },
+  {
+    "id": 8756,
+    "name": "Duralumin",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": "#FFFFDC"
+  },
+  {
+    "id": 8757,
+    "name": "Meteorite",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": "#DE64DE"
+  },
+  {
+    "id": 8758,
+    "name": "Frozen Iron",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": "#EBEBFF"
+  },
+  {
+    "id": 8759,
+    "name": "Kreknorite",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": "#800000"
+  },
+  {
+    "id": 8760,
+    "name": "Alduorite",
+    "symbol": "",
+    "constructor": "setalore",
+    "color": ""
+  },
+  {
+    "id": 8761,
+    "name": "Infuscolium",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8762,
+    "name": "Rubracium",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8763,
+    "name": "Meutoite",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8764,
+    "name": "Lemurite",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8765,
+    "name": "Ceruclase",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8766,
+    "name": "HSLA-Tungsten-Alloy",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8767,
+    "name": "Oureclase",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8768,
+    "name": "Kalendrite",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8769,
+    "name": "Orichalcum",
+    "symbol": "",
+    "constructor": "alloymachore",
+    "color": ""
+  },
+  {
+    "id": 8770,
+    "name": "Carmot",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8771,
+    "name": "Sanguinite",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8772,
+    "name": "Vyroxeres",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8773,
+    "name": "Eximite",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8774,
+    "name": "Prometheum",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8775,
+    "name": "Ignatius",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8776,
+    "name": "Vulcanite",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8777,
+    "name": "Inolashite",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8778,
+    "name": "Haderoth",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8779,
+    "name": "Celenegil",
+    "symbol": "",
+    "constructor": "alloymachore",
+    "color": ""
+  },
+  {
+    "id": 8780,
+    "name": "Workers Alloy",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8781,
+    "name": "Desichalkos",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8782,
+    "name": "Tartarite",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8783,
+    "name": "Amordrine",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8784,
+    "name": "Adamantine",
+    "symbol": "",
+    "constructor": "metalore",
+    "color": ""
+  },
+  {
+    "id": 8785,
+    "name": "Syrmorite",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": "#5050C7"
+  },
+  {
+    "id": 8786,
+    "name": "Octine",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": ""
+  },
+  {
+    "id": 8790,
+    "name": "Trinitanium",
+    "symbol": "",
+    "constructor": "clloymachine",
+    "color": ""
+  },
+  {
+    "id": 8791,
+    "name": "Draconium",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": ""
+  },
+  {
+    "id": 8792,
+    "name": "DraconiumAwakened",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8793,
+    "name": "Titanium Iridium",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8794,
+    "name": "Titanium Aluminide",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8795,
+    "name": "Bedrockium",
+    "symbol": "",
+    "constructor": "metalmachore",
+    "color": "#585858"
+  },
+  {
+    "id": 8796,
+    "name": "HSS-G",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8797,
+    "name": "HSS-E",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8798,
+    "name": "HSS-S",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8799,
+    "name": "Crystal Matrix",
+    "symbol": "",
+    "constructor": "slloymachine",
+    "color": ""
+  },
+  {
+    "id": 8800,
+    "name": "Cosmic Neutronium",
+    "symbol": "",
+    "constructor": "setalmachine",
+    "color": ""
+  },
+  {
+    "id": 8801,
+    "name": "Infinity",
+    "symbol": "",
+    "constructor": "setalmachine",
+    "color": ""
+  },
+  {
+    "id": 8802,
+    "name": "Tantalum Hafnium Carbide",
+    "symbol": "",
+    "constructor": "alloymachine",
+    "color": ""
+  },
+  {
+    "id": 8803,
+    "name": "Cast Iron",
+    "symbol": "",
+    "constructor": "alloymachnd",
+    "color": "#404040"
+  },
+  {
+    "id": 8804,
+    "name": "Mingrade",
+    "symbol": "",
+    "constructor": "clloy",
+    "color": ""
+  },
+  {
+    "id": 8805,
+    "name": "Unstable",
+    "symbol": "",
+    "constructor": "setal",
+    "color": ""
+  },
+  {
+    "id": 8806,
+    "name": "Clay Compound",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": "#847F7B"
+  },
+  {
+    "id": 8807,
+    "name": "End Steel",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8808,
+    "name": "Energetic Silver",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8809,
+    "name": "Melodic Alloy",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8810,
+    "name": "Stellar Alloy",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8811,
+    "name": "Vivid Alloy",
+    "symbol": "",
+    "constructor": "alloy",
+    "color": ""
+  },
+  {
+    "id": 8812,
+    "name": "Crystalline Alloy",
+    "symbol": "",
+    "constructor": "slloy",
+    "color": ""
+  },
+  {
+    "id": 8813,
+    "name": "Crystalline Pink Slime",
+    "symbol": "",
+    "constructor": "slloy",
+    "color": ""
+  },
+  {
+    "id": 9000,
+    "name": "Pumice",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": "#DCD87F"
+  },
+  {
+    "id": 9001,
+    "name": "Diatomite",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#E1E1E1"
+  },
+  {
+    "id": 9003,
+    "name": "Basaltic Mineral Sand",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#283228"
+  },
+  {
+    "id": 9004,
+    "name": "Granitic Mineral Sand",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#283C3C"
+  },
+  {
+    "id": 9005,
+    "name": "Garnet Sand",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#C86400"
+  },
+  {
+    "id": 9006,
+    "name": "Quartz Sand",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#C8C8C8"
+  },
+  {
+    "id": 9007,
+    "name": "Uranium Tetrafluoride",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#567669"
+  },
+  {
+    "id": 9008,
+    "name": "Uranium Hexafluoride",
+    "symbol": "",
+    "constructor": "gaschemdcmp",
+    "color": ""
+  },
+  {
+    "id": 9009,
+    "name": "Uranium-238 Tetrafluoride",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#567669"
+  },
+  {
+    "id": 9010,
+    "name": "Uranium-238 Hexafluoride",
+    "symbol": "",
+    "constructor": "gaschemdcmp",
+    "color": ""
+  },
+  {
+    "id": 9011,
+    "name": "Uranium-235 Tetrafluoride",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#567669"
+  },
+  {
+    "id": 9012,
+    "name": "Uranium-235 Hexafluoride",
+    "symbol": "",
+    "constructor": "gaschemdcmp",
+    "color": ""
+  },
+  {
+    "id": 9100,
+    "name": "Rare Earth",
+    "symbol": "",
+    "constructor": "oredust",
+    "color": "#808064"
+  },
+  {
+    "id": 9101,
+    "name": "Almandine",
+    "symbol": "",
+    "constructor": "garnet",
+    "color": ""
+  },
+  {
+    "id": 9102,
+    "name": "Andradite",
+    "symbol": "",
+    "constructor": "garnet",
+    "color": ""
+  },
+  {
+    "id": 9103,
+    "name": "Asbestos",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#E6E6E6"
+  },
+  {
+    "id": 9104,
+    "name": "Hematite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#915A5A"
+  },
+  {
+    "id": 9105,
+    "name": "Bauxite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C86400"
+  },
+  {
+    "id": 9106,
+    "name": "Brown Limonite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C86400"
+  },
+  {
+    "id": 9107,
+    "name": "Calcite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#FAE6DC"
+  },
+  {
+    "id": 9108,
+    "name": "Cassiterite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#DCDCDC"
+  },
+  {
+    "id": 9109,
+    "name": "Realgar",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#9D2123"
+  },
+  {
+    "id": 9110,
+    "name": "Celestine",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#C8CDF0"
+  },
+  {
+    "id": 9111,
+    "name": "Chalcopyrite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#A07828"
+  },
+  {
+    "id": 9112,
+    "name": "Chalk",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 9113,
+    "name": "Chromite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#23140F"
+  },
+  {
+    "id": 9114,
+    "name": "Cinnabar",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#960000"
+  },
+  {
+    "id": 9115,
+    "name": "Cobaltite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#5050FA"
+  },
+  {
+    "id": 9116,
+    "name": "Cooperite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#82A0E6"
+  },
+  {
+    "id": 9117,
+    "name": "Galena",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#643C64"
+  },
+  {
+    "id": 9118,
+    "name": "Garnierite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#32C846"
+  },
+  {
+    "id": 9119,
+    "name": "Grossular",
+    "symbol": "",
+    "constructor": "garnet",
+    "color": ""
+  },
+  {
+    "id": 9120,
+    "name": "Ilmenite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#463732"
+  },
+  {
+    "id": 9122,
+    "name": "Magnetite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#1E1E1E"
+  },
+  {
+    "id": 9123,
+    "name": "Molybdenite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#191919"
+  },
+  {
+    "id": 9124,
+    "name": "Powellite",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#FFFF00"
+  },
+  {
+    "id": 9125,
+    "name": "Pyrite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#FFE650"
+  },
+  {
+    "id": 9126,
+    "name": "Pyrolusite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#323246"
+  },
+  {
+    "id": 9127,
+    "name": "Pyrope",
+    "symbol": "",
+    "constructor": "garnet",
+    "color": ""
+  },
+  {
+    "id": 9128,
+    "name": "Scheelite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C88C14"
+  },
+  {
+    "id": 9129,
+    "name": "Spessartine",
+    "symbol": "",
+    "constructor": "garnet",
+    "color": ""
+  },
+  {
+    "id": 9130,
+    "name": "Sphalerite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#DEDE00"
+  },
+  {
+    "id": 9131,
+    "name": "Stibnite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#464646"
+  },
+  {
+    "id": 9132,
+    "name": "Tetrahedrite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C82000"
+  },
+  {
+    "id": 9133,
+    "name": "Tungstate",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#373223"
+  },
+  {
+    "id": 9134,
+    "name": "Uraninite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#232323"
+  },
+  {
+    "id": 9135,
+    "name": "Uvarovite",
+    "symbol": "",
+    "constructor": "garnet",
+    "color": ""
+  },
+  {
+    "id": 9136,
+    "name": "Wulfenite",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#FF8000"
+  },
+  {
+    "id": 9137,
+    "name": "Yellow Limonite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#C8C800"
+  },
+  {
+    "id": 9138,
+    "name": "Perlite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#1E141E"
+  },
+  {
+    "id": 9139,
+    "name": "Borax",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 9140,
+    "name": "Potassium Feldspar",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#782828"
+  },
+  {
+    "id": 9141,
+    "name": "Biotite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#141E14"
+  },
+  {
+    "id": 9143,
+    "name": "Vanadium Magnetite",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#23233C"
+  },
+  {
+    "id": 9144,
+    "name": "Bastnasite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#C86E2D"
+  },
+  {
+    "id": 9145,
+    "name": "Pentlandite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#A59605"
+  },
+  {
+    "id": 9146,
+    "name": "Spodumene",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#BEAAAA"
+  },
+  {
+    "id": 9147,
+    "name": "Pollucite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#F0D2D2"
+  },
+  {
+    "id": 9148,
+    "name": "Tantalite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#915028"
+  },
+  {
+    "id": 9149,
+    "name": "Lepidolite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#F0328C"
+  },
+  {
+    "id": 9150,
+    "name": "Glauconite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#82B43C"
+  },
+  {
+    "id": 9151,
+    "name": "Glauconite Sand",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#82B43C"
+  },
+  {
+    "id": 9152,
+    "name": "Vermiculite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#C8B40F"
+  },
+  {
+    "id": 9153,
+    "name": "Bentonite",
+    "symbol": "",
+    "constructor": "clay",
+    "color": ""
+  },
+  {
+    "id": 9154,
+    "name": "Palygorskite",
+    "symbol": "",
+    "constructor": "clay",
+    "color": ""
+  },
+  {
+    "id": 9155,
+    "name": "Pitchblende",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#646E00"
+  },
+  {
+    "id": 9156,
+    "name": "Malachite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#055F05"
+  },
+  {
+    "id": 9157,
+    "name": "Mirabilite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#F0FAD2"
+  },
+  {
+    "id": 9158,
+    "name": "Mica",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#C3C3CD"
+  },
+  {
+    "id": 9159,
+    "name": "Trona",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#87875F"
+  },
+  {
+    "id": 9160,
+    "name": "Barite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#E6EBFF"
+  },
+  {
+    "id": 9161,
+    "name": "Gypsum",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#F0F0F0"
+  },
+  {
+    "id": 9162,
+    "name": "Alunite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#E1B441"
+  },
+  {
+    "id": 9163,
+    "name": "Dolomite",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#E1CDCD"
+  },
+  {
+    "id": 9164,
+    "name": "Wollastonite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#F0F0F0"
+  },
+  {
+    "id": 9165,
+    "name": "Zeolite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#F0E6E6"
+  },
+  {
+    "id": 9166,
+    "name": "Kyanite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#6E6EFA"
+  },
+  {
+    "id": 9167,
+    "name": "Kaolinite",
+    "symbol": "",
+    "constructor": "clay",
+    "color": ""
+  },
+  {
+    "id": 9169,
+    "name": "Talc",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#5F915F"
+  },
+  {
+    "id": 9170,
+    "name": "Gneiss",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9171,
+    "name": "Greenschist",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9172,
+    "name": "Greenstone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9173,
+    "name": "Greywacke",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9174,
+    "name": "Graphite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#808080"
+  },
+  {
+    "id": 9175,
+    "name": "Graphene",
+    "symbol": "",
+    "constructor": "dcmp",
+    "color": "#808080"
+  },
+  {
+    "id": 9176,
+    "name": "Gabbro",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": ""
+  },
+  {
+    "id": 9177,
+    "name": "Komatiite",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": ""
+  },
+  {
+    "id": 9178,
+    "name": "Siltstone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9179,
+    "name": "Rhyolite",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9180,
+    "name": "Quartzite",
+    "symbol": "",
+    "constructor": "stone",
+    "color": "#E6CDCD"
+  },
+  {
+    "id": 9181,
+    "name": "Migmatite",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9182,
+    "name": "Epidote",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9183,
+    "name": "Emery",
+    "symbol": "",
+    "constructor": "oredust",
+    "color": "#808080"
+  },
+  {
+    "id": 9184,
+    "name": "Blueschist",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9185,
+    "name": "Bluestone",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9186,
+    "name": "Chert",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9187,
+    "name": "Dacite",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9188,
+    "name": "Andesite",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9189,
+    "name": "Limestone",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": ""
+  },
+  {
+    "id": 9190,
+    "name": "Shale",
+    "symbol": "",
+    "constructor": "stonecent",
+    "color": ""
+  },
+  {
+    "id": 9191,
+    "name": "Eclogite",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9192,
+    "name": "Rutile",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#6E5078"
+  },
+  {
+    "id": 9193,
+    "name": "Stolzite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#373223"
+  },
+  {
+    "id": 9194,
+    "name": "Ferberite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#373223"
+  },
+  {
+    "id": 9195,
+    "name": "Huebnerite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#373223"
+  },
+  {
+    "id": 9196,
+    "name": "Russellite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#373223"
+  },
+  {
+    "id": 9197,
+    "name": "Pinalite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#373223"
+  },
+  {
+    "id": 9198,
+    "name": "Diduranium Trioxide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#2D9191"
+  },
+  {
+    "id": 9199,
+    "name": "Duranium Hexafluoride",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#19AF7D"
+  },
+  {
+    "id": 9200,
+    "name": "Duranium Hexachloride",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#4BAF91"
+  },
+  {
+    "id": 9201,
+    "name": "Duranium Hexabromide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#2D7DAF"
+  },
+  {
+    "id": 9202,
+    "name": "Duranium Hexaiodide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#4B7DAF"
+  },
+  {
+    "id": 9203,
+    "name": "Duranium Hexaastatide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#1991AF"
+  },
+  {
+    "id": 9204,
+    "name": "Tritanium Dioxide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#19B97D"
+  },
+  {
+    "id": 9205,
+    "name": "Tritanium Hexafluoride",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#557D7D"
+  },
+  {
+    "id": 9206,
+    "name": "Tritanium Hexachloride",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#37B99B"
+  },
+  {
+    "id": 9207,
+    "name": "Tritanium Hexabromide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#377D9B"
+  },
+  {
+    "id": 9208,
+    "name": "Tritanium Hexaiodide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#55B9B9"
+  },
+  {
+    "id": 9209,
+    "name": "Tritanium Hexaastatide",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#197DB9"
+  },
+  {
+    "id": 9210,
+    "name": "Bromargyrite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#5A2D0A"
+  },
+  {
+    "id": 9211,
+    "name": "Smithsonite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#6EDFD2"
+  },
+  {
+    "id": 9212,
+    "name": "Sperrylite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#696969"
+  },
+  {
+    "id": 9213,
+    "name": "Kesterite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#699B69"
+  },
+  {
+    "id": 9214,
+    "name": "Stannite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#9B9137"
+  },
+  {
+    "id": 9215,
+    "name": "Fluorite",
+    "symbol": "",
+    "constructor": "fluorite",
+    "color": ""
+  },
+  {
+    "id": 9216,
+    "name": "Arsenopyrite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#FAF01E"
+  },
+  {
+    "id": 9217,
+    "name": "Wolframite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#373223"
+  },
+  {
+    "id": 9218,
+    "name": "Kimberlite",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9219,
+    "name": "Prismarine",
+    "symbol": "",
+    "constructor": "stone",
+    "color": "#6EB2A5"
+  },
+  {
+    "id": 9220,
+    "name": "PrismarineDark",
+    "symbol": "",
+    "constructor": "stone",
+    "color": "#587D6C"
+  },
+  {
+    "id": 9221,
+    "name": "Bischofite",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#636876"
+  },
+  {
+    "id": 9222,
+    "name": "Slate",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9223,
+    "name": "Blackstone",
+    "symbol": "",
+    "constructor": "brick",
+    "color": ""
+  },
+  {
+    "id": 9243,
+    "name": "Clay Brick",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#B75A40"
+  },
+  {
+    "id": 9244,
+    "name": "Grayschist",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9245,
+    "name": "Pinkschist",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9246,
+    "name": "Columbite",
+    "symbol": "",
+    "constructor": "oredustelec",
+    "color": "#414D0E"
+  },
+  {
+    "id": 9247,
+    "name": "Coltan",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#695342"
+  },
+  {
+    "id": 9248,
+    "name": "Deepslate",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9249,
+    "name": "PhobosRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9250,
+    "name": "DeimosRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9251,
+    "name": "VenusRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9252,
+    "name": "MercuryRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9253,
+    "name": "CeresRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9254,
+    "name": "JupiterRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9255,
+    "name": "IoRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9256,
+    "name": "EuropaRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9257,
+    "name": "GanymedeRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9258,
+    "name": "CallistoRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9259,
+    "name": "SaturnRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9260,
+    "name": "RheaRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9261,
+    "name": "TitanRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9262,
+    "name": "OberonRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9263,
+    "name": "IapetusRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9264,
+    "name": "UranusRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9265,
+    "name": "TitaniaRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9266,
+    "name": "NeptuneRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9267,
+    "name": "TritonRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9268,
+    "name": "PlutoRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9269,
+    "name": "ErisRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9270,
+    "name": "Kepler22bRock",
+    "symbol": "",
+    "constructor": "stone",
+    "color": ""
+  },
+  {
+    "id": 9271,
+    "name": "Quicklime",
+    "symbol": "",
+    "constructor": "oredustdcmp",
+    "color": "#F0E6D2"
+  },
+  {
+    "id": 9300,
+    "name": "Oak",
+    "symbol": "Oak",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9301,
+    "name": "Birch",
+    "symbol": "Birch",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9302,
+    "name": "Spruce",
+    "symbol": "Spruce",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9303,
+    "name": "Junglewood",
+    "symbol": "Junglewood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9304,
+    "name": "Acacia",
+    "symbol": "Acacia",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9305,
+    "name": "DarkOak",
+    "symbol": "Dark Oak",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9306,
+    "name": "Crimsonwood",
+    "symbol": "Crimsonwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9307,
+    "name": "Warpedwood",
+    "symbol": "Warped Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9308,
+    "name": "WoodCompressed",
+    "symbol": "Compressed Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9309,
+    "name": "WoodDead",
+    "symbol": "Dead Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9310,
+    "name": "WoodRotten",
+    "symbol": "Rotten Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9311,
+    "name": "WoodMossy",
+    "symbol": "Mossy Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9312,
+    "name": "WoodFrozen",
+    "symbol": "Frozen Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9313,
+    "name": "Maple",
+    "symbol": "Maple",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9314,
+    "name": "Willow",
+    "symbol": "Willow",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9315,
+    "name": "BlueMahoe",
+    "symbol": "Blue Mahoe",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9316,
+    "name": "Hazel",
+    "symbol": "Hazel",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9317,
+    "name": "Cinnamonwood",
+    "symbol": "Cinnawood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9318,
+    "name": "Coconutwood",
+    "symbol": "Coconut",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9319,
+    "name": "Rainbowood",
+    "symbol": "Rainbowood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9320,
+    "name": "Towerwood",
+    "symbol": "Towerwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9321,
+    "name": "Witchwood",
+    "symbol": "Witchwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9322,
+    "name": "Ogrewood",
+    "symbol": "Ogrewood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9323,
+    "name": "Wyvernwood",
+    "symbol": "Wyvernwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9324,
+    "name": "Aspen",
+    "symbol": "Aspen",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9325,
+    "name": "DouglasFir",
+    "symbol": "Douglas Fir",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9326,
+    "name": "Sycamore",
+    "symbol": "Sycamore",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9327,
+    "name": "WhiteCedar",
+    "symbol": "White Cedar",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9328,
+    "name": "WhiteElm",
+    "symbol": "White Elm",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9329,
+    "name": "Thorntree",
+    "symbol": "Thorntree",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9330,
+    "name": "SilverPine",
+    "symbol": "Silver Pine",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9331,
+    "name": "Alder",
+    "symbol": "Alder",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9332,
+    "name": "Hawthorn",
+    "symbol": "Hawthorn",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9333,
+    "name": "Rowan",
+    "symbol": "Rowan",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9334,
+    "name": "Autumnwood",
+    "symbol": "Autumn Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9335,
+    "name": "Pine",
+    "symbol": "Pine",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9336,
+    "name": "Cypress",
+    "symbol": "Cypress",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9337,
+    "name": "Fir",
+    "symbol": "Fir",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9338,
+    "name": "JapaneseMaple",
+    "symbol": "Japanese Maple",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9339,
+    "name": "RainbowEucalyptus",
+    "symbol": "Rainbow Eucalyptus",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9340,
+    "name": "Redwood",
+    "symbol": "Redwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9341,
+    "name": "Sakura",
+    "symbol": "Sakura",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9342,
+    "name": "Balsa",
+    "symbol": "Balsa",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9343,
+    "name": "Baobab",
+    "symbol": "Baobab",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9344,
+    "name": "Cherrywood",
+    "symbol": "Cherrywood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9345,
+    "name": "Chestnutwood",
+    "symbol": "Chestnutwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9346,
+    "name": "Citruswood",
+    "symbol": "Citruswood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9347,
+    "name": "Cocobolowood",
+    "symbol": "Cocobolowood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9348,
+    "name": "Ebony",
+    "symbol": "Ebony",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9349,
+    "name": "Giganteumwood",
+    "symbol": "Giganteumwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9350,
+    "name": "Greenheart",
+    "symbol": "Greenheart",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9351,
+    "name": "Ipe",
+    "symbol": "Ipe",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9352,
+    "name": "Kapok",
+    "symbol": "Kapok",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9353,
+    "name": "Larch",
+    "symbol": "Larch",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9354,
+    "name": "Limewood",
+    "symbol": "Limewood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9355,
+    "name": "Mahoe",
+    "symbol": "Mahoe",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9356,
+    "name": "Mahogany",
+    "symbol": "Mahogany",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9357,
+    "name": "Padauk",
+    "symbol": "Padauk",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9358,
+    "name": "Palm",
+    "symbol": "Palm",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9359,
+    "name": "Papayawood",
+    "symbol": "Papayawood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9360,
+    "name": "Plumwood",
+    "symbol": "Plumwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9361,
+    "name": "Poplar",
+    "symbol": "Poplar",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9362,
+    "name": "Sequoia",
+    "symbol": "Sequoia",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9363,
+    "name": "Teak",
+    "symbol": "Teak",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9364,
+    "name": "Walnutwood",
+    "symbol": "Walnutwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9365,
+    "name": "Wenge",
+    "symbol": "Wenge",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9366,
+    "name": "Zebrawood",
+    "symbol": "Zebrawood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9367,
+    "name": "Darkwood",
+    "symbol": "Darkwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9368,
+    "name": "Etherealwood",
+    "symbol": "Etherealwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9369,
+    "name": "Goldwood",
+    "symbol": "Goldwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9370,
+    "name": "Hellbark",
+    "symbol": "Hellbark",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9371,
+    "name": "Jacaranda",
+    "symbol": "Jacaranda",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9372,
+    "name": "Mangrove",
+    "symbol": "Mangrove",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9373,
+    "name": "SacredOak",
+    "symbol": "Sacred Oak",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9374,
+    "name": "Magicwood",
+    "symbol": "Magicwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9375,
+    "name": "Applewood",
+    "symbol": "Applewood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9376,
+    "name": "Ashwood",
+    "symbol": "Ashwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9377,
+    "name": "Beech",
+    "symbol": "Beech",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9378,
+    "name": "Boxwood",
+    "symbol": "Boxwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9379,
+    "name": "Brazilwood",
+    "symbol": "Brazilwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9380,
+    "name": "Butternutwood",
+    "symbol": "Butternutwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9381,
+    "name": "Cedar",
+    "symbol": "Cedar",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9382,
+    "name": "Elderwood",
+    "symbol": "Elderwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9383,
+    "name": "Elm",
+    "symbol": "Elm",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9384,
+    "name": "Eucalyptus",
+    "symbol": "Eucalyptus",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9385,
+    "name": "Figwood",
+    "symbol": "Figwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9386,
+    "name": "Gingko",
+    "symbol": "Gingko",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9387,
+    "name": "Hemlock",
+    "symbol": "Hemlock",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9388,
+    "name": "Hickory",
+    "symbol": "Hickory",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9389,
+    "name": "Holly",
+    "symbol": "Holly",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9390,
+    "name": "Hornbeam",
+    "symbol": "Hornbeam",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9391,
+    "name": "Iroko",
+    "symbol": "Iroko",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9392,
+    "name": "Locust",
+    "symbol": "Locust",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9393,
+    "name": "Logwood",
+    "symbol": "Logwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9394,
+    "name": "Maclura",
+    "symbol": "Maclura",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9395,
+    "name": "Olivewood",
+    "symbol": "Olivewood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9396,
+    "name": "Pearwood",
+    "symbol": "Pearwood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9397,
+    "name": "PinkIvory",
+    "symbol": "Pink Ivory",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9398,
+    "name": "Purpleheart",
+    "symbol": "Purpleheart",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9399,
+    "name": "Rosewood",
+    "symbol": "Rosewood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9400,
+    "name": "Sweetgum",
+    "symbol": "Sweetgum",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9401,
+    "name": "Syzgium",
+    "symbol": "Syzgium",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9402,
+    "name": "Whitebeam",
+    "symbol": "Whitebeam",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9403,
+    "name": "Yew",
+    "symbol": "Yew",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9404,
+    "name": "WoodScorched",
+    "symbol": "Scorched Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9405,
+    "name": "WoodVarnished",
+    "symbol": "Varnished Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9406,
+    "name": "WoodTainted",
+    "symbol": "Tainted Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9407,
+    "name": "WoodBleached",
+    "symbol": "Bleached Wood",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9408,
+    "name": "Foxfirewood",
+    "symbol": "Foxfire",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9409,
+    "name": "BlueSpruce",
+    "symbol": "Blue Spruce",
+    "constructor": "woodnormal",
+    "color": ""
+  },
+  {
+    "id": 9700,
+    "name": "MeatRaw",
+    "symbol": "",
+    "constructor": "meat",
+    "color": ""
+  },
+  {
+    "id": 9701,
+    "name": "MeatCooked",
+    "symbol": "",
+    "constructor": "meat",
+    "color": ""
+  },
+  {
+    "id": 9702,
+    "name": "Wheat",
+    "symbol": "",
+    "constructor": "grain",
+    "color": ""
+  },
+  {
+    "id": 9703,
+    "name": "Sugar",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 9704,
+    "name": "Barley",
+    "symbol": "",
+    "constructor": "grain",
+    "color": ""
+  },
+  {
+    "id": 9705,
+    "name": "Rye",
+    "symbol": "",
+    "constructor": "grain",
+    "color": ""
+  },
+  {
+    "id": 9706,
+    "name": "Rice",
+    "symbol": "",
+    "constructor": "grain",
+    "color": ""
+  },
+  {
+    "id": 9707,
+    "name": "Oat",
+    "symbol": "",
+    "constructor": "grain",
+    "color": ""
+  },
+  {
+    "id": 9708,
+    "name": "Corn",
+    "symbol": "",
+    "constructor": "grain",
+    "color": ""
+  },
+  {
+    "id": 9709,
+    "name": "Potato",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": "#F0F0A4"
+  },
+  {
+    "id": 9710,
+    "name": "MeatRotten",
+    "symbol": "",
+    "constructor": "meat",
+    "color": ""
+  },
+  {
+    "id": 9711,
+    "name": "FishCooked",
+    "symbol": "",
+    "constructor": "meat",
+    "color": ""
+  },
+  {
+    "id": 9712,
+    "name": "FishRaw",
+    "symbol": "",
+    "constructor": "meat",
+    "color": ""
+  },
+  {
+    "id": 9713,
+    "name": "FishRotten",
+    "symbol": "",
+    "constructor": "meat",
+    "color": ""
+  },
+  {
+    "id": 9714,
+    "name": "Almond",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9715,
+    "name": "Marshmallow",
+    "symbol": "",
+    "constructor": "wood",
+    "color": "#FFDCDC"
+  },
+  {
+    "id": 9716,
+    "name": "PEZ",
+    "symbol": "",
+    "constructor": "orefood",
+    "color": ""
+  },
+  {
+    "id": 9717,
+    "name": "Licorice",
+    "symbol": "",
+    "constructor": "orefood",
+    "color": ""
+  },
+  {
+    "id": 9718,
+    "name": "Nougat",
+    "symbol": "",
+    "constructor": "orefood",
+    "color": ""
+  },
+  {
+    "id": 9719,
+    "name": "Abyssal Oat",
+    "symbol": "",
+    "constructor": "grain",
+    "color": ""
+  },
+  {
+    "id": 9778,
+    "name": "Tofu",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": "#DEDEDE"
+  },
+  {
+    "id": 9779,
+    "name": "Soylent Green",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": "#00DE00"
+  },
+  {
+    "id": 9780,
+    "name": "Cheese",
+    "symbol": "",
+    "constructor": "orefood",
+    "color": ""
+  },
+  {
+    "id": 9781,
+    "name": "Chili",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9782,
+    "name": "Cocoa",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9783,
+    "name": "Chocolate",
+    "symbol": "",
+    "constructor": "mixfood",
+    "color": ""
+  },
+  {
+    "id": 9784,
+    "name": "Coffee",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9785,
+    "name": "Cinnamon",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9786,
+    "name": "Nutmeg",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9787,
+    "name": "Vanilla",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9788,
+    "name": "PepperBlack",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9789,
+    "name": "Curry",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9790,
+    "name": "Milk",
+    "symbol": "",
+    "constructor": "food",
+    "color": "#FEFEFE"
+  },
+  {
+    "id": 9791,
+    "name": "Honey",
+    "symbol": "",
+    "constructor": "orefood",
+    "color": ""
+  },
+  {
+    "id": 9792,
+    "name": "Tea",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9793,
+    "name": "Honeydew",
+    "symbol": "",
+    "constructor": "orefood",
+    "color": ""
+  },
+  {
+    "id": 9794,
+    "name": "Mint",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9795,
+    "name": "Peanut",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9796,
+    "name": "Hazelnut",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9797,
+    "name": "Pistachio",
+    "symbol": "",
+    "constructor": "dustfood",
+    "color": ""
+  },
+  {
+    "id": 9798,
+    "name": "Butter",
+    "symbol": "",
+    "constructor": "food",
+    "color": ""
+  },
+  {
+    "id": 9799,
+    "name": "Salted Butter",
+    "symbol": "",
+    "constructor": "food",
+    "color": ""
+  },
+  {
+    "id": 9800,
+    "name": "Water",
+    "symbol": "",
+    "constructor": "lquddcmp",
+    "color": ""
+  },
+  {
+    "id": 9801,
+    "name": "Snow",
+    "symbol": "",
+    "constructor": "dust",
+    "color": "#FAFAFA"
+  },
+  {
+    "id": 9802,
+    "name": "Ice",
+    "symbol": "",
+    "constructor": "create",
+    "color": "#C8C8FF"
+  },
+  {
+    "id": 9803,
+    "name": "Fresh Water",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": ""
+  },
+  {
+    "id": 9804,
+    "name": "Saltwater",
+    "symbol": "",
+    "constructor": "lqudelec",
+    "color": ""
+  },
+  {
+    "id": 9805,
+    "name": "Holy Water",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": ""
+  },
+  {
+    "id": 9806,
+    "name": "Sea Water",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": ""
+  },
+  {
+    "id": 9807,
+    "name": "WaterDirty",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": ""
+  },
+  {
+    "id": 9808,
+    "name": "WaterDistilled",
+    "symbol": "",
+    "constructor": "lquddcmp",
+    "color": ""
+  },
+  {
+    "id": 9809,
+    "name": "Hydrogen Peroxide",
+    "symbol": "",
+    "constructor": "lquddcmp",
+    "color": ""
+  },
+  {
+    "id": 9810,
+    "name": "Lava",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": "#FF4000"
+  },
+  {
+    "id": 9811,
+    "name": "Semiheavy Water",
+    "symbol": "",
+    "constructor": "lquddcmp",
+    "color": ""
+  },
+  {
+    "id": 9812,
+    "name": "Heavy Water",
+    "symbol": "",
+    "constructor": "lquddcmp",
+    "color": ""
+  },
+  {
+    "id": 9813,
+    "name": "Tritiated Water",
+    "symbol": "",
+    "constructor": "lquddcmp",
+    "color": ""
+  },
+  {
+    "id": 9814,
+    "name": "Steam",
+    "symbol": "",
+    "constructor": "gasdcmp",
+    "color": ""
+  },
+  {
+    "id": 9815,
+    "name": "Salted Water",
+    "symbol": "",
+    "constructor": "lqudelec",
+    "color": ""
+  },
+  {
+    "id": 9820,
+    "name": "Nitro Carbon",
+    "symbol": "",
+    "constructor": "elec",
+    "color": "#004B64"
+  },
+  {
+    "id": 9821,
+    "name": "Glyceryl",
+    "symbol": "",
+    "constructor": "lqudchemelec",
+    "color": ""
+  },
+  {
+    "id": 9822,
+    "name": "Sodium Persulfate",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#82B4FA"
+  },
+  {
+    "id": 9823,
+    "name": "Sodium Sulfide",
+    "symbol": "",
+    "constructor": "dustdcmp",
+    "color": "#DCDC64"
+  },
+  {
+    "id": 9824,
+    "name": "Sulfuric Acid",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 9825,
+    "name": "Nitric Acid",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 9826,
+    "name": "Hydrochloric Acid",
+    "symbol": "",
+    "constructor": "gasaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 9827,
+    "name": "Aqua Regia",
+    "symbol": "",
+    "constructor": "lqudacidcent",
+    "color": ""
+  },
+  {
+    "id": 9828,
+    "name": "Glycerol",
+    "symbol": "",
+    "constructor": "lqudchemelec",
+    "color": ""
+  },
+  {
+    "id": 9829,
+    "name": "Hydrogen Fluoride",
+    "symbol": "",
+    "constructor": "gasaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 9830,
+    "name": "Air",
+    "symbol": "",
+    "constructor": "gas",
+    "color": ""
+  },
+  {
+    "id": 9831,
+    "name": "Nitrogen Dioxide",
+    "symbol": "",
+    "constructor": "gaschemelec",
+    "color": ""
+  },
+  {
+    "id": 9832,
+    "name": "Methane",
+    "symbol": "",
+    "constructor": "gaschemelec",
+    "color": ""
+  },
+  {
+    "id": 9833,
+    "name": "Methane Ice",
+    "symbol": "",
+    "constructor": "dustcent",
+    "color": "#E1C8FA"
+  },
+  {
+    "id": 9834,
+    "name": "Sulfur Dioxide",
+    "symbol": "",
+    "constructor": "gaschemdcmp",
+    "color": ""
+  },
+  {
+    "id": 9835,
+    "name": "Sulfur Trioxide",
+    "symbol": "",
+    "constructor": "gaschemdcmp",
+    "color": ""
+  },
+  {
+    "id": 9836,
+    "name": "Carbon Dioxide",
+    "symbol": "",
+    "constructor": "gaschemelec",
+    "color": ""
+  },
+  {
+    "id": 9837,
+    "name": "Nitrogen Monoxide",
+    "symbol": "",
+    "constructor": "gaschemelec",
+    "color": ""
+  },
+  {
+    "id": 9838,
+    "name": "Carbon Monoxide",
+    "symbol": "",
+    "constructor": "gaschemelec",
+    "color": ""
+  },
+  {
+    "id": 9839,
+    "name": "Helium-Neon",
+    "symbol": "",
+    "constructor": "gaschemcent",
+    "color": ""
+  },
+  {
+    "id": 9840,
+    "name": "Biomass",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9841,
+    "name": "Bio Fuel",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9842,
+    "name": "Ethanol",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9843,
+    "name": "Carbon Trioxide",
+    "symbol": "",
+    "constructor": "gaschemelec",
+    "color": ""
+  },
+  {
+    "id": 9844,
+    "name": "Disulfuric Acid",
+    "symbol": "",
+    "constructor": "lqudaciddcmp",
+    "color": ""
+  },
+  {
+    "id": 9850,
+    "name": "Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9851,
+    "name": "Oil Sand",
+    "symbol": "",
+    "constructor": "oredust",
+    "color": "#0A0A0A"
+  },
+  {
+    "id": 9852,
+    "name": "Crude Oil",
+    "symbol": "",
+    "constructor": "oredust",
+    "color": "#0A0A0A"
+  },
+  {
+    "id": 9853,
+    "name": "Oil Shale",
+    "symbol": "",
+    "constructor": "oredustcent",
+    "color": "#32323C"
+  },
+  {
+    "id": 9860,
+    "name": "Fuel",
+    "symbol": "",
+    "constructor": "lqudexpl",
+    "color": ""
+  },
+  {
+    "id": 9861,
+    "name": "Nitro-Fuel",
+    "symbol": "",
+    "constructor": "lqudexpl",
+    "color": ""
+  },
+  {
+    "id": 9862,
+    "name": "Kerosine",
+    "symbol": "",
+    "constructor": "lqudexpl",
+    "color": ""
+  },
+  {
+    "id": 9863,
+    "name": "Diesel",
+    "symbol": "",
+    "constructor": "lqudexpl",
+    "color": ""
+  },
+  {
+    "id": 9864,
+    "name": "Petrol",
+    "symbol": "",
+    "constructor": "lqudexpl",
+    "color": ""
+  },
+  {
+    "id": 9865,
+    "name": "Propane",
+    "symbol": "",
+    "constructor": "gasexpl",
+    "color": ""
+  },
+  {
+    "id": 9866,
+    "name": "Butane",
+    "symbol": "",
+    "constructor": "gasexpl",
+    "color": ""
+  },
+  {
+    "id": 9867,
+    "name": "Propylene",
+    "symbol": "",
+    "constructor": "gasexpl",
+    "color": ""
+  },
+  {
+    "id": 9868,
+    "name": "Ethylene",
+    "symbol": "",
+    "constructor": "gasexpl",
+    "color": ""
+  },
+  {
+    "id": 9870,
+    "name": "Creosote",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9871,
+    "name": "Fish Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9872,
+    "name": "Seed Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9873,
+    "name": "Hemp Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9874,
+    "name": "Lin Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9875,
+    "name": "Sunflower Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9876,
+    "name": "Nut Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9877,
+    "name": "Olive Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9880,
+    "name": "FryingOilHot",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9881,
+    "name": "Glue",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  },
+  {
+    "id": 9882,
+    "name": "Lubricant",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": ""
+  },
+  {
+    "id": 9883,
+    "name": "Construction Foam",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": "#808080"
+  },
+  {
+    "id": 9884,
+    "name": "UU-Amplifier",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": ""
+  },
+  {
+    "id": 9885,
+    "name": "UU-Matter",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": ""
+  },
+  {
+    "id": 9886,
+    "name": "Latex",
+    "symbol": "",
+    "constructor": "lqud",
+    "color": ""
+  },
+  {
+    "id": 9887,
+    "name": "Whale Oil",
+    "symbol": "",
+    "constructor": "lqudflam",
+    "color": ""
+  }
+]

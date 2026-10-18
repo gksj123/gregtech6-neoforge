@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "minecraft:piston"
+    },
+    "C": {
+      "item": "gregtech:machine_casing"
+    },
+    "I": {
+      "item": "minecraft:iron_block"
+    },
+    "R": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "pattern": [
+    "IPI",
+    "CRC",
+    "ICI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gregtech:large_crusher"
+  }
+}
