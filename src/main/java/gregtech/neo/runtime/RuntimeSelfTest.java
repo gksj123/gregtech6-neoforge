@@ -12,6 +12,9 @@ import gregtech.neo.block.LargeCrusherBlockEntity;
 import gregtech.neo.block.MachinePortBlock;
 import gregtech.neo.block.MachinePortMode;
 import gregtech.neo.block.MechanicalEnergyNetwork;
+import gregtech.neo.block.SmallCrucibleBlockEntity;
+import gregtech.neo.block.TemperatureSensorBlockEntity;
+import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
 import gregtech.neo.material.GTMaterialItems;
 import gregtech.neo.material.GTMaterialGameplayRegistry;
@@ -53,6 +56,8 @@ public final class RuntimeSelfTest {
     private static BlockPos largeItemInputPortPos;
     private static BlockPos cruciblePos;
     private static BlockPos burningBoxPos;
+    private static BlockPos smallCruciblePos;
+    private static BlockPos temperatureSensorPos;
     private static boolean genericCapabilityInserted;
     private static boolean burningHeatObserved;
     private static boolean creativeCatalogPass;
@@ -86,10 +91,13 @@ public final class RuntimeSelfTest {
         genericMachinePos = controllerPos.offset(20, 0, 5);
         cruciblePos = controllerPos.offset(-10, 0, 5);
         burningBoxPos = cruciblePos.below();
+        smallCruciblePos = controllerPos.offset(-20, 0, 5);
+        temperatureSensorPos = smallCruciblePos.east();
         buildStructure(level);
         buildKineticChain(level);
         buildGenericMachine(level);
         buildCrucible(level);
+        buildSmallCrucible(level);
         creativeCatalogPass = validateCreativeCatalog(server);
         GT6Neo.LOGGER.info(
             "GT6 runtime self-test: large RU structure at {}, EU/KU chain at {}, RU/KU chain crank at {}",
@@ -163,6 +171,15 @@ public final class RuntimeSelfTest {
                     false
                 );
             }
+            if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
+                long packetSize = 512;
+                long targetTemperature = Math.min(1900, crucible.maximumTemperature() - 100);
+                long requiredHeat = Math.max(0, targetTemperature - crucible.temperature())
+                    * crucible.requiredHeatPerKelvin();
+                long packets = Math.max(1, (requiredHeat + packetSize - 1) / packetSize);
+                crucible.receivePacket(new EnergyPacket(EnergyKind.HEAT, packetSize, packets),
+                    Direction.UP, false);
+            }
         }
         if (ticks == 20) {
             ServerLevel level = event.getServer().overworld();
@@ -205,21 +222,33 @@ public final class RuntimeSelfTest {
                 && crucibleTemperature >= 1811
                 && crucible.moltenUnits() >= GTMaterialGameplayRegistry.MATERIAL_UNIT;
         }
+        boolean smallCruciblePass = false;
+        long smallCrucibleTemperature = 0;
+        if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
+            smallCrucibleTemperature = crucible.temperature();
+            smallCruciblePass = smallCrucibleTemperature >= 1811
+                && crucible.moltenUnits() >= GTMaterialGameplayRegistry.MATERIAL_UNIT;
+        }
+        boolean sensorPass = level.getBlockEntity(temperatureSensorPos) instanceof TemperatureSensorBlockEntity sensor
+            && sensor.temperatureKelvin() == smallCrucibleTemperature
+            && sensor.analogSignal() > 0;
         if (level.getBlockEntity(controllerPos) instanceof LargeCrusherBlockEntity crusher) {
             ItemStack output = crusher.peekOutputForTesting();
             if (output.is(Items.GRAVEL) && basicPass && crankPass && genericPass
-                && genericCapabilityInserted && cruciblePass && creativeCatalogPass) {
+                && genericCapabilityInserted && cruciblePass && smallCruciblePass
+                && sensorPass && creativeCatalogPass) {
                 GT6Neo.LOGGER.info(
-                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K",
+                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K",
                     output.getCount(),
                     basicCount,
                     crankCount,
                     genericCount,
-                    crucibleTemperature
+                    crucibleTemperature,
+                    smallCrucibleTemperature
                 );
             } else {
                 GT6Neo.LOGGER.error(
-                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} CREATIVE_CATALOG={}",
+                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} SMALL_CRUCIBLE pass={} temperature={} SENSOR pass={} CREATIVE_CATALOG={}",
                     crusher.isFormed(),
                     output,
                     basicPass,
@@ -228,6 +257,9 @@ public final class RuntimeSelfTest {
                     genericCapabilityInserted,
                     cruciblePass,
                     crucibleTemperature,
+                    smallCruciblePass,
+                    smallCrucibleTemperature,
+                    sensorPass,
                     creativeCatalogPass
                 );
             }
@@ -250,21 +282,30 @@ public final class RuntimeSelfTest {
         int machines = creativeSize("machine_catalog", parameters);
         int multiblocks = creativeSize("multiblocks_and_heat", parameters);
         int tools = creativeSize("tools_and_energy", parameters);
+        int smallCrucibles = creativeSize("smelting_crucibles", parameters);
+        long smallCrucibleHeatData = GTMachineRegistry.machines().stream()
+            .filter(machine -> "Smelting Crucibles".equals(machine.category()))
+            .filter(machine -> GTMaterialGameplayRegistry.material(machine.material_slug()) != null)
+            .count();
         GT6Neo.LOGGER.info(
-            "GT6 creative catalog: demo={} materials={} blocks={} machines={} multiblocks={} tools={}",
+            "GT6 creative catalog: demo={} materials={} blocks={} machines={} multiblocks={} tools={} small_crucibles={} small_crucible_heat_data={}",
             demo,
             materials,
             blocks,
             machines,
             multiblocks,
-            tools
+            tools,
+            smallCrucibles,
+            smallCrucibleHeatData
         );
         return demo >= 25
             && materials >= 10_000
             && blocks >= 12_000
             && machines >= 251
             && multiblocks >= 30
-            && tools >= 10;
+            && tools >= 10
+            && smallCrucibles >= 40
+            && smallCrucibleHeatData == 39;
     }
 
     private static int creativeSize(
@@ -429,6 +470,25 @@ public final class RuntimeSelfTest {
             box.setPart(new MachinePart(528, "Burning Boxes"));
             box.insertFuel(new ItemStack(Items.COAL, 8));
         }
+    }
+
+    private static void buildSmallCrucible(ServerLevel level) {
+        for (int x = -2; x <= 2; x++) {
+            for (int y = -2; y <= 2; y++) {
+                for (int z = -2; z <= 2; z++) {
+                    level.setBlockAndUpdate(smallCruciblePos.offset(x, y, z), Blocks.AIR.defaultBlockState());
+                }
+            }
+        }
+        level.setBlockAndUpdate(smallCruciblePos, GTBlocks.SMALL_CRUCIBLE.get().defaultBlockState());
+        if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
+            crucible.setPart(new MachinePart(267, "Smelting Crucibles"));
+            crucible.addMaterial("iron", "ingot", 3);
+        }
+        level.setBlockAndUpdate(
+            temperatureSensorPos,
+            GTBlocks.TEMPERATURE_SENSOR.get().defaultBlockState()
+        );
     }
 
     private static IItemHandler levelCapability(

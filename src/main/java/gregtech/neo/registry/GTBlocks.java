@@ -12,6 +12,8 @@ import gregtech.neo.block.KineticConverterBlock;
 import gregtech.neo.block.LargeCrusherBlock;
 import gregtech.neo.block.ManualCrankBlock;
 import gregtech.neo.block.MachinePortBlock;
+import gregtech.neo.block.SmallCrucibleBlock;
+import gregtech.neo.block.TemperatureSensorBlock;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -77,6 +79,17 @@ public final class GTBlocks {
     public static final DeferredBlock<CrucibleBlock> CRUCIBLE = registerBlock(
         "crucible",
         () -> new CrucibleBlock(machineProperties(MapColor.METAL, 6.0F, 10.0F)),
+        MapColor.METAL
+    );
+
+    public static final DeferredBlock<SmallCrucibleBlock> SMALL_CRUCIBLE = BLOCKS.register(
+        "small_crucible",
+        () -> new SmallCrucibleBlock(machineProperties(MapColor.METAL, 4.0F, 8.0F))
+    );
+
+    public static final DeferredBlock<TemperatureSensorBlock> TEMPERATURE_SENSOR = registerBlock(
+        "temperature_sensor",
+        () -> new TemperatureSensorBlock(machineProperties(MapColor.METAL, 2.0F, 5.0F)),
         MapColor.METAL
     );
 

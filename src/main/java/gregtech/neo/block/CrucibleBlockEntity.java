@@ -26,7 +26,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class CrucibleBlockEntity extends BlockEntity implements EnergyReceiver {
+public final class CrucibleBlockEntity extends BlockEntity implements EnergyReceiver, TemperatureProvider {
     public static final long ENVIRONMENT_TEMPERATURE = 293L;
     public static final long MAX_AMOUNT = 16L * 3L * 3L * 3L
         * GTMaterialGameplayRegistry.MATERIAL_UNIT;
@@ -191,6 +191,21 @@ public final class CrucibleBlockEntity extends BlockEntity implements EnergyRece
 
     public long temperature() {
         return temperature;
+    }
+
+    @Override
+    public long temperatureKelvin() {
+        return temperature;
+    }
+
+    @Override
+    public long maximumTemperatureKelvin() {
+        return maximumTemperature();
+    }
+
+    @Override
+    public String temperatureSourceName() {
+        return "Large Crucible";
     }
 
     public long storedHeat() {

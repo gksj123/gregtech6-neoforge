@@ -232,6 +232,7 @@ def extract_machine_registrations() -> tuple[list[dict[str, object]], dict[str, 
             previous_window = text[max(0, start - 8000) : start]
             previous_materials = list(MATERIAL_ASSIGNMENT.finditer(previous_window))
             material_expression = previous_materials[-1].group(1).strip() if previous_materials else ""
+        material_name = resolve_material_expression(material_expression)
         display_name = resolve_machine_name(name_expression, material_expression)
         numeric = {
             key: int(match.group(1)) if (match := re.search(pattern, raw)) else 0
@@ -258,6 +259,8 @@ def extract_machine_registrations() -> tuple[list[dict[str, object]], dict[str, 
                 "recipe_map": recipe_map.group(1) if recipe_map else "",
                 "fuel_map": fuel_map.group(1) if fuel_map else "",
                 "material_expression": material_expression,
+                "material_name": material_name,
+                "material_slug": material_slug(material_name),
                 "display_name": display_name,
                 **numeric,
                 **boolean,
@@ -383,10 +386,13 @@ def resolve_material_expression(expression: str) -> str:
         }[array_match.group(1)]
         index = int(array_match.group(2))
         return values[index] if 0 <= index < len(values) else "Unknown"
-    simple = re.search(r"(?:MT|ANY)\.([A-Za-z0-9_]+)", expression)
+    simple = re.search(r"(?:MT|ANY)\.([A-Za-z0-9_.]+)", expression)
     if not simple:
         return ""
-    name = simple.group(1)
+    path = simple.group(1)
+    if path.startswith("DATA."):
+        return ""
+    name = path.split(".")[-1]
     aliases = {
         "Pb": "Lead",
         "Sn": "Tin",
@@ -403,11 +409,31 @@ def resolve_material_expression(expression: str) -> str:
         "Ir": "Iridium",
         "Os": "Osmium",
         "Bz": "Bronze",
+        "C": "Carbon",
+        "Mo": "Molybdenum",
+        "Nb": "Niobium",
+        "Ta": "Tantalum",
+        "V": "Vanadium",
+        "Ad": "Adamantium",
+        "HSLA": "HSLA-Steel",
+        "Ta4HfC5": "Tantalum Hafnium Carbide",
     }
     if name in aliases:
         return aliases[name]
     name = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", name)
     return name.replace("_", " ").strip()
+
+
+def material_slug(name: str) -> str:
+    aliases = {
+        # ANY.Quartz in ANY.java steals the properties of MT.MilkyQuartz.
+        "Quartz": "milkyquartz",
+        # MT.Os stores its source material under the local name Osmium.
+        "Osmium": "osmiumelemental",
+    }
+    if name in aliases:
+        return aliases[name]
+    return re.sub(r"[^a-z0-9]", "", name.lower())
 
 
 def extract_recipe_index() -> tuple[list[dict[str, object]], dict[str, int]]:

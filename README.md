@@ -15,6 +15,8 @@ The first playable machines are:
 - A single-block **Kinetic Crusher** that accepts only KU.
 - A source-shaped 5x5x3 **Large Crusher** that accepts only RU.
 - A source-shaped 3x3x3 **Large Crucible** with material thermal mass.
+- 39 source-defined material variants of the single-block **Smelting Crucible**.
+- A **Thermometer** tool and analog-redstone **Thermometer Sensor**.
 - GUI-free solid-fuel **Burning Boxes** that emit HU.
 
 GT6's energy families are kept separate. RU, KU, EU, and LU are not interchangeable scalar values. Converters explicitly transform one family into another and apply their own losses.
@@ -64,6 +66,8 @@ silently guessed.
 - Isolated runtime client launched and entered the world
 - Runtime self-test formed the exact 5x5x3 crusher, transferred RU/KU, and produced
   3 gravel through each crusher path plus 9 material outputs through the generic KU machine
+- Runtime self-test melted iron in both crucible types and verified that the adjacent
+  thermometer sensor reported the same temperature and a nonzero analog signal
 
 The build intentionally compiles against the supplied local Minecraft installation. It does not need a global Gradle installation and does not currently download NeoGradle dependencies.
 
@@ -108,10 +112,18 @@ GT6_JVM_ARGS='-Dgregtech.runtimeSelfTest=true' python3 tools/run_client.py
 A successful run ends with:
 
 ```text
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1906K
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1905K SMALL_CRUCIBLE=1888K
 ```
 
 The runtime test requires `run-client/saves/world`. A flat test world can be generated using the vanilla 1.21.1 server jar; the copied world should be placed in that location.
+
+On a machine without a usable OpenGL display, install the matching NeoForge
+dedicated server into `run-server` once, then run the same test headlessly:
+
+```sh
+java -jar neoforge-21.1.227-installer.jar --installServer run-server
+GT6_JVM_ARGS='-Dgregtech.runtimeSelfTest=true' python3 tools/run_server.py
+```
 
 ## In-World Controls
 
@@ -132,16 +144,17 @@ No machine menu is opened.
 
 ## Creative Demo Inventory
 
-The demo exposes six source-oriented creative tabs:
+The demo exposes seven source-oriented creative tabs:
 
 | Tab | Current entries | Contents |
 | --- | ---: | --- |
-| Demo Kit | 26 | tools, controllers, structure materials, starter ingots and fuel |
+| Demo Kit | 29 | tools, controllers, a steel crucible, thermometer sensor, structure materials, starter ingots and fuel |
 | Material Forms | 10368 | all materials in nine primary forms, plus all forms for core materials |
 | Material Blocks | 12232 | all 11 current material block families across the material registry |
 | Machines | 251 | all GT6 Basic Machine registrations |
-| Multiblocks & Heat | 34 | crushers, crucible, walls, ports, wheels and Furnace-map Burning Boxes |
-| Tools & Energy | 15 | tools, generators, converters, axles and cables |
+| Multiblocks & Heat | 35 | crushers, crucible, thermometer sensor, walls, ports, wheels and Furnace-map Burning Boxes |
+| Tools & Energy | 16 | tools, generators, converters, axles and cables |
+| Smelting Crucibles | 41 | 39 material crucibles, the quicksilver thermometer and the thermometer sensor |
 
 The **GT6 NeoForge Demo Guide** item prints the interaction sequence in chat.
 Material and material-block tooltips include the original inventory category,
@@ -265,6 +278,18 @@ Melting, boiling, evaporation, environmental cooling, and a wall-material
 temperature limit are checked separately. Material density, heat, and tool data
 come from `materials_gameplay.json`; unresolved density values remain marked
 with their confidence field.
+
+The small crucible follows `MultiTileEntitySmeltery`:
+
+- All 39 `Smelting Crucibles` registrations from the GT6 source are exposed as data variants.
+- Capacity is `16U`; the wall contributes `7U` to thermal mass.
+- The wall can be heated to 1.25 times its source melting point before it melts into lava.
+- HU is accepted from any side, while materials are inserted by right-clicking their item form.
+- The Thermometer prints Kelvin and the wall limit; the Thermometer Sensor reads an
+  adjacent temperature provider every 10 ticks and emits a proportional 0-15 redstone signal.
+
+For now, molten contents are tracked for testing purposes but cannot yet be poured,
+cast into molds, or used to trigger crucible alloy recipes.
 
 ## Current Port Limits
 

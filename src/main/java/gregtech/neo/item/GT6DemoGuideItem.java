@@ -20,6 +20,8 @@ public final class GT6DemoGuideItem extends Item {
         "Monkey wrench: toggle automatic input/output behavior.",
         "Burning Box: right-click fuel into it; it sends HU upward.",
         "Crucible: place it above a burning box; right-click material parts into the controller.",
+        "Small Crucibles use 16U capacity and a 1.25 wall-temperature multiplier.",
+        "Thermometer: right-click a crucible for Kelvin; the Thermometer Sensor also emits redstone.",
         "Material items show GT6 heat, density, tool and original prefix data.",
         "Machines intentionally have no GUI. Use the world and tools."
     };

@@ -11,6 +11,8 @@ public record GTMachineDefinition(
     String recipe_map,
     String fuel_map,
     String material_expression,
+    String material_name,
+    String material_slug,
     String display_name,
     int input,
     int input_min,

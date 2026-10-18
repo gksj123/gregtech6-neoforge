@@ -3,6 +3,7 @@ package gregtech.neo.registry;
 import gregtech.neo.GT6Neo;
 import gregtech.neo.item.BasicMachineItem;
 import gregtech.neo.item.BurningBoxItem;
+import gregtech.neo.item.SmallCrucibleItem;
 import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
 import gregtech.neo.material.GTMaterialBlocks;
@@ -33,9 +34,15 @@ public final class GTCreativeTabs {
                 output.accept(GTItems.MAGNIFYING_GLASS.get());
                 output.accept(GTItems.MONKEY_WRENCH.get());
                 output.accept(GTItems.ELECTROMETER.get());
+                output.accept(GTItems.THERMOMETER.get());
                 output.accept(GTBlocks.BASIC_CRUSHER.get());
                 output.accept(GTBlocks.LARGE_CRUSHER.get());
                 output.accept(GTBlocks.CRUCIBLE.get());
+                output.accept(SmallCrucibleItem.create(
+                    GTItems.SMALL_CRUCIBLE.get(),
+                    new MachinePart(267, "Smelting Crucibles")
+                ));
+                output.accept(GTBlocks.TEMPERATURE_SENSOR.get());
                 output.accept(GTBlocks.LV_GENERATOR.get());
                 output.accept(GTBlocks.MANUAL_CRANK.get());
                 output.accept(GTBlocks.ELECTRIC_MOTOR.get());
@@ -107,6 +114,7 @@ public final class GTCreativeTabs {
                 output.accept(GTBlocks.CRUCIBLE_WALL.get());
                 output.accept(GTBlocks.CRUSHER_WHEELS.get());
                 output.accept(GTBlocks.MACHINE_PORT.get());
+                output.accept(GTBlocks.TEMPERATURE_SENSOR.get());
                 GTMachineRegistry.machines().stream()
                     .filter(machine -> "Burning Boxes".equals(machine.category()))
                     .filter(machine -> "Furnace".equals(machine.fuel_map()))
@@ -131,6 +139,7 @@ public final class GTCreativeTabs {
                 output.accept(GTItems.MAGNIFYING_GLASS.get());
                 output.accept(GTItems.MONKEY_WRENCH.get());
                 output.accept(GTItems.ELECTROMETER.get());
+                output.accept(GTItems.THERMOMETER.get());
                 output.accept(GTBlocks.LV_GENERATOR.get());
                 output.accept(GTBlocks.MANUAL_CRANK.get());
                 output.accept(GTBlocks.ELECTRIC_MOTOR.get());
@@ -139,6 +148,27 @@ public final class GTCreativeTabs {
                 output.accept(GTBlocks.AXLE.get());
                 output.accept(GTBlocks.TIN_CABLE.get());
                 output.accept(GTBlocks.COPPER_CABLE.get());
+            })
+            .build()
+    );
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> SMALL_CRUCIBLES = TABS.register(
+        "smelting_crucibles",
+        () -> CreativeModeTab.builder(CreativeModeTab.Row.BOTTOM, 0)
+            .title(Component.translatable("itemGroup.gregtech.smelting_crucibles"))
+            .icon(() -> SmallCrucibleItem.create(
+                GTItems.SMALL_CRUCIBLE.get(),
+                new MachinePart(267, "Smelting Crucibles")
+            ))
+            .displayItems((parameters, output) -> {
+                GTMachineRegistry.machines().stream()
+                    .filter(machine -> "Smelting Crucibles".equals(machine.category()))
+                    .forEach(machine -> output.accept(SmallCrucibleItem.create(
+                        GTItems.SMALL_CRUCIBLE.get(),
+                        new MachinePart(machine.line(), machine.category())
+                    )));
+                output.accept(GTItems.THERMOMETER.get());
+                output.accept(GTBlocks.TEMPERATURE_SENSOR.get());
             })
             .build()
     );

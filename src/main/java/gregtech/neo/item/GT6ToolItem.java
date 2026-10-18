@@ -14,7 +14,8 @@ public final class GT6ToolItem extends Item {
         SOFT_HAMMER,
         MAGNIFYING_GLASS,
         MONKEY_WRENCH,
-        ELECTROMETER
+        ELECTROMETER,
+        THERMOMETER
     }
 
     private final ToolKind kind;

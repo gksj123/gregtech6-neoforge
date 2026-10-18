@@ -12,6 +12,8 @@ import gregtech.neo.block.GeneratorBlockEntity;
 import gregtech.neo.block.LargeCrusherBlockEntity;
 import gregtech.neo.block.MachinePortBlockEntity;
 import gregtech.neo.block.MaterialStorageBlockEntity;
+import gregtech.neo.block.SmallCrucibleBlockEntity;
+import gregtech.neo.block.TemperatureSensorBlockEntity;
 import gregtech.neo.material.GTMaterialBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -98,5 +100,17 @@ public final class GTBlockEntities {
         BLOCK_ENTITIES.register("crucible", () -> BlockEntityType.Builder.of(
             CrucibleBlockEntity::new,
             GTBlocks.CRUCIBLE.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SmallCrucibleBlockEntity>> SMALL_CRUCIBLE =
+        BLOCK_ENTITIES.register("small_crucible", () -> BlockEntityType.Builder.of(
+            SmallCrucibleBlockEntity::new,
+            GTBlocks.SMALL_CRUCIBLE.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TemperatureSensorBlockEntity>> TEMPERATURE_SENSOR =
+        BLOCK_ENTITIES.register("temperature_sensor", () -> BlockEntityType.Builder.of(
+            TemperatureSensorBlockEntity::new,
+            GTBlocks.TEMPERATURE_SENSOR.get()
         ).build(null));
 }

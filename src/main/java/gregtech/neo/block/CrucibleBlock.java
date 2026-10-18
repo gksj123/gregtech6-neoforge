@@ -67,6 +67,10 @@ public final class CrucibleBlock extends BaseEntityBlock {
                     InWorldMessages.send(player, crucible.describe());
                     return ItemInteractionResult.SUCCESS;
                 }
+                case THERMOMETER -> {
+                    InWorldMessages.send(player, SmallCrucibleBlock.thermometerStatus(crucible));
+                    return ItemInteractionResult.SUCCESS;
+                }
                 case MAGNIFYING_GLASS, ELECTROMETER -> {
                     InWorldMessages.send(player, crucible.describe());
                     return ItemInteractionResult.SUCCESS;

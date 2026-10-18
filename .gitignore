@@ -2,8 +2,10 @@
 build/
 run/
 run-client/
+run-server/
 run-vanilla/
 run-data/
+neoforge-installer.jar.log
 *.iml
 .idea/
 .DS_Store
