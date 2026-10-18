@@ -130,6 +130,27 @@ No machine menu is opened.
 | Right-click the manual crank | Emit RU 16 to its facing side |
 | Right-click without a tool | Print compact machine status |
 
+## Creative Demo Inventory
+
+The demo exposes six source-oriented creative tabs:
+
+| Tab | Current entries | Contents |
+| --- | ---: | --- |
+| Demo Kit | 26 | tools, controllers, structure materials, starter ingots and fuel |
+| Material Forms | 10368 | all materials in nine primary forms, plus all forms for core materials |
+| Material Blocks | 12232 | all 11 current material block families across the material registry |
+| Machines | 251 | all GT6 Basic Machine registrations |
+| Multiblocks & Heat | 34 | crushers, crucible, walls, ports, wheels and Furnace-map Burning Boxes |
+| Tools & Energy | 15 | tools, generators, converters, axles and cables |
+
+The **GT6 NeoForge Demo Guide** item prints the interaction sequence in chat.
+Material and material-block tooltips include the original inventory category,
+source material/prefix, melting point, boiling point, density and tool stats
+when those values could be resolved from the GT6 source.
+
+NeoForge creative tabs accept only count-one templates; players choose the final
+stack size through normal creative-mode pickup behavior.
+
 ## Large Crusher Assembly
 
 The source shape is a 5x5x3 basin, matching `MultiTileEntityCrusher`:

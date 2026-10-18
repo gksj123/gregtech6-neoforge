@@ -71,6 +71,10 @@ public final class BasicMachineItem extends BlockItem {
                 definition.machine_class()
             ));
             tooltip.add(Component.translatable(
+                "block.gregtech.basic_machine.category",
+                definition.category()
+            ));
+            tooltip.add(Component.translatable(
                 "block.gregtech.basic_machine.energy",
                 definition.energy_accepted(),
                 definition.input()
@@ -81,6 +85,7 @@ public final class BasicMachineItem extends BlockItem {
                     definition.recipe_map()
                 ));
             }
+            tooltip.add(Component.translatable("block.gregtech.basic_machine.usage"));
         }
     }
 }

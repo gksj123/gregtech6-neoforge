@@ -16,7 +16,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public final class GTMaterialBlocks {
     private static final List<String> BLOCK_PREFIXES = List.of(
@@ -67,16 +66,23 @@ public final class GTMaterialBlocks {
     public static List<ItemStack> creativeStacks() {
         List<ItemStack> stacks = new ArrayList<>();
         for (Map.Entry<String, DeferredItem<MaterialBlockItem>> entry : ITEMS.entrySet()) {
-            for (String materialSlug : Set.of(
-                "iron", "copper", "tin", "gold", "silver", "lead", "nickel", "zinc",
-                "bronze", "brass", "steel", "stainlesssteel", "aluminium", "titanium",
-                "tungsten", "tungstensteel", "uranium", "plutonium", "rubber", "plastic"
-            )) {
-                if (GTMaterialRegistry.material(materialSlug) != null) {
-                    stacks.add(MaterialBlockItem.create(entry.getValue().get(), materialSlug, entry.getKey(), 1));
-                }
+            for (GTMaterial material : GTMaterialRegistry.materials()) {
+                stacks.add(MaterialBlockItem.create(
+                    entry.getValue().get(),
+                    material.slug(),
+                    entry.getKey(),
+                    1
+                ));
             }
         }
         return stacks;
+    }
+
+    public static ItemStack creativeStack(String materialSlug, String prefixId) {
+        DeferredItem<MaterialBlockItem> item = ITEMS.get(prefixId);
+        if (item == null || GTMaterialRegistry.material(materialSlug) == null) {
+            return ItemStack.EMPTY;
+        }
+        return MaterialBlockItem.create(item.get(), materialSlug, prefixId, 1);
     }
 }

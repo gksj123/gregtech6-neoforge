@@ -2,6 +2,7 @@ package gregtech.neo.item;
 
 import gregtech.neo.block.MaterialStorageBlockEntity;
 import gregtech.neo.material.GTMaterial;
+import gregtech.neo.material.GTMaterialGameplayRegistry;
 import gregtech.neo.material.GTMaterialPrefix;
 import gregtech.neo.material.GTMaterialRegistry;
 import gregtech.neo.material.MaterialPart;
@@ -70,6 +71,24 @@ public final class MaterialBlockItem extends BlockItem {
         MaterialPart part = stack.get(GTDataComponents.MATERIAL_PART.get());
         if (part != null) {
             tooltip.add(Component.translatable("block.gregtech.material_storage.source", part.prefix(), part.material()));
+            GTMaterialPrefix prefix = GTMaterialRegistry.prefix(part.prefix());
+            if (prefix != null) {
+                tooltip.add(Component.translatable(
+                    "block.gregtech.material_storage.category",
+                    prefix.category()
+                ));
+            }
+            GTMaterialGameplayRegistry.MaterialGameplay gameplay =
+                GTMaterialGameplayRegistry.material(part.material());
+            if (gameplay != null) {
+                tooltip.add(Component.translatable(
+                    "block.gregtech.material_storage.thermal",
+                    gameplay.meltingKelvin(),
+                    gameplay.boilingKelvin(),
+                    gameplay.densityGramsPerCubicCentimeter()
+                ));
+            }
+            tooltip.add(Component.translatable("block.gregtech.material_storage.usage"));
         }
     }
 }

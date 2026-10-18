@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
 license = "LGPL-3.0"
-issueTrackerURL = "https://github.com/GregTech6/gregtech6/issues"
+issueTrackerURL = "https://github.com/gksj123/gregtech6-neoforge/issues"
 
 [[mods]]
 modId = "gregtech"
@@ -11,8 +11,9 @@ authors = "GregTech-6 Team and NeoForge port contributors"
 description = '''
 An in-progress port of GregTech 6 to Minecraft 1.21.1 on NeoForge.
 
-The current vertical slice focuses on GUI-free machine control, packet-based
-energy with voltage/amperage/loss, and formed multiblock machines.
+The current creative demo focuses on GUI-free machine control, packet-based
+energy with voltage/amperage/loss, formed multiblocks, material heat data,
+burning boxes and crucible smelting.
 '''
 
 [[dependencies.gregtech]]

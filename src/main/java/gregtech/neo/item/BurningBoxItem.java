@@ -77,9 +77,14 @@ public final class BurningBoxItem extends BlockItem {
             definition.machine_class()
         ));
         tooltip.add(Component.translatable(
+            "block.gregtech.burning_box.category",
+            definition.category()
+        ));
+        tooltip.add(Component.translatable(
             "block.gregtech.burning_box.heat",
             definition.output(),
             definition.efficiency()
         ));
+        tooltip.add(Component.translatable("block.gregtech.burning_box.usage"));
     }
 }

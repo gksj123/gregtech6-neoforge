@@ -8,6 +8,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -23,6 +24,10 @@ public final class GTMaterialItems {
         "ingotHot", "plate", "plateDouble", "plateDense", "stick", "stickLong",
         "gearGt", "gearGtSmall", "rotor", "screw", "bolt", "ring", "foil",
         "wireFine", "casingSmall", "lens", "plateGem", "plateGemTiny"
+    );
+    private static final Set<String> PRIMARY_DISPLAY_PREFIXES = Set.of(
+        "dust", "ingot", "plate", "gem", "rawOreChunk", "crushed",
+        "stick", "gearGt", "wireGt01"
     );
 
     public static final Map<String, DeferredItem<MaterialPartItem>> PREFIX_ITEMS = new LinkedHashMap<>();
@@ -47,19 +52,36 @@ public final class GTMaterialItems {
     }
 
     public static List<ItemStack> creativeStacks() {
-        List<ItemStack> stacks = new ArrayList<>();
+        Map<String, ItemStack> stacks = new LinkedHashMap<>();
+        LinkedHashSet<String> seen = new LinkedHashSet<>();
         for (Map.Entry<String, DeferredItem<MaterialPartItem>> entry : PREFIX_ITEMS.entrySet()) {
-            if (!CORE_PREFIXES.contains(entry.getKey())) {
-                continue;
-            }
-            for (String materialSlug : CORE_MATERIALS) {
-                if (GTMaterialRegistry.material(materialSlug) == null) {
-                    continue;
+            if (PRIMARY_DISPLAY_PREFIXES.contains(entry.getKey())) {
+                for (GTMaterial material : GTMaterialRegistry.materials()) {
+                    addCreativeStack(stacks, seen, entry, material.slug(), entry.getKey());
                 }
-                stacks.add(MaterialPartItem.create(entry.getValue().get(), materialSlug, entry.getKey(), 1));
+            }
+            if (CORE_PREFIXES.contains(entry.getKey())) {
+                for (String materialSlug : CORE_MATERIALS) {
+                    if (GTMaterialRegistry.material(materialSlug) != null) {
+                        addCreativeStack(stacks, seen, entry, materialSlug, entry.getKey());
+                    }
+                }
             }
         }
-        return stacks;
+        return new ArrayList<>(stacks.values());
+    }
+
+    private static void addCreativeStack(
+        Map<String, ItemStack> stacks,
+        Set<String> seen,
+        Map.Entry<String, DeferredItem<MaterialPartItem>> entry,
+        String material,
+        String prefix
+    ) {
+        String key = material + "|" + prefix;
+        if (seen.add(key)) {
+            stacks.put(key, MaterialPartItem.create(entry.getValue().get(), material, prefix, 1));
+        }
     }
 
     public static ItemStack createPart(String material, String prefix, int count) {

@@ -20,8 +20,11 @@ import gregtech.neo.registry.GTDataComponents;
 import gregtech.neo.registry.GTBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
@@ -52,6 +55,7 @@ public final class RuntimeSelfTest {
     private static BlockPos burningBoxPos;
     private static boolean genericCapabilityInserted;
     private static boolean burningHeatObserved;
+    private static boolean creativeCatalogPass;
 
     private RuntimeSelfTest() {
     }
@@ -71,6 +75,7 @@ public final class RuntimeSelfTest {
         ticks = 0;
         genericCapabilityInserted = false;
         burningHeatObserved = false;
+        creativeCatalogPass = false;
         MinecraftServer server = event.getServer();
         ServerLevel level = server.overworld();
         BlockPos spawn = level.getSharedSpawnPos();
@@ -85,6 +90,7 @@ public final class RuntimeSelfTest {
         buildKineticChain(level);
         buildGenericMachine(level);
         buildCrucible(level);
+        creativeCatalogPass = validateCreativeCatalog(server);
         GT6Neo.LOGGER.info(
             "GT6 runtime self-test: large RU structure at {}, EU/KU chain at {}, RU/KU chain crank at {}",
             controllerPos,
@@ -202,7 +208,7 @@ public final class RuntimeSelfTest {
         if (level.getBlockEntity(controllerPos) instanceof LargeCrusherBlockEntity crusher) {
             ItemStack output = crusher.peekOutputForTesting();
             if (output.is(Items.GRAVEL) && basicPass && crankPass && genericPass
-                && genericCapabilityInserted && cruciblePass) {
+                && genericCapabilityInserted && cruciblePass && creativeCatalogPass) {
                 GT6Neo.LOGGER.info(
                     "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K",
                     output.getCount(),
@@ -213,7 +219,7 @@ public final class RuntimeSelfTest {
                 );
             } else {
                 GT6Neo.LOGGER.error(
-                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={}",
+                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} CREATIVE_CATALOG={}",
                     crusher.isFormed(),
                     output,
                     basicPass,
@@ -221,7 +227,8 @@ public final class RuntimeSelfTest {
                     genericPass,
                     genericCapabilityInserted,
                     cruciblePass,
-                    crucibleTemperature
+                    crucibleTemperature,
+                    creativeCatalogPass
                 );
             }
         } else {
@@ -229,6 +236,48 @@ public final class RuntimeSelfTest {
         }
         armed = false;
         event.getServer().halt(false);
+    }
+
+    private static boolean validateCreativeCatalog(MinecraftServer server) {
+        CreativeModeTab.ItemDisplayParameters parameters = new CreativeModeTab.ItemDisplayParameters(
+            server.overworld().enabledFeatures(),
+            true,
+            server.registryAccess()
+        );
+        int demo = creativeSize("demo", parameters);
+        int materials = creativeSize("materials", parameters);
+        int blocks = creativeSize("material_blocks", parameters);
+        int machines = creativeSize("machine_catalog", parameters);
+        int multiblocks = creativeSize("multiblocks_and_heat", parameters);
+        int tools = creativeSize("tools_and_energy", parameters);
+        GT6Neo.LOGGER.info(
+            "GT6 creative catalog: demo={} materials={} blocks={} machines={} multiblocks={} tools={}",
+            demo,
+            materials,
+            blocks,
+            machines,
+            multiblocks,
+            tools
+        );
+        return demo >= 25
+            && materials >= 10_000
+            && blocks >= 12_000
+            && machines >= 251
+            && multiblocks >= 30
+            && tools >= 10;
+    }
+
+    private static int creativeSize(
+        String path,
+        CreativeModeTab.ItemDisplayParameters parameters
+    ) {
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("gregtech", path);
+        CreativeModeTab tab = BuiltInRegistries.CREATIVE_MODE_TAB.get(id);
+        if (tab == null) {
+            return 0;
+        }
+        tab.buildContents(parameters);
+        return tab.getDisplayItems().size();
     }
 
     private static void buildStructure(ServerLevel level) {

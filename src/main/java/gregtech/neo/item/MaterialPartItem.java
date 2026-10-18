@@ -1,6 +1,7 @@
 package gregtech.neo.item;
 
 import gregtech.neo.material.GTMaterial;
+import gregtech.neo.material.GTMaterialGameplayRegistry;
 import gregtech.neo.material.GTMaterialPrefix;
 import gregtech.neo.material.GTMaterialRegistry;
 import gregtech.neo.material.MaterialPart;
@@ -64,6 +65,30 @@ public final class MaterialPartItem extends Item {
                 prefix.id(),
                 prefix.category()
             ));
+            tooltip.add(Component.translatable(
+                "item.gregtech.material_part.category",
+                prefix.category()
+            ));
         }
+        GTMaterialGameplayRegistry.MaterialGameplay gameplay =
+            GTMaterialGameplayRegistry.material(part.material());
+        if (gameplay != null) {
+            tooltip.add(Component.translatable(
+                "item.gregtech.material_part.thermal",
+                gameplay.meltingKelvin(),
+                gameplay.boilingKelvin(),
+                gameplay.densityGramsPerCubicCentimeter()
+            ));
+            if (gameplay.toolTypes() > 0) {
+                tooltip.add(Component.translatable(
+                    "item.gregtech.material_part.tools",
+                    gameplay.toolTypes(),
+                    gameplay.toolSpeed(),
+                    gameplay.toolDurability(),
+                    gameplay.toolQuality()
+                ));
+            }
+        }
+        tooltip.add(Component.translatable("item.gregtech.material_part.usage"));
     }
 }

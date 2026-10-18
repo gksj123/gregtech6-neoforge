@@ -5,6 +5,7 @@ import gregtech.neo.item.GT6ToolItem;
 import gregtech.neo.material.GTMaterialItems;
 import gregtech.neo.item.BasicMachineItem;
 import gregtech.neo.item.BurningBoxItem;
+import gregtech.neo.item.GT6DemoGuideItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -24,6 +25,8 @@ public final class GTItems {
         tool("monkey_wrench", GT6ToolItem.ToolKind.MONKEY_WRENCH);
     public static final DeferredItem<GT6ToolItem> ELECTROMETER =
         tool("electrometer", GT6ToolItem.ToolKind.ELECTROMETER);
+    public static final DeferredItem<GT6DemoGuideItem> GT6_DEMO_GUIDE =
+        ITEMS.register("gt6_demo_guide", () -> new GT6DemoGuideItem(new Item.Properties()));
     public static final DeferredItem<BasicMachineItem> BASIC_MACHINE =
         ITEMS.register("basic_machine", () -> new BasicMachineItem(GTBlocks.BASIC_MACHINE.get(), new Item.Properties()));
     public static final DeferredItem<BurningBoxItem> BURNING_BOX =
