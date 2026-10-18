@@ -10,6 +10,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -17,11 +18,17 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public final class ManualCrankBlock extends HorizontalDirectionalBlock {
     public static final MapCodec<ManualCrankBlock> CODEC = simpleCodec(ManualCrankBlock::new);
     public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
     private static final EnergyPacket PACKET = new EnergyPacket(EnergyKind.ROTATION, 16, 1);
+    private static final VoxelShape NORTH_SHAPE = box(2, 2, 0, 14, 14, 2);
+    private static final VoxelShape SOUTH_SHAPE = box(2, 2, 14, 14, 14, 16);
+    private static final VoxelShape WEST_SHAPE = box(0, 2, 2, 2, 14, 14);
+    private static final VoxelShape EAST_SHAPE = box(14, 2, 2, 16, 14, 14);
 
     public ManualCrankBlock(Properties properties) {
         super(properties);
@@ -41,6 +48,36 @@ public final class ManualCrankBlock extends HorizontalDirectionalBlock {
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
         return defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
+    }
+
+    @Override
+    protected VoxelShape getShape(
+        BlockState state,
+        BlockGetter level,
+        BlockPos pos,
+        CollisionContext context
+    ) {
+        return shape(state);
+    }
+
+    @Override
+    protected VoxelShape getCollisionShape(
+        BlockState state,
+        BlockGetter level,
+        BlockPos pos,
+        CollisionContext context
+    ) {
+        return shape(state);
+    }
+
+    private static VoxelShape shape(BlockState state) {
+        return switch (state.getValue(FACING)) {
+            case NORTH -> NORTH_SHAPE;
+            case SOUTH -> SOUTH_SHAPE;
+            case WEST -> WEST_SHAPE;
+            case EAST -> EAST_SHAPE;
+            default -> NORTH_SHAPE;
+        };
     }
 
     @Override

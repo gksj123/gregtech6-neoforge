@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "gregtech:block/machine_casing"
+    "particle": "gregtech:block/tungstensteel_wall_side",
+    "down": "gregtech:block/tungstensteel_wall_bottom",
+    "up": "gregtech:block/tungstensteel_wall_top",
+    "north": "gregtech:block/tungstensteel_wall_side",
+    "south": "gregtech:block/tungstensteel_wall_side",
+    "west": "gregtech:block/tungstensteel_wall_side",
+    "east": "gregtech:block/tungstensteel_wall_side"
   }
 }

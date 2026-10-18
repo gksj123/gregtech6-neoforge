@@ -84,12 +84,12 @@ public final class GTBlocks {
 
     public static final DeferredBlock<SmallCrucibleBlock> SMALL_CRUCIBLE = BLOCKS.register(
         "small_crucible",
-        () -> new SmallCrucibleBlock(machineProperties(MapColor.METAL, 4.0F, 8.0F))
+        () -> new SmallCrucibleBlock(machineProperties(MapColor.METAL, 4.0F, 8.0F).noOcclusion())
     );
 
     public static final DeferredBlock<TemperatureSensorBlock> TEMPERATURE_SENSOR = registerBlock(
         "temperature_sensor",
-        () -> new TemperatureSensorBlock(machineProperties(MapColor.METAL, 2.0F, 5.0F)),
+        () -> new TemperatureSensorBlock(machineProperties(MapColor.METAL, 2.0F, 5.0F).noOcclusion()),
         MapColor.METAL
     );
 
@@ -107,7 +107,7 @@ public final class GTBlocks {
 
     public static final DeferredBlock<ManualCrankBlock> MANUAL_CRANK = registerBlock(
         "manual_crank",
-        () -> new ManualCrankBlock(machineProperties(MapColor.WOOD, 2.0F, 3.0F)),
+        () -> new ManualCrankBlock(machineProperties(MapColor.WOOD, 2.0F, 3.0F).noOcclusion()),
         MapColor.WOOD
     );
 

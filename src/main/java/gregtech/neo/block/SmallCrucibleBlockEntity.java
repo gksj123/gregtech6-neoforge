@@ -19,10 +19,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +68,7 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
             coolTowardEnvironment();
             processPhaseChanges();
         }
+        absorbNearbyItems();
         applyHeat();
         if (temperature > maximumTemperature()) {
             meltDown();
@@ -110,6 +113,35 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
     public boolean insertItem(ItemStack stack) {
         MaterialPart part = stack.get(GTDataComponents.MATERIAL_PART.get());
         return part != null && addMaterial(part.material(), part.prefix(), 1);
+    }
+
+    private void absorbNearbyItems() {
+        if (level == null) {
+            return;
+        }
+        AABB intake = new AABB(
+            worldPosition.getX() + 0.125,
+            worldPosition.getY() + 0.125,
+            worldPosition.getZ() + 0.125,
+            worldPosition.getX() + 0.875,
+            worldPosition.getY() + 1.125,
+            worldPosition.getZ() + 0.875
+        );
+        for (ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, intake)) {
+            ItemStack stack = item.getItem();
+            if (!insertItem(stack)) {
+                continue;
+            }
+            ItemStack remainder = stack.copy();
+            remainder.shrink(1);
+            if (remainder.isEmpty()) {
+                item.discard();
+            } else {
+                item.setItem(remainder);
+            }
+            setChanged();
+            return;
+        }
     }
 
     public boolean addMaterial(String material, String prefixId, int itemCount) {
@@ -234,6 +266,14 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
 
     public long temperature() {
         return temperature;
+    }
+
+    public String wallMaterial() {
+        return wallMaterial;
+    }
+
+    public List<Content> contents() {
+        return List.copyOf(contents);
     }
 
     public long storedHeat() {

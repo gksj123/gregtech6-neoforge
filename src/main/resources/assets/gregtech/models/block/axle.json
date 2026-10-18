@@ -1,6 +1,20 @@
 {
-  "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "gregtech:block/axle"
-  }
+    "particle": "gregtech:block/axle",
+    "axle": "gregtech:block/axle"
+  },
+  "elements": [
+    {
+      "from": [6, 6, 6],
+      "to": [10, 10, 10],
+      "faces": {
+        "down": {"texture": "#axle"},
+        "up": {"texture": "#axle"},
+        "north": {"texture": "#axle"},
+        "south": {"texture": "#axle"},
+        "west": {"texture": "#axle"},
+        "east": {"texture": "#axle"}
+      }
+    }
+  ]
 }

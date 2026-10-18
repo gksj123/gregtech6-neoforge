@@ -1,3 +1,12 @@
 {
-  "parent": "gregtech:block/large_crusher"
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "gregtech:block/large_crusher_formed_front",
+    "down": "gregtech:block/large_crusher_formed_bottom",
+    "up": "gregtech:block/large_crusher_formed_top",
+    "north": "gregtech:block/large_crusher_formed_front",
+    "south": "gregtech:block/large_crusher_formed_back",
+    "west": "gregtech:block/large_crusher_formed_left",
+    "east": "gregtech:block/large_crusher_formed_right"
+  }
 }

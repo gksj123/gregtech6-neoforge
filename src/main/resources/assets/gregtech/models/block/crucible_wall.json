@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "gregtech:block/machine_casing"
+    "particle": "gregtech:block/crucible_wall_side",
+    "down": "gregtech:block/crucible_wall_bottom",
+    "up": "gregtech:block/crucible_wall_top",
+    "north": "gregtech:block/crucible_wall_side",
+    "south": "gregtech:block/crucible_wall_side",
+    "west": "gregtech:block/crucible_wall_side",
+    "east": "gregtech:block/crucible_wall_side"
   }
 }

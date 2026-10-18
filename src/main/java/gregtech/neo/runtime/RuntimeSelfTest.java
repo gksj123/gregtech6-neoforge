@@ -27,11 +27,13 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import gregtech.neo.core.EnergyKind;
 import gregtech.neo.core.EnergyPacket;
 import net.neoforged.neoforge.capabilities.Capabilities;
@@ -113,6 +115,7 @@ public final class RuntimeSelfTest {
         }
         ticks++;
         if (ticks == 1) {
+            spawnCrucibleDropTests(event.getServer().overworld());
             if (event.getServer().overworld().getBlockEntity(controllerPos) instanceof LargeCrusherBlockEntity crusher) {
                 crusher.forceStructureCheck();
                 GT6Neo.LOGGER.info("GT6 runtime self-test: controller formed={}", crusher.isFormed());
@@ -165,8 +168,13 @@ public final class RuntimeSelfTest {
         if (ticks == 30) {
             ServerLevel level = event.getServer().overworld();
             if (level.getBlockEntity(cruciblePos) instanceof CrucibleBlockEntity crucible) {
+                long packetSize = 1024;
+                long targetTemperature = Math.min(1950, crucible.maximumTemperature() - 100);
+                long requiredHeat = Math.max(0, targetTemperature - crucible.temperature())
+                    * crucible.requiredHeatPerKelvin();
+                long packets = Math.max(1, (requiredHeat + packetSize - 1) / packetSize);
                 crucible.receivePacket(
-                    new EnergyPacket(EnergyKind.HEAT, 1024, 210),
+                    new EnergyPacket(EnergyKind.HEAT, packetSize, packets),
                     Direction.UP,
                     false
                 );
@@ -214,19 +222,26 @@ public final class RuntimeSelfTest {
             genericCount = output.getCount();
         }
         boolean cruciblePass = false;
+        boolean largeDropAbsorbed = false;
         long crucibleTemperature = 0;
         if (level.getBlockEntity(cruciblePos) instanceof CrucibleBlockEntity crucible) {
             crucibleTemperature = crucible.temperature();
+            largeDropAbsorbed = crucible.contents().stream()
+                .anyMatch(content -> "copper".equals(content.material()));
             cruciblePass = burningHeatObserved
                 && crucible.isFormed()
                 && crucibleTemperature >= 1811
                 && crucible.moltenUnits() >= GTMaterialGameplayRegistry.MATERIAL_UNIT;
         }
         boolean smallCruciblePass = false;
+        boolean smallDropAbsorbed = false;
         long smallCrucibleTemperature = 0;
         if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
             smallCrucibleTemperature = crucible.temperature();
-            smallCruciblePass = smallCrucibleTemperature >= 1811
+            smallDropAbsorbed = crucible.contents().stream()
+                .anyMatch(content -> "copper".equals(content.material()));
+            smallCruciblePass = smallDropAbsorbed
+                && smallCrucibleTemperature >= 1811
                 && crucible.moltenUnits() >= GTMaterialGameplayRegistry.MATERIAL_UNIT;
         }
         boolean sensorPass = level.getBlockEntity(temperatureSensorPos) instanceof TemperatureSensorBlockEntity sensor
@@ -235,20 +250,23 @@ public final class RuntimeSelfTest {
         if (level.getBlockEntity(controllerPos) instanceof LargeCrusherBlockEntity crusher) {
             ItemStack output = crusher.peekOutputForTesting();
             if (output.is(Items.GRAVEL) && basicPass && crankPass && genericPass
-                && genericCapabilityInserted && cruciblePass && smallCruciblePass
+                && genericCapabilityInserted && cruciblePass && largeDropAbsorbed
+                && smallCruciblePass && smallDropAbsorbed
                 && sensorPass && creativeCatalogPass) {
                 GT6Neo.LOGGER.info(
-                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K",
+                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{}",
                     output.getCount(),
                     basicCount,
                     crankCount,
                     genericCount,
                     crucibleTemperature,
-                    smallCrucibleTemperature
+                    smallCrucibleTemperature,
+                    largeDropAbsorbed,
+                    smallDropAbsorbed
                 );
             } else {
                 GT6Neo.LOGGER.error(
-                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} SMALL_CRUCIBLE pass={} temperature={} SENSOR pass={} CREATIVE_CATALOG={}",
+                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SENSOR pass={} CREATIVE_CATALOG={}",
                     crusher.isFormed(),
                     output,
                     basicPass,
@@ -257,8 +275,10 @@ public final class RuntimeSelfTest {
                     genericCapabilityInserted,
                     cruciblePass,
                     crucibleTemperature,
+                    largeDropAbsorbed,
                     smallCruciblePass,
                     smallCrucibleTemperature,
+                    smallDropAbsorbed,
                     sensorPass,
                     creativeCatalogPass
                 );
@@ -489,6 +509,30 @@ public final class RuntimeSelfTest {
             temperatureSensorPos,
             GTBlocks.TEMPERATURE_SENSOR.get().defaultBlockState()
         );
+    }
+
+    private static void spawnCrucibleDropTests(ServerLevel level) {
+        ItemEntity largeDrop = new ItemEntity(
+            level,
+            cruciblePos.getX() + 0.5,
+            cruciblePos.getY() + 1.25,
+            cruciblePos.getZ() + 0.5,
+            GTMaterialItems.createPart("copper", "ingot", 1)
+        );
+        largeDrop.setNoGravity(true);
+        largeDrop.setDeltaMovement(Vec3.ZERO);
+        level.addFreshEntity(largeDrop);
+
+        ItemEntity smallDrop = new ItemEntity(
+            level,
+            smallCruciblePos.getX() + 0.5,
+            smallCruciblePos.getY() + 0.75,
+            smallCruciblePos.getZ() + 0.5,
+            GTMaterialItems.createPart("copper", "ingot", 1)
+        );
+        smallDrop.setNoGravity(true);
+        smallDrop.setDeltaMovement(Vec3.ZERO);
+        level.addFreshEntity(smallDrop);
     }
 
     private static IItemHandler levelCapability(

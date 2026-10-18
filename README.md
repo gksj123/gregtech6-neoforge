@@ -290,9 +290,15 @@ The small crucible follows `MultiTileEntitySmeltery`:
 - All 39 `Smelting Crucibles` registrations from the GT6 source are exposed as data variants.
 - Capacity is `16U`; the wall contributes `7U` to thermal mass.
 - The wall can be heated to 1.25 times its source melting point before it melts into lava.
+- The rendered block is an open 14x14 footprint with 2px walls and a hollow top.
+- Collision covers the actual walls and floor; item entities dropped into the opening are consumed.
 - HU is accepted from any side, while materials are inserted by right-clicking their item form.
 - The Thermometer prints Kelvin and the wall limit; the Thermometer Sensor reads an
   adjacent temperature provider every 10 ticks and emits a proportional 0-15 redstone signal.
+
+The large crucible also pulls material-form item entities from its 3x3 interior,
+matching the source `WD.suck` behavior. Thermometer sensors are 2px wall-mounted
+panels with directional shapes rather than full cubes.
 
 For now, molten contents are tracked for testing purposes but cannot yet be poured,
 cast into molds, or used to trigger crucible alloy recipes.

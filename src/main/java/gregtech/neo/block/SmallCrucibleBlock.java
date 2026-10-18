@@ -23,9 +23,26 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 public final class SmallCrucibleBlock extends BaseEntityBlock {
     public static final MapCodec<SmallCrucibleBlock> CODEC = simpleCodec(SmallCrucibleBlock::new);
+    private static final VoxelShape OUTLINE_SHAPE = Shapes.or(
+        box(0, 0, 0, 2, 16, 16),
+        box(14, 0, 0, 16, 16, 16),
+        box(2, 0, 0, 14, 16, 2),
+        box(2, 0, 14, 14, 16, 16),
+        box(2, 0, 2, 14, 2, 14)
+    );
+    private static final VoxelShape COLLISION_SHAPE = Shapes.or(
+        box(1, 1, 1, 2, 15, 15),
+        box(14, 1, 1, 15, 15, 15),
+        box(2, 1, 1, 14, 15, 2),
+        box(2, 1, 14, 14, 15, 15),
+        box(2, 1, 2, 14, 2, 14)
+    );
 
     public SmallCrucibleBlock(Properties properties) {
         super(properties);
@@ -39,6 +56,35 @@ public final class SmallCrucibleBlock extends BaseEntityBlock {
     @Override
     protected RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
+    }
+
+    @Override
+    protected VoxelShape getShape(
+        BlockState state,
+        net.minecraft.world.level.BlockGetter level,
+        BlockPos pos,
+        CollisionContext context
+    ) {
+        return OUTLINE_SHAPE;
+    }
+
+    @Override
+    protected VoxelShape getCollisionShape(
+        BlockState state,
+        net.minecraft.world.level.BlockGetter level,
+        BlockPos pos,
+        CollisionContext context
+    ) {
+        return COLLISION_SHAPE;
+    }
+
+    @Override
+    protected VoxelShape getInteractionShape(
+        BlockState state,
+        net.minecraft.world.level.BlockGetter level,
+        BlockPos pos
+    ) {
+        return OUTLINE_SHAPE;
     }
 
     @Override

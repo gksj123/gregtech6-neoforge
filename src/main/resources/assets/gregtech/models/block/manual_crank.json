@@ -1,12 +1,45 @@
 {
-  "parent": "minecraft:block/cube",
   "textures": {
     "particle": "gregtech:block/manual_crank_side",
-    "down": "gregtech:block/manual_crank_side",
-    "up": "gregtech:block/manual_crank_side",
-    "north": "gregtech:block/manual_crank_front",
-    "south": "gregtech:block/manual_crank_side",
-    "west": "gregtech:block/manual_crank_side",
-    "east": "gregtech:block/manual_crank_side"
-  }
+    "front": "gregtech:block/manual_crank_front",
+    "side": "gregtech:block/manual_crank_side"
+  },
+  "elements": [
+    {
+      "from": [2, 2, 0],
+      "to": [14, 14, 2],
+      "faces": {
+        "north": {"texture": "#front", "uv": [0, 0, 16, 16]},
+        "south": {"texture": "#side"},
+        "west": {"texture": "#side"},
+        "east": {"texture": "#side"},
+        "up": {"texture": "#side"},
+        "down": {"texture": "#side"}
+      }
+    },
+    {
+      "from": [6, 6, 2],
+      "to": [10, 10, 10],
+      "faces": {
+        "north": {"texture": "#side"},
+        "south": {"texture": "#side"},
+        "west": {"texture": "#side"},
+        "east": {"texture": "#side"},
+        "up": {"texture": "#side"},
+        "down": {"texture": "#side"}
+      }
+    },
+    {
+      "from": [6, 7, 8],
+      "to": [10, 13, 10],
+      "faces": {
+        "north": {"texture": "#side"},
+        "south": {"texture": "#side"},
+        "west": {"texture": "#side"},
+        "east": {"texture": "#side"},
+        "up": {"texture": "#side"},
+        "down": {"texture": "#side"}
+      }
+    }
+  ]
 }

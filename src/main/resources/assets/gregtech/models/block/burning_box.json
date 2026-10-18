@@ -1,6 +1,12 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "all": "gregtech:block/lv_generator_side"
+    "particle": "gregtech:block/burning_box_front",
+    "down": "gregtech:block/burning_box_bottom",
+    "up": "gregtech:block/burning_box_top",
+    "north": "gregtech:block/burning_box_front",
+    "south": "gregtech:block/burning_box_back",
+    "west": "gregtech:block/burning_box_left",
+    "east": "gregtech:block/burning_box_right"
   }
 }

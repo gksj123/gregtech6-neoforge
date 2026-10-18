@@ -5,8 +5,8 @@
     "down": "gregtech:block/basic_crusher_bottom",
     "up": "gregtech:block/basic_crusher_top",
     "north": "gregtech:block/basic_crusher_front",
-    "south": "gregtech:block/basic_crusher_side",
-    "west": "gregtech:block/basic_crusher_side",
-    "east": "gregtech:block/basic_crusher_side"
+    "south": "gregtech:block/basic_crusher_back",
+    "west": "gregtech:block/basic_crusher_left",
+    "east": "gregtech:block/basic_crusher_right"
   }
 }

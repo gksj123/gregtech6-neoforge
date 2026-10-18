@@ -17,11 +17,13 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +64,7 @@ public final class CrucibleBlockEntity extends BlockEntity implements EnergyRece
             coolTowardEnvironment();
             processPhaseChanges();
         }
+        absorbNearbyItems();
         applyHeat();
         if (temperature > maximumTemperature()) {
             meltDown();
@@ -117,6 +120,35 @@ public final class CrucibleBlockEntity extends BlockEntity implements EnergyRece
             return false;
         }
         return true;
+    }
+
+    private void absorbNearbyItems() {
+        if (level == null) {
+            return;
+        }
+        AABB intake = new AABB(
+            worldPosition.getX() - 0.5,
+            worldPosition.getY() + 0.125,
+            worldPosition.getZ() - 0.5,
+            worldPosition.getX() + 1.5,
+            worldPosition.getY() + 3.125,
+            worldPosition.getZ() + 1.5
+        );
+        for (ItemEntity item : level.getEntitiesOfClass(ItemEntity.class, intake)) {
+            ItemStack stack = item.getItem();
+            if (!insertItem(stack)) {
+                continue;
+            }
+            ItemStack remainder = stack.copy();
+            remainder.shrink(1);
+            if (remainder.isEmpty()) {
+                item.discard();
+            } else {
+                item.setItem(remainder);
+            }
+            setChanged();
+            return;
+        }
     }
 
     public boolean addMaterial(String material, String prefixId, int itemCount) {

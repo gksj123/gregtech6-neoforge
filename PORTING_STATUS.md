@@ -37,6 +37,10 @@
 - Density-derived thermal mass and material melting/boiling behavior
 - Environmental cooling and crucible wall temperature limits
 - GUI-free thermometer readings and analog-redstone Thermometer Sensor
+- Source CC0 machine textures with original colored/overlay composition
+- Hollow open-top small crucible model and material-based tint
+- Source-shaped crucible, sensor, crank, axle, and cable collision boxes
+- Item-entity insertion into both small and large crucibles
 - Seven source-oriented creative inventory tabs covering all current content
 - All-material primary-form and material-block creative catalogs
 - In-game GUI-free demo guide item and detailed source/material tooltips
@@ -47,7 +51,7 @@
 GT6 creative catalog: demo=29 materials=10368 blocks=12232 machines=251 multiblocks=35 tools=16 small_crucibles=41 small_crucible_heat_data=39
 GT6 runtime self-test: large RU structure at BlockPos{x=0, y=40, z=2}, EU/KU chain at BlockPos{x=10, y=40, z=0}, RU/KU chain crank at BlockPos{x=14, y=40, z=-3}
 GT6 runtime self-test: controller formed=true
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1905K SMALL_CRUCIBLE=1888K
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=1896K CRUCIBLE_DROPS=true/true
 ```
 
 Material bootstrap evidence:
