@@ -14,6 +14,7 @@ import gregtech.neo.block.ManualCrankBlock;
 import gregtech.neo.block.MachinePortBlock;
 import gregtech.neo.block.SmallCrucibleBlock;
 import gregtech.neo.block.TemperatureSensorBlock;
+import gregtech.neo.item.GTBlockInfoItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -160,7 +161,7 @@ public final class GTBlocks {
         MapColor color
     ) {
         DeferredBlock<B> holder = BLOCKS.register(name, block);
-        GTItems.ITEMS.registerSimpleBlockItem(name, holder);
+        GTItems.ITEMS.register(name, () -> new GTBlockInfoItem(holder.get(), new Item.Properties()));
         return holder;
     }
 

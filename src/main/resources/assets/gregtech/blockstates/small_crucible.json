@@ -1,7 +1,73 @@
 {
-  "variants": {
-    "": {
-      "model": "gregtech:block/small_crucible"
+  "multipart": [
+    {
+      "apply": {
+        "model": "gregtech:block/small_crucible"
+      }
+    },
+    {
+      "when": {
+        "fill": "1"
+      },
+      "apply": {
+        "model": "gregtech:block/small_crucible_fill_1"
+      }
+    },
+    {
+      "when": {
+        "fill": "2"
+      },
+      "apply": {
+        "model": "gregtech:block/small_crucible_fill_2"
+      }
+    },
+    {
+      "when": {
+        "fill": "3"
+      },
+      "apply": {
+        "model": "gregtech:block/small_crucible_fill_3"
+      }
+    },
+    {
+      "when": {
+        "fill": "4"
+      },
+      "apply": {
+        "model": "gregtech:block/small_crucible_fill_4"
+      }
+    },
+    {
+      "when": {
+        "fill": "5"
+      },
+      "apply": {
+        "model": "gregtech:block/small_crucible_fill_5"
+      }
+    },
+    {
+      "when": {
+        "fill": "6"
+      },
+      "apply": {
+        "model": "gregtech:block/small_crucible_fill_6"
+      }
+    },
+    {
+      "when": {
+        "fill": "7"
+      },
+      "apply": {
+        "model": "gregtech:block/small_crucible_fill_7"
+      }
+    },
+    {
+      "when": {
+        "fill": "8"
+      },
+      "apply": {
+        "model": "gregtech:block/small_crucible_fill_8"
+      }
     }
-  }
+  ]
 }

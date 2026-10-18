@@ -13,7 +13,9 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
@@ -22,6 +24,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -29,6 +33,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public final class SmallCrucibleBlock extends BaseEntityBlock {
     public static final MapCodec<SmallCrucibleBlock> CODEC = simpleCodec(SmallCrucibleBlock::new);
+    public static final IntegerProperty FILL = IntegerProperty.create("fill", 0, 8);
     private static final VoxelShape OUTLINE_SHAPE = Shapes.or(
         box(0, 0, 0, 2, 16, 16),
         box(14, 0, 0, 16, 16, 16),
@@ -46,11 +51,17 @@ public final class SmallCrucibleBlock extends BaseEntityBlock {
 
     public SmallCrucibleBlock(Properties properties) {
         super(properties);
+        registerDefaultState(stateDefinition.any().setValue(FILL, 0));
     }
 
     @Override
     protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(FILL);
     }
 
     @Override
@@ -75,7 +86,15 @@ public final class SmallCrucibleBlock extends BaseEntityBlock {
         BlockPos pos,
         CollisionContext context
     ) {
-        return COLLISION_SHAPE;
+        int fill = state.getValue(FILL);
+        if (fill <= 0) {
+            return COLLISION_SHAPE;
+        }
+        double surface = 2.0 + fill * 13.5 / 8.0;
+        return Shapes.or(
+            COLLISION_SHAPE,
+            box(2, surface - 0.5, 2, 14, surface, 14)
+        );
     }
 
     @Override
@@ -107,6 +126,19 @@ public final class SmallCrucibleBlock extends BaseEntityBlock {
         }
         if (!(level.getBlockEntity(pos) instanceof SmallCrucibleBlockEntity crucible)) {
             return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+        }
+        if (stack.getItem() instanceof ShovelItem
+            && hit.getDirection() == net.minecraft.core.Direction.UP) {
+            ItemStack output = crucible.shovelOutSolidContent();
+            if (!output.isEmpty()) {
+                player.getInventory().placeItemBackInInventory(output);
+            }
+            if (crucible.temperature() > 320) {
+                player.setRemainingFireTicks(40);
+                player.hurt(level.damageSources().onFire(), 1.0F);
+            }
+            InWorldMessages.send(player, crucible.describe());
+            return ItemInteractionResult.SUCCESS;
         }
         if (stack.getItem() instanceof GT6ToolItem tool) {
             switch (tool.kind()) {
@@ -144,6 +176,23 @@ public final class SmallCrucibleBlock extends BaseEntityBlock {
             InWorldMessages.send(player, crucible.describe());
         }
         return InteractionResult.SUCCESS;
+    }
+
+    @Override
+    protected void entityInside(
+        BlockState state,
+        Level level,
+        BlockPos pos,
+        net.minecraft.world.entity.Entity entity
+    ) {
+        if (level.isClientSide() || !(entity instanceof LivingEntity)) {
+            return;
+        }
+        if (level.getBlockEntity(pos) instanceof SmallCrucibleBlockEntity crucible
+            && crucible.temperature() > 320) {
+            entity.setRemainingFireTicks(Math.max(entity.getRemainingFireTicks(), 40));
+            entity.hurt(level.damageSources().onFire(), 1.0F);
+        }
     }
 
     public static Component thermometerStatus(TemperatureProvider provider) {

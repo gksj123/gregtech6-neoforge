@@ -6,6 +6,7 @@ import gregtech.neo.material.GTMaterialPrefix;
 import gregtech.neo.material.GTMaterialRegistry;
 import gregtech.neo.material.MaterialPart;
 import gregtech.neo.registry.GTDataComponents;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -52,43 +53,46 @@ public final class MaterialPartItem extends Item {
         GTMaterial material = GTMaterialRegistry.material(part.material());
         GTMaterialPrefix prefix = GTMaterialRegistry.prefix(part.prefix());
         if (material != null) {
-            tooltip.add(Component.translatable(
-                "item.gregtech.material_part.material",
-                material.name(),
-                material.symbol(),
-                material.id()
-            ));
+            GT6Tooltip.header(tooltip, "MATERIAL FORM");
+            GT6Tooltip.line(tooltip, ChatFormatting.YELLOW,
+                "MAT: " + material.name()
+                    + (material.symbol().isBlank() ? "" : " [" + material.symbol() + "]")
+                    + " // ID " + material.id());
         }
         if (prefix != null) {
-            tooltip.add(Component.translatable(
-                "item.gregtech.material_part.prefix",
-                prefix.id(),
-                prefix.category()
-            ));
-            tooltip.add(Component.translatable(
-                "item.gregtech.material_part.category",
-                prefix.category()
-            ));
+            GT6Tooltip.line(tooltip, ChatFormatting.AQUA,
+                "FORM: " + prefix.id()
+                    + " // " + prefix.category()
+                    + " // " + prefix.amount() + "U");
         }
         GTMaterialGameplayRegistry.MaterialGameplay gameplay =
             GTMaterialGameplayRegistry.material(part.material());
         if (gameplay != null) {
-            tooltip.add(Component.translatable(
-                "item.gregtech.material_part.thermal",
-                gameplay.meltingKelvin(),
-                gameplay.boilingKelvin(),
-                gameplay.densityGramsPerCubicCentimeter()
-            ));
+            GT6Tooltip.line(tooltip, ChatFormatting.RED,
+                "THERM: MP " + format(gameplay.meltingKelvin())
+                    + "K // BP " + format(gameplay.boilingKelvin())
+                    + "K // DENS " + format(gameplay.densityGramsPerCubicCentimeter())
+                    + "g/cm3");
             if (gameplay.toolTypes() > 0) {
-                tooltip.add(Component.translatable(
-                    "item.gregtech.material_part.tools",
-                    gameplay.toolTypes(),
-                    gameplay.toolSpeed(),
-                    gameplay.toolDurability(),
-                    gameplay.toolQuality()
-                ));
+                GT6Tooltip.line(tooltip, ChatFormatting.GREEN,
+                    "TOOL: " + gameplay.toolTypes()
+                        + " types // SPD " + format(gameplay.toolSpeed())
+                        + " // DUR " + gameplay.toolDurability()
+                        + " // Q " + gameplay.toolQuality());
             }
+            GT6Tooltip.source(tooltip, "MT.java", gameplay.sourceLine());
+            GT6Tooltip.nbt(tooltip,
+                "gregtech:material_part={material:\"" + part.material()
+                    + "\",prefix:\"" + part.prefix() + "\"}"
+                    + ", heat:\"" + gameplay.heatConfidence() + "\"");
         }
-        tooltip.add(Component.translatable("item.gregtech.material_part.usage"));
+        GT6Tooltip.line(tooltip, ChatFormatting.GRAY,
+            "CTRL: insert into crucibles or machine input slots");
+    }
+
+    private static String format(double value) {
+        return Math.abs(value - Math.rint(value)) < 0.0001
+            ? Long.toString(Math.round(value))
+            : String.format(java.util.Locale.ROOT, "%.3f", value);
     }
 }

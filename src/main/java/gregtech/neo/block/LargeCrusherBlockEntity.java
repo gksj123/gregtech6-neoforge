@@ -10,11 +10,13 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.AABB;
 
 public final class LargeCrusherBlockEntity extends AbstractCrusherBlockEntity {
     private boolean formed;
@@ -42,6 +44,9 @@ public final class LargeCrusherBlockEntity extends AbstractCrusherBlockEntity {
             forceStructureCheck();
         }
         tickProcessing();
+        if (formed && isActive() && level.getGameTime() % 10 == 0) {
+            damageInteriorEntities();
+        }
     }
 
     public void forceStructureCheck() {
@@ -97,6 +102,22 @@ public final class LargeCrusherBlockEntity extends AbstractCrusherBlockEntity {
         }
         structureError = "";
         return true;
+    }
+
+    private void damageInteriorEntities() {
+        Direction facing = getBlockState().getValue(LargeCrusherBlock.FACING);
+        BlockPos center = worldPosition.offset(worldOffset(facing, 0, 1, 2));
+        AABB interior = new AABB(
+            center.getX() - 1.5,
+            center.getY(),
+            center.getZ() - 1.5,
+            center.getX() + 1.5,
+            center.getY() + 2.0,
+            center.getZ() + 1.5
+        );
+        for (LivingEntity entity : level.getEntitiesOfClass(LivingEntity.class, interior)) {
+            entity.hurt(level.damageSources().cactus(), 2.0F);
+        }
     }
 
     private boolean structureFailure(String message) {

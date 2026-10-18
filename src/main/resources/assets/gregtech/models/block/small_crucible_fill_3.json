@@ -1,0 +1,26 @@
+{
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "content": "gregtech:block/crucible_content"
+  },
+  "elements": [
+    {
+      "from": [
+        2,
+        7.0625,
+        2
+      ],
+      "to": [
+        14,
+        7.0825,
+        14
+      ],
+      "faces": {
+        "up": {
+          "texture": "#content",
+          "tintindex": 1
+        }
+      }
+    }
+  ]
+}

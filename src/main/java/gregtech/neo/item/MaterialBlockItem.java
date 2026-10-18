@@ -8,6 +8,7 @@ import gregtech.neo.material.GTMaterialRegistry;
 import gregtech.neo.material.MaterialPart;
 import gregtech.neo.registry.GTDataComponents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
@@ -70,25 +71,27 @@ public final class MaterialBlockItem extends BlockItem {
         super.appendHoverText(stack, context, tooltip, flag);
         MaterialPart part = stack.get(GTDataComponents.MATERIAL_PART.get());
         if (part != null) {
-            tooltip.add(Component.translatable("block.gregtech.material_storage.source", part.prefix(), part.material()));
+            GT6Tooltip.header(tooltip, "MATERIAL BLOCK");
+            GT6Tooltip.line(tooltip, ChatFormatting.YELLOW,
+                "MAT: " + part.material() + " // FORM: " + part.prefix());
             GTMaterialPrefix prefix = GTMaterialRegistry.prefix(part.prefix());
             if (prefix != null) {
-                tooltip.add(Component.translatable(
-                    "block.gregtech.material_storage.category",
-                    prefix.category()
-                ));
+                GT6Tooltip.line(tooltip, ChatFormatting.AQUA,
+                    "CAT: " + prefix.category() + " // AMT " + prefix.amount() + "U");
             }
             GTMaterialGameplayRegistry.MaterialGameplay gameplay =
                 GTMaterialGameplayRegistry.material(part.material());
             if (gameplay != null) {
-                tooltip.add(Component.translatable(
-                    "block.gregtech.material_storage.thermal",
-                    gameplay.meltingKelvin(),
-                    gameplay.boilingKelvin(),
-                    gameplay.densityGramsPerCubicCentimeter()
-                ));
+                GT6Tooltip.line(tooltip, ChatFormatting.RED,
+                    "THERM: MP " + gameplay.meltingKelvin()
+                        + "K // BP " + gameplay.boilingKelvin()
+                        + "K // DENS " + gameplay.densityGramsPerCubicCentimeter());
             }
-            tooltip.add(Component.translatable("block.gregtech.material_storage.usage"));
+            GT6Tooltip.line(tooltip, ChatFormatting.GRAY,
+                "CTRL: place // break to recover the same material");
+            GT6Tooltip.nbt(tooltip,
+                "gregtech:material_part={material:\"" + part.material()
+                    + "\",prefix:\"" + part.prefix() + "\"}");
         }
     }
 }

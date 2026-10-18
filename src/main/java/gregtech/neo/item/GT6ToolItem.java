@@ -1,5 +1,6 @@
 package gregtech.neo.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -36,6 +37,16 @@ public final class GT6ToolItem extends Item {
         List<Component> tooltip,
         TooltipFlag flag
     ) {
-        tooltip.add(Component.translatable("item.gregtech.tool.usage." + kind.name().toLowerCase()));
+        String usage = switch (kind) {
+            case WRENCH -> "CTRL: rotate machine or multiblock";
+            case SCREWDRIVER -> "CTRL: toggle machine / cycle port mode";
+            case SOFT_HAMMER -> "CTRL: force structure check / reset";
+            case MAGNIFYING_GLASS -> "CTRL: inspect machine and NBT state";
+            case MONKEY_WRENCH -> "CTRL: toggle automation behavior";
+            case ELECTROMETER -> "CTRL: inspect energy family, size and amperage";
+            case THERMOMETER -> "CTRL: read temperature in Kelvin";
+        };
+        tooltip.add(Component.literal(usage).withStyle(ChatFormatting.GRAY));
+        GT6Tooltip.nbt(tooltip, "tool:\"" + kind.name().toLowerCase() + "\"");
     }
 }

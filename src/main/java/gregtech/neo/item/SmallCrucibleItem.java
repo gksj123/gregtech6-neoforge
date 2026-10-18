@@ -6,6 +6,7 @@ import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
 import gregtech.neo.registry.GTDataComponents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
@@ -71,15 +72,21 @@ public final class SmallCrucibleItem extends BlockItem {
         if (definition == null) {
             return;
         }
-        tooltip.add(Component.translatable(
-            "block.gregtech.small_crucible.category",
-            definition.category()
-        ));
-        tooltip.add(Component.translatable(
-            "block.gregtech.small_crucible.material",
-            definition.material_name()
-        ));
-        tooltip.add(Component.translatable("block.gregtech.small_crucible.usage"));
-        tooltip.add(Component.translatable("block.gregtech.small_crucible.thermometer"));
+        GT6Tooltip.header(tooltip, "SMELTING CRUCIBLE");
+        GT6Tooltip.source(tooltip, definition.category(), definition.line());
+        GT6Tooltip.line(tooltip, ChatFormatting.AQUA,
+            "WALL: " + definition.material_name());
+        GT6Tooltip.line(tooltip, ChatFormatting.GOLD,
+            "ENERGY: HU IN // KU -> AIR // CU: COOL");
+        GT6Tooltip.line(tooltip, ChatFormatting.RED,
+            "CAP: 16U // WALL LIMIT: MP x1.25");
+        GT6Tooltip.line(tooltip, ChatFormatting.GREEN,
+            "CTRL: right-click insert // drop items into open top");
+        GT6Tooltip.line(tooltip, ChatFormatting.GRAY,
+            "TOOL: thermometer // shovel removes solid content");
+        GT6Tooltip.nbt(tooltip,
+            "gregtech:machine_part={line:" + definition.line()
+                + ",category:\"Smelting Crucibles\"}, wall:\"" + definition.material_slug()
+                + "\", capacity:\"16U\", heatScale:1.25");
     }
 }

@@ -6,7 +6,9 @@ import gregtech.neo.core.EnergyPacket;
 import gregtech.neo.machine.GTMachineDefinition;
 import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
+import gregtech.neo.material.GTMaterial;
 import gregtech.neo.material.GTMaterialGameplayRegistry;
+import gregtech.neo.material.GTMaterialItems;
 import gregtech.neo.material.GTMaterialPrefix;
 import gregtech.neo.material.GTMaterialRegistry;
 import gregtech.neo.material.MaterialPart;
@@ -18,15 +20,23 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public final class SmallCrucibleBlockEntity extends BlockEntity implements EnergyReceiver, TemperatureProvider {
@@ -42,7 +52,9 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
     private GTMachineDefinition definition;
     private String wallMaterial = "stone";
     private long temperature = ENVIRONMENT_TEMPERATURE;
+    private long oxygenUnits;
     private boolean enabled = true;
+    private String lastVisualKey = "";
 
     public SmallCrucibleBlockEntity(BlockPos pos, BlockState state) {
         super(GTBlockEntities.SMALL_CRUCIBLE.get(), pos, state);
@@ -56,6 +68,7 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
             : definition.material_slug();
         contents.clear();
         heatBuffer.restore(0);
+        oxygenUnits = 0;
         temperature = ENVIRONMENT_TEMPERATURE;
         setChanged();
     }
@@ -69,6 +82,9 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
             processPhaseChanges();
         }
         absorbNearbyItems();
+        processOxygenSteelmaking();
+        collectRainwater();
+        syncVisualState();
         applyHeat();
         if (temperature > maximumTemperature()) {
             meltDown();
@@ -104,9 +120,75 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
             Content content = contents.get(index);
             GTMaterialGameplayRegistry.MaterialGameplay gameplay =
                 GTMaterialGameplayRegistry.material(content.material);
-            if (gameplay == null || content.units <= 0 || temperature >= gameplay.boilingKelvin()) {
+            if (gameplay == null || content.units <= 0) {
+                contents.remove(index);
+            } else if (temperature >= gameplay.boilingKelvin()) {
+                boilingEffect(gameplay, content.units);
                 contents.remove(index);
             }
+        }
+    }
+
+    private void boilingEffect(GTMaterialGameplayRegistry.MaterialGameplay gameplay, long units) {
+        if (level == null) {
+            return;
+        }
+        level.playSound(
+            null,
+            worldPosition,
+            SoundEvents.LAVA_EXTINGUISH,
+            SoundSource.BLOCKS,
+            0.7F,
+            1.2F
+        );
+        if (gameplay.boilingKelvin() >= 320) {
+            for (LivingEntity entity : level.getEntitiesOfClass(
+                LivingEntity.class,
+                new AABB(worldPosition).inflate(3.0)
+            )) {
+                entity.setRemainingFireTicks(Math.max(entity.getRemainingFireTicks(), 40));
+                entity.hurt(level.damageSources().onFire(), 1.0F);
+            }
+        }
+        if (gameplay.boilingKelvin() >= 2000) {
+            int attempts = (int) Math.min(9,
+                Math.max(1, units / GTMaterialGameplayRegistry.MATERIAL_UNIT));
+            for (int attempt = 0; attempt < attempts; attempt++) {
+                BlockPos candidate = worldPosition.offset(
+                    level.random.nextInt(7) - 3,
+                    level.random.nextInt(4) - 1,
+                    level.random.nextInt(7) - 3
+                );
+                if (level.getBlockState(candidate).isAir()
+                    && level.getBlockState(candidate.below()).isSolid()) {
+                    level.setBlockAndUpdate(candidate, Blocks.FIRE.defaultBlockState());
+                }
+            }
+        }
+    }
+
+    private void processOxygenSteelmaking() {
+        if (oxygenUnits <= 0 || temperature < 2046) {
+            return;
+        }
+        for (Content content : contents) {
+            String target = switch (content.material) {
+                case "iron", "wroughtiron" -> "steel";
+                case "meteoriciron" -> "meteoricsteel";
+                default -> "";
+            };
+            if (target.isBlank() || content.units <= 0) {
+                continue;
+            }
+            long converted = Math.min(content.units, oxygenUnits);
+            if (converted <= 0) {
+                continue;
+            }
+            content.units -= converted;
+            oxygenUnits -= converted;
+            addContent(target, converted);
+            setChanged();
+            break;
         }
     }
 
@@ -145,14 +227,20 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
     }
 
     public boolean addMaterial(String material, String prefixId, int itemCount) {
-        GTMaterialGameplayRegistry.MaterialGameplay gameplay =
-            GTMaterialGameplayRegistry.material(material);
         GTMaterialPrefix prefix = GTMaterialRegistry.prefix(prefixId);
-        if (gameplay == null || prefix == null || prefix.amount() <= 0 || itemCount <= 0) {
+        if (prefix == null || prefix.amount() <= 0 || itemCount <= 0) {
             return false;
         }
-        long units = prefix.amount() * itemCount;
+        return addRawMaterial(material, prefix.amount() * itemCount);
+    }
+
+    private boolean addRawMaterial(String material, long units) {
+        GTMaterialGameplayRegistry.MaterialGameplay gameplay =
+            GTMaterialGameplayRegistry.material(material);
         if (units <= 0 || totalUnits() > MAX_AMOUNT - units) {
+            return false;
+        }
+        if (gameplay == null) {
             return false;
         }
         double oldMass = thermalMassKilograms();
@@ -167,6 +255,18 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
         addContent(material, units);
         setChanged();
         return true;
+    }
+
+    private void collectRainwater() {
+        if (level == null || level.getGameTime() % 600 != 10
+            || !level.isRainingAt(worldPosition.above())) {
+            return;
+        }
+        long units = Math.max(1, GTMaterialGameplayRegistry.MATERIAL_UNIT / 1000);
+        if (level.isThundering()) {
+            units *= 2;
+        }
+        addRawMaterial("water", units);
     }
 
     private static long signRound(double value) {
@@ -219,6 +319,74 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
         return total;
     }
 
+    public int fillLevel() {
+        if (totalUnits() <= 0) {
+            return 0;
+        }
+        return Math.max(1, Math.min(8,
+            (int) Math.ceil(totalUnits() * 8.0 / MAX_AMOUNT)));
+    }
+
+    public float fillFraction() {
+        return fillLevel() / 8.0F;
+    }
+
+    public String contentMaterial() {
+        return contents.stream()
+            .filter(content -> GTMaterialGameplayRegistry.material(content.material) != null)
+            .min(Comparator.comparingDouble(content ->
+                GTMaterialGameplayRegistry.material(content.material)
+                    .densityGramsPerCubicCentimeter()))
+            .map(Content::material)
+            .orElse("");
+    }
+
+    public int contentColor() {
+        GTMaterial material = GTMaterialRegistry.material(contentMaterial());
+        return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
+    }
+
+    public boolean contentMolten() {
+        if (totalUnits() <= 0) {
+            return false;
+        }
+        return contents.stream().anyMatch(content -> {
+            GTMaterialGameplayRegistry.MaterialGameplay gameplay =
+                GTMaterialGameplayRegistry.material(content.material);
+            return gameplay != null && temperature >= gameplay.meltingKelvin();
+        });
+    }
+
+    public long oxygenUnits() {
+        return oxygenUnits;
+    }
+
+    private void syncVisualState() {
+        if (level == null || level.isClientSide()) {
+            return;
+        }
+        int fill = fillLevel();
+        String visualKey = fill + "|" + contentMaterial() + "|" + contentMolten();
+        if (visualKey.equals(lastVisualKey)) {
+            return;
+        }
+        lastVisualKey = visualKey;
+        BlockState oldState = getBlockState();
+        if (!oldState.hasProperty(SmallCrucibleBlock.FILL)) {
+            return;
+        }
+        BlockState newState = oldState.setValue(SmallCrucibleBlock.FILL, fill);
+        if (newState != oldState) {
+            level.setBlock(worldPosition, newState, net.minecraft.world.level.block.Block.UPDATE_ALL);
+        }
+        level.sendBlockUpdated(
+            worldPosition,
+            oldState,
+            newState,
+            net.minecraft.world.level.block.Block.UPDATE_ALL
+        );
+    }
+
     public long moltenUnits() {
         long total = 0;
         for (Content content : contents) {
@@ -231,9 +399,66 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
         return total;
     }
 
+    public ItemStack shovelOutSolidContent() {
+        GTMaterialPrefix scrap = GTMaterialRegistry.prefix("scrapGt");
+        if (scrap == null || scrap.amount() <= 0) {
+            return ItemStack.EMPTY;
+        }
+        Content selected = contents.stream()
+            .filter(content -> {
+                GTMaterialGameplayRegistry.MaterialGameplay gameplay =
+                    GTMaterialGameplayRegistry.material(content.material);
+                return gameplay != null && temperature < gameplay.meltingKelvin()
+                    && content.units > 0;
+            })
+            .min(Comparator.comparingDouble(content ->
+                GTMaterialGameplayRegistry.material(content.material)
+                    .densityGramsPerCubicCentimeter()))
+            .orElse(null);
+        if (selected == null) {
+            return ItemStack.EMPTY;
+        }
+        int count = (int) Math.min(64, selected.units / scrap.amount());
+        if (count <= 0) {
+            selected.units = 0;
+        } else {
+            selected.units -= count * scrap.amount();
+        }
+        contents.removeIf(content -> content.units <= 0);
+        setChanged();
+        return count <= 0 ? ItemStack.EMPTY : GTMaterialItems.createPart(
+            selected.material,
+            "scrapGt",
+            count
+        );
+    }
+
     @Override
     public long receivePacket(EnergyPacket packet, Direction side, boolean simulate) {
-        if (!enabled || packet.kind() != EnergyKind.HEAT) {
+        if (!enabled) {
+            return 0;
+        }
+        if (packet.kind() == EnergyKind.KINETIC) {
+            if (!canAcceptOxygen()) {
+                return 0;
+            }
+            if (!simulate) {
+                long airUnits = EnergyPacket.saturatedMultiply(packet.totalEnergy(), 1000L);
+                oxygenUnits = EnergyPacket.saturatedAdd(oxygenUnits, airUnits);
+                setChanged();
+            }
+            return packet.amount();
+        }
+        if (packet.kind() == EnergyKind.CRYO) {
+            if (!simulate) {
+                long cooling = Math.max(1,
+                    packet.totalEnergy() / requiredHeatPerKelvin());
+                temperature = Math.max(ENVIRONMENT_TEMPERATURE, temperature - cooling);
+                setChanged();
+            }
+            return packet.amount();
+        }
+        if (packet.kind() != EnergyKind.HEAT) {
             return 0;
         }
         long accepted = Math.min(packet.amount(), heatBuffer.room() / packet.size());
@@ -247,10 +472,34 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
         return accepted;
     }
 
+    private boolean canAcceptOxygen() {
+        if (level == null) {
+            return false;
+        }
+        BlockState above = level.getBlockState(worldPosition.above());
+        return above.isAir() && above.getFluidState().isEmpty();
+    }
+
     private void meltDown() {
         contents.clear();
         heatBuffer.restore(0);
         if (level != null) {
+            level.playSound(
+                null,
+                worldPosition,
+                SoundEvents.LAVA_EXTINGUISH,
+                SoundSource.BLOCKS,
+                1.0F,
+                1.0F
+            );
+            Level damageLevel = level;
+            for (LivingEntity entity : level.getEntitiesOfClass(
+                LivingEntity.class,
+                new AABB(worldPosition).inflate(3.0)
+            )) {
+                entity.setRemainingFireTicks(Math.max(entity.getRemainingFireTicks(), 80));
+                entity.hurt(damageLevel.damageSources().onFire(), 2.0F);
+            }
             level.setBlockAndUpdate(worldPosition, Blocks.LAVA.defaultBlockState());
         }
     }
@@ -307,7 +556,9 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
             thermalMassKilograms(),
             totalUnits(),
             MAX_AMOUNT,
-            moltenUnits()
+            moltenUnits(),
+            oxygenUnits,
+            fillLevel()
         );
     }
 
@@ -315,6 +566,7 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
     protected void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.loadAdditional(tag, registries);
         temperature = tag.contains("temperature") ? tag.getLong("temperature") : ENVIRONMENT_TEMPERATURE;
+        oxygenUnits = tag.getLong("oxygen");
         heatBuffer.restore(tag.getLong("heat"));
         enabled = !tag.contains("enabled") || tag.getBoolean("enabled");
         if (tag.contains("source_line")) {
@@ -335,6 +587,7 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
     protected void saveAdditional(CompoundTag tag, HolderLookup.Provider registries) {
         super.saveAdditional(tag, registries);
         tag.putLong("temperature", temperature);
+        tag.putLong("oxygen", oxygenUnits);
         tag.putLong("heat", heatBuffer.stored());
         tag.putBoolean("enabled", enabled);
         if (part != null) {
@@ -349,6 +602,18 @@ public final class SmallCrucibleBlockEntity extends BlockEntity implements Energ
             list.add(entry);
         }
         tag.put("contents", list);
+    }
+
+    @Override
+    public CompoundTag getUpdateTag(HolderLookup.Provider registries) {
+        CompoundTag tag = new CompoundTag();
+        saveAdditional(tag, registries);
+        return tag;
+    }
+
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
     }
 
     public static final class Content {

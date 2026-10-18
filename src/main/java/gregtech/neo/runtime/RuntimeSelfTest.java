@@ -2,7 +2,9 @@ package gregtech.neo.runtime;
 
 import gregtech.neo.GT6Neo;
 import gregtech.neo.block.BasicMachineBlockEntity;
+import gregtech.neo.block.BurningBoxBlock;
 import gregtech.neo.block.BurningBoxBlockEntity;
+import gregtech.neo.block.CrucibleBlock;
 import gregtech.neo.block.CrucibleBlockEntity;
 import gregtech.neo.block.GeneratorBlockEntity;
 import gregtech.neo.block.BasicCrusherBlockEntity;
@@ -13,6 +15,7 @@ import gregtech.neo.block.MachinePortBlock;
 import gregtech.neo.block.MachinePortMode;
 import gregtech.neo.block.MechanicalEnergyNetwork;
 import gregtech.neo.block.SmallCrucibleBlockEntity;
+import gregtech.neo.block.SmallCrucibleBlock;
 import gregtech.neo.block.TemperatureSensorBlockEntity;
 import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
@@ -62,6 +65,7 @@ public final class RuntimeSelfTest {
     private static BlockPos temperatureSensorPos;
     private static boolean genericCapabilityInserted;
     private static boolean burningHeatObserved;
+    private static boolean burningBoxLitObserved;
     private static boolean creativeCatalogPass;
 
     private RuntimeSelfTest() {
@@ -82,6 +86,7 @@ public final class RuntimeSelfTest {
         ticks = 0;
         genericCapabilityInserted = false;
         burningHeatObserved = false;
+        burningBoxLitObserved = false;
         creativeCatalogPass = false;
         MinecraftServer server = event.getServer();
         ServerLevel level = server.overworld();
@@ -181,7 +186,7 @@ public final class RuntimeSelfTest {
             }
             if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
                 long packetSize = 512;
-                long targetTemperature = Math.min(1900, crucible.maximumTemperature() - 100);
+                long targetTemperature = Math.min(2100, crucible.maximumTemperature() - 100);
                 long requiredHeat = Math.max(0, targetTemperature - crucible.temperature())
                     * crucible.requiredHeatPerKelvin();
                 long packets = Math.max(1, (requiredHeat + packetSize - 1) / packetSize);
@@ -189,10 +194,24 @@ public final class RuntimeSelfTest {
                     Direction.UP, false);
             }
         }
+        if (ticks == 31) {
+            ServerLevel level = event.getServer().overworld();
+            if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
+                crucible.receivePacket(
+                    new EnergyPacket(EnergyKind.KINETIC, 16, 10_000),
+                    Direction.UP,
+                    false
+                );
+            }
+        }
         if (ticks == 20) {
             ServerLevel level = event.getServer().overworld();
             if (level.getBlockEntity(cruciblePos) instanceof CrucibleBlockEntity crucible) {
                 burningHeatObserved = crucible.storedHeat() > 0 || crucible.temperature() > 293;
+            }
+            if (level.getBlockEntity(burningBoxPos) instanceof BurningBoxBlockEntity box) {
+                burningBoxLitObserved = box.isBurning()
+                    && level.getBlockState(burningBoxPos).getValue(BurningBoxBlock.LIT);
             }
         }
         if (ticks < 360) {
@@ -223,24 +242,38 @@ public final class RuntimeSelfTest {
         }
         boolean cruciblePass = false;
         boolean largeDropAbsorbed = false;
+        boolean largeFillPass = false;
         long crucibleTemperature = 0;
         if (level.getBlockEntity(cruciblePos) instanceof CrucibleBlockEntity crucible) {
             crucibleTemperature = crucible.temperature();
             largeDropAbsorbed = crucible.contents().stream()
                 .anyMatch(content -> "copper".equals(content.material()));
+            largeFillPass = crucible.fillLevel() > 0
+                && level.getBlockState(cruciblePos).getValue(CrucibleBlock.FILL)
+                    == crucible.fillLevel();
             cruciblePass = burningHeatObserved
+                && burningBoxLitObserved
+                && largeFillPass
                 && crucible.isFormed()
                 && crucibleTemperature >= 1811
                 && crucible.moltenUnits() >= GTMaterialGameplayRegistry.MATERIAL_UNIT;
         }
         boolean smallCruciblePass = false;
         boolean smallDropAbsorbed = false;
+        boolean smallSteelmakingPass = false;
+        boolean smallFillPass = false;
         long smallCrucibleTemperature = 0;
         if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
             smallCrucibleTemperature = crucible.temperature();
             smallDropAbsorbed = crucible.contents().stream()
                 .anyMatch(content -> "copper".equals(content.material()));
+            smallSteelmakingPass = crucible.contents().stream()
+                .anyMatch(content -> "steel".equals(content.material()));
+            smallFillPass = crucible.fillLevel() > 0
+                && level.getBlockState(smallCruciblePos).getValue(SmallCrucibleBlock.FILL)
+                    == crucible.fillLevel();
             smallCruciblePass = smallDropAbsorbed
+                && smallFillPass
                 && smallCrucibleTemperature >= 1811
                 && crucible.moltenUnits() >= GTMaterialGameplayRegistry.MATERIAL_UNIT;
         }
@@ -252,9 +285,9 @@ public final class RuntimeSelfTest {
             if (output.is(Items.GRAVEL) && basicPass && crankPass && genericPass
                 && genericCapabilityInserted && cruciblePass && largeDropAbsorbed
                 && smallCruciblePass && smallDropAbsorbed
-                && sensorPass && creativeCatalogPass) {
+                && smallSteelmakingPass && sensorPass && creativeCatalogPass) {
                 GT6Neo.LOGGER.info(
-                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{}",
+                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{} FILL={}/{} STEELMAKING={} BURNING_BOX_LIT={}",
                     output.getCount(),
                     basicCount,
                     crankCount,
@@ -262,11 +295,15 @@ public final class RuntimeSelfTest {
                     crucibleTemperature,
                     smallCrucibleTemperature,
                     largeDropAbsorbed,
-                    smallDropAbsorbed
+                    smallDropAbsorbed,
+                    largeFillPass,
+                    smallFillPass,
+                    smallSteelmakingPass,
+                    burningBoxLitObserved
                 );
             } else {
                 GT6Neo.LOGGER.error(
-                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SENSOR pass={} CREATIVE_CATALOG={}",
+                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} LARGE_FILL={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SMALL_FILL={} STEELMAKING={} SENSOR pass={} BURNING_BOX_LIT={} CREATIVE_CATALOG={}",
                     crusher.isFormed(),
                     output,
                     basicPass,
@@ -276,10 +313,14 @@ public final class RuntimeSelfTest {
                     cruciblePass,
                     crucibleTemperature,
                     largeDropAbsorbed,
+                    largeFillPass,
                     smallCruciblePass,
                     smallCrucibleTemperature,
                     smallDropAbsorbed,
+                    smallFillPass,
+                    smallSteelmakingPass,
                     sensorPass,
+                    burningBoxLitObserved,
                     creativeCatalogPass
                 );
             }
@@ -489,6 +530,7 @@ public final class RuntimeSelfTest {
         if (level.getBlockEntity(burningBoxPos) instanceof BurningBoxBlockEntity box) {
             box.setPart(new MachinePart(528, "Burning Boxes"));
             box.insertFuel(new ItemStack(Items.COAL, 8));
+            box.ignite();
         }
     }
 

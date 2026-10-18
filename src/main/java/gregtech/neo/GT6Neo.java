@@ -12,6 +12,7 @@ import gregtech.neo.material.GTMaterialRegistry;
 import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.recipe.GTRecipeEngine;
 import gregtech.neo.client.GTMaterialItemColors;
+import gregtech.neo.client.GTCrucibleRenderer;
 import gregtech.neo.runtime.RuntimeSelfTest;
 import gregtech.neo.runtime.ClientRuntimeSelfTest;
 import net.neoforged.bus.api.IEventBus;
@@ -40,6 +41,7 @@ public final class GT6Neo {
         if (FMLEnvironment.dist.isClient()) {
             ClientRuntimeSelfTest.install();
             GTMaterialItemColors.install(modEventBus);
+            GTCrucibleRenderer.install(modEventBus);
         }
     }
 }

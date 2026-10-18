@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import os
+import shutil
 from pathlib import Path
 
 from PIL import Image, ImageChops
@@ -55,6 +56,10 @@ def faces(
         )
 
 
+def copy_asset(relative: str, output: str) -> None:
+    shutil.copy2(SOURCE / relative, OUTPUT / output)
+
+
 def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
 
@@ -95,6 +100,15 @@ def main() -> None:
         "machines/generators/burning_solid/overlay",
         ("front", "back", "left", "right", "top", "bottom"),
         tint=(130, 130, 130),
+    )
+    for face in ("front", "back", "left", "right", "top", "bottom"):
+        copy_asset(
+            f"machines/generators/burning_solid/overlay_active/{face}.png",
+            f"burning_box_active_{face}.png",
+        )
+    copy_asset(
+        "machines/generators/burning_solid/overlay_active/front.png.mcmeta",
+        "burning_box_active_front.png.mcmeta",
     )
     faces(
         "lv_generator",
@@ -187,6 +201,8 @@ def main() -> None:
     (OUTPUT / "small_crucible_bottom.png").write_bytes(
         (OUTPUT / "small_crucible_wall.png").read_bytes()
     )
+    copy_asset("materialicons/METALLIC/molten.png", "crucible_content.png")
+    copy_asset("materialicons/METALLIC/molten.png.mcmeta", "crucible_content.png.mcmeta")
 
     print(f"Imported GT6 textures from {SOURCE} into {OUTPUT}")
 

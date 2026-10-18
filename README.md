@@ -20,6 +20,7 @@ The first playable machines are:
 - 39 source-defined material variants of the single-block **Smelting Crucible**.
 - A **Thermometer** tool and analog-redstone **Thermometer Sensor**.
 - GUI-free solid-fuel **Burning Boxes** that emit HU.
+- Ignited Burning Box animation, particles, contact damage and water extinguishing.
 
 GT6's energy families are kept separate. RU, KU, EU, and LU are not interchangeable scalar values. Converters explicitly transform one family into another and apply their own losses.
 
@@ -40,12 +41,16 @@ The port now loads a generated inventory of the legacy source at startup:
 Material items use one modern data component to store the original material and prefix instead of reviving 1.7.10 metadata. Material blocks use a block entity so the same block family can represent many materials without thousands of Java classes.
 
 The generated migration inventory is documented in [SOURCE_OF_TRUTH.md](SOURCE_OF_TRUTH.md) and produced by `tools/inventory_gt6.py`.
+The source interaction audit is documented in
+[GAMEPLAY_INTERACTIONS.md](GAMEPLAY_INTERACTIONS.md).
 
 Repeated gameplay properties are generated separately:
 
 ```sh
 python3 tools/inventory_gt6.py
 python3 tools/export_gameplay_properties.py
+python3 tools/import_gt6_assets.py
+python3 tools/generate_crucible_models.py
 ```
 
 The generators look for `../gregtech6-legacy` by default. Set
@@ -118,7 +123,7 @@ GT6_JVM_ARGS='-Dgregtech.runtimeSelfTest=true' python3 tools/run_client.py
 A successful run ends with:
 
 ```text
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1905K SMALL_CRUCIBLE=1888K
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=2006K SMALL_CRUCIBLE=2091K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true BURNING_BOX_LIT=true
 ```
 
 The runtime test requires `run-client/saves/world`. A flat test world can be generated using the vanilla 1.21.1 server jar; the copied world should be placed in that location.
@@ -292,13 +297,21 @@ The small crucible follows `MultiTileEntitySmeltery`:
 - The wall can be heated to 1.25 times its source melting point before it melts into lava.
 - The rendered block is an open 14x14 footprint with 2px walls and a hollow top.
 - Collision covers the actual walls and floor; item entities dropped into the opening are consumed.
+- Content height drives an animated, material-tinted surface in eight visual levels.
+- The surface adds collision, KU creates steelmaking oxygen, and CU removes heat.
 - HU is accepted from any side, while materials are inserted by right-clicking their item form.
 - The Thermometer prints Kelvin and the wall limit; the Thermometer Sensor reads an
   adjacent temperature provider every 10 ticks and emits a proportional 0-15 redstone signal.
 
 The large crucible also pulls material-form item entities from its 3x3 interior,
-matching the source `WD.suck` behavior. Thermometer sensors are 2px wall-mounted
-panels with directional shapes rather than full cubes.
+matching the source `WD.suck` behavior. Iron/Wrought Iron plus KU oxygen converts
+to Steel at 2046K. Its animated content surface is rendered through a block
+entity renderer. Thermometer sensors are 2px wall-mounted panels with directional
+shapes rather than full cubes.
+
+Item tooltips use English GT abbreviations and colored sections. Machine items
+show their `gregtech:machine_part` component, while material items show their
+`gregtech:material_part` component, thermal data, tool data and source line.
 
 For now, molten contents are tracked for testing purposes but cannot yet be poured,
 cast into molds, or used to trigger crucible alloy recipes.

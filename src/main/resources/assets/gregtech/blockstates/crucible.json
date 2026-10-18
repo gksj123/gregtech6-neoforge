@@ -1,6 +1,30 @@
 {
   "variants": {
-    "": {
+    "fill=0": {
+      "model": "gregtech:block/crucible"
+    },
+    "fill=1": {
+      "model": "gregtech:block/crucible"
+    },
+    "fill=2": {
+      "model": "gregtech:block/crucible"
+    },
+    "fill=3": {
+      "model": "gregtech:block/crucible"
+    },
+    "fill=4": {
+      "model": "gregtech:block/crucible"
+    },
+    "fill=5": {
+      "model": "gregtech:block/crucible"
+    },
+    "fill=6": {
+      "model": "gregtech:block/crucible"
+    },
+    "fill=7": {
+      "model": "gregtech:block/crucible"
+    },
+    "fill=8": {
       "model": "gregtech:block/crucible"
     }
   }

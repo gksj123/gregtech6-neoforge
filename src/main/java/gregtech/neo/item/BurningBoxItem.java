@@ -6,6 +6,7 @@ import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
 import gregtech.neo.registry.GTDataComponents;
 import net.minecraft.core.BlockPos;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
@@ -71,20 +72,22 @@ public final class BurningBoxItem extends BlockItem {
         if (definition == null) {
             return;
         }
-        tooltip.add(Component.translatable(
-            "block.gregtech.burning_box.source",
-            definition.line(),
-            definition.machine_class()
-        ));
-        tooltip.add(Component.translatable(
-            "block.gregtech.burning_box.category",
-            definition.category()
-        ));
-        tooltip.add(Component.translatable(
-            "block.gregtech.burning_box.heat",
-            definition.output(),
-            definition.efficiency()
-        ));
-        tooltip.add(Component.translatable("block.gregtech.burning_box.usage"));
+        GT6Tooltip.header(tooltip, "SOLID BURNING BOX");
+        GT6Tooltip.source(tooltip, definition.category(), definition.line());
+        GT6Tooltip.line(tooltip, ChatFormatting.GOLD,
+            "ENERGY: HU " + definition.output() + " x 1/t");
+        GT6Tooltip.line(tooltip, ChatFormatting.YELLOW,
+            "EFF: " + definition.efficiency() + " / 10000");
+        GT6Tooltip.line(tooltip, ChatFormatting.AQUA,
+            "FUEL: " + definition.fuel_map());
+        GT6Tooltip.line(tooltip, ChatFormatting.RED,
+            "REQ: FRONT AIR + OXYGEN // IGNITER");
+        GT6Tooltip.line(tooltip, ChatFormatting.GRAY,
+            "CTRL: FRONT insert/extract // WATER: extinguish");
+        GT6Tooltip.nbt(tooltip,
+            "gregtech:machine_part={line:" + definition.line()
+                + ",category:\"Burning Boxes\"}, kind:\"HU\", rate:" + definition.output()
+                + ", efficiency:" + definition.efficiency()
+                + ", lit:false");
     }
 }

@@ -102,9 +102,12 @@ public final class GTMaterialItemColors {
         BlockPos pos,
         int tintIndex
     ) {
-        if (tintIndex != 0 || pos == null
+        if ((tintIndex != 0 && tintIndex != 1) || pos == null
             || !(level.getBlockEntity(pos) instanceof gregtech.neo.block.SmallCrucibleBlockEntity crucible)) {
             return 0xFFFFFFFF;
+        }
+        if (tintIndex == 1) {
+            return crucible.contentColor();
         }
         GTMaterial material = GTMaterialRegistry.material(crucible.wallMaterial());
         return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());

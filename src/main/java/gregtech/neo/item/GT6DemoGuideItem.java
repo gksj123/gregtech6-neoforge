@@ -1,5 +1,6 @@
 package gregtech.neo.item;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -19,7 +20,9 @@ public final class GT6DemoGuideItem extends Item {
         "Magnifying glass / electrometer: read machine and energy details.",
         "Monkey wrench: toggle automatic input/output behavior.",
         "Burning Box: right-click fuel into it; it sends HU upward.",
+        "Ignite the Burning Box front with flint and steel; water extinguishes it.",
         "Crucible: place it above a burning box; right-click material parts into the controller.",
+        "KU with oxygen makes steelmaking air; CU cools crucible contents.",
         "Small Crucibles use 16U capacity and a 1.25 wall-temperature multiplier.",
         "Throwing material items into an open crucible adds them automatically.",
         "Thermometer Sensors are 2px wall panels and output analog redstone.",
@@ -49,7 +52,10 @@ public final class GT6DemoGuideItem extends Item {
         List<Component> tooltip,
         TooltipFlag flag
     ) {
-        tooltip.add(Component.translatable("item.gregtech.demo_guide.tooltip"));
-        tooltip.add(Component.translatable("item.gregtech.demo_guide.use"));
+        GT6Tooltip.header(tooltip, "GUI-FREE DEMO GUIDE");
+        GT6Tooltip.line(tooltip, ChatFormatting.AQUA,
+            "INFO: machines, crucibles, energy, materials and controls");
+        GT6Tooltip.line(tooltip, ChatFormatting.GREEN,
+            "CTRL: right-click to print the interaction guide");
     }
 }

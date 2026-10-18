@@ -35,6 +35,12 @@ public final class ClientRuntimeSelfTest {
         if (waitTicks < 60) {
             return;
         }
+        if (minecraft.level != null) {
+            opened = true;
+            if (minecraft.screen != null) {
+                minecraft.setScreen(null);
+            }
+        }
         if (minecraft.screen instanceof TitleScreen) {
             opened = true;
             GT6Neo.LOGGER.info("GT6 runtime self-test: opening save 'world'");
