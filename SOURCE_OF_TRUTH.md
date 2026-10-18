@@ -4,7 +4,8 @@ The port must not silently substitute GregTech 5, GTCEu, or another modern GregT
 
 ## Required precedence
 
-1. The checked-out GT6 6.17.06 source and assets in this repository.
+1. The checked-out GT6 6.17.06 source and assets in the sibling
+   `../gregtech6-legacy` checkout.
 2. The official GT6 site, for explanatory material that agrees with the source.
 3. FTB Wiki, for navigation and cross-checking.
 4. MCMod, only as a content index.
@@ -36,6 +37,9 @@ Run:
 ```sh
 python3 tools/inventory_gt6.py
 ```
+
+The default legacy-source path is `../gregtech6-legacy`. Override it with
+`GT6_LEGACY_HOME` if the legacy checkout is elsewhere.
 
 Generated files live in `migration/`:
 

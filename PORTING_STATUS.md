@@ -32,30 +32,28 @@
 - Automated material heat/tool extraction with confidence reporting
 - Automated machine hardness, resistance, block sound, and event-sound extraction
 - Source-shaped 3x3x3 Large Crucible structure
+- 39 source-defined single-block Smelting Crucible material variants
 - GUI-free solid-fuel Burning Boxes with source HU output and efficiency
 - Density-derived thermal mass and material melting/boiling behavior
 - Environmental cooling and crucible wall temperature limits
-- Six source-oriented creative inventory tabs covering all current content
+- GUI-free thermometer readings and analog-redstone Thermometer Sensor
+- Seven source-oriented creative inventory tabs covering all current content
 - All-material primary-form and material-block creative catalogs
 - In-game GUI-free demo guide item and detailed source/material tooltips
 
 ## Acceptance Evidence
 
 ```text
-Loaded 1302 recipes
+GT6 creative catalog: demo=29 materials=10368 blocks=12232 machines=251 multiblocks=35 tools=16 small_crucibles=41 small_crucible_heat_data=39
 GT6 runtime self-test: large RU structure at BlockPos{x=0, y=40, z=2}, EU/KU chain at BlockPos{x=10, y=40, z=0}, RU/KU chain crank at BlockPos{x=14, y=40, z=-3}
 GT6 runtime self-test: controller formed=true
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1906K
-GT6 creative catalog: demo=26 materials=10368 blocks=12232 machines=251 multiblocks=34 tools=15
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1905K SMALL_CRUCIBLE=1888K
 ```
-
-No mod-specific errors appeared in `run-client/logs/latest.log`.
 
 Material bootstrap evidence:
 
 ```text
 Loaded GT6 source inventory: 1112 materials, 326 material prefixes
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1906K
 ```
 
 ## Not Yet Implemented

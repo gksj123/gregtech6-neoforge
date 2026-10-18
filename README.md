@@ -1,6 +1,8 @@
 # GregTech 6: NeoForge 1.21.1
 
-This directory is the modern port workspace for GregTech 6. The legacy 1.7.10 source remains unmodified in the repository root so it can continue to serve as the gameplay reference.
+This directory is the modern NeoForge 1.21.1 port workspace for GregTech 6. The
+legacy 1.7.10 source is kept in the separate sibling directory
+`../gregtech6-legacy` and remains the gameplay reference.
 
 ## Current Status
 
@@ -46,6 +48,10 @@ python3 tools/inventory_gt6.py
 python3 tools/export_gameplay_properties.py
 ```
 
+The generators look for `../gregtech6-legacy` by default. Set
+`GT6_LEGACY_HOME=/absolute/path/to/gregtech6-legacy` when the legacy checkout
+is stored somewhere else.
+
 The gameplay extractor currently resolves:
 
 - 492 of 1115 materials to explicit/constructor/inherited heat values.
@@ -74,14 +80,14 @@ The build intentionally compiles against the supplied local Minecraft installati
 ## Build
 
 ```sh
-cd neo21
+cd gregtech6-neoforge
 ./gradlew build
 ```
 
 The main artifact is:
 
 ```text
-neo21/build/libs/gregtech-neoforge-1.21.1-6.17.06-alpha.1.jar
+gregtech6-neoforge/build/libs/gregtech-neoforge-1.21.1-6.17.06-alpha.1.jar
 ```
 
 If the Minecraft installation is somewhere else, change `minecraft_home` in `gradle.properties`.

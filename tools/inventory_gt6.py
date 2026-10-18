@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import ast
 import json
+import os
 import re
 import subprocess
 from collections import Counter
@@ -12,7 +13,9 @@ from pathlib import Path
 
 
 PORT = Path(__file__).resolve().parents[1]
-REPO = PORT.parent
+REPO = Path(
+    os.environ.get("GT6_LEGACY_HOME", PORT.parent / "gregtech6-legacy")
+).expanduser().resolve()
 SOURCE = REPO / "src/main/java"
 RESOURCES = REPO / "src/main/resources"
 OUTPUT = PORT / "migration"
