@@ -1,5 +1,7 @@
 package gregtech.neo.block;
 
+import gregtech.neo.casting.GTMoldRegistry;
+import gregtech.neo.casting.MoltenMaterialSource;
 import gregtech.neo.core.EnergyBuffer;
 import gregtech.neo.core.EnergyKind;
 import gregtech.neo.core.EnergyPacket;
@@ -12,6 +14,7 @@ import gregtech.neo.material.MaterialPart;
 import gregtech.neo.registry.GTBlockEntities;
 import gregtech.neo.registry.GTBlocks;
 import gregtech.neo.registry.GTDataComponents;
+import gregtech.neo.recipe.GTAlloyRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -37,7 +40,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public final class CrucibleBlockEntity extends BlockEntity implements EnergyReceiver, TemperatureProvider {
+public final class CrucibleBlockEntity extends BlockEntity
+    implements EnergyReceiver, TemperatureProvider, MoltenMaterialSource {
     public static final long ENVIRONMENT_TEMPERATURE = 293L;
     public static final long MAX_AMOUNT = 16L * 3L * 3L * 3L
         * GTMaterialGameplayRegistry.MATERIAL_UNIT;
@@ -77,7 +81,7 @@ public final class CrucibleBlockEntity extends BlockEntity implements EnergyRece
             damageEntitiesNearContent();
         }
         absorbNearbyItems();
-        processOxygenSteelmaking();
+        processAlloying();
         collectRainwater();
         syncVisualState();
         applyHeat();
@@ -339,28 +343,45 @@ public final class CrucibleBlockEntity extends BlockEntity implements EnergyRece
         return total;
     }
 
-    private void processOxygenSteelmaking() {
-        if (oxygenUnits <= 0 || temperature < 2046) {
-            return;
-        }
-        for (Content content : contents) {
-            String target = switch (content.material) {
-                case "iron", "wroughtiron" -> "steel";
-                case "meteoriciron" -> "meteoricsteel";
-                default -> "";
-            };
-            if (target.isBlank() || content.units <= 0) {
-                continue;
-            }
-            long converted = Math.min(content.units, oxygenUnits);
-            if (converted <= 0) {
-                continue;
-            }
-            content.units -= converted;
-            oxygenUnits -= converted;
-            addContent(target, converted);
+    private void processAlloying() {
+        GTAlloyRegistry.Result result = GTAlloyRegistry.process(
+            new GTAlloyRegistry.Contents() {
+                @Override
+                public long amount(String material) {
+                    return contents.stream()
+                        .filter(content -> content.material.equals(material))
+                        .mapToLong(content -> content.units)
+                        .sum();
+                }
+
+                @Override
+                public boolean consume(String material, long units) {
+                    for (Content content : contents) {
+                        if (!content.material.equals(material)) {
+                            continue;
+                        }
+                        if (content.units < units) {
+                            return false;
+                        }
+                        content.units -= units;
+                        contents.removeIf(entry -> entry.units <= 0);
+                        return true;
+                    }
+                    return false;
+                }
+
+                @Override
+                public void add(String material, long units) {
+                    addContent(material, units);
+                }
+            },
+            temperature,
+            oxygenUnits,
+            MAX_AMOUNT - totalUnits()
+        );
+        if (result.converted()) {
+            oxygenUnits = Math.max(0, oxygenUnits - result.oxygenUsed());
             setChanged();
-            break;
         }
     }
 
@@ -498,6 +519,40 @@ public final class CrucibleBlockEntity extends BlockEntity implements EnergyRece
             }
         }
         return true;
+    }
+
+    @Override
+    public long castingTemperature() {
+        return temperature;
+    }
+
+    @Override
+    public boolean pourInto(MoldBlockEntity mold) {
+        if (mold == null || !mold.canAccept(mold.shapeMask())) {
+            return false;
+        }
+        long required = mold.requiredUnits();
+        if (required <= 0) {
+            return false;
+        }
+        for (Content content : contents) {
+            GTMaterialGameplayRegistry.MaterialGameplay gameplay =
+                GTMaterialGameplayRegistry.material(content.material);
+            if (gameplay == null || content.units < required
+                || temperature < gameplay.meltingKelvin()
+                || !mold.canAcceptTemperature(temperature)
+                || !mold.canAcceptMaterial(content.material)) {
+                continue;
+            }
+            if (!mold.fillMold(content.material, required, temperature)) {
+                continue;
+            }
+            content.units -= required;
+            contents.removeIf(entry -> entry.units <= 0);
+            setChanged();
+            return true;
+        }
+        return false;
     }
 
     public boolean isPart(BlockPos pos) {

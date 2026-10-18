@@ -26,6 +26,14 @@ public final class GTBlockInfoItem extends BlockItem {
     }
 
     @Override
+    public Component getName(ItemStack stack) {
+        // The source registration this block ports is "Large Steel Crucible".
+        return getBlock() instanceof CrucibleBlock
+            ? Component.literal("Large Steel Crucible")
+            : super.getName(stack);
+    }
+
+    @Override
     public void appendHoverText(
         ItemStack stack,
         TooltipContext context,
@@ -45,12 +53,7 @@ public final class GTBlockInfoItem extends BlockItem {
             GT6Tooltip.line(tooltip, ChatFormatting.GRAY, "CTRL: insert item // empty hand: output");
             GT6Tooltip.nbt(tooltip, "kind:\"KU\", input:9, output:9");
         } else if (getBlock() instanceof CrucibleBlock) {
-            GT6Tooltip.header(tooltip, "LARGE CRUCIBLE");
-            GT6Tooltip.line(tooltip, ChatFormatting.AQUA, "STRUCT: 3x3x3 hollow wall ring");
-            GT6Tooltip.line(tooltip, ChatFormatting.GOLD, "ENERGY: HU IN // KU > AIR");
-            GT6Tooltip.line(tooltip, ChatFormatting.RED, "CAP: 432U // WALL LIMIT: MP x1.10");
-            GT6Tooltip.line(tooltip, ChatFormatting.GRAY, "DROP: material entities into center");
-            GT6Tooltip.nbt(tooltip, "kind:\"HEAT\", capacity:\"432U\", steelmaking:true");
+            GT6CrucibleTooltips.appendLargeCrucible(tooltip);
         } else if (getBlock() instanceof TemperatureSensorBlock) {
             GT6Tooltip.header(tooltip, "THERMOMETER SENSOR");
             GT6Tooltip.line(tooltip, ChatFormatting.AQUA, "SHAPE: 2px wall panel // 6-way facing");

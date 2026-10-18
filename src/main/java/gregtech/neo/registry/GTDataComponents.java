@@ -1,6 +1,7 @@
 package gregtech.neo.registry;
 
 import gregtech.neo.GT6Neo;
+import gregtech.neo.casting.CastingPart;
 import gregtech.neo.material.MaterialPart;
 import gregtech.neo.machine.MachinePart;
 import net.minecraft.core.component.DataComponentType;
@@ -28,5 +29,13 @@ public final class GTDataComponents {
             builder -> builder
                 .persistent(MachinePart.CODEC)
                 .networkSynchronized(MachinePart.STREAM_CODEC)
+        );
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<CastingPart>> CASTING_PART =
+        DATA_COMPONENTS.registerComponentType(
+            "casting_part",
+            builder -> builder
+                .persistent(CastingPart.CODEC)
+                .networkSynchronized(CastingPart.STREAM_CODEC)
         );
 }

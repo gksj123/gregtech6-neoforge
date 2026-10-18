@@ -11,8 +11,11 @@ import gregtech.neo.material.GTMaterialGameplayRegistry;
 import gregtech.neo.material.GTMaterialRegistry;
 import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.recipe.GTRecipeEngine;
+import gregtech.neo.recipe.GTAlloyRegistry;
+import gregtech.neo.casting.GTMoldRegistry;
 import gregtech.neo.client.GTMaterialItemColors;
 import gregtech.neo.client.GTCrucibleRenderer;
+import gregtech.neo.client.GTCastingRenderer;
 import gregtech.neo.runtime.RuntimeSelfTest;
 import gregtech.neo.runtime.ClientRuntimeSelfTest;
 import net.neoforged.bus.api.IEventBus;
@@ -31,6 +34,8 @@ public final class GT6Neo {
         GTMaterialGameplayRegistry.bootstrap();
         GTMachineRegistry.bootstrap();
         GTRecipeEngine.bootstrap();
+        GTAlloyRegistry.bootstrap();
+        GTMoldRegistry.bootstrap();
         GTDataComponents.DATA_COMPONENTS.register(modEventBus);
         GTBlocks.BLOCKS.register(modEventBus);
         GTItems.ITEMS.register(modEventBus);
@@ -42,6 +47,7 @@ public final class GT6Neo {
             ClientRuntimeSelfTest.install();
             GTMaterialItemColors.install(modEventBus);
             GTCrucibleRenderer.install(modEventBus);
+            GTCastingRenderer.install(modEventBus);
         }
     }
 }

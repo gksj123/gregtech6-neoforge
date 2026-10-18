@@ -1,0 +1,4088 @@
+{
+  "format": 1,
+  "source_repository": "gregtech6-legacy",
+  "source_commit": "3703e40308c8c030763fd6297dea8b210d2a77b1",
+  "source_file": "java/gregapi/data/MT.java",
+  "recipe_count": 137,
+  "resolved_count": 135,
+  "unresolved_count": 2,
+  "recipes": [
+    {
+      "id": "alloy-0001",
+      "output_expression": "WroughtIron",
+      "output_material": "wroughtiron",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Fe",
+          "material": "iron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1655,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0002",
+      "output_expression": "AnnealedCopper",
+      "output_material": "annealedcopper",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1656,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0003",
+      "output_expression": "Celenegil",
+      "output_material": "celenegil",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Pt",
+          "material": "platinum",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Orichalcum",
+          "material": "orichalcum",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1682,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0004",
+      "output_expression": "ShadowSteel",
+      "output_material": "shadowsteel",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "ShadowIron",
+          "material": "shadowiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Lemurite",
+          "material": "lemurite",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1683,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0005",
+      "output_expression": "Inolashite",
+      "output_material": "inolashite",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Alduorite",
+          "material": "alduorite",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ceruclase",
+          "material": "ceruclase",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1684,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0006",
+      "output_expression": "Haderoth",
+      "output_material": "haderoth",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Mithril",
+          "material": "mithril",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Rubracium",
+          "material": "rubracium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1685,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0007",
+      "output_expression": "Desichalkos",
+      "output_material": "desichalkos",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Eximite",
+          "material": "eximite",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Meutoite",
+          "material": "meutoite",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1686,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0008",
+      "output_expression": "Tartarite",
+      "output_material": "tartarite",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Adamantine",
+          "material": "adamantine",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Atl",
+          "material": "atlarus",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1687,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0009",
+      "output_expression": "Amordrine",
+      "output_material": "amordrine",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Prometheum",
+          "material": "prometheum",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Kalendrite",
+          "material": "kalendrite",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1688,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0010",
+      "output_expression": "Electrum",
+      "output_material": "electrum",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1691,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0011",
+      "output_expression": "SterlingSilver",
+      "output_material": "sterlingsilver",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1692,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0012",
+      "output_expression": "RoseGold",
+      "output_material": "rosegold",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1693,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0013",
+      "output_expression": "Angmallen",
+      "output_material": "angmallen",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1694,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0014",
+      "output_expression": "InductiveAlloy",
+      "output_material": "goldinductive",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1695,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0015",
+      "output_expression": "Cd_In_Ag_Alloy",
+      "output_material": "cdinagalloy",
+      "common_divider": 3,
+      "components": [
+        {
+          "expression": "Cd",
+          "material": "cadmium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "In",
+          "material": "indium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1696,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0016",
+      "output_expression": "Brass",
+      "output_material": "brass",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Zn",
+          "material": "zinc",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1700,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0017",
+      "output_expression": "CobaltBrass",
+      "output_material": "cobaltbrass",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "Brass",
+          "material": "brass",
+          "amount_expression": "7*U",
+          "amount_raw": 4540536000,
+          "amount_units": 7
+        },
+        {
+          "expression": "Al",
+          "material": "aluminium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Co",
+          "material": "cobalt",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1701,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0018",
+      "output_expression": "Bronze",
+      "output_material": "bronze",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1705,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0019",
+      "output_expression": "BlackBronze",
+      "output_material": "blackbronze",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Electrum",
+          "material": "electrum",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1706,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0020",
+      "output_expression": "BismuthBronze",
+      "output_material": "bismuthbronze",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Bi",
+          "material": "bismuth",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Brass",
+          "material": "brass",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1707,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0021",
+      "output_expression": "Hepatizon",
+      "output_material": "hepatizon",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Bronze",
+          "material": "bronze",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1708,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0022",
+      "output_expression": "ArsenicCopper",
+      "output_material": "arseniccopper",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "As",
+          "material": "arsenic",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1709,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0023",
+      "output_expression": "ArsenicBronze",
+      "output_material": "arsenicbronze",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "As",
+          "material": "arsenic",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Bronze",
+          "material": "bronze",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1710,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0024",
+      "output_expression": "BlackSteel",
+      "output_material": "blacksteel",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Ni",
+          "material": "nickel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "BlackBronze",
+          "material": "blackbronze",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1714,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0025",
+      "output_expression": "BlueSteel",
+      "output_material": "bluesteel",
+      "common_divider": 8,
+      "components": [
+        {
+          "expression": "SterlingSilver",
+          "material": "sterlingsilver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "BismuthBronze",
+          "material": "bismuthbronze",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "BlackSteel",
+          "material": "blacksteel",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1715,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0026",
+      "output_expression": "RedSteel",
+      "output_material": "redsteel",
+      "common_divider": 8,
+      "components": [
+        {
+          "expression": "RoseGold",
+          "material": "rosegold",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Brass",
+          "material": "brass",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "BlackSteel",
+          "material": "blacksteel",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1716,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0027",
+      "output_expression": "VanadiumSteel",
+      "output_material": "vanadiumsteel",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        },
+        {
+          "expression": "V",
+          "material": "vanadium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1718,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0028",
+      "output_expression": "TungstenSteel",
+      "output_material": "tungstensteel",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "W",
+          "material": "tungsten",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1719,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0029",
+      "output_expression": "TungstenCarbide",
+      "output_material": "tungstencarbide",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "W",
+          "material": "tungsten",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1720,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0030",
+      "output_expression": "TitaniumGold",
+      "output_material": "titaniumgold",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Ti",
+          "material": "titanium",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1733,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0031",
+      "output_expression": "Ta4HfC5",
+      "output_material": "tantalumhafniumcarbide",
+      "common_divider": 10,
+      "components": [
+        {
+          "expression": "Ta",
+          "material": "tantalum",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        },
+        {
+          "expression": "Hf",
+          "material": "hafnium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1734,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0032",
+      "output_expression": "MeteoricBlackSteel",
+      "output_material": "meteoricblacksteel",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Ni",
+          "material": "nickel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "BlackBronze",
+          "material": "blackbronze",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "MeteoricSteel",
+          "material": "meteoricsteel",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1739,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0033",
+      "output_expression": "MeteoricBlueSteel",
+      "output_material": "meteoricbluesteel",
+      "common_divider": 8,
+      "components": [
+        {
+          "expression": "SterlingSilver",
+          "material": "sterlingsilver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "BismuthBronze",
+          "material": "bismuthbronze",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "MeteoricSteel",
+          "material": "meteoricsteel",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "MeteoricBlackSteel",
+          "material": "meteoricblacksteel",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1740,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0034",
+      "output_expression": "MeteoricRedSteel",
+      "output_material": "meteoricredsteel",
+      "common_divider": 8,
+      "components": [
+        {
+          "expression": "RoseGold",
+          "material": "rosegold",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Brass",
+          "material": "brass",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "MeteoricSteel",
+          "material": "meteoricsteel",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "MeteoricBlackSteel",
+          "material": "meteoricblacksteel",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1741,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0035",
+      "output_expression": "RedAlloy",
+      "output_material": "redalloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1744,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0036",
+      "output_expression": "BlueAlloy",
+      "output_material": "bluealloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Nikolite",
+          "material": "nikolite",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1745,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0037",
+      "output_expression": "PurpleAlloy",
+      "output_material": "purplealloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "RedAlloy",
+          "material": "redalloy",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "BlueAlloy",
+          "material": "bluealloy",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1746,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0038",
+      "output_expression": "RedstoneAlloy",
+      "output_material": "redstonealloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Si",
+          "material": "silicon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1748,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0039",
+      "output_expression": "NikolineAlloy",
+      "output_material": "nikolinealloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Si",
+          "material": "silicon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Nikolite",
+          "material": "nikolite",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1749,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0040",
+      "output_expression": "ElectrotineAlloy",
+      "output_material": "electrotinealloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Nikolite",
+          "material": "nikolite",
+          "amount_expression": "8*U",
+          "amount_raw": 5189184000,
+          "amount_units": 8
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1750,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0041",
+      "output_expression": "ElectrumFlux",
+      "output_material": "electrumflux",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Electrum",
+          "material": "electrum",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1751,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0042",
+      "output_expression": "ConductiveIron",
+      "output_material": "conductiveiron",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1752,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0043",
+      "output_expression": "EnergeticSilver",
+      "output_material": "energeticsilver",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Glowstone",
+          "material": "glowstone",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1753,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0044",
+      "output_expression": "Invar",
+      "output_material": "invar",
+      "common_divider": 3,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Ni",
+          "material": "nickel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1754,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0045",
+      "output_expression": "Constantan",
+      "output_material": "constantan",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ni",
+          "material": "nickel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1755,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0046",
+      "output_expression": "Nichrome",
+      "output_material": "nichrome",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Ni",
+          "material": "nickel",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        },
+        {
+          "expression": "Cr",
+          "material": "chromium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1756,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0047",
+      "output_expression": "Kanthal",
+      "output_material": "kanthal",
+      "common_divider": 3,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Al",
+          "material": "aluminium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Cr",
+          "material": "chromium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1757,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0048",
+      "output_expression": "Magnalium",
+      "output_material": "magnalium",
+      "common_divider": 3,
+      "components": [
+        {
+          "expression": "Mg",
+          "material": "magnesium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Al",
+          "material": "aluminium",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1758,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0049",
+      "output_expression": "StainlessSteel",
+      "output_material": "stainlesssteel",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        },
+        {
+          "expression": "Invar",
+          "material": "invar",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Cr",
+          "material": "chromium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Mn",
+          "material": "manganese",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1759,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0050",
+      "output_expression": "Ultimet",
+      "output_material": "ultimet",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "Co",
+          "material": "cobalt",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Ni",
+          "material": "nickel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Cr",
+          "material": "chromium",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Mo",
+          "material": "molybdenum",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1760,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0051",
+      "output_expression": "TinAlloy",
+      "output_material": "tinalloy",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1761,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0052",
+      "output_expression": "BatteryAlloy",
+      "output_material": "batteryalloy",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Pb",
+          "material": "lead",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        },
+        {
+          "expression": "Sb",
+          "material": "antimony",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1762,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0053",
+      "output_expression": "SolderingAlloy",
+      "output_material": "solderingalloy",
+      "common_divider": 10,
+      "components": [
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "9*U",
+          "amount_raw": 5837832000,
+          "amount_units": 9
+        },
+        {
+          "expression": "Sb",
+          "material": "antimony",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1763,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0054",
+      "output_expression": "IronWood",
+      "output_material": "ironwood",
+      "common_divider": 18,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "8*U",
+          "amount_raw": 5189184000,
+          "amount_units": 8
+        },
+        {
+          "expression": "LiveRoot",
+          "material": "liveroot",
+          "amount_expression": "9*U",
+          "amount_raw": 5837832000,
+          "amount_units": 9
+        },
+        {
+          "expression": "Angmallen",
+          "material": "angmallen",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1764,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0055",
+      "output_expression": "Osmiridium",
+      "output_material": "osmiridium",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Os",
+          "material": "osmiumelemental",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ir",
+          "material": "iridium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1777,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0056",
+      "output_expression": "VanadiumGallium",
+      "output_material": "vanadiumgallium",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "V",
+          "material": "vanadium",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Ga",
+          "material": "gallium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1780,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0057",
+      "output_expression": "NiobiumTitanium",
+      "output_material": "niobiumtitanium",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Nb",
+          "material": "niobium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ti",
+          "material": "titanium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1783,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0058",
+      "output_expression": "AluminiumBrass",
+      "output_material": "aluminiumbrass",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Al",
+          "material": "aluminium",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1784,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0059",
+      "output_expression": "Alumite",
+      "output_material": "alumite",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "Al2O3",
+          "material": "alumina",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Obsidian",
+          "material": "obsidian",
+          "amount_expression": "18*U",
+          "amount_raw": 11675664000,
+          "amount_units": 18
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1786,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0060",
+      "output_expression": "Manyullyn",
+      "output_material": "manyullyn",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Co",
+          "material": "cobalt",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ardite",
+          "material": "ardite",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1787,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0061",
+      "output_expression": "VibraniumSteel",
+      "output_material": "vibraniumsteel",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Vb",
+          "material": "vibranium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1788,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0062",
+      "output_expression": "VibraniumSilver",
+      "output_material": "vibraniumsilver",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Vb",
+          "material": "vibranium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1789,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0063",
+      "output_expression": "Vibramantium",
+      "output_material": "vibramantium",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Vb",
+          "material": "vibranium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ad",
+          "material": "adamantium",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1790,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0064",
+      "output_expression": "Signalum",
+      "output_material": "signalum",
+      "common_divider": 8,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "RedAlloy",
+          "material": "redalloy",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1791,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0065",
+      "output_expression": "Lumium",
+      "output_material": "lumium",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Glowstone",
+          "material": "glowstone",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1792,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0066",
+      "output_expression": "EnderiumBase",
+      "output_material": "enderiumbase",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Pt",
+          "material": "platinum",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1793,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0067",
+      "output_expression": "Enderium",
+      "output_material": "enderium",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "EnderiumBase",
+          "material": "enderiumbase",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "EnderPearl",
+          "material": "enderpearl",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1794,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0068",
+      "output_expression": "ObsidianSteel",
+      "output_material": "obsidiansteel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Obsidian",
+          "material": "obsidian",
+          "amount_expression": "9*U",
+          "amount_raw": 5837832000,
+          "amount_units": 9
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1805,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0069",
+      "output_expression": "PulsatingIron",
+      "output_material": "pulsatingiron",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "EnderPearl",
+          "material": "enderpearl",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1806,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0070",
+      "output_expression": "EnergeticAlloy",
+      "output_material": "energeticalloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "InductiveAlloy",
+          "material": "goldinductive",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Glowstone",
+          "material": "glowstone",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1807,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0071",
+      "output_expression": "VibrantAlloy",
+      "output_material": "vibrantalloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "EnergeticAlloy",
+          "material": "energeticalloy",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "EnderPearl",
+          "material": "enderpearl",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1808,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0072",
+      "output_expression": "ElectricalSteel",
+      "output_material": "electricalsteel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Si",
+          "material": "silicon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1809,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0073",
+      "output_expression": "Soularium",
+      "output_material": "soularium",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "SoulSand",
+          "material": "soulsand",
+          "amount_expression": "9*U",
+          "amount_raw": 5837832000,
+          "amount_units": 9
+        },
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1810,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0074",
+      "output_expression": "CrudeSteel",
+      "output_material": "claycompound",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Stone",
+          "material": "stone",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Ceramic",
+          "material": "ceramic",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1811,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0075",
+      "output_expression": "EndSteel",
+      "output_material": "endsteel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Endstone",
+          "material": "endstone",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "ObsidianSteel",
+          "material": "obsidiansteel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Obsidian",
+          "material": "obsidian",
+          "amount_expression": "9*U",
+          "amount_raw": 5837832000,
+          "amount_units": 9
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1812,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0076",
+      "output_expression": "MelodicAlloy",
+      "output_material": "melodicalloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "EndSteel",
+          "material": "endsteel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "EnderEye",
+          "material": "endereye",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1813,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0077",
+      "output_expression": "StellarAlloy",
+      "output_material": "stellaralloy",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "MelodicAlloy",
+          "material": "melodicalloy",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "NetherStar",
+          "material": "netherstar",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Clay",
+          "material": "clay",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1814,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0078",
+      "output_expression": "VividAlloy",
+      "output_material": "vividalloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "EnergeticSilver",
+          "material": "energeticsilver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "EnderPearl",
+          "material": "enderpearl",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1815,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0079",
+      "output_expression": "SpectreIron",
+      "output_material": "spectreiron",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ectoplasm",
+          "material": "ectoplasm",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1819,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0080",
+      "output_expression": "Netherite",
+      "output_material": "netherite",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        },
+        {
+          "expression": "AncientDebris",
+          "material": "ancientdebris",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1833,
+      "source_method": "setAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0081",
+      "output_expression": "Desh",
+      "output_material": "desh",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "B",
+          "material": "boron",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "La",
+          "material": "lanthanium",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Nd",
+          "material": "neodymium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Nb",
+          "material": "niobium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Co",
+          "material": "cobalt",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ce",
+          "material": "cerium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Li",
+          "material": "lithium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1838,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0082",
+      "output_expression": "DuraniumAlloy",
+      "output_material": "duranium",
+      "common_divider": 8,
+      "components": [
+        {
+          "expression": "Dn",
+          "material": "duraniumelemental",
+          "amount_expression": "7*U",
+          "amount_raw": 4540536000,
+          "amount_units": 7
+        },
+        {
+          "expression": "Mg",
+          "material": "magnesium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1840,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0083",
+      "output_expression": "TritaniumAlloy",
+      "output_material": "tritanium",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Tn",
+          "material": "tritaniumelemental",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Dn",
+          "material": "duraniumelemental",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1841,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0084",
+      "output_expression": "HSSG",
+      "output_material": "hssg",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "TungstenSteel",
+          "material": "tungstensteel",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Cr",
+          "material": "chromium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Mo",
+          "material": "molybdenum",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "V",
+          "material": "vanadium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1853,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0085",
+      "output_expression": "HSSE",
+      "output_material": "hsse",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "HSSG",
+          "material": "hssg",
+          "amount_expression": "6*U",
+          "amount_raw": 3891888000,
+          "amount_units": 6
+        },
+        {
+          "expression": "Co",
+          "material": "cobalt",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Mn",
+          "material": "manganese",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Si",
+          "material": "silicon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1854,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0086",
+      "output_expression": "HSSS",
+      "output_material": "hsss",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "HSSG",
+          "material": "hssg",
+          "amount_expression": "6*U",
+          "amount_raw": 3891888000,
+          "amount_units": 6
+        },
+        {
+          "expression": "Osmiridium",
+          "material": "osmiridium",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Ir",
+          "material": "iridium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1855,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0087",
+      "output_expression": "Trinaquadalloy",
+      "output_material": "trinaquadalloy",
+      "common_divider": 9,
+      "components": [
+        {
+          "expression": "Ke",
+          "material": "trinium",
+          "amount_expression": "6*U",
+          "amount_raw": 3891888000,
+          "amount_units": 6
+        },
+        {
+          "expression": "Nq",
+          "material": "naquadah",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1871,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0088",
+      "output_expression": "Trinitanium",
+      "output_material": "trinitanium",
+      "common_divider": 3,
+      "components": [
+        {
+          "expression": "Ke",
+          "material": "trinium",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Ti",
+          "material": "titanium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1872,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0089",
+      "output_expression": "Iritanium",
+      "output_material": "titaniumiridium",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Ir",
+          "material": "iridium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ti",
+          "material": "titanium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1875,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0090",
+      "output_expression": "TitaniumAluminide",
+      "output_material": "titaniumaluminide",
+      "common_divider": 3,
+      "components": [
+        {
+          "expression": "Ti",
+          "material": "titanium",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Al",
+          "material": "aluminium",
+          "amount_expression": "7*U",
+          "amount_raw": 4540536000,
+          "amount_units": 7
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 1876,
+      "source_method": "uumAloy",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0091",
+      "output_expression": "Fe",
+      "output_material": "iron",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Fe2O3",
+          "material": "hematite",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "CaCO3",
+          "material": "calcite",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3333,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0092",
+      "output_expression": "Fe",
+      "output_material": "iron",
+      "common_divider": 6,
+      "components": [
+        {
+          "expression": "OREMATS.Magnetite",
+          "material": "magnetite",
+          "amount_expression": "14*U",
+          "amount_raw": 9081072000,
+          "amount_units": 14
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3334,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0093",
+      "output_expression": "Fe",
+      "output_material": "iron",
+      "common_divider": 6,
+      "components": [
+        {
+          "expression": "OREMATS.BasalticMineralSand",
+          "material": "basalticmineralsand",
+          "amount_expression": "14*U",
+          "amount_raw": 9081072000,
+          "amount_units": 14
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3335,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0094",
+      "output_expression": "Fe",
+      "output_material": "iron",
+      "common_divider": 6,
+      "components": [
+        {
+          "expression": "OREMATS.GraniticMineralSand",
+          "material": "graniticmineralsand",
+          "amount_expression": "14*U",
+          "amount_raw": 9081072000,
+          "amount_units": 14
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3336,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0095",
+      "output_expression": "Fe",
+      "output_material": "iron",
+      "common_divider": 6,
+      "components": [
+        {
+          "expression": "OREMATS.Ferrovanadium",
+          "material": "vanadiummagnetite",
+          "amount_expression": "28*U",
+          "amount_raw": 18162144000,
+          "amount_units": 28
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3337,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0096",
+      "output_expression": "Si",
+      "output_material": "silicon",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "SiO2",
+          "material": "silicondioxide",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "C",
+          "material": "carbon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3339,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0097",
+      "output_expression": "Fe",
+      "output_material": "iron",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "ShadowIron",
+          "material": "shadowiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ignatius",
+          "material": "ignatius",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3344,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0098",
+      "output_expression": "Fe",
+      "output_material": "iron",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "DeepIron",
+          "material": "deepiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Prometheum",
+          "material": "prometheum",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3345,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0099",
+      "output_expression": "BlackSteel",
+      "output_material": "blacksteel",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "DeepIron",
+          "material": "deepiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Infuscolium",
+          "material": "infuscolium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3346,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0100",
+      "output_expression": "Steel",
+      "output_material": "steel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Air",
+          "material": "air",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3348,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0101",
+      "output_expression": "MeteoricSteel",
+      "output_material": "meteoricsteel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "MeteoricIron",
+          "material": "meteoriciron",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Air",
+          "material": "air",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3349,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0102",
+      "output_expression": "EnergeticAlloy",
+      "output_material": "energeticalloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "InductiveAlloy",
+          "material": "goldinductive",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "tMat",
+          "material": "",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3352,
+      "source_method": "addAlloyingRecipe",
+      "status": "unresolved",
+      "unresolved_reason": "unresolved material/amount expressions: tMat"
+    },
+    {
+      "id": "alloy-0103",
+      "output_expression": "Lumium",
+      "output_material": "lumium",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "tMat",
+          "material": "",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3353,
+      "source_method": "addAlloyingRecipe",
+      "status": "unresolved",
+      "unresolved_reason": "unresolved material/amount expressions: tMat"
+    },
+    {
+      "id": "alloy-0104",
+      "output_expression": "ElectrumFlux",
+      "output_material": "electrumflux",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "InductiveAlloy",
+          "material": "goldinductive",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3355,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0105",
+      "output_expression": "Ultimet",
+      "output_material": "ultimet",
+      "common_divider": 36,
+      "components": [
+        {
+          "expression": "Co",
+          "material": "cobalt",
+          "amount_expression": "20*U",
+          "amount_raw": 12972960000,
+          "amount_units": 20
+        },
+        {
+          "expression": "Nichrome",
+          "material": "nichrome",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Cr",
+          "material": "chromium",
+          "amount_expression": "7*U",
+          "amount_raw": 4540536000,
+          "amount_units": 7
+        },
+        {
+          "expression": "Mo",
+          "material": "molybdenum",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3356,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0106",
+      "output_expression": "StainlessSteel",
+      "output_material": "stainlesssteel",
+      "common_divider": 36,
+      "components": [
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "24*U",
+          "amount_raw": 15567552000,
+          "amount_units": 24
+        },
+        {
+          "expression": "Nichrome",
+          "material": "nichrome",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Cr",
+          "material": "chromium",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Mn",
+          "material": "manganese",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3357,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0107",
+      "output_expression": "TungstenSteel",
+      "output_material": "tungstensteel",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "MeteoricSteel",
+          "material": "meteoricsteel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "W",
+          "material": "tungsten",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3358,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0108",
+      "output_expression": "TungstenSteel",
+      "output_material": "tungstensteel",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "MeteoricSteel",
+          "material": "meteoricsteel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "TungstenSintered",
+          "material": "tungstensintered",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3359,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0109",
+      "output_expression": "TungstenSteel",
+      "output_material": "tungstensteel",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "TungstenSintered",
+          "material": "tungstensintered",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3360,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0110",
+      "output_expression": "VanadiumSteel",
+      "output_material": "vanadiumsteel",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "MeteoricSteel",
+          "material": "meteoricsteel",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        },
+        {
+          "expression": "V",
+          "material": "vanadium",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3361,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0111",
+      "output_expression": "ElectricalSteel",
+      "output_material": "electricalsteel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "MeteoricSteel",
+          "material": "meteoricsteel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Si",
+          "material": "silicon",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3362,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0112",
+      "output_expression": "ObsidianSteel",
+      "output_material": "obsidiansteel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "MeteoricSteel",
+          "material": "meteoricsteel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Lava",
+          "material": "lava",
+          "amount_expression": "9*U",
+          "amount_raw": 5837832000,
+          "amount_units": 9
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3363,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0113",
+      "output_expression": "ObsidianSteel",
+      "output_material": "obsidiansteel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Steel",
+          "material": "steel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Lava",
+          "material": "lava",
+          "amount_expression": "9*U",
+          "amount_raw": 5837832000,
+          "amount_units": 9
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3364,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0114",
+      "output_expression": "EndSteel",
+      "output_material": "endsteel",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "ObsidianSteel",
+          "material": "obsidiansteel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Endstone",
+          "material": "endstone",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Lava",
+          "material": "lava",
+          "amount_expression": "9*U",
+          "amount_raw": 5837832000,
+          "amount_units": 9
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3365,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0115",
+      "output_expression": "Alumite",
+      "output_material": "alumite",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "Al",
+          "material": "aluminium",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "WroughtIron",
+          "material": "wroughtiron",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Lava",
+          "material": "lava",
+          "amount_expression": "18*U",
+          "amount_raw": 11675664000,
+          "amount_units": 18
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3366,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0116",
+      "output_expression": "Hepatizon",
+      "output_material": "hepatizon",
+      "common_divider": 24,
+      "components": [
+        {
+          "expression": "Bronze",
+          "material": "bronze",
+          "amount_expression": "8*U",
+          "amount_raw": 5189184000,
+          "amount_units": 8
+        },
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "RoseGold",
+          "material": "rosegold",
+          "amount_expression": "15*U",
+          "amount_raw": 9729720000,
+          "amount_units": 15
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3367,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0117",
+      "output_expression": "RedAlloy",
+      "output_material": "redalloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "Mingrade",
+          "material": "mingrade",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3368,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0118",
+      "output_expression": "RedAlloy",
+      "output_material": "redalloy",
+      "common_divider": 1,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Redstone",
+          "material": "redstone",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3369,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0119",
+      "output_expression": "RoseGold",
+      "output_material": "rosegold",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3370,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0120",
+      "output_expression": "SterlingSilver",
+      "output_material": "sterlingsilver",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3371,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0121",
+      "output_expression": "AluminiumBrass",
+      "output_material": "aluminiumbrass",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Al",
+          "material": "aluminium",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3372,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0122",
+      "output_expression": "Brass",
+      "output_material": "brass",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Zn",
+          "material": "zinc",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3373,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0123",
+      "output_expression": "Bronze",
+      "output_material": "bronze",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3374,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0124",
+      "output_expression": "ArsenicCopper",
+      "output_material": "arseniccopper",
+      "common_divider": 4,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "As",
+          "material": "arsenic",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3375,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0125",
+      "output_expression": "ArsenicBronze",
+      "output_material": "arsenicbronze",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "ArsenicCopper",
+          "material": "arseniccopper",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        },
+        {
+          "expression": "Sn",
+          "material": "tin",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3376,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0126",
+      "output_expression": "BlackBronze",
+      "output_material": "blackbronze",
+      "common_divider": 5,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Electrum",
+          "material": "electrum",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3377,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0127",
+      "output_expression": "BlackBronze",
+      "output_material": "blackbronze",
+      "common_divider": 20,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "11*U",
+          "amount_raw": 7135128000,
+          "amount_units": 11
+        },
+        {
+          "expression": "RoseGold",
+          "material": "rosegold",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3378,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0128",
+      "output_expression": "BlackBronze",
+      "output_material": "blackbronze",
+      "common_divider": 20,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "11*U",
+          "amount_raw": 7135128000,
+          "amount_units": 11
+        },
+        {
+          "expression": "RoseGold",
+          "material": "rosegold",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3379,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0129",
+      "output_expression": "BlackBronze",
+      "output_material": "blackbronze",
+      "common_divider": 20,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "11*U",
+          "amount_raw": 7135128000,
+          "amount_units": 11
+        },
+        {
+          "expression": "SterlingSilver",
+          "material": "sterlingsilver",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3380,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0130",
+      "output_expression": "BlackBronze",
+      "output_material": "blackbronze",
+      "common_divider": 20,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "11*U",
+          "amount_raw": 7135128000,
+          "amount_units": 11
+        },
+        {
+          "expression": "SterlingSilver",
+          "material": "sterlingsilver",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Au",
+          "material": "gold",
+          "amount_expression": "4*U",
+          "amount_raw": 2594592000,
+          "amount_units": 4
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3381,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0131",
+      "output_expression": "Signalum",
+      "output_material": "signalum",
+      "common_divider": 8,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ag",
+          "material": "silver",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "RedAlloy",
+          "material": "redalloy",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3382,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0132",
+      "output_expression": "Signalum",
+      "output_material": "signalum",
+      "common_divider": 16,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "SterlingSilver",
+          "material": "sterlingsilver",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "RedAlloy",
+          "material": "redalloy",
+          "amount_expression": "10*U",
+          "amount_raw": 6486480000,
+          "amount_units": 10
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3383,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0133",
+      "output_expression": "Signalum",
+      "output_material": "signalum",
+      "common_divider": 16,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "SterlingSilver",
+          "material": "sterlingsilver",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "RedAlloy",
+          "material": "redalloy",
+          "amount_expression": "10*U",
+          "amount_raw": 6486480000,
+          "amount_units": 10
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3384,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0134",
+      "output_expression": "Constantan",
+      "output_material": "constantan",
+      "common_divider": 2,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        },
+        {
+          "expression": "Ni",
+          "material": "nickel",
+          "amount_expression": "1*U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3385,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0135",
+      "output_expression": "YttriumBariumCuprate",
+      "output_material": "yttriumbariumcuprate",
+      "common_divider": 6,
+      "components": [
+        {
+          "expression": "AnnealedCopper",
+          "material": "annealedcopper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Ba",
+          "material": "barium",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Y",
+          "material": "yttrium",
+          "amount_expression": "U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3386,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0136",
+      "output_expression": "YttriumBariumCuprate",
+      "output_material": "yttriumbariumcuprate",
+      "common_divider": 6,
+      "components": [
+        {
+          "expression": "Cu",
+          "material": "copper",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        },
+        {
+          "expression": "Ba",
+          "material": "barium",
+          "amount_expression": "2*U",
+          "amount_raw": 1297296000,
+          "amount_units": 2
+        },
+        {
+          "expression": "Y",
+          "material": "yttrium",
+          "amount_expression": "U",
+          "amount_raw": 648648000,
+          "amount_units": 1
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3387,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    },
+    {
+      "id": "alloy-0137",
+      "output_expression": "Li2Fe2O4",
+      "output_material": "ferrite",
+      "common_divider": 8,
+      "components": [
+        {
+          "expression": "Fe2O3",
+          "material": "hematite",
+          "amount_expression": "5*U",
+          "amount_raw": 3243240000,
+          "amount_units": 5
+        },
+        {
+          "expression": "Li2O",
+          "material": "lithiumoxide",
+          "amount_expression": "3*U",
+          "amount_raw": 1945944000,
+          "amount_units": 3
+        }
+      ],
+      "source_file": "java/gregapi/data/MT.java",
+      "source_line": 3388,
+      "source_method": "addAlloyingRecipe",
+      "status": "resolved",
+      "unresolved_reason": ""
+    }
+  ]
+}

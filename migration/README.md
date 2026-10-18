@@ -15,6 +15,8 @@ Key files:
 - `materials_gameplay.json`: normalized heat, density/thermal-mass, and tool statistics.
 - `machines_gameplay.json`: hardness, resistance, block sound, and machine sound events.
 - `sound_profiles.json`: source classes that emit GT sound events.
+- `alloys.json`: all resolved and unresolved crucible component recipes.
+- `molds.json`: mold/faucet material registrations, canonical masks and transformed mask lookup.
 - `gameplay_properties_summary.json`: extraction coverage and confidence counts.
 
 Regenerate structural inventory and gameplay properties in order:
@@ -22,7 +24,10 @@ Regenerate structural inventory and gameplay properties in order:
 ```sh
 python3 tools/inventory_gt6.py
 python3 tools/export_gameplay_properties.py
+python3 tools/export_alloys.py
+python3 tools/export_molds.py
 ```
 
-The second script also validates known anchors such as Iron, Steel, Water, Stone,
-and the Large Crusher before writing output.
+The extractors validate known anchors such as Iron, Steel, Water, Stone, the
+Large Crusher, the Steel/Meteoric Steel Air recipes, and the ingot/plate/gear
+mold masks before writing output.

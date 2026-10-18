@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": {"model": "gregtech:block/faucet", "y": 180},
+    "facing=east": {"model": "gregtech:block/faucet", "y": 270},
+    "facing=south": {"model": "gregtech:block/faucet"},
+    "facing=west": {"model": "gregtech:block/faucet", "y": 90}
+  }
+}

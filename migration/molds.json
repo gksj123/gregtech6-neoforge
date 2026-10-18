@@ -1,0 +1,3960 @@
+{
+  "format": 1,
+  "source_repository": "gregtech6-legacy",
+  "source_commit": "3703e40308c8c030763fd6297dea8b210d2a77b1",
+  "source_files": [
+    "java/gregtech/loaders/b/Loader_MultiTileEntities.java",
+    "java/gregtech/tileentity/tools/MultiTileEntityMold.java"
+  ],
+  "mold_variants": [
+    {
+      "display_name": "Mold (Stone)",
+      "material": "stone",
+      "source_line": 347,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Basalt)",
+      "material": "basalt",
+      "source_line": 348,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Granite Black)",
+      "material": "graniteblack",
+      "source_line": 349,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Granite Red)",
+      "material": "granitered",
+      "source_line": 350,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Nether Brick)",
+      "material": "netherbrick",
+      "source_line": 351,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Ceramic)",
+      "material": "ceramic",
+      "source_line": 352,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Umber)",
+      "material": "umber",
+      "source_line": 353,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Livingrock)",
+      "material": "livingrock",
+      "source_line": 354,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Holystone)",
+      "material": "holystone",
+      "source_line": 355,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Betweenstone)",
+      "material": "betweenstone",
+      "source_line": 356,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Quartz)",
+      "material": "milkyquartz",
+      "source_line": 358,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Carbon)",
+      "material": "carbon",
+      "source_line": 359,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Bronze)",
+      "material": "bronze",
+      "source_line": 361,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Invar)",
+      "material": "invar",
+      "source_line": 362,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Steel)",
+      "material": "steel",
+      "source_line": 363,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (HSLA-Steel)",
+      "material": "hslasteel",
+      "source_line": 364,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Stainless Steel)",
+      "material": "stainlesssteel",
+      "source_line": 365,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Mold (Dark Iron)",
+      "material": "darkiron",
+      "source_line": 366,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Meteoric Iron)",
+      "material": "meteoriciron",
+      "source_line": 367,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Meteoric Steel)",
+      "material": "meteoricsteel",
+      "source_line": 368,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Netherite)",
+      "material": "netherite",
+      "source_line": 369,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Mold (Knightmetal)",
+      "material": "knightmetal",
+      "source_line": 370,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Fiery Steel)",
+      "material": "fierysteel",
+      "source_line": 371,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Octine)",
+      "material": "octine",
+      "source_line": 372,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Thaumium)",
+      "material": "thaumium",
+      "source_line": 373,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Mold (Titanium)",
+      "material": "titanium",
+      "source_line": 374,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Chromium)",
+      "material": "chromium",
+      "source_line": 375,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Mold (Molybdenum)",
+      "material": "molybdenum",
+      "source_line": 376,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Niobium)",
+      "material": "niobium",
+      "source_line": 377,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Tantalum)",
+      "material": "tantalum",
+      "source_line": 378,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Osmium)",
+      "material": "osmiumelemental",
+      "source_line": 379,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Iridium)",
+      "material": "iridium",
+      "source_line": 380,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Mold (Niobium Titanium)",
+      "material": "niobiumtitanium",
+      "source_line": 381,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Vanadium)",
+      "material": "vanadium",
+      "source_line": 382,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Tungsten)",
+      "material": "tungsten",
+      "source_line": 383,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Mold (Tantalum Hafnium Carbide)",
+      "material": "tantalumhafniumcarbide",
+      "source_line": 384,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Void Metal)",
+      "material": "voidmetal",
+      "source_line": 385,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Mold (Bedrock HSLA Alloy)",
+      "material": "bedrockhslaalloy",
+      "source_line": 387,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Mold (Adamantium)",
+      "material": "adamantium",
+      "source_line": 388,
+      "acid_proof": true
+    }
+  ],
+  "faucet_variants": [
+    {
+      "display_name": "Crucible Faucet (Stone)",
+      "material": "stone",
+      "source_line": 300,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Basalt)",
+      "material": "basalt",
+      "source_line": 301,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Granite Black)",
+      "material": "graniteblack",
+      "source_line": 302,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Granite Red)",
+      "material": "granitered",
+      "source_line": 303,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Nether Brick)",
+      "material": "netherbrick",
+      "source_line": 304,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Ceramic)",
+      "material": "ceramic",
+      "source_line": 305,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Umber)",
+      "material": "umber",
+      "source_line": 306,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Livingrock)",
+      "material": "livingrock",
+      "source_line": 307,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Holystone)",
+      "material": "holystone",
+      "source_line": 308,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Betweenstone)",
+      "material": "betweenstone",
+      "source_line": 309,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Quartz)",
+      "material": "milkyquartz",
+      "source_line": 311,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Carbon)",
+      "material": "carbon",
+      "source_line": 312,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Bronze)",
+      "material": "bronze",
+      "source_line": 314,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Invar)",
+      "material": "invar",
+      "source_line": 315,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Steel)",
+      "material": "steel",
+      "source_line": 316,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (HSLA-Steel)",
+      "material": "hslasteel",
+      "source_line": 317,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Stainless Steel)",
+      "material": "stainlesssteel",
+      "source_line": 318,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Crucible Faucet (Dark Iron)",
+      "material": "darkiron",
+      "source_line": 319,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Meteoric Iron)",
+      "material": "meteoriciron",
+      "source_line": 320,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Meteoric Steel)",
+      "material": "meteoricsteel",
+      "source_line": 321,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Netherite)",
+      "material": "netherite",
+      "source_line": 322,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Crucible Faucet (Knightmetal)",
+      "material": "knightmetal",
+      "source_line": 323,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Fiery Steel)",
+      "material": "fierysteel",
+      "source_line": 324,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Octine)",
+      "material": "octine",
+      "source_line": 325,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Thaumium)",
+      "material": "thaumium",
+      "source_line": 326,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Crucible Faucet (Titanium)",
+      "material": "titanium",
+      "source_line": 327,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Chromium)",
+      "material": "chromium",
+      "source_line": 328,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Crucible Faucet (Molybdenum)",
+      "material": "molybdenum",
+      "source_line": 329,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Niobium)",
+      "material": "niobium",
+      "source_line": 330,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Tantalum)",
+      "material": "tantalum",
+      "source_line": 331,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Osmium)",
+      "material": "osmiumelemental",
+      "source_line": 332,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Iridium)",
+      "material": "iridium",
+      "source_line": 333,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Crucible Faucet (Niobium Titanium)",
+      "material": "niobiumtitanium",
+      "source_line": 334,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Vanadium)",
+      "material": "vanadium",
+      "source_line": 335,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Tungsten)",
+      "material": "tungsten",
+      "source_line": 336,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Crucible Faucet (Tantalum Hafnium Carbide)",
+      "material": "tantalumhafniumcarbide",
+      "source_line": 337,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Void Metal)",
+      "material": "voidmetal",
+      "source_line": 338,
+      "acid_proof": true
+    },
+    {
+      "display_name": "Crucible Faucet (Bedrock HSLA Alloy)",
+      "material": "bedrockhslaalloy",
+      "source_line": 340,
+      "acid_proof": false
+    },
+    {
+      "display_name": "Crucible Faucet (Adamantium)",
+      "material": "adamantium",
+      "source_line": 341,
+      "acid_proof": true
+    }
+  ],
+  "canonical_shapes": [
+    {
+      "name": "ingot",
+      "mask": 15153614,
+      "prefix": "ingot",
+      "source_line": 391
+    },
+    {
+      "name": "billet",
+      "mask": 13597056,
+      "prefix": "billet",
+      "source_line": 392
+    },
+    {
+      "name": "chunk",
+      "mask": 25952256,
+      "prefix": "chunkGt",
+      "source_line": 393
+    },
+    {
+      "name": "plate",
+      "mask": 33554431,
+      "prefix": "plate",
+      "source_line": 394
+    },
+    {
+      "name": "tiny_plate",
+      "mask": 473536,
+      "prefix": "plateTiny",
+      "source_line": 395
+    },
+    {
+      "name": "bolt",
+      "mask": 4224,
+      "prefix": "bolt",
+      "source_line": 396
+    },
+    {
+      "name": "rod",
+      "mask": 31744,
+      "prefix": "stick",
+      "source_line": 397
+    },
+    {
+      "name": "long_rod",
+      "mask": 17043521,
+      "prefix": "stickLong",
+      "source_line": 398
+    },
+    {
+      "name": "item_casing",
+      "mask": 31388732,
+      "prefix": "casingSmall",
+      "source_line": 399
+    },
+    {
+      "name": "ring",
+      "mask": 469440,
+      "prefix": "ring",
+      "source_line": 400
+    },
+    {
+      "name": "gear",
+      "mask": 22506965,
+      "prefix": "gearGt",
+      "source_line": 401
+    },
+    {
+      "name": "small_gear",
+      "mask": 11512810,
+      "prefix": "gearGtSmall",
+      "source_line": 402
+    },
+    {
+      "name": "sword",
+      "mask": 4667854,
+      "prefix": "toolHeadRawSword",
+      "source_line": 403
+    },
+    {
+      "name": "pickaxe",
+      "mask": 476160,
+      "prefix": "toolHeadRawPickaxe",
+      "source_line": 404
+    },
+    {
+      "name": "spade",
+      "mask": 15153472,
+      "prefix": "toolHeadRawSpade",
+      "source_line": 405
+    },
+    {
+      "name": "shovel",
+      "mask": 4667840,
+      "prefix": "toolHeadRawShovel",
+      "source_line": 406
+    },
+    {
+      "name": "universal_spade",
+      "mask": 4665792,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_line": 407
+    },
+    {
+      "name": "axe",
+      "mask": 473344,
+      "prefix": "toolHeadRawAxe",
+      "source_line": 408
+    },
+    {
+      "name": "double_axe",
+      "mask": 1048096,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_line": 409
+    },
+    {
+      "name": "saw",
+      "mask": 1047552,
+      "prefix": "toolHeadRawSaw",
+      "source_line": 410
+    },
+    {
+      "name": "hammer",
+      "mask": 15149518,
+      "prefix": "toolHeadHammer",
+      "source_line": 411
+    },
+    {
+      "name": "file",
+      "mask": 15153284,
+      "prefix": "toolHeadFile",
+      "source_line": 412
+    },
+    {
+      "name": "screwdriver",
+      "mask": 135300,
+      "prefix": "toolHeadScrewdriver",
+      "source_line": 413
+    },
+    {
+      "name": "chisel",
+      "mask": 14815364,
+      "prefix": "toolHeadRawChisel",
+      "source_line": 414
+    },
+    {
+      "name": "arrow",
+      "mask": 135616,
+      "prefix": "toolHeadRawArrow",
+      "source_line": 415
+    },
+    {
+      "name": "hoe",
+      "mask": 210944,
+      "prefix": "toolHeadRawHoe",
+      "source_line": 416
+    },
+    {
+      "name": "sense",
+      "mask": 523264,
+      "prefix": "toolHeadRawSense",
+      "source_line": 417
+    },
+    {
+      "name": "plow",
+      "mask": 33554404,
+      "prefix": "toolHeadRawPlow",
+      "source_line": 418
+    },
+    {
+      "name": "builderwand",
+      "mask": 163274,
+      "prefix": "toolHeadBuilderwand",
+      "source_line": 419
+    },
+    {
+      "name": "nugget",
+      "mask": 4096,
+      "prefix": "nugget",
+      "source_line": 420
+    }
+  ],
+  "mask_lookup": [
+    {
+      "mask": 3,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 6,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 12,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 15,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 24,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 30,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 31,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 33,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 66,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 96,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 99,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 103,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 132,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 192,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 198,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 199,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 206,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 227,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 230,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 264,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 384,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 396,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 398,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 412,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 454,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 460,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 465,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 480,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 511,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 528,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 558,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 768,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 792,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 796,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 908,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 920,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 960,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 991,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 992,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 1007,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 1022,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 1023,
+      "prefix": "toolHeadRawSaw",
+      "source_shape": "toolHeadRawSaw",
+      "source_line": 827
+    },
+    {
+      "mask": 1056,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 1123,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 1249,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 1255,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 2017,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 2112,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 2119,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 2147,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 2246,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 2498,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 2510,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 3072,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 3168,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 3169,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 3170,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 3175,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 3296,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 4224,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 4238,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 4294,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 4324,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 4327,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 4492,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 4996,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 5020,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 5607,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 6144,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 6336,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 6338,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 6340,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 6343,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 6350,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 6368,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 6592,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 7234,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 7264,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 7267,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 7335,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 7360,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 7366,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 7393,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 7396,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 7399,
+      "prefix": "plateTiny",
+      "source_shape": "plateTiny",
+      "source_line": 775
+    },
+    {
+      "mask": 7653,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 7655,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 8167,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 8448,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 8476,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 8588,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 8648,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 8654,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 8984,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 10734,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 11214,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 12288,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 12672,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 12676,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 12680,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 12686,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 12700,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 12736,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 13184,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 14468,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 14528,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 14534,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 14670,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 14720,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 14732,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 14786,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 14792,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 14798,
+      "prefix": "plateTiny",
+      "source_shape": "plateTiny",
+      "source_line": 775
+    },
+    {
+      "mask": 14826,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 14830,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 14880,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 15306,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 15310,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 15360,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 15599,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 15823,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 16352,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 16367,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 16896,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 17176,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 17296,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 17308,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 17392,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 17856,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 18431,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 21468,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 24576,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 25344,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 25352,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 25360,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 25372,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 25472,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 28936,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 29056,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 29068,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 29340,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 29440,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 29464,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 29572,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 29584,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 29596,
+      "prefix": "plateTiny",
+      "source_shape": "plateTiny",
+      "source_line": 775
+    },
+    {
+      "mask": 29652,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 29660,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 29692,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 30720,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 31198,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 31646,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 31712,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 31742,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 31744,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 32224,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 32639,
+      "prefix": "toolHeadHammer",
+      "source_shape": "toolHeadHammer",
+      "source_line": 704
+    },
+    {
+      "mask": 32704,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 32736,
+      "prefix": "toolHeadRawSaw",
+      "source_shape": "toolHeadRawSaw",
+      "source_line": 827
+    },
+    {
+      "mask": 32753,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 32767,
+      "prefix": "ingot",
+      "source_shape": "ingot",
+      "source_line": 688
+    },
+    {
+      "mask": 33792,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 33825,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 35936,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 39968,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 40160,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 64544,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 67584,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 67650,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 67808,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 68704,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 71872,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 72807,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 72903,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 72935,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 79936,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 80320,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 98304,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 101376,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 101408,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 101440,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 101600,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 105472,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 135168,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 135300,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 135616,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 137408,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 138368,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 138464,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 143744,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 145614,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 145806,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 145870,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 159872,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 160640,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 163274,
+      "prefix": "toolHeadBuilderwand",
+      "source_shape": "builderwand",
+      "source_line": 632
+    },
+    {
+      "mask": 171239,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 179424,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 196608,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 202752,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 202816,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 202880,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 202976,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 203200,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 203776,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 210944,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 212454,
+      "prefix": "billet",
+      "source_shape": "billet",
+      "source_line": 637
+    },
+    {
+      "mask": 231488,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 232448,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 232544,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 232674,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 234720,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 235520,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 235712,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 235746,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 236576,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 236672,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 236768,
+      "prefix": "plateTiny",
+      "source_shape": "plateTiny",
+      "source_line": 775
+    },
+    {
+      "mask": 236770,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 236773,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 244896,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 244960,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 261344,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 270336,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 270600,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 271232,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 274816,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 276736,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 276928,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 287488,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 291228,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 291612,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 291740,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 342478,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 343012,
+      "prefix": "toolHeadBuilderwand",
+      "source_shape": "toolHeadBuilderwand",
+      "source_line": 631
+    },
+    {
+      "mask": 343488,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 358848,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 393216,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 405504,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 405632,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 405760,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 405952,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 406400,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 407552,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 421888,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 424908,
+      "prefix": "billet",
+      "source_shape": "billet",
+      "source_line": 637
+    },
+    {
+      "mask": 462976,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 464896,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 465088,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 465348,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 469440,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 471040,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 471424,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 471492,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 473152,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 473344,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 473536,
+      "prefix": "plateTiny",
+      "source_shape": "tiny_plate",
+      "source_line": 775
+    },
+    {
+      "mask": 473540,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 473546,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 474432,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 474560,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 476160,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 489792,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 489920,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 491520,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 499168,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 506336,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 523264,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 523744,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 540672,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 541200,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 549632,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 553472,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 553856,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 556544,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 571392,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 589792,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 684956,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 686976,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 786432,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 811008,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 811264,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 811520,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 811904,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 815104,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 925952,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 929792,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 930176,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 930696,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 938880,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 942080,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 942848,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 942984,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 946304,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 946688,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 947072,
+      "prefix": "plateTiny",
+      "source_shape": "plateTiny",
+      "source_line": 775
+    },
+    {
+      "mask": 947080,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 947092,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 948864,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 949120,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 950144,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 983040,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 998336,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 1012672,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 1014784,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 1015744,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 1015808,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 1031168,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 1044448,
+      "prefix": "toolHeadHammer",
+      "source_shape": "hammer",
+      "source_line": 704
+    },
+    {
+      "mask": 1046528,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 1047552,
+      "prefix": "toolHeadRawSaw",
+      "source_shape": "toolHeadRawSaw",
+      "source_line": 827
+    },
+    {
+      "mask": 1048096,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 1048544,
+      "prefix": "ingot",
+      "source_shape": "ingot",
+      "source_line": 688
+    },
+    {
+      "mask": 1081344,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 1082400,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 1082401,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 1116225,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 1118480,
+      "prefix": "stickLong",
+      "source_shape": "stickLong",
+      "source_line": 647
+    },
+    {
+      "mask": 1149952,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 1150051,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 1278976,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 1285120,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 2065408,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 2130978,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 2162688,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 2164800,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 2164802,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 2164807,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 2169856,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 2170087,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 2198528,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 2198627,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 2232450,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 2299904,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 2300102,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 2329824,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 2332896,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 2333920,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 2333927,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 2557952,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 2563522,
+      "prefix": "toolHeadBuilderwand",
+      "source_shape": "toolHeadBuilderwand",
+      "source_line": 631
+    },
+    {
+      "mask": 2570240,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 3145728,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 3244032,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 3245056,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 3246080,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 3247201,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 3247202,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 3247203,
+      "prefix": "toolHeadRawSaw",
+      "source_shape": "toolHeadRawSaw",
+      "source_line": 827
+    },
+    {
+      "mask": 3251200,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 3375104,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 4261956,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 4325376,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 4329600,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 4329604,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 4329614,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 4339712,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 4340174,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 4397056,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 4397254,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 4427776,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 4430848,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 4438244,
+      "prefix": "toolHeadBuilderwand",
+      "source_shape": "builderwand",
+      "source_line": 632
+    },
+    {
+      "mask": 4464900,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 4599808,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 4600204,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 4659648,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 4665792,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 4667840,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 4667854,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 5115904,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 5127044,
+      "prefix": "toolHeadBuilderwand",
+      "source_shape": "builderwand",
+      "source_line": 632
+    },
+    {
+      "mask": 5140480,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 5224768,
+      "prefix": "toolHeadBuilderwand",
+      "source_shape": "toolHeadBuilderwand",
+      "source_line": 631
+    },
+    {
+      "mask": 5242879,
+      "prefix": "toolHeadRawPlow",
+      "source_shape": "toolHeadRawPlow",
+      "source_line": 639
+    },
+    {
+      "mask": 5479648,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 5741568,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 6291456,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 6488064,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 6490112,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 6492160,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 6494402,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 6494404,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 6494406,
+      "prefix": "toolHeadRawSaw",
+      "source_shape": "toolHeadRawSaw",
+      "source_line": 827
+    },
+    {
+      "mask": 6495232,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 6502400,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 6520832,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 6750208,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 6798528,
+      "prefix": "billet",
+      "source_shape": "billet",
+      "source_line": 637
+    },
+    {
+      "mask": 7407616,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 7407682,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 7438336,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 7441408,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 7441511,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 7445568,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 7511040,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 7536640,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 7542784,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 7542983,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 7543872,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 7570432,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 7573504,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 7574759,
+      "prefix": "toolHeadHammer",
+      "source_shape": "toolHeadHammer",
+      "source_line": 704
+    },
+    {
+      "mask": 7576576,
+      "prefix": "plateTiny",
+      "source_shape": "plateTiny",
+      "source_line": 775
+    },
+    {
+      "mask": 7576640,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 7576642,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 7576736,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 7576802,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 7576807,
+      "prefix": "ingot",
+      "source_shape": "ingot",
+      "source_line": 688
+    },
+    {
+      "mask": 7836672,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 7838720,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 7888631,
+      "prefix": "casingSmall",
+      "source_shape": "casingSmall",
+      "source_line": 663
+    },
+    {
+      "mask": 8363008,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 8523912,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 8650752,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 8659200,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 8659208,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 8659228,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 8679424,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 8680348,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 8794112,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 8794508,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 8855552,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 8861696,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 8876488,
+      "prefix": "toolHeadBuilderwand",
+      "source_shape": "toolHeadBuilderwand",
+      "source_line": 631
+    },
+    {
+      "mask": 8929800,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 9199616,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 9200408,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 9319296,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 9331584,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 9335680,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 9335708,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 10959296,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 10976384,
+      "prefix": "toolHeadBuilderwand",
+      "source_shape": "builderwand",
+      "source_line": 632
+    },
+    {
+      "mask": 10991616,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 11483136,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 11512810,
+      "prefix": "gearGtSmall",
+      "source_shape": "small_gear",
+      "source_line": 679
+    },
+    {
+      "mask": 12582912,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 12976128,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 12980224,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 12984320,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 12988804,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 12988808,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 12988812,
+      "prefix": "toolHeadRawSaw",
+      "source_shape": "toolHeadRawSaw",
+      "source_line": 827
+    },
+    {
+      "mask": 12990464,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 13004800,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 13041664,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 13500416,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 13597056,
+      "prefix": "billet",
+      "source_shape": "billet",
+      "source_line": 637
+    },
+    {
+      "mask": 14815232,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 14815364,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 14876672,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 14882816,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 14883022,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 14891136,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 15022080,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 15073280,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 15085568,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 15085966,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 15087744,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 15140864,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 15147008,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 15149518,
+      "prefix": "toolHeadHammer",
+      "source_shape": "hammer",
+      "source_line": 704
+    },
+    {
+      "mask": 15153152,
+      "prefix": "plateTiny",
+      "source_shape": "plateTiny",
+      "source_line": 775
+    },
+    {
+      "mask": 15153280,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 15153284,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 15153472,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 15153604,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 15153614,
+      "prefix": "ingot",
+      "source_shape": "ingot",
+      "source_line": 688
+    },
+    {
+      "mask": 15181824,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 15185920,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 15237120,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 15673344,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 15677440,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 15728640,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 15752951,
+      "prefix": "casingSmall",
+      "source_shape": "casingSmall",
+      "source_line": 663
+    },
+    {
+      "mask": 15973376,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 16202752,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 16252399,
+      "prefix": "toolHeadRawPlow",
+      "source_shape": "toolHeadRawPlow",
+      "source_line": 639
+    },
+    {
+      "mask": 16744448,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 16759808,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 17043521,
+      "prefix": "stickLong",
+      "source_shape": "stickLong",
+      "source_line": 647
+    },
+    {
+      "mask": 17047824,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 17301504,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 17318400,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 17318416,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 17588224,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 17589016,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 17711104,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 17723392,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 17809408,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 18284544,
+      "prefix": "toolHeadRawPickaxe",
+      "source_shape": "toolHeadRawPickaxe",
+      "source_line": 819
+    },
+    {
+      "mask": 18873344,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 21918592,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 21983232,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 22506965,
+      "prefix": "gearGt",
+      "source_shape": "gear",
+      "source_line": 671
+    },
+    {
+      "mask": 24894479,
+      "prefix": "casingSmall",
+      "source_shape": "casingSmall",
+      "source_line": 663
+    },
+    {
+      "mask": 24894983,
+      "prefix": "casingSmall",
+      "source_shape": "casingSmall",
+      "source_line": 663
+    },
+    {
+      "mask": 25165824,
+      "prefix": "bolt",
+      "source_shape": "bolt",
+      "source_line": 781
+    },
+    {
+      "mask": 25952256,
+      "prefix": "chunkGt",
+      "source_shape": "chunkGt",
+      "source_line": 764
+    },
+    {
+      "mask": 25960448,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 25968640,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 25977608,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 25977616,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 25977624,
+      "prefix": "toolHeadRawSaw",
+      "source_shape": "toolHeadRawSaw",
+      "source_line": 827
+    },
+    {
+      "mask": 25980928,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 26083328,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 29423549,
+      "prefix": "casingSmall",
+      "source_shape": "casingSmall",
+      "source_line": 663
+    },
+    {
+      "mask": 29630464,
+      "prefix": "toolHeadRawArrow",
+      "source_shape": "toolHeadRawArrow",
+      "source_line": 752
+    },
+    {
+      "mask": 29630728,
+      "prefix": "toolHeadRawChisel",
+      "source_shape": "toolHeadRawChisel",
+      "source_line": 720
+    },
+    {
+      "mask": 29753344,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 29765632,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 29766044,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 29782272,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 30044160,
+      "prefix": "ring",
+      "source_shape": "ring",
+      "source_line": 769
+    },
+    {
+      "mask": 30146560,
+      "prefix": "toolHeadRawHoe",
+      "source_shape": "toolHeadRawHoe",
+      "source_line": 745
+    },
+    {
+      "mask": 30171136,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 30171932,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 30175488,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 30281728,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 30294016,
+      "prefix": "toolHeadRawAxe",
+      "source_shape": "toolHeadRawAxe",
+      "source_line": 758
+    },
+    {
+      "mask": 30299036,
+      "prefix": "toolHeadHammer",
+      "source_shape": "toolHeadHammer",
+      "source_line": 704
+    },
+    {
+      "mask": 30306304,
+      "prefix": "plateTiny",
+      "source_shape": "plateTiny",
+      "source_line": 775
+    },
+    {
+      "mask": 30306560,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 30306568,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 30306944,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 30307208,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 30307228,
+      "prefix": "ingot",
+      "source_shape": "ingot",
+      "source_line": 688
+    },
+    {
+      "mask": 30363648,
+      "prefix": "toolHeadRawUniversalSpade",
+      "source_shape": "toolHeadRawUniversalSpade",
+      "source_line": 802
+    },
+    {
+      "mask": 30371840,
+      "prefix": "toolHeadRawShovel",
+      "source_shape": "toolHeadRawShovel",
+      "source_line": 788
+    },
+    {
+      "mask": 30404608,
+      "prefix": "toolHeadFile",
+      "source_shape": "toolHeadFile",
+      "source_line": 728
+    },
+    {
+      "mask": 31388702,
+      "prefix": "casingSmall",
+      "source_shape": "casingSmall",
+      "source_line": 663
+    },
+    {
+      "mask": 31388732,
+      "prefix": "casingSmall",
+      "source_shape": "casingSmall",
+      "source_line": 663
+    },
+    {
+      "mask": 31457280,
+      "prefix": "toolHeadScrewdriver",
+      "source_shape": "toolHeadScrewdriver",
+      "source_line": 809
+    },
+    {
+      "mask": 31487933,
+      "prefix": "casingSmall",
+      "source_shape": "casingSmall",
+      "source_line": 663
+    },
+    {
+      "mask": 31946752,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 32405504,
+      "prefix": "toolHeadRawSpade",
+      "source_shape": "toolHeadRawSpade",
+      "source_line": 795
+    },
+    {
+      "mask": 32473054,
+      "prefix": "toolHeadRawPlow",
+      "source_shape": "toolHeadRawPlow",
+      "source_line": 639
+    },
+    {
+      "mask": 32473088,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 32503808,
+      "prefix": "toolHeadRawSword",
+      "source_shape": "toolHeadRawSword",
+      "source_line": 736
+    },
+    {
+      "mask": 32505856,
+      "prefix": "stick",
+      "source_shape": "stick",
+      "source_line": 712
+    },
+    {
+      "mask": 32997376,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 33422336,
+      "prefix": "toolHeadHammer",
+      "source_shape": "toolHeadHammer",
+      "source_line": 704
+    },
+    {
+      "mask": 33488896,
+      "prefix": "toolHeadRawSense",
+      "source_shape": "toolHeadRawSense",
+      "source_line": 835
+    },
+    {
+      "mask": 33521664,
+      "prefix": "toolHeadRawSaw",
+      "source_shape": "toolHeadRawSaw",
+      "source_line": 827
+    },
+    {
+      "mask": 33539072,
+      "prefix": "toolHeadRawAxeDouble",
+      "source_shape": "toolHeadRawAxeDouble",
+      "source_line": 696
+    },
+    {
+      "mask": 33553408,
+      "prefix": "ingot",
+      "source_shape": "ingot",
+      "source_line": 688
+    },
+    {
+      "mask": 33554404,
+      "prefix": "toolHeadRawPlow",
+      "source_shape": "toolHeadRawPlow",
+      "source_line": 639
+    },
+    {
+      "mask": 33554431,
+      "prefix": "plate",
+      "source_shape": "plate",
+      "source_line": 655
+    }
+  ],
+  "default_unknown_prefix": "nugget"
+}

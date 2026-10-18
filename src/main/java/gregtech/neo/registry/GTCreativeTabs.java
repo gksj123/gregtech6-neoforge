@@ -4,6 +4,10 @@ import gregtech.neo.GT6Neo;
 import gregtech.neo.item.BasicMachineItem;
 import gregtech.neo.item.BurningBoxItem;
 import gregtech.neo.item.SmallCrucibleItem;
+import gregtech.neo.item.MoldItem;
+import gregtech.neo.item.FaucetItem;
+import gregtech.neo.casting.CastingPart;
+import gregtech.neo.casting.GTMoldRegistry;
 import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
 import gregtech.neo.material.GTMaterialBlocks;
@@ -35,6 +39,7 @@ public final class GTCreativeTabs {
                 output.accept(GTItems.MONKEY_WRENCH.get());
                 output.accept(GTItems.ELECTROMETER.get());
                 output.accept(GTItems.THERMOMETER.get());
+                output.accept(GTItems.CHISEL.get());
                 output.accept(GTBlocks.BASIC_CRUSHER.get());
                 output.accept(GTBlocks.LARGE_CRUSHER.get());
                 output.accept(GTBlocks.CRUCIBLE.get());
@@ -43,6 +48,14 @@ public final class GTCreativeTabs {
                     new MachinePart(267, "Smelting Crucibles")
                 ));
                 output.accept(GTBlocks.TEMPERATURE_SENSOR.get());
+                output.accept(MoldItem.create(
+                    GTItems.MOLD.get(),
+                    new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false)
+                ));
+                output.accept(FaucetItem.create(
+                    GTItems.FAUCET.get(),
+                    new CastingPart("steel", 1722, 0, false)
+                ));
                 output.accept(GTBlocks.LV_GENERATOR.get());
                 output.accept(GTBlocks.MANUAL_CRANK.get());
                 output.accept(GTBlocks.ELECTRIC_MOTOR.get());
@@ -140,6 +153,7 @@ public final class GTCreativeTabs {
                 output.accept(GTItems.MONKEY_WRENCH.get());
                 output.accept(GTItems.ELECTROMETER.get());
                 output.accept(GTItems.THERMOMETER.get());
+                output.accept(GTItems.CHISEL.get());
                 output.accept(GTBlocks.LV_GENERATOR.get());
                 output.accept(GTBlocks.MANUAL_CRANK.get());
                 output.accept(GTBlocks.ELECTRIC_MOTOR.get());
@@ -169,6 +183,45 @@ public final class GTCreativeTabs {
                     )));
                 output.accept(GTItems.THERMOMETER.get());
                 output.accept(GTBlocks.TEMPERATURE_SENSOR.get());
+            })
+            .build()
+    );
+
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> CASTING = TABS.register(
+        "casting",
+        () -> CreativeModeTab.builder(CreativeModeTab.Row.BOTTOM, 1)
+            .title(Component.translatable("itemGroup.gregtech.casting"))
+            .icon(() -> MoldItem.create(
+                GTItems.MOLD.get(),
+                new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false)
+            ))
+            .displayItems((parameters, output) -> {
+                output.accept(GTItems.CHISEL.get());
+                output.accept(GTItems.THERMOMETER.get());
+                for (GTMoldRegistry.MoldVariant variant : GTMoldRegistry.molds()) {
+                    for (GTMoldRegistry.MoldShape shape : GTMoldRegistry.canonicalShapes()) {
+                        output.accept(MoldItem.create(
+                            GTItems.MOLD.get(),
+                            new CastingPart(
+                                variant.material(),
+                                variant.sourceLine(),
+                                shape.mask(),
+                                variant.acidProof()
+                            )
+                        ));
+                    }
+                }
+                for (GTMoldRegistry.MoldVariant variant : GTMoldRegistry.faucets()) {
+                    output.accept(FaucetItem.create(
+                        GTItems.FAUCET.get(),
+                        new CastingPart(
+                            variant.material(),
+                            variant.sourceLine(),
+                            0,
+                            variant.acidProof()
+                        )
+                    ));
+                }
             })
             .build()
     );

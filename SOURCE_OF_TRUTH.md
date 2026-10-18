@@ -51,6 +51,8 @@ Generated files live in `migration/`:
 - `materials_gameplay.json`
 - `machines_gameplay.json`
 - `sound_profiles.json`
+- `alloys.json`
+- `molds.json`
 - `gameplay_properties_summary.json`
 - `multitile_registry.tsv`
 - `multitile_registry.json`
@@ -80,3 +82,15 @@ mass calculation.
 Machine sound extraction separates the block step sound from emitted sound
 events. GT6 does not store a universal per-machine loudness scalar in the
 multitile registration, so fabricating one would be incorrect.
+
+Alloy recipes are extracted by `tools/export_alloys.py`. Both `setAloy` and
+`uumAloy` are included because both reach `alloySimple()` and register a
+crucible component configuration. Static `addAlloyingRecipe` calls are included
+as well. Dynamic expressions are retained with `status: unresolved`; the runtime
+does not fabricate their components.
+
+Mold and faucet data are extracted by `tools/export_molds.py`. The script
+evaluates the source `TEMP_MOLD_RECIPES` table, reads the ceramic canonical
+shape masks, and applies the same rotation and mirror transformations as
+`MultiTileEntityMold`. It also exports all resolved mold/faucet registration
+materials and source lines.

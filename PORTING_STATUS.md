@@ -44,18 +44,25 @@
 - Ignited Burning Box animation, particles, contact damage and water extinguishing
 - Animated material-tinted crucible fill surfaces and dynamic content collision
 - KU oxygen generation, CU cooling, rainwater collection and source steelmaking conversion
+- Data-driven crucible alloy selection from 135 resolved source configurations
+- 2 unresolved dynamic source alloy loops retained in migration output
+- 39 source mold material variants and 30 named 5x5 mold shapes
+- 549 source rotation/mirror mold masks with chisel carving
+- Hollow mold collision, molten and solid content rendering, passive and CU cooling
+- Mold solidification, component-preserving output extraction and overheat meltdown
+- 39 crucible faucet variants with redstone and automatic pouring
 - English abbreviated GT tooltips with color-coded source, energy, thermal and NBT sections
-- Seven source-oriented creative inventory tabs covering all current content
+- Eight source-oriented creative inventory tabs covering all current content
 - All-material primary-form and material-block creative catalogs
 - In-game GUI-free demo guide item and detailed source/material tooltips
 
 ## Acceptance Evidence
 
 ```text
-GT6 creative catalog: demo=29 materials=10368 blocks=12232 machines=251 multiblocks=35 tools=16 small_crucibles=41 small_crucible_heat_data=39
+GT6 creative catalog: demo=32 materials=10368 blocks=12232 machines=251 multiblocks=35 tools=17 small_crucibles=41 casting=1211 small_crucible_heat_data=39
 GT6 runtime self-test: large RU structure at BlockPos{x=0, y=40, z=2}, EU/KU chain at BlockPos{x=10, y=40, z=0}, RU/KU chain crank at BlockPos{x=14, y=40, z=-3}
 GT6 runtime self-test: controller formed=true
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=2006K SMALL_CRUCIBLE=2091K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true BURNING_BOX_LIT=true
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true
 ```
 
 Material bootstrap evidence:
@@ -76,7 +83,9 @@ Loaded GT6 source inventory: 1112 materials, 326 material prefixes
 - Covers and complete side automation
 - Fluids, tanks, and fluid recipe inputs/outputs
 - Gas and fluidized-bed Burning Box fuel maps
-- Crucible faucet, molds, casting, and molten-fluid capabilities
+- Dynamic `ANY.Glowstone.mToThis` alloy loop entries (2 source-derived configurations remain unresolved)
+- Acid, flammable, explosive and radioactive material-property gates for casting
+- External fluid-container and fluid-network integration with crucible contents
 - Heat, laser, quantum, and remaining specialized energy transfer networks
 - A survival RU source capable of reaching the Large Crusher's original 512 speed threshold
 - WAILA/Jade, JEI/EMI, and other mod integrations

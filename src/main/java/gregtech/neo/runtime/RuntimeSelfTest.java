@@ -17,6 +17,11 @@ import gregtech.neo.block.MechanicalEnergyNetwork;
 import gregtech.neo.block.SmallCrucibleBlockEntity;
 import gregtech.neo.block.SmallCrucibleBlock;
 import gregtech.neo.block.TemperatureSensorBlockEntity;
+import gregtech.neo.block.MoldBlockEntity;
+import gregtech.neo.block.FaucetBlock;
+import gregtech.neo.block.FaucetBlockEntity;
+import gregtech.neo.casting.CastingPart;
+import gregtech.neo.casting.GTMoldRegistry;
 import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
 import gregtech.neo.material.GTMaterialItems;
@@ -24,6 +29,7 @@ import gregtech.neo.material.GTMaterialGameplayRegistry;
 import gregtech.neo.material.MaterialPart;
 import gregtech.neo.registry.GTDataComponents;
 import gregtech.neo.registry.GTBlocks;
+import gregtech.neo.recipe.GTAlloyRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -62,11 +68,21 @@ public final class RuntimeSelfTest {
     private static BlockPos cruciblePos;
     private static BlockPos burningBoxPos;
     private static BlockPos smallCruciblePos;
+    private static BlockPos moldPos;
+    private static BlockPos faucetPos;
+    private static BlockPos faucetMoldPos;
     private static BlockPos temperatureSensorPos;
     private static boolean genericCapabilityInserted;
     private static boolean burningHeatObserved;
     private static boolean burningBoxLitObserved;
     private static boolean creativeCatalogPass;
+    private static boolean castingPoured;
+    private static boolean castingOutputPass;
+    private static boolean castingCooled;
+    private static boolean alloyCatalogPass;
+    private static boolean smallDropObserved;
+    private static boolean faucetPoured;
+    private static boolean faucetOutputPass;
 
     private RuntimeSelfTest() {
     }
@@ -88,6 +104,17 @@ public final class RuntimeSelfTest {
         burningHeatObserved = false;
         burningBoxLitObserved = false;
         creativeCatalogPass = false;
+        castingPoured = false;
+        castingOutputPass = false;
+        castingCooled = false;
+        alloyCatalogPass = GTAlloyRegistry.resolvedRecipeCount() >= 100
+            && GTAlloyRegistry.hasRecipeFor("steel")
+            && GTAlloyRegistry.hasRecipeFor("meteoricsteel")
+            && GTAlloyRegistry.hasRecipeFor("bronze")
+            && GTAlloyRegistry.hasRecipeFor("stainlesssteel");
+        smallDropObserved = false;
+        faucetPoured = false;
+        faucetOutputPass = false;
         MinecraftServer server = event.getServer();
         ServerLevel level = server.overworld();
         BlockPos spawn = level.getSharedSpawnPos();
@@ -100,11 +127,15 @@ public final class RuntimeSelfTest {
         burningBoxPos = cruciblePos.below();
         smallCruciblePos = controllerPos.offset(-20, 0, 5);
         temperatureSensorPos = smallCruciblePos.east();
+        moldPos = smallCruciblePos.north();
+        faucetPos = smallCruciblePos.south();
+        faucetMoldPos = faucetPos.below();
         buildStructure(level);
         buildKineticChain(level);
         buildGenericMachine(level);
         buildCrucible(level);
         buildSmallCrucible(level);
+        buildCastingMold(level);
         creativeCatalogPass = validateCreativeCatalog(server);
         GT6Neo.LOGGER.info(
             "GT6 runtime self-test: large RU structure at {}, EU/KU chain at {}, RU/KU chain crank at {}",
@@ -204,6 +235,32 @@ public final class RuntimeSelfTest {
                 );
             }
         }
+        if (ticks == 120) {
+            ServerLevel level = event.getServer().overworld();
+            if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible
+                && level.getBlockEntity(moldPos) instanceof MoldBlockEntity mold) {
+                castingPoured = crucible.pourInto(mold);
+                if (castingPoured) {
+                    long before = mold.contentTemperature();
+                    mold.receivePacket(
+                        new EnergyPacket(EnergyKind.CRYO, 2048, 2),
+                        Direction.UP,
+                        false
+                    );
+                    castingCooled = mold.contentTemperature() < before;
+                    mold.forceSolidifyForTesting();
+                }
+            }
+        }
+        if (ticks == 121) {
+            ServerLevel level = event.getServer().overworld();
+            if (level.getBlockEntity(faucetPos) instanceof FaucetBlockEntity faucet) {
+                faucetPoured = faucet.tryPour();
+            }
+            if (level.getBlockEntity(faucetMoldPos) instanceof MoldBlockEntity mold) {
+                mold.forceSolidifyForTesting();
+            }
+        }
         if (ticks == 20) {
             ServerLevel level = event.getServer().overworld();
             if (level.getBlockEntity(cruciblePos) instanceof CrucibleBlockEntity crucible) {
@@ -212,6 +269,10 @@ public final class RuntimeSelfTest {
             if (level.getBlockEntity(burningBoxPos) instanceof BurningBoxBlockEntity box) {
                 burningBoxLitObserved = box.isBurning()
                     && level.getBlockState(burningBoxPos).getValue(BurningBoxBlock.LIT);
+            }
+            if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
+                smallDropObserved = crucible.contents().stream()
+                    .anyMatch(content -> "copper".equals(content.material()));
             }
         }
         if (ticks < 360) {
@@ -266,7 +327,9 @@ public final class RuntimeSelfTest {
         if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible) {
             smallCrucibleTemperature = crucible.temperature();
             smallDropAbsorbed = crucible.contents().stream()
-                .anyMatch(content -> "copper".equals(content.material()));
+                .anyMatch(content -> "copper".equals(content.material())
+                    || "annealedcopper".equals(content.material()))
+                || smallDropObserved;
             smallSteelmakingPass = crucible.contents().stream()
                 .anyMatch(content -> "steel".equals(content.material()));
             smallFillPass = crucible.fillLevel() > 0
@@ -280,14 +343,30 @@ public final class RuntimeSelfTest {
         boolean sensorPass = level.getBlockEntity(temperatureSensorPos) instanceof TemperatureSensorBlockEntity sensor
             && sensor.temperatureKelvin() == smallCrucibleTemperature
             && sensor.analogSignal() > 0;
+        if (level.getBlockEntity(moldPos) instanceof MoldBlockEntity mold) {
+            ItemStack output = mold.takeOutputForTesting();
+            MaterialPart part = output.get(GTDataComponents.MATERIAL_PART.get());
+            castingOutputPass = part != null
+                && "ingot".equals(part.prefix())
+                && GTMaterialGameplayRegistry.material(part.material()) != null;
+        }
+        if (level.getBlockEntity(faucetMoldPos) instanceof MoldBlockEntity mold) {
+            ItemStack output = mold.takeOutputForTesting();
+            MaterialPart part = output.get(GTDataComponents.MATERIAL_PART.get());
+            faucetOutputPass = part != null
+                && "ingot".equals(part.prefix())
+                && GTMaterialGameplayRegistry.material(part.material()) != null;
+        }
         if (level.getBlockEntity(controllerPos) instanceof LargeCrusherBlockEntity crusher) {
             ItemStack output = crusher.peekOutputForTesting();
             if (output.is(Items.GRAVEL) && basicPass && crankPass && genericPass
                 && genericCapabilityInserted && cruciblePass && largeDropAbsorbed
                 && smallCruciblePass && smallDropAbsorbed
-                && smallSteelmakingPass && sensorPass && creativeCatalogPass) {
+                && smallSteelmakingPass && sensorPass && creativeCatalogPass
+                && castingPoured && castingCooled && castingOutputPass
+                && faucetPoured && faucetOutputPass && alloyCatalogPass) {
                 GT6Neo.LOGGER.info(
-                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{} FILL={}/{} STEELMAKING={} BURNING_BOX_LIT={}",
+                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{} FILL={}/{} STEELMAKING={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={}",
                     output.getCount(),
                     basicCount,
                     crankCount,
@@ -299,11 +378,17 @@ public final class RuntimeSelfTest {
                     largeFillPass,
                     smallFillPass,
                     smallSteelmakingPass,
+                    castingPoured,
+                    castingCooled,
+                    castingOutputPass,
+                    faucetPoured,
+                    faucetOutputPass,
+                    GTAlloyRegistry.resolvedRecipeCount(),
                     burningBoxLitObserved
                 );
             } else {
                 GT6Neo.LOGGER.error(
-                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} LARGE_FILL={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SMALL_FILL={} STEELMAKING={} SENSOR pass={} BURNING_BOX_LIT={} CREATIVE_CATALOG={}",
+                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} LARGE_FILL={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SMALL_FILL={} STEELMAKING={} SENSOR pass={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={} CREATIVE_CATALOG={}",
                     crusher.isFormed(),
                     output,
                     basicPass,
@@ -320,6 +405,12 @@ public final class RuntimeSelfTest {
                     smallFillPass,
                     smallSteelmakingPass,
                     sensorPass,
+                    castingPoured,
+                    castingCooled,
+                    castingOutputPass,
+                    faucetPoured,
+                    faucetOutputPass,
+                    alloyCatalogPass,
                     burningBoxLitObserved,
                     creativeCatalogPass
                 );
@@ -344,12 +435,13 @@ public final class RuntimeSelfTest {
         int multiblocks = creativeSize("multiblocks_and_heat", parameters);
         int tools = creativeSize("tools_and_energy", parameters);
         int smallCrucibles = creativeSize("smelting_crucibles", parameters);
+        int casting = creativeSize("casting", parameters);
         long smallCrucibleHeatData = GTMachineRegistry.machines().stream()
             .filter(machine -> "Smelting Crucibles".equals(machine.category()))
             .filter(machine -> GTMaterialGameplayRegistry.material(machine.material_slug()) != null)
             .count();
         GT6Neo.LOGGER.info(
-            "GT6 creative catalog: demo={} materials={} blocks={} machines={} multiblocks={} tools={} small_crucibles={} small_crucible_heat_data={}",
+            "GT6 creative catalog: demo={} materials={} blocks={} machines={} multiblocks={} tools={} small_crucibles={} casting={} small_crucible_heat_data={}",
             demo,
             materials,
             blocks,
@@ -357,6 +449,7 @@ public final class RuntimeSelfTest {
             multiblocks,
             tools,
             smallCrucibles,
+            casting,
             smallCrucibleHeatData
         );
         return demo >= 25
@@ -366,6 +459,7 @@ public final class RuntimeSelfTest {
             && multiblocks >= 30
             && tools >= 10
             && smallCrucibles >= 40
+            && casting >= 1_200
             && smallCrucibleHeatData == 39;
     }
 
@@ -551,6 +645,35 @@ public final class RuntimeSelfTest {
             temperatureSensorPos,
             GTBlocks.TEMPERATURE_SENSOR.get().defaultBlockState()
         );
+    }
+
+    private static void buildCastingMold(ServerLevel level) {
+        level.setBlockAndUpdate(moldPos, GTBlocks.MOLD.get().defaultBlockState());
+        if (level.getBlockEntity(moldPos) instanceof MoldBlockEntity mold) {
+            mold.configure(new CastingPart(
+                "steel",
+                1072,
+                GTMoldRegistry.ingotMask(),
+                false
+            ));
+        }
+        level.setBlockAndUpdate(
+            faucetPos,
+            GTBlocks.FAUCET.get().defaultBlockState()
+                .setValue(FaucetBlock.FACING, Direction.NORTH)
+        );
+        if (level.getBlockEntity(faucetPos) instanceof FaucetBlockEntity faucet) {
+            faucet.configure(new CastingPart("steel", 1722, 0, false));
+        }
+        level.setBlockAndUpdate(faucetMoldPos, GTBlocks.MOLD.get().defaultBlockState());
+        if (level.getBlockEntity(faucetMoldPos) instanceof MoldBlockEntity mold) {
+            mold.configure(new CastingPart(
+                "steel",
+                1072,
+                GTMoldRegistry.ingotMask(),
+                false
+            ));
+        }
     }
 
     private static void spawnCrucibleDropTests(ServerLevel level) {

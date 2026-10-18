@@ -203,6 +203,19 @@ def main() -> None:
     )
     copy_asset("materialicons/METALLIC/molten.png", "crucible_content.png")
     copy_asset("materialicons/METALLIC/molten.png.mcmeta", "crucible_content.png.mcmeta")
+    (OUTPUT / "mold_wall.png").write_bytes(
+        (OUTPUT / "small_crucible_wall.png").read_bytes()
+    )
+    (OUTPUT / "mold_inner.png").write_bytes(
+        (OUTPUT / "small_crucible_wall.png").read_bytes()
+    )
+    (OUTPUT / "faucet.png").write_bytes(
+        (OUTPUT / "small_crucible_wall.png").read_bytes()
+    )
+    shutil.copy2(
+        LEGACY / "src/main/resources/assets/gregtech/textures/items/materialicons/METALLIC/toolHeadChisel.png",
+        PORT / "src/main/resources/assets/gregtech/textures/item/chisel.png",
+    )
 
     print(f"Imported GT6 textures from {SOURCE} into {OUTPUT}")
 

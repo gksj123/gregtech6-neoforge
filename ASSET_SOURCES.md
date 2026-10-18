@@ -22,6 +22,8 @@ base texture with its matching overlay before writing the modern texture.
 - `machine_port.png`: `multiblockparts/metalwall/1/colored/side.png`
 - `small_crucible_wall.png`: `materialicons/METALLIC/blockSolid.png`, tinted at runtime by the wall material
 - `crucible_content.png`: `materialicons/METALLIC/molten.png`, tinted by the displayed content material
+- `mold_wall.png`, `mold_inner.png`, `faucet.png`: the GT6 metallic solid texture, tinted by the casting wall material
+- `item/chisel.png`: `materialicons/METALLIC/toolHeadChisel.png`
 
 GregTech 6 assets are released under CC0 unless the original asset states otherwise. See the parent project's `src/main/resources/LICENSE.assets`.
 

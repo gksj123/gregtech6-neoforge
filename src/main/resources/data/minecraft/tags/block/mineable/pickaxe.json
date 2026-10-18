@@ -13,6 +13,8 @@
     "gregtech:rotation_engine",
     "gregtech:axle",
     "gregtech:tin_cable",
-    "gregtech:copper_cable"
+    "gregtech:copper_cable",
+    "gregtech:mold",
+    "gregtech:faucet"
   ]
 }

@@ -11,6 +11,7 @@ import gregtech.neo.registry.GTItems;
 import gregtech.neo.machine.GTMachineDefinition;
 import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.machine.MachinePart;
+import gregtech.neo.casting.CastingPart;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.BlockAndTintGetter;
@@ -43,6 +44,8 @@ public final class GTMaterialItemColors {
             GTMaterialItemColors::getSmallCrucibleItemColor,
             GTItems.SMALL_CRUCIBLE.get()
         );
+        event.register(GTMaterialItemColors::getCastingItemColor, GTItems.MOLD.get());
+        event.register(GTMaterialItemColors::getCastingItemColor, GTItems.FAUCET.get());
     }
 
     private static void registerBlocks(RegisterColorHandlersEvent.Block event) {
@@ -54,6 +57,8 @@ public final class GTMaterialItemColors {
             GTMaterialItemColors::getSmallCrucibleBlockColor,
             GTBlocks.SMALL_CRUCIBLE.get()
         );
+        event.register(GTMaterialItemColors::getMoldBlockColor, GTBlocks.MOLD.get());
+        event.register(GTMaterialItemColors::getFaucetBlockColor, GTBlocks.FAUCET.get());
     }
 
     private static int getColor(ItemStack stack, int tintIndex) {
@@ -110,6 +115,43 @@ public final class GTMaterialItemColors {
             return crucible.contentColor();
         }
         GTMaterial material = GTMaterialRegistry.material(crucible.wallMaterial());
+        return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
+    }
+
+    private static int getCastingItemColor(ItemStack stack, int tintIndex) {
+        if (tintIndex != 0) {
+            return 0xFFFFFFFF;
+        }
+        CastingPart part = stack.get(GTDataComponents.CASTING_PART.get());
+        GTMaterial material = part == null ? null : GTMaterialRegistry.material(part.wallMaterial());
+        return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
+    }
+
+    private static int getMoldBlockColor(
+        BlockState state,
+        BlockAndTintGetter level,
+        BlockPos pos,
+        int tintIndex
+    ) {
+        if (tintIndex != 0 || pos == null
+            || !(level.getBlockEntity(pos) instanceof gregtech.neo.block.MoldBlockEntity mold)) {
+            return 0xFFFFFFFF;
+        }
+        GTMaterial material = GTMaterialRegistry.material(mold.wallMaterial());
+        return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
+    }
+
+    private static int getFaucetBlockColor(
+        BlockState state,
+        BlockAndTintGetter level,
+        BlockPos pos,
+        int tintIndex
+    ) {
+        if (tintIndex != 0 || pos == null
+            || !(level.getBlockEntity(pos) instanceof gregtech.neo.block.FaucetBlockEntity faucet)) {
+            return 0xFFFFFFFF;
+        }
+        GTMaterial material = GTMaterialRegistry.material(faucet.wallMaterial());
         return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
     }
 }

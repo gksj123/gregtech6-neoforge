@@ -7,11 +7,13 @@ import gregtech.neo.block.BasicMachineBlock;
 import gregtech.neo.block.BurningBoxBlock;
 import gregtech.neo.block.CrucibleBlock;
 import gregtech.neo.block.AxleBlock;
+import gregtech.neo.block.FaucetBlock;
 import gregtech.neo.block.GeneratorBlock;
 import gregtech.neo.block.KineticConverterBlock;
 import gregtech.neo.block.LargeCrusherBlock;
 import gregtech.neo.block.ManualCrankBlock;
 import gregtech.neo.block.MachinePortBlock;
+import gregtech.neo.block.MoldBlock;
 import gregtech.neo.block.SmallCrucibleBlock;
 import gregtech.neo.block.TemperatureSensorBlock;
 import gregtech.neo.item.GTBlockInfoItem;
@@ -92,6 +94,16 @@ public final class GTBlocks {
         "temperature_sensor",
         () -> new TemperatureSensorBlock(machineProperties(MapColor.METAL, 2.0F, 5.0F).noOcclusion()),
         MapColor.METAL
+    );
+
+    public static final DeferredBlock<MoldBlock> MOLD = BLOCKS.register(
+        "mold",
+        () -> new MoldBlock(machineProperties(MapColor.STONE, 2.0F, 5.0F).noOcclusion())
+    );
+
+    public static final DeferredBlock<FaucetBlock> FAUCET = BLOCKS.register(
+        "faucet",
+        () -> new FaucetBlock(machineProperties(MapColor.METAL, 2.0F, 6.0F).noOcclusion())
     );
 
     public static final DeferredBlock<Block> CRUCIBLE_WALL = registerBlock(

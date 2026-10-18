@@ -49,6 +49,8 @@ Repeated gameplay properties are generated separately:
 ```sh
 python3 tools/inventory_gt6.py
 python3 tools/export_gameplay_properties.py
+python3 tools/export_alloys.py
+python3 tools/export_molds.py
 python3 tools/import_gt6_assets.py
 python3 tools/generate_crucible_models.py
 ```
@@ -64,6 +66,8 @@ The gameplay extractor currently resolves:
 - Hardness and resistance for all 1366 multitile registrations.
 - Block sound classification for all 1366 registrations.
 - Event sound profiles for 78 source classes.
+- 135 resolved crucible alloy configurations, with 2 dynamic source loops marked unresolved.
+- 39 mold and 39 faucet material variants, 30 named 5x5 shapes, and 549 source-transformed masks.
 
 Unresolved computed or default values remain marked in JSON instead of being
 silently guessed.
@@ -123,7 +127,7 @@ GT6_JVM_ARGS='-Dgregtech.runtimeSelfTest=true' python3 tools/run_client.py
 A successful run ends with:
 
 ```text
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=2006K SMALL_CRUCIBLE=2091K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true BURNING_BOX_LIT=true
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true
 ```
 
 The runtime test requires `run-client/saves/world`. A flat test world can be generated using the vanilla 1.21.1 server jar; the copied world should be placed in that location.
@@ -155,17 +159,18 @@ No machine menu is opened.
 
 ## Creative Demo Inventory
 
-The demo exposes seven source-oriented creative tabs:
+The demo exposes eight source-oriented creative tabs:
 
 | Tab | Current entries | Contents |
 | --- | ---: | --- |
-| Demo Kit | 29 | tools, controllers, a steel crucible, thermometer sensor, structure materials, starter ingots and fuel |
+| Demo Kit | 32 | tools, controllers, crucible, mold, faucet, sensor, structure materials, starter ingots and fuel |
 | Material Forms | 10368 | all materials in nine primary forms, plus all forms for core materials |
 | Material Blocks | 12232 | all 11 current material block families across the material registry |
 | Machines | 251 | all GT6 Basic Machine registrations |
 | Multiblocks & Heat | 35 | crushers, crucible, thermometer sensor, walls, ports, wheels and Furnace-map Burning Boxes |
-| Tools & Energy | 16 | tools, generators, converters, axles and cables |
+| Tools & Energy | 17 | tools, generators, converters, axles and cables |
 | Smelting Crucibles | 41 | 39 material crucibles, the quicksilver thermometer and the thermometer sensor |
+| Molds & Casting | 1211 | 39 wall materials × 30 named shapes, 39 faucets, chisel and thermometer |
 
 The **GT6 NeoForge Demo Guide** item prints the interaction sequence in chat.
 Material and material-block tooltips include the original inventory category,
@@ -304,17 +309,41 @@ The small crucible follows `MultiTileEntitySmeltery`:
   adjacent temperature provider every 10 ticks and emits a proportional 0-15 redstone signal.
 
 The large crucible also pulls material-form item entities from its 3x3 interior,
-matching the source `WD.suck` behavior. Iron/Wrought Iron plus KU oxygen converts
-to Steel at 2046K. Its animated content surface is rendered through a block
-entity renderer. Thermometer sensors are 2px wall-mounted panels with directional
-shapes rather than full cubes.
+matching the source `WD.suck` behavior. Its animated content surface is rendered
+through a block entity renderer. Thermometer sensors are 2px wall-mounted panels
+with directional shapes rather than full cubes.
 
 Item tooltips use English GT abbreviations and colored sections. Machine items
 show their `gregtech:machine_part` component, while material items show their
 `gregtech:material_part` component, thermal data, tool data and source line.
 
-For now, molten contents are tracked for testing purposes but cannot yet be poured,
-cast into molds, or used to trigger crucible alloy recipes.
+## Alloying and Casting
+
+`tools/export_alloys.py` extracts every source `setAloy` and `uumAloy`
+configuration plus the explicit `addAlloyingRecipe` block. At runtime the
+crucible reproduces the GT6 selector: it starts from molten content, permits at
+most one non-molten component, compares conversion count multiplied by the
+common divider, consumes every component, and emits
+`common_divider × conversions`. KU-generated Air is consumed from the actual
+oxygen buffer, so Steel and Meteoric Steel use the same source data as every
+other alloy.
+
+`tools/export_molds.py` reads the mold and faucet registrations, evaluates the
+source 5×5 mask table, and applies GT6's rotation/mirror transformations.
+The resulting 549 masks map to the original item prefixes. A mold:
+
+1. pulls one complete casting amount from an adjacent molten crucible;
+2. stores the pouring material and temperature;
+3. cools at up to 5K/tick, or accepts CU for faster cooling;
+4. solidifies below the material melting point into its configured prefix;
+5. returns the correctly component-tagged item when clicked with an empty hand;
+6. melts into lava above the wall limit or content boiling point.
+
+The faucet can pull from a crucible behind it and pour into a mold below it in
+redstone or automatic mode. Molds use source-shaped hollow collision, a
+material-tinted animated casting surface, a chisel for individual 5×5 cells,
+and wrench rotation. Item tooltips include colored `MAT`, `SHAPE`, `REQ`,
+`THERM`, `CTRL`, `SRC` and component-NBT entries.
 
 ## Current Port Limits
 
@@ -322,7 +351,7 @@ cast into molds, or used to trigger crucible alloy recipes.
 - RU transmission is implemented through axle networks.
 - KU is direct-facing only.
 - Item ports support direct player insertion/extraction.
-- Fluid port modes are represented in the UI-free state machine but fluid transfer is not implemented yet.
+- Fluid port modes are represented in the UI-free state machine but fluid-network transfer is not implemented yet.
 - Hoppers and other mods cannot yet discover item ports through a NeoForge capability.
 - Recipe values are currently built into `CrusherRecipe`; GT6's full recipe map has not been migrated.
 

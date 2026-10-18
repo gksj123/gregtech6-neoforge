@@ -6,12 +6,14 @@ import gregtech.neo.block.BasicCrusherBlockEntity;
 import gregtech.neo.block.BasicMachineBlockEntity;
 import gregtech.neo.block.BurningBoxBlockEntity;
 import gregtech.neo.block.CrucibleBlockEntity;
+import gregtech.neo.block.FaucetBlockEntity;
 import gregtech.neo.block.AxleBlockEntity;
 import gregtech.neo.block.KineticConverterBlockEntity;
 import gregtech.neo.block.GeneratorBlockEntity;
 import gregtech.neo.block.LargeCrusherBlockEntity;
 import gregtech.neo.block.MachinePortBlockEntity;
 import gregtech.neo.block.MaterialStorageBlockEntity;
+import gregtech.neo.block.MoldBlockEntity;
 import gregtech.neo.block.SmallCrucibleBlockEntity;
 import gregtech.neo.block.TemperatureSensorBlockEntity;
 import gregtech.neo.material.GTMaterialBlocks;
@@ -112,5 +114,17 @@ public final class GTBlockEntities {
         BLOCK_ENTITIES.register("temperature_sensor", () -> BlockEntityType.Builder.of(
             TemperatureSensorBlockEntity::new,
             GTBlocks.TEMPERATURE_SENSOR.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<MoldBlockEntity>> MOLD =
+        BLOCK_ENTITIES.register("mold", () -> BlockEntityType.Builder.of(
+            MoldBlockEntity::new,
+            GTBlocks.MOLD.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<FaucetBlockEntity>> FAUCET =
+        BLOCK_ENTITIES.register("faucet", () -> BlockEntityType.Builder.of(
+            FaucetBlockEntity::new,
+            GTBlocks.FAUCET.get()
         ).build(null));
 }
