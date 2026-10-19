@@ -60,6 +60,131 @@ ASM Coremod）用 NeoForge 1.21.1 的等价机制重写，且重写后的 **可�
    原版引用。
 5. **验证**：数值与行为逐条对照原版源码自检；构建通过；
    可交互的功能必须在游戏内实测（工具链见 `tools/run_client.py`）。
+   - 可交互功能**优先且默认**使用已配置的 `mcpfabric` MCP 工具做黑盒交互测试。
+   - 编译、单元测试或静态检查不能代替交互测试；没有实测时必须明确报告未验证。
+
+## MCP 交互测试（强制流程）
+
+本仓库的开发环境已配置 Codex MCP 服务 `mcpfabric`，它通过 NeoForge 侧
+结构化 API 读取游戏状态并执行操作，不依赖视觉识别。MCP 服务、
+MCPFabric 兼容 jar 和维护说明位于：
+
+- `~/.codex/mcpfabric/mcp-server/dist/index.js`
+- `run-client/mods/mcpfabric-neoforge-0.8.0+1.21.1-gt6dev.jar`
+- `~/.codex/mcpfabric/GT6DEV.md`
+
+### 启动与连接
+
+1. 先启动隔离开发客户端：
+
+   ```sh
+   cd gregtech6-neoforge
+   python3 tools/run_client.py
+   ```
+
+   需要直接进入开发世界时可使用：
+
+   ```sh
+   GT6_QUICK_PLAY='新的世界' python3 tools/run_client.py
+   ```
+
+2. 游戏启动后，在**新的 Codex 会话**中使用 `mcpfabric`。MCP Server 由
+   Codex 自动启动；不要重复手动启动第二个 MCP Server。
+
+3. 第一次调用必须是 `get_status`。确认：
+
+   - `loader` 为 `neoforge`；
+   - `side` 为 `client` 或 `dedicated_server`；
+   - 进入世界后 `integratedServer` 为 `true`（客户端模式）；
+   - 客户端模式至少有 1 名在线玩家。
+
+4. 然后调用 `agent_brief` 和 `get_self`，记录世界、维度、坐标、生命值、
+   游戏模式和当前界面。必要时用 `get_screen` 检查是否卡在暂停菜单或加载界面。
+
+### 操作与观测原则
+
+- **优先使用结构化状态判断结果**：`get_block`、`get_blocks_region`、
+  `get_inventory`、`query_entities`、`poll_events`、`open_container` 及其回读等。
+- Codex 侧已禁用 `screenshot`。不要通过截图识别或让模型猜测画面；MCP 交互
+  测试应以坐标、方块状态、背包、实体、聊天、事件和方块回读为依据。
+- `enableVision` 仍用于结构化 `perception`/地图观察，不代表必须使用图像模型。
+- 若本功能依赖自定义 GUI，本项目默认 `enableUiControl=false`。需要测试
+  GT6 自定义界面时，必须在隔离存档中取得用户同意，再临时开启并记录风险；
+  GT6 的机器交互应优先通过无 GUI 的世界交互和原版源码定义的输入路径验证。
+
+### 标准测试步骤
+
+1. **准备可复现场景**：使用测试世界和固定坐标。记录维度、坐标、初始背包、
+   方块状态和机器配置。
+2. **搭建场景**：用原版命令或 `set_block`/`fill_blocks` 只修改明确声明的
+   测试体积；用 `give_item`、`select_hotbar_slot` 准备工具和材料。
+3. **执行真实交互**：用 `look_at`、`navigate_to`、`break_block`、`place_block`、
+   `use_item`、`attack_entity`、`open_container` 等工具走实际交互路径。
+   不得用命令或直接修改存档绕过被测功能来伪造通过结果。
+4. **等待并回读**：按原版源码确认 tick/秒数，再读取方块、背包、容器、能量或
+   实体状态。不能只看工具调用返回值。
+5. **验证边界和失败路径**：至少覆盖工具错误、能量不足、错误端口模式、
+   错误等级、无效结构、掉落/拾取和重启后的持久化中适用的项目。
+6. **清理现场**：恢复游戏模式、天气和时间（如测试修改过），停止后台任务并
+   关闭客户端。除非用户要求保留运行，测试结束后释放 `127.0.0.1:25599`。
+
+推荐的最小调用顺序：
+
+```text
+get_status
+agent_brief
+get_self
+get_block / get_blocks_region
+look_at
+use_item / place_block / break_block
+poll_events
+get_inventory / container.state
+get_block（回读）
+```
+
+### GT6 交互测试重点
+
+按功能适用的项目逐项验证：
+
+- 方块注册、放置、破坏和工具等级限制；
+- 机器朝向、端口模式、螺丝刀/扳手/软锤等工具行为；
+- 多方块结构成型、失效、旋转和重建；
+- RU/KU/EU/HU/蒸汽等能量或流体的输入、转换、损失和超额处理；
+- 输入/输出总线的插入、抽取、满仓和错误物品；
+- tick 顺序、加工时长、掉落和 NBT/Data Component 持久化；
+- 客户端与服务端状态同步；条件允许时用专用服务器验证专用端路径。
+
+测试结果汇报时至少写明：
+
+```text
+原版出处：
+测试场景：
+坐标/维度：
+MCP 调用：
+实际回读：
+期望行为：
+结论：通过 / 未通过 / 未验证
+日志或复现命令：
+```
+
+### MCP 失败处理
+
+- 工具不存在或连接失败：先确认游戏进程仍在运行、MCP 配置已加载，并检查
+  `run-client/logs/latest.log`；不要直接把 MCP 失败当作功能失败。
+- 工具返回超时：先用 `get_status`、`get_screen` 和 `poll_events` 判断游戏是否
+  卡住；不要盲目重复破坏性操作。
+- MCP 无法暴露目标交互时，补充窄范围、可验证的 MCP 工具或在测试报告中明确
+  说明覆盖缺口；不得用“人工看过”替代结构化断言。
+- `run-server` 已放置同一 MCP jar 和配置，但专用服务器路径目前尚未完成无头
+  冒烟测试。使用前先按 `tools/run_server.py` 启动并单独验证；客户端和专用
+  服务器不要同时占用 `25599` 端口。
+
+### 安全边界
+
+- 只在 `run-client`、`run-server` 等隔离开发实例中授权 MCP 的世界写入和命令。
+- 禁止把 MCP HTTP 桥接暴露到局域网或公网；保持 `127.0.0.1` 和 bearer token。
+- 禁止在测试中执行大范围 `fill`/`clear`、删除存档或修改用户主实例。
+- 禁止打印、提交或复制 MCP token。配置文件权限应保持为仅用户可读。
 
 ## 平台映射约定（1.7.10 → 1.21.1 等价重写，不改变行为）
 
@@ -101,4 +226,5 @@ ASM Coremod）用 NeoForge 1.21.1 的等价机制重写，且重写后的 **可�
 - `PORTING_STATUS.md` — 移植台账
 - `GAMEPLAY_INTERACTIONS.md` — 交互行为审计
 - `ASSET_SOURCES.md` — 资源文件来源
+- `~/.codex/mcpfabric/GT6DEV.md` — MCP 开发环境维护说明
 - `../gregtech6-legacy/FEATURE_INDEX/INDEX.md` — 原版功能索引总目录
