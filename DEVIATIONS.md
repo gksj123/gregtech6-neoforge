@@ -10,5 +10,7 @@
 | D3 | 蒸汽管道 | 原版使用通用 GT6 流体管道 | 使用实际 Steam 流体和指向接入面的 capability，由专用 `Steam Pipe` 方块承载 | 通用 GT6 流体管网尚未整体移植 | 可恢复：接入 `MultiTileEntityPipeFluid` 后替换专用管块 |
 | D4 | 蒸汽设备外观 | 锅炉气压计、引擎活塞和涡轮正反转使用原版分层纹理与动画 overlay | 当前使用功能模型占位，运行状态与机械方向已生效，但视觉 overlay 未逐面复现 | 原版设备纹理需要单独的动态材质/overlay 渲染层 | 可恢复：导入对应 colored/overlay 纹理并补 BlockEntityRenderer |
 | D5 | 流体 NBT | 1.7.10 使用 GT `FluidTankGT` 的旧流体 NBT 格式 | 保留 `gt.tank.N` 键，但内部使用 NeoForge `FluidStack` 数据组件格式 | 1.21.1 流体注册表和 NBT 表示不同 | 可恢复：增加 1.7.10 存档转换器 |
+| D6 | 大型锅炉方块强度 | 控制器与强化壁的硬度/抗爆值按 Stainless Steel、Invar、Titanium、Tungstensteel、Adamantium 分别定义 | 共用一个控制器方块和强化壁方块，方块强度统一为 6.0/12.0 | 材料由 Data Component 与 BlockEntity 提供，而 NeoForge 方块硬度属于 Block 实例，无法按内容动态变化 | 可恢复：为每个大型锅炉材质注册独立 Block |
+| D7 | Adamantium 大型锅炉蒸汽容量 | `131072*2*10000 = 2,621,440,000 L` | 受 NeoForge `IFluidHandler` 的 `int` 容量限制，钳制为 `2,147,483,647 L`，少 473,956,353 L | 1.21.1 流体槽与 FluidStack 数量均为 32 位整数 | 可恢复：用多个虚拟槽分段聚合为 long 容量并重写全部流体路由 |
 
 新增差异必须在此登记；未登记的差异视为违规。

@@ -6,6 +6,8 @@ import gregtech.neo.material.GTMaterialItems;
 import gregtech.neo.item.BasicMachineItem;
 import gregtech.neo.item.BurningBoxItem;
 import gregtech.neo.item.GT6DemoGuideItem;
+import gregtech.neo.item.LargeBoilerItem;
+import gregtech.neo.item.LargeBoilerWallItem;
 import gregtech.neo.item.MoldItem;
 import gregtech.neo.item.FaucetItem;
 import gregtech.neo.item.CeramicMoldRawItem;
@@ -82,6 +84,18 @@ public final class GTItems {
 
     public static final DeferredItem<SteamTurbineItem> STEAM_TURBINE =
         ITEMS.register("steam_turbine", () -> new SteamTurbineItem(GTBlocks.STEAM_TURBINE.get(), new Item.Properties()));
+
+    public static final DeferredItem<LargeBoilerItem> LARGE_BOILER =
+        ITEMS.register("large_boiler", () -> new LargeBoilerItem(
+            GTBlocks.LARGE_BOILER.get(),
+            new Item.Properties()
+        ));
+
+    public static final DeferredItem<LargeBoilerWallItem> LARGE_BOILER_WALL =
+        ITEMS.register("large_boiler_wall", () -> new LargeBoilerWallItem(
+            GTBlocks.LARGE_BOILER_WALL.get(),
+            new Item.Properties()
+        ));
 
     private static DeferredItem<GT6ToolItem> tool(String name, GT6ToolItem.ToolKind kind) {
         return ITEMS.register(name, () -> new GT6ToolItem(kind, new Item.Properties()));

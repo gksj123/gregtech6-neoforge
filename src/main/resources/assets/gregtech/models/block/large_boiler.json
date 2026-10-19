@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "gregtech:block/large_boiler_side",
+    "down": "gregtech:block/large_boiler_bottom",
+    "up": "gregtech:block/large_boiler_top",
+    "north": "gregtech:block/large_boiler_front",
+    "south": "gregtech:block/large_boiler_back",
+    "west": "gregtech:block/large_boiler_side",
+    "east": "gregtech:block/large_boiler_side"
+  }
+}

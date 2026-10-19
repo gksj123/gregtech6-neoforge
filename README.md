@@ -29,7 +29,8 @@ The first playable machines are:
 - GUI-free solid-fuel **Burning Boxes** that emit HU.
 - Ignited Burning Box animation, particles, contact damage and water extinguishing.
 - Source-shaped **casting molds**, faucets and 5x5 carved shape masks.
-- Steam boiler tanks, reciprocal steam engines and steam turbines using real fluid handlers.
+- 26 normal/strong steam boiler tanks, 5 source-tier large boilers, reciprocal KU steam
+  engines and RU steam turbines using real fluid handlers.
 
 GT6's energy families are kept separate. RU, KU, EU, and LU are not interchangeable scalar values. Converters explicitly transform one family into another and apply their own losses.
 
@@ -80,7 +81,8 @@ The gameplay extractor currently resolves:
 - 135 resolved crucible alloy configurations, with 2 dynamic source loops marked unresolved.
 - 39 blank mold and 39 faucet material variants, 30 named 5x5 shapes, and 549 source-transformed masks.
 - 107 casting recipes: 38 material molds, 39 faucets, and 30 raw ceramic mold smelting recipes.
-- Actual Steam and Distilled Water fluids, boiler/engine/turbine fluid capabilities, and dimensional steam-pipe routing.
+- Actual Steam and Distilled Water fluids, boiler/engine/turbine fluid capabilities,
+  dimensional steam-pipe routing, and large-boiler wall/heat-transmitter ports.
 
 Unresolved computed or default values remain marked in JSON instead of being
 silently guessed.
@@ -92,7 +94,8 @@ silently guessed.
 - Java 21
 - Gradle wrapper 8.14.2
 - Isolated runtime client launched and entered the world
-- Runtime self-test formed the exact 5x5x3 crusher, transferred RU/KU, and produced
+- Runtime self-test formed the exact 5x5x3 crusher and 3x3x3 large boiler, transferred RU/KU,
+  converted HU into steam, recovered distilled water, and produced
   3 gravel through each crusher path plus 9 material outputs through the generic KU machine
 - Runtime self-test melted iron in both crucible types and verified that the adjacent
   thermometer sensor reported the same temperature and a nonzero analog signal
@@ -144,7 +147,7 @@ saves are present.
 A successful run ends with:
 
 ```text
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true MOLD_INTERACTION=true MOLD_AUTO=true STEAM_FLOW=true STEAM_NO_VOID=true STEAM_TURBINE=true CASTING_RECIPES=true MOLD_RIGHT_CLICK=true LARGE_WALL_MOLD=true MOLD_SHAPES=true
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=2145K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true MOLD_INTERACTION=true MOLD_AUTO=true STEAM_FLOW=true STEAM_NO_VOID=true STEAM_TURBINE=true STEAM_LARGE_BOILER=true STEAM_LARGE_EXPLOSION=true CASTING_RECIPES=true MOLD_RIGHT_CLICK=true LARGE_WALL_MOLD=true MOLD_SHAPES=true
 ```
 
 The runtime test requires the configured save under `run-client/saves/`. A flat test world can be generated using the vanilla 1.21.1 server jar and copied there.
@@ -170,7 +173,9 @@ No machine menu is opened.
 | Magnifying glass or electrometer | Print machine, cable, and energy diagnostics |
 | Chisel on a mold's top face | Carve one cell of the 5x5 shape |
 | Pincers on a mold | Remove a casting without temperature damage |
-| Water bucket on a steam boiler | Insert 1000 L of water |
+| Water bucket on a steam boiler | Insert 1000 L of water into a normal/strong or large boiler controller |
+| Chisel on a calcified boiler | Descale it; high pressure can make the descaling explode |
+| Wrench on a large boiler | Rotate the controller and request a structure check |
 | Soft hammer on an engine or turbine | Toggle the machine on/off |
 | Right-click an `ITEM_IN` port with an item | Insert into the controller input bus |
 | Right-click an `ITEM_OUT` port with an empty hand | Extract from the controller output bus |
@@ -184,11 +189,11 @@ The demo exposes eight source-oriented creative tabs:
 
 | Tab | Current entries | Contents |
 | --- | ---: | --- |
-| Demo Kit | 34 | tools, controllers, crucible, mold, faucet, sensor, steam starter, structure materials, ingots and fuel |
+| Demo Kit | 37 | tools, controllers, crucible, mold, faucet, sensor, steam starter, large boiler starter, structure materials, ingots and fuel |
 | Material Forms | 10768 | all materials in nine primary forms, plus all 30 mold-output forms for core materials |
 | Material Blocks | 12232 | all 11 current material block families across the material registry |
 | Machines | 251 | all GT6 Basic Machine registrations |
-| Multiblocks & Heat | 61 | crushers, crucible, thermometer sensor, walls, ports, wheels, Burning Boxes and all boiler tanks |
+| Multiblocks & Heat | 72 | crushers, crucible, thermometer sensor, walls, ports, wheels, Burning Boxes, 26 boiler tanks, 5 large boilers, 5 dense wall tiers and Heat Transmitters |
 | Tools & Energy | 62 | tools, generators, converters, axles, cables, all steam engines and turbines |
 | Smelting Crucibles | 41 | 39 material crucibles, the quicksilver thermometer and the thermometer sensor |
 | Molds & Casting | 110 | 30 raw ceramic shapes, 39 blank wall-material molds, 39 faucets, chisel, pincers and thermometer |
@@ -216,6 +221,21 @@ The source shape is a 5x5x3 basin, matching `MultiTileEntityCrusher`:
 - The LV electric motor currently produces only RU 16, so it does not yet meet the Large Crusher's original RU 512 minimum.
 
 The controller checks its structure every second. The soft hammer forces an immediate check.
+
+## Large Steam Boiler Assembly
+
+The source shape is the 3x3x3 hollow boiler from `MultiTileEntityLargeBoiler`:
+
+- Place the controller at the center of the lower front wall, facing outward.
+- Build a full 3x3 layer of Heat Transmitters directly below the boiler.
+- Build the lower, middle and top wall rings from the same dense wall material as the controller.
+- Fill the top-center wall position; the internal 3x3x3 volume stays hollow.
+- Supply HU through the Heat Transmitters and water through any lower wall face.
+- Steam can leave through the top-center block or the four upper side-wall centers.
+- Build matching walls for Stainless Steel, Invar, Titanium, Tungstensteel or Adamantium.
+- Do not block the steam ports or exceed the heat/pressure limits: the boiler can explode.
+
+The controller checks its structure every second. A soft hammer forces an immediate check.
 
 ## Energy Model
 
@@ -400,7 +420,7 @@ mold and faucet tooltips use the original GT6 wording and line order.
 1. Add NeoForge item/fluid/energy capabilities to ports and machine controllers.
 2. Port the 251 Basic Machine registrations onto one data-driven machine block and recipe-map engine.
 3. Replace hard-coded structures with a data-driven pattern and rotation engine.
-4. Port the large boiler and steam turbine to provide an authentic high-output RU source.
+4. Port the large steam turbine to pair with the completed large boiler.
 5. Port covers, side configuration, shutters, conveyor and pump modules.
 6. Migrate GT6 ores, cables, circuits, and all recipe loader families.
 7. Rebuild NEI-like recipe inspection without reintroducing machine GUIs.

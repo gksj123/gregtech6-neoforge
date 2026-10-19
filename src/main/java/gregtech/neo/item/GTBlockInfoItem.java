@@ -5,6 +5,7 @@ import gregtech.neo.block.BasicCrusherBlock;
 import gregtech.neo.block.CableBlock;
 import gregtech.neo.block.CrucibleBlock;
 import gregtech.neo.block.GeneratorBlock;
+import gregtech.neo.block.HeatTransmitterBlock;
 import gregtech.neo.block.KineticConverterBlock;
 import gregtech.neo.block.LargeCrusherBlock;
 import gregtech.neo.block.MachinePortBlock;
@@ -64,6 +65,12 @@ public final class GTBlockInfoItem extends BlockItem {
             GT6Tooltip.line(tooltip, ChatFormatting.GOLD, "ENERGY: EU 32 x 2 A");
             GT6Tooltip.line(tooltip, ChatFormatting.GRAY, "FUEL: solid furnace fuels");
             GT6Tooltip.nbt(tooltip, "kind:\"EU\", voltage:32, amperage:2");
+        } else if (getBlock() instanceof HeatTransmitterBlock) {
+            GT6Tooltip.header(tooltip, "HEAT TRANSMITTER");
+            GT6Tooltip.line(tooltip, ChatFormatting.GOLD, "INPUT: HU from any side");
+            GT6Tooltip.line(tooltip, ChatFormatting.GRAY,
+                "BUILD: 3x3 layer below a large steam boiler");
+            GT6Tooltip.nbt(tooltip, "kind:\"HU\", structure:\"large_boiler\"");
         } else if (getBlock() instanceof ManualCrankBlock) {
             GT6Tooltip.header(tooltip, "MANUAL CRANK");
             GT6Tooltip.line(tooltip, ChatFormatting.GOLD, "OUTPUT: RU 16 x 1");

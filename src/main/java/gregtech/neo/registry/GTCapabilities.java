@@ -4,6 +4,8 @@ import gregtech.neo.block.SteamBoilerBlockEntity;
 import gregtech.neo.block.SteamEngineBlockEntity;
 import gregtech.neo.block.SteamPipeBlockEntity;
 import gregtech.neo.block.SteamTurbineBlockEntity;
+import gregtech.neo.block.LargeBoilerBlockEntity;
+import gregtech.neo.block.LargeBoilerWallBlockEntity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
@@ -61,6 +63,16 @@ public final class GTCapabilities {
             Capabilities.FluidHandler.BLOCK,
             GTBlockEntities.STEAM_TURBINE.get(),
             SteamTurbineBlockEntity::fluidHandler
+        );
+        event.registerBlockEntity(
+            Capabilities.FluidHandler.BLOCK,
+            GTBlockEntities.LARGE_BOILER.get(),
+            LargeBoilerBlockEntity::fluidHandler
+        );
+        event.registerBlockEntity(
+            Capabilities.FluidHandler.BLOCK,
+            GTBlockEntities.LARGE_BOILER_WALL.get(),
+            LargeBoilerWallBlockEntity::fluidHandler
         );
         event.registerBlockEntity(
             Capabilities.FluidHandler.BLOCK,

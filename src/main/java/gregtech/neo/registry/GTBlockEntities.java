@@ -10,6 +10,9 @@ import gregtech.neo.block.FaucetBlockEntity;
 import gregtech.neo.block.AxleBlockEntity;
 import gregtech.neo.block.KineticConverterBlockEntity;
 import gregtech.neo.block.GeneratorBlockEntity;
+import gregtech.neo.block.HeatTransmitterBlockEntity;
+import gregtech.neo.block.LargeBoilerBlockEntity;
+import gregtech.neo.block.LargeBoilerWallBlockEntity;
 import gregtech.neo.block.LargeCrusherBlockEntity;
 import gregtech.neo.block.MachinePortBlockEntity;
 import gregtech.neo.block.MaterialStorageBlockEntity;
@@ -148,6 +151,24 @@ public final class GTBlockEntities {
         BLOCK_ENTITIES.register("steam_turbine", () -> BlockEntityType.Builder.of(
             SteamTurbineBlockEntity::new,
             GTBlocks.STEAM_TURBINE.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<LargeBoilerBlockEntity>> LARGE_BOILER =
+        BLOCK_ENTITIES.register("large_boiler", () -> BlockEntityType.Builder.of(
+            LargeBoilerBlockEntity::new,
+            GTBlocks.LARGE_BOILER.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<LargeBoilerWallBlockEntity>> LARGE_BOILER_WALL =
+        BLOCK_ENTITIES.register("large_boiler_wall", () -> BlockEntityType.Builder.of(
+            LargeBoilerWallBlockEntity::new,
+            GTBlocks.LARGE_BOILER_WALL.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<HeatTransmitterBlockEntity>> HEAT_TRANSMITTER =
+        BLOCK_ENTITIES.register("heat_transmitter", () -> BlockEntityType.Builder.of(
+            HeatTransmitterBlockEntity::new,
+            GTBlocks.HEAT_TRANSMITTER.get()
         ).build(null));
 
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SteamPipeBlockEntity>> STEAM_PIPE =

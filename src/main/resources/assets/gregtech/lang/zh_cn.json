@@ -40,6 +40,17 @@
   "block.gregtech.copper_cable": "铜导线",
   "block.gregtech.mold": "GT 铸模",
   "block.gregtech.faucet": "GT 坩埚龙头",
+  "block.gregtech.steam_boiler": "GT 蒸汽锅炉",
+  "block.gregtech.steam_boiler.unassigned": "未指定材料的 GT 蒸汽锅炉",
+  "block.gregtech.steam_engine": "GT 蒸汽动力引擎",
+  "block.gregtech.steam_engine.unassigned": "未指定材料的 GT 蒸汽动力引擎",
+  "block.gregtech.steam_turbine": "GT 蒸汽旋转引擎",
+  "block.gregtech.steam_turbine.unassigned": "未指定材料的 GT 蒸汽旋转引擎",
+  "block.gregtech.steam_pipe": "GT 蒸汽管道",
+  "block.gregtech.large_boiler": "大型蒸汽锅炉控制器",
+  "block.gregtech.large_boiler.unassigned": "未指定材料的大型蒸汽锅炉",
+  "block.gregtech.large_boiler_wall.name": "%1$s强化锅炉壁",
+  "block.gregtech.heat_transmitter": "热传导器",
 
   "item.gregtech.wrench": "GT 扳手",
   "item.gregtech.screwdriver": "GT 螺丝刀",
@@ -86,6 +97,7 @@
   "message.gregtech.item_inserted": "物品已送入多方块输入总线",
   "message.gregtech.item_extracted": "已从多方块输出总线取出物品",
   "message.gregtech.input_full": "输入总线已满，或无法接收该物品",
+  "message.gregtech.water_inserted": "已注入水",
   "message.gregtech.fuel_inserted": "燃料已插入",
   "message.gregtech.machine.enabled": "机器已启用",
   "message.gregtech.machine.disabled": "机器已关闭",
@@ -115,5 +127,10 @@
   "message.gregtech.cable.status": "导线：%1$s | 上限 %2$s V / %3$s A | 损耗 %4$s V/格 | 上次 %5$s V、%6$s A | 烧毁次数：%7$s",
   "message.gregtech.generator.status": "启用：%1$s | 剩余燃料刻：%2$s | 能量包：%3$s V × %4$s A | 发电：%5$s EU/t | 送达：%6$s EU | 接收端：%7$s",
   "message.gregtech.crusher.status": "启用：%1$s | 成形：%2$s | 能量：%3$s | 缓存：%4$s | 进度：%5$s / %6$s",
-  "message.gregtech.crusher.detail": "启用：%1$s | 成形：%2$s | 能量：%3$s | 缓存：%4$s / %5$s | 进度：%6$s / %7$s | 上次尺寸：%8$s（范围 %9$s-%10$s，最多 %11$s 包）| 输入：%12$s | 输出：%13$s"
+  "message.gregtech.crusher.detail": "启用：%1$s | 成形：%2$s | 能量：%3$s | 缓存：%4$s / %5$s | 进度：%6$s / %7$s | 上次尺寸：%8$s（范围 %9$s-%10$s，最多 %11$s 包）| 输入：%12$s | 输出：%13$s",
+  "message.gregtech.steam_boiler.status": "%1$s | 蒸汽输出：%2$s L/t | 效率：%3$s | 热量：%4$s / %5$s HU | 水：%6$s L | 蒸汽：%7$s L | 气压计：%8$s",
+  "message.gregtech.steam_engine.status": "%1$s | 基础动力：%2$s KU | 效率：%3$s | 蒸汽：%4$s | 储能：%5$s | 已停机：%6$s | 运行：%7$s",
+  "message.gregtech.steam_turbine.status": "%1$s | 输出：%2$s RU/t | 蒸汽：%3$s / %4$s | 运行：%5$s",
+  "message.gregtech.steam_pipe.status": "蒸汽管道：在锅炉与蒸汽机/旋转引擎之间输送蒸汽流体",
+  "message.gregtech.large_boiler.status": "%1$s | 成形：%2$s | 蒸汽输出：%3$s L/t | 效率：%4$s | 热量：%5$s / %6$s HU | 水：%7$s L | 蒸汽：%8$s L | 气压计：%9$s | 错误：%10$s"
 }

@@ -10,6 +10,9 @@ import gregtech.neo.block.GeneratorBlockEntity;
 import gregtech.neo.block.BasicCrusherBlockEntity;
 import gregtech.neo.block.KineticConverterBlock;
 import gregtech.neo.block.KineticConverterBlockEntity;
+import gregtech.neo.block.LargeBoilerBlock;
+import gregtech.neo.block.LargeBoilerBlockEntity;
+import gregtech.neo.block.LargeBoilerWallBlockEntity;
 import gregtech.neo.block.LargeCrusherBlock;
 import gregtech.neo.block.LargeCrusherBlockEntity;
 import gregtech.neo.block.MachinePortBlock;
@@ -24,6 +27,7 @@ import gregtech.neo.block.SteamPipeBlockEntity;
 import gregtech.neo.block.SteamTurbineBlock;
 import gregtech.neo.block.SteamTurbineBlockEntity;
 import gregtech.neo.block.TemperatureSensorBlockEntity;
+import gregtech.neo.block.HeatTransmitterBlockEntity;
 import gregtech.neo.block.MoldBlockEntity;
 import gregtech.neo.block.FaucetBlock;
 import gregtech.neo.block.FaucetBlockEntity;
@@ -91,11 +95,13 @@ public final class RuntimeSelfTest {
     private static BlockPos autoCruciblePos;
     private static BlockPos steamTestPos;
     private static BlockPos turbineTestPos;
+    private static BlockPos largeBoilerTestPos;
     private static BlockPos rightClickMoldPos;
     private static BlockPos largeWallMoldPos;
     private static boolean genericCapabilityInserted;
     private static boolean burningHeatObserved;
     private static boolean burningBoxLitObserved;
+    private static boolean crucibleMeltObserved;
     private static boolean creativeCatalogPass;
     private static boolean castingPoured;
     private static boolean castingOutputPass;
@@ -109,6 +115,8 @@ public final class RuntimeSelfTest {
     private static boolean steamFlowPass;
     private static boolean steamNoVoidPass;
     private static boolean steamTurbinePass;
+    private static boolean steamLargeBoilerPass;
+    private static boolean steamLargeExplosionPass;
     private static boolean castingRecipePass;
     private static boolean rightClickMoldPass;
     private static boolean largeWallMoldPass;
@@ -133,6 +141,7 @@ public final class RuntimeSelfTest {
         genericCapabilityInserted = false;
         burningHeatObserved = false;
         burningBoxLitObserved = false;
+        crucibleMeltObserved = false;
         creativeCatalogPass = false;
         castingPoured = false;
         castingOutputPass = false;
@@ -150,6 +159,8 @@ public final class RuntimeSelfTest {
         steamFlowPass = false;
         steamNoVoidPass = false;
         steamTurbinePass = false;
+        steamLargeBoilerPass = false;
+        steamLargeExplosionPass = false;
         castingRecipePass = false;
         rightClickMoldPass = false;
         largeWallMoldPass = false;
@@ -171,6 +182,7 @@ public final class RuntimeSelfTest {
         autoMoldPos = autoCruciblePos.north();
         steamTestPos = controllerPos.offset(-35, 0, -15);
         turbineTestPos = steamTestPos.offset(20, 0, 0);
+        largeBoilerTestPos = steamTestPos.offset(0, 0, 30);
         rightClickMoldPos = controllerPos.offset(50, 0, 10);
         largeWallMoldPos = cruciblePos.offset(-2, 1, 0);
         moldPos = smallCruciblePos.north();
@@ -216,6 +228,8 @@ public final class RuntimeSelfTest {
             steamFlowPass = steamResults[0];
             steamNoVoidPass = steamResults[1];
             steamTurbinePass = steamResults[2];
+            steamLargeBoilerPass = steamResults[3];
+            steamLargeExplosionPass = steamResults[4];
             rightClickMoldPass = runMoldRightClickPourTest(
                 event.getServer().overworld()
             );
@@ -323,6 +337,22 @@ public final class RuntimeSelfTest {
             }
             if (level.getBlockEntity(cruciblePos) instanceof CrucibleBlockEntity crucible
                 && level.getBlockEntity(largeWallMoldPos) instanceof MoldBlockEntity mold) {
+                long targetTemperature = 2100;
+                long requiredHeat = Math.max(
+                    0,
+                    targetTemperature - crucible.temperature()
+                ) * crucible.requiredHeatPerKelvin();
+                if (requiredHeat > 0) {
+                    long packetSize = 1024;
+                    long packets = Math.max(1, (requiredHeat + packetSize - 1) / packetSize);
+                    crucible.receivePacket(
+                        new EnergyPacket(EnergyKind.HEAT, packetSize, packets),
+                        Direction.UP,
+                        false
+                    );
+                }
+                crucibleMeltObserved = crucible.temperature() >= 1811
+                    && crucible.moltenUnits() >= GTMaterialGameplayRegistry.MATERIAL_UNIT;
                 Player player = FakePlayerFactory.getMinecraft(level);
                 player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
                 BlockHitResult wallMoldHit = new BlockHitResult(
@@ -407,8 +437,7 @@ public final class RuntimeSelfTest {
                 && burningBoxLitObserved
                 && largeFillPass
                 && crucible.isFormed()
-                && crucibleTemperature >= 1811
-                && crucible.moltenUnits() >= GTMaterialGameplayRegistry.MATERIAL_UNIT;
+                && crucibleMeltObserved;
         }
         boolean smallCruciblePass = false;
         boolean smallDropAbsorbed = false;
@@ -458,10 +487,11 @@ public final class RuntimeSelfTest {
                 && faucetPoured && faucetOutputPass && alloyCatalogPass
                 && moldInteractionPass && moldAutoPullPass
                 && steamFlowPass && steamNoVoidPass && steamTurbinePass
+                && steamLargeBoilerPass && steamLargeExplosionPass
                 && castingRecipePass && rightClickMoldPass
                 && largeWallMoldPass && moldShapeOutputPass) {
                 GT6Neo.LOGGER.info(
-                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{} FILL={}/{} STEELMAKING={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={} MOLD_INTERACTION={} MOLD_AUTO={} STEAM_FLOW={} STEAM_NO_VOID={} STEAM_TURBINE={} CASTING_RECIPES={} MOLD_RIGHT_CLICK={} LARGE_WALL_MOLD={} MOLD_SHAPES={}",
+                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{} FILL={}/{} STEELMAKING={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={} MOLD_INTERACTION={} MOLD_AUTO={} STEAM_FLOW={} STEAM_NO_VOID={} STEAM_TURBINE={} STEAM_LARGE_BOILER={} STEAM_LARGE_EXPLOSION={} CASTING_RECIPES={} MOLD_RIGHT_CLICK={} LARGE_WALL_MOLD={} MOLD_SHAPES={}",
                     output.getCount(),
                     basicCount,
                     crankCount,
@@ -485,6 +515,8 @@ public final class RuntimeSelfTest {
                     steamFlowPass,
                     steamNoVoidPass,
                     steamTurbinePass,
+                    steamLargeBoilerPass,
+                    steamLargeExplosionPass,
                     castingRecipePass,
                     rightClickMoldPass,
                     largeWallMoldPass,
@@ -492,7 +524,7 @@ public final class RuntimeSelfTest {
                 );
             } else {
                 GT6Neo.LOGGER.error(
-                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} LARGE_FILL={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SMALL_FILL={} STEELMAKING={} SENSOR pass={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={} CREATIVE_CATALOG={} MOLD_INTERACTION={} MOLD_AUTO={} STEAM_FLOW={} STEAM_NO_VOID={} STEAM_TURBINE={} CASTING_RECIPES={} MOLD_RIGHT_CLICK={} LARGE_WALL_MOLD={} MOLD_SHAPES={}",
+                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} LARGE_FILL={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SMALL_FILL={} STEELMAKING={} SENSOR pass={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={} CREATIVE_CATALOG={} MOLD_INTERACTION={} MOLD_AUTO={} STEAM_FLOW={} STEAM_NO_VOID={} STEAM_TURBINE={} STEAM_LARGE_BOILER={} STEAM_LARGE_EXPLOSION={} CASTING_RECIPES={} MOLD_RIGHT_CLICK={} LARGE_WALL_MOLD={} MOLD_SHAPES={}",
                     crusher.isFormed(),
                     output,
                     basicPass,
@@ -522,6 +554,8 @@ public final class RuntimeSelfTest {
                     steamFlowPass,
                     steamNoVoidPass,
                     steamTurbinePass,
+                    steamLargeBoilerPass,
+                    steamLargeExplosionPass,
                     castingRecipePass,
                     rightClickMoldPass,
                     largeWallMoldPass,
@@ -1076,7 +1110,201 @@ public final class RuntimeSelfTest {
 
         clearTestVolume(level, steamTestPos, 8, 6, 10);
         clearTestVolume(level, turbineTestPos, 6, 5, 6);
-        return new boolean[] {steamFlowPass, steamNoVoidPass, steamTurbinePass};
+        boolean[] largeBoilerResults = runLargeBoilerTests(level);
+        return new boolean[] {
+            steamFlowPass,
+            steamNoVoidPass,
+            steamTurbinePass,
+            largeBoilerResults[0],
+            largeBoilerResults[1]
+        };
+    }
+
+    private static boolean[] runLargeBoilerTests(ServerLevel level) {
+        clearTestVolume(level, largeBoilerTestPos, 6, 8, 8);
+        LargeBoilerBlockEntity boiler = buildLargeBoiler(
+            level,
+            largeBoilerTestPos,
+            "stainlesssteel",
+            1248
+        );
+        if (boiler == null) {
+            GT6Neo.LOGGER.error("GT6 large boiler test: missing controller block entity");
+            return new boolean[] {false, false};
+        }
+
+        BlockPos center = boiler.center();
+        BlockPos enginePos = center.above(3);
+        BlockPos waterSinkPos = enginePos.east();
+        level.setBlockAndUpdate(
+            enginePos,
+            GTBlocks.STEAM_ENGINE.get().defaultBlockState()
+                .setValue(SteamEngineBlock.FACING, Direction.UP)
+        );
+        level.setBlockAndUpdate(
+            waterSinkPos,
+            GTBlocks.STEAM_BOILER.get().defaultBlockState()
+        );
+        SteamEngineBlockEntity engine = level.getBlockEntity(enginePos)
+            instanceof SteamEngineBlockEntity entity ? entity : null;
+        SteamBoilerBlockEntity waterSink = level.getBlockEntity(waterSinkPos)
+            instanceof SteamBoilerBlockEntity entity ? entity : null;
+        if (engine == null || waterSink == null) {
+            GT6Neo.LOGGER.error("GT6 large boiler test: missing engine or condensate sink");
+            return new boolean[] {false, false};
+        }
+        engine.setPart(new MachinePart(584, "Engines"));
+        waterSink.setPart(new MachinePart(553, "Steam Boilers"));
+
+        BlockPos lowerWaterWallPos = center.west();
+        IFluidHandler waterInput = level.getCapability(
+            Capabilities.FluidHandler.BLOCK,
+            lowerWaterWallPos,
+            Direction.EAST
+        );
+        int initialWater = waterInput == null
+            ? 0
+            : waterInput.fill(
+                GTFluidUtil.distilledWater(128_000),
+                IFluidHandler.FluidAction.EXECUTE
+            );
+        BlockPos heatInputPos = center.below();
+        if (level.getBlockEntity(heatInputPos) instanceof HeatTransmitterBlockEntity transmitter) {
+            transmitter.receivePacket(
+                new EnergyPacket(EnergyKind.HEAT, 4_096, 5_200),
+                Direction.UP,
+                false
+            );
+        }
+        for (int tick = 0; tick < 160; tick++) {
+            if (waterInput != null) {
+                waterInput.fill(
+                    GTFluidUtil.distilledWater(32_000),
+                    IFluidHandler.FluidAction.EXECUTE
+                );
+            }
+            boiler.tick();
+            engine.tick();
+        }
+
+        boolean largeBoilerPass = boiler.isFormed()
+            && boiler.outputRate() == 8_192
+            && boiler.heatCapacity() == 81_920_000L
+            && boiler.steamAmount() >= boiler.steamCapacity() / 2
+            && boiler.efficiency() == 10_000
+            && boiler.barometer() > 0
+            && initialWater == 128_000
+            && (engine.energyStored() > 0 || waterSink.waterAmount() > 0);
+        GT6Neo.LOGGER.info(
+            "GT6 large boiler test: formed={} output={} heatCap={} wallInput={} water={} steam={} efficiency={} barometer={} engineKU={} condensate={} pass={}",
+            boiler.isFormed(),
+            boiler.outputRate(),
+            boiler.heatCapacity(),
+            initialWater,
+            boiler.waterAmount(),
+            boiler.steamAmount(),
+            boiler.efficiency(),
+            boiler.barometer(),
+            engine.energyStored(),
+            waterSink.waterAmount(),
+            largeBoilerPass
+        );
+
+        BlockPos explosionPos = largeBoilerTestPos.offset(0, 0, 12);
+        clearTestVolume(level, explosionPos, 7, 8, 7);
+        LargeBoilerBlockEntity exploding = buildLargeBoiler(
+            level,
+            explosionPos,
+            "stainlesssteel",
+            1248
+        );
+        boolean explosionPass = false;
+        if (exploding != null) {
+            int filled = exploding.fillSteamForTesting(Integer.MAX_VALUE);
+            boolean formedBefore = exploding.isFormed();
+            long capacity = exploding.steamCapacity();
+            exploding.tick();
+            explosionPass = filled >= capacity
+                && formedBefore
+                && !(level.getBlockState(explosionPos).getBlock() instanceof LargeBoilerBlock);
+            GT6Neo.LOGGER.info(
+                "GT6 large boiler explosion test: filled={} capacity={} formed={} destroyed={} pass={}",
+                filled,
+                capacity,
+                formedBefore,
+                !(level.getBlockState(explosionPos).getBlock() instanceof LargeBoilerBlock),
+                explosionPass
+            );
+        }
+
+        clearTestVolume(level, largeBoilerTestPos, 7, 8, 9);
+        clearTestVolume(level, explosionPos, 12, 10, 12);
+        return new boolean[] {largeBoilerPass, explosionPass};
+    }
+
+    private static LargeBoilerBlockEntity buildLargeBoiler(
+        ServerLevel level,
+        BlockPos controllerPos,
+        String material,
+        int sourceLine
+    ) {
+        BlockState controllerState = GTBlocks.LARGE_BOILER.get().defaultBlockState()
+            .setValue(LargeBoilerBlock.FACING, Direction.SOUTH)
+            .setValue(LargeBoilerBlock.FORMED, false);
+        level.setBlockAndUpdate(controllerPos, controllerState);
+        if (!(level.getBlockEntity(controllerPos) instanceof LargeBoilerBlockEntity boiler)) {
+            return null;
+        }
+        boiler.setPart(new MachinePart(sourceLine, "Multiblock Machines"));
+
+        BlockPos center = controllerPos.north();
+        for (int x = -1; x <= 1; x++) {
+            for (int z = -1; z <= 1; z++) {
+                BlockPos bottom = center.offset(x, -1, z);
+                level.setBlockAndUpdate(
+                    bottom,
+                    GTBlocks.HEAT_TRANSMITTER.get().defaultBlockState()
+                );
+            }
+        }
+        for (int y = 0; y <= 2; y++) {
+            for (int x = -1; x <= 1; x++) {
+                for (int z = -1; z <= 1; z++) {
+                    if (x == 0 && z == 0) {
+                        if (y == 2) {
+                            setLargeBoilerWall(level, center.offset(x, y, z), material);
+                        }
+                        continue;
+                    }
+                    BlockPos target = center.offset(x, y, z);
+                    if (!target.equals(controllerPos)) {
+                        setLargeBoilerWall(level, target, material);
+                    }
+                }
+            }
+        }
+        boiler.forceStructureCheck();
+        GT6Neo.LOGGER.info(
+            "GT6 large boiler structure: controller={} formed={} error={}",
+            controllerPos,
+            boiler.isFormed(),
+            boiler.structureError()
+        );
+        return boiler;
+    }
+
+    private static void setLargeBoilerWall(
+        ServerLevel level,
+        BlockPos pos,
+        String material
+    ) {
+        level.setBlockAndUpdate(
+            pos,
+            GTBlocks.LARGE_BOILER_WALL.get().defaultBlockState()
+        );
+        if (level.getBlockEntity(pos) instanceof LargeBoilerWallBlockEntity wall) {
+            wall.setPart(new MaterialPart(material, "casingMachineDense"));
+        }
     }
 
     private static void clearTestVolume(

@@ -17,6 +17,9 @@ base texture with its matching overlay before writing the modern texture.
 - `manual_crank_front.png`: `tools/crank/colored/front.png` and overlay
 - `temperature_sensor_*.png`: `redstone/sensors/thermometer/colored` and overlay
 - `large_crucible_*.png`: `multiblockmains/crucible/colored_front` and overlay
+- `large_boiler_*.png`: `multiblockmains/largeboiler/colored` and `colored_front`
+- `large_boiler_wall.png`: `multiblockparts/metalwalldense/0/colored/side.png`, tinted by wall material
+- `heat_transmitter.png`: `multiblockparts/heatacceptor/0/colored/side.png`
 - `crucible_wall_*.png`: `multiblockparts/metalwall/0/colored` and overlay
 - `tungstensteel_wall_*.png`: the same GT6 metal-wall set tinted as tungstensteel
 - `machine_port.png`: `multiblockparts/metalwall/1/colored/side.png`

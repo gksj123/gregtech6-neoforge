@@ -222,6 +222,39 @@ def main() -> None:
         ("top", "side", "bottom"),
         tint=(130, 130, 130),
     )
+    compose(
+        SOURCE / "machines/multiblockmains/largeboiler/colored_front/side.png",
+        SOURCE / "machines/multiblockmains/largeboiler/overlay_front/side.png",
+        "large_boiler_front.png",
+    )
+    compose(
+        SOURCE / "machines/multiblockmains/largeboiler/colored/side.png",
+        SOURCE / "machines/multiblockmains/largeboiler/overlay/side.png",
+        "large_boiler_back.png",
+    )
+    (OUTPUT / "large_boiler_side.png").write_bytes(
+        (OUTPUT / "large_boiler_back.png").read_bytes()
+    )
+    compose(
+        SOURCE / "machines/multiblockmains/largeboiler/colored_front/top.png",
+        SOURCE / "machines/multiblockmains/largeboiler/overlay_front/top.png",
+        "large_boiler_top.png",
+    )
+    compose(
+        SOURCE / "machines/multiblockmains/largeboiler/colored_front/bottom.png",
+        SOURCE / "machines/multiblockmains/largeboiler/overlay_front/bottom.png",
+        "large_boiler_bottom.png",
+    )
+    compose(
+        SOURCE / "machines/multiblockparts/metalwalldense/0/colored/side.png",
+        SOURCE / "machines/multiblockparts/metalwalldense/0/overlay/side.png",
+        "large_boiler_wall.png",
+    )
+    compose(
+        SOURCE / "machines/multiblockparts/heatacceptor/0/colored/side.png",
+        SOURCE / "machines/multiblockparts/heatacceptor/0/overlay/side.png",
+        "heat_transmitter.png",
+    )
     faces(
         "crucible_wall",
         "machines/multiblockparts/metalwall/0/colored",

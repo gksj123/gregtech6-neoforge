@@ -10,6 +10,8 @@ import gregtech.neo.item.CeramicMoldRawItem;
 import gregtech.neo.item.SteamBoilerItem;
 import gregtech.neo.item.SteamEngineItem;
 import gregtech.neo.item.SteamTurbineItem;
+import gregtech.neo.item.LargeBoilerItem;
+import gregtech.neo.item.LargeBoilerWallItem;
 import gregtech.neo.casting.CastingPart;
 import gregtech.neo.casting.GTMoldRegistry;
 import gregtech.neo.machine.GTMachineRegistry;
@@ -25,9 +27,18 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.List;
+
 public final class GTCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> TABS =
         DeferredRegister.create(Registries.CREATIVE_MODE_TAB, GT6Neo.MOD_ID);
+    private static final List<String> LARGE_BOILER_WALL_MATERIALS = List.of(
+        "stainlesssteel",
+        "invar",
+        "titanium",
+        "tungstensteel",
+        "adamantium"
+    );
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> DEMO = TABS.register(
         "demo",
@@ -79,6 +90,15 @@ public final class GTCreativeTabs {
                     GTItems.STEAM_BOILER.get(),
                     new MachinePart(555, "Steam Boilers")
                 ));
+                output.accept(LargeBoilerItem.create(
+                    GTItems.LARGE_BOILER.get(),
+                    new MachinePart(1248, "Multiblock Machines")
+                ));
+                output.accept(LargeBoilerWallItem.create(
+                    GTItems.LARGE_BOILER_WALL.get(),
+                    "stainlesssteel"
+                ));
+                output.accept(GTBlocks.HEAT_TRANSMITTER.get());
                 output.accept(GTMaterialItems.createPart("iron", "ingot", 1));
                 output.accept(GTMaterialItems.createPart("copper", "ingot", 1));
                 output.accept(GTMaterialItems.createPart("tin", "ingot", 1));
@@ -150,6 +170,19 @@ public final class GTCreativeTabs {
                         GTItems.STEAM_BOILER.get(),
                         new MachinePart(machine.line(), machine.category())
                     )));
+                GTMachineRegistry.machines().stream()
+                    .filter(machine -> "MultiTileEntityLargeBoiler".equals(machine.machine_class()))
+                    .forEach(machine -> output.accept(LargeBoilerItem.create(
+                        GTItems.LARGE_BOILER.get(),
+                        new MachinePart(machine.line(), machine.category())
+                    )));
+                for (String material : LARGE_BOILER_WALL_MATERIALS) {
+                    output.accept(LargeBoilerWallItem.create(
+                        GTItems.LARGE_BOILER_WALL.get(),
+                        material
+                    ));
+                }
+                output.accept(GTBlocks.HEAT_TRANSMITTER.get());
             })
             .build()
     );

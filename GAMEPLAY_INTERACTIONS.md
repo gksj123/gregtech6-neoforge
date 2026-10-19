@@ -99,7 +99,8 @@ Source: `gregtech/tileentity/tools/MultiTileEntityMold.java`,
 
 Sources:
 `gregtech/tileentity/energy/converters/MultiTileEntityBoilerTank.java`,
-`MultiTileEntityEngineSteam.java`, and `MultiTileEntityTurbineSteam.java`.
+`MultiTileEntityEngineSteam.java`, `MultiTileEntityTurbineSteam.java`, and
+`gregtech/tileentity/multiblocks/MultiTileEntityLargeBoiler.java`.
 
 | Source behavior | Port status |
 | --- | --- |
@@ -115,6 +116,12 @@ Sources:
 | Turbine accepts steam only through its back | Implemented and runtime-tested |
 | Soft hammer toggles engines/turbines | Implemented |
 | Steam pipes | Implemented as fluid-capability pipes with actual side routing |
+| Normal and strong boiler tiers | 13 materials each, mapped directly from source registration lines |
+| Large boiler tiers | 5 source tiers: Stainless Steel, Invar, Titanium, Tungstensteel and Adamantium |
+| Large boiler structure | 3x3 Heat Transmitters below a 3x3x3 hollow dense-wall shell |
+| Large boiler water/steam ports | Lower wall faces accept water; top center and upper side centers drain steam |
+| Large boiler hazard rules | Calcification, pressure structure failure and source explosion formula implemented |
+| Large boiler acceptance | Runtime-tested at 8,192 L/t with KU output and 2,432 L condensed water; full-pressure explosion also tested |
 
 ## Large Crucible
 

@@ -47,6 +47,10 @@
   "block.gregtech.steam_turbine": "GT Steam Turbine",
   "block.gregtech.steam_turbine.unassigned": "Unassigned GT Steam Turbine",
   "block.gregtech.steam_pipe": "GT Steam Pipe",
+  "block.gregtech.large_boiler": "Large Steam Boiler Controller",
+  "block.gregtech.large_boiler.unassigned": "Unassigned Large Steam Boiler",
+  "block.gregtech.large_boiler_wall.name": "Dense %1$s Boiler Wall",
+  "block.gregtech.heat_transmitter": "Heat Transmitter",
 
   "item.gregtech.wrench": "GT Wrench",
   "item.gregtech.screwdriver": "GT Screwdriver",
@@ -96,6 +100,7 @@
   "message.gregtech.item_inserted": "Item sent to the multiblock input bus",
   "message.gregtech.item_extracted": "Item removed from the multiblock output bus",
   "message.gregtech.input_full": "Multiblock input bus is full or does not accept this item",
+  "message.gregtech.water_inserted": "Water inserted",
   "message.gregtech.fuel_inserted": "Fuel inserted",
   "message.gregtech.machine.enabled": "Machine enabled",
   "message.gregtech.machine.disabled": "Machine disabled",
@@ -130,5 +135,6 @@
   "message.gregtech.steam_boiler.status": "%1$s | Output: %2$s L Steam/t | Efficiency: %3$s | Heat: %4$s / %5$s HU | Water: %6$s L | Steam: %7$s L | Barometer: %8$s",
   "message.gregtech.steam_engine.status": "%1$s | Base: %2$s KU | Efficiency: %3$s | Steam: %4$s | Energy: %5$s | Stopped: %6$s | Active: %7$s",
   "message.gregtech.steam_turbine.status": "%1$s | Output: %2$s RU/t | Steam: %3$s / %4$s | Active: %5$s",
-  "message.gregtech.steam_pipe.status": "Steam pipe: transports Steam fluid between boilers and engines/turbines"
+  "message.gregtech.steam_pipe.status": "Steam pipe: transports Steam fluid between boilers and engines/turbines",
+  "message.gregtech.large_boiler.status": "%1$s | Formed: %2$s | Output: %3$s L Steam/t | Efficiency: %4$s | Heat: %5$s / %6$s HU | Water: %7$s L | Steam: %8$s L | Barometer: %9$s | Error: %10$s"
 }

@@ -9,8 +9,11 @@ import gregtech.neo.block.CrucibleBlock;
 import gregtech.neo.block.AxleBlock;
 import gregtech.neo.block.FaucetBlock;
 import gregtech.neo.block.GeneratorBlock;
+import gregtech.neo.block.HeatTransmitterBlock;
 import gregtech.neo.block.KineticConverterBlock;
 import gregtech.neo.block.LargeCrusherBlock;
+import gregtech.neo.block.LargeBoilerBlock;
+import gregtech.neo.block.LargeBoilerWallBlock;
 import gregtech.neo.block.ManualCrankBlock;
 import gregtech.neo.block.MachinePortBlock;
 import gregtech.neo.block.MoldBlock;
@@ -177,6 +180,22 @@ public final class GTBlocks {
     public static final DeferredBlock<SteamTurbineBlock> STEAM_TURBINE = BLOCKS.register(
         "steam_turbine",
         () -> new SteamTurbineBlock(machineProperties(MapColor.METAL, 5.0F, 8.0F))
+    );
+
+    public static final DeferredBlock<LargeBoilerBlock> LARGE_BOILER = BLOCKS.register(
+        "large_boiler",
+        () -> new LargeBoilerBlock(machineProperties(MapColor.METAL, 6.0F, 12.0F))
+    );
+
+    public static final DeferredBlock<LargeBoilerWallBlock> LARGE_BOILER_WALL = BLOCKS.register(
+        "large_boiler_wall",
+        () -> new LargeBoilerWallBlock(machineProperties(MapColor.METAL, 6.0F, 12.0F))
+    );
+
+    public static final DeferredBlock<HeatTransmitterBlock> HEAT_TRANSMITTER = registerBlock(
+        "heat_transmitter",
+        () -> new HeatTransmitterBlock(machineProperties(MapColor.METAL, 10.0F, 10.0F)),
+        MapColor.METAL
     );
 
     public static final DeferredBlock<SteamPipeBlock> STEAM_PIPE = registerBlock(

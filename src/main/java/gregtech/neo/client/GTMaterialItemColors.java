@@ -44,6 +44,11 @@ public final class GTMaterialItemColors {
             GTMaterialItemColors::getSmallCrucibleItemColor,
             GTItems.SMALL_CRUCIBLE.get()
         );
+        event.register(
+            GTMaterialItemColors::getSmallCrucibleItemColor,
+            GTItems.LARGE_BOILER.get()
+        );
+        event.register(GTMaterialItemColors::getColor, GTItems.LARGE_BOILER_WALL.get());
         event.register(GTMaterialItemColors::getCastingItemColor, GTItems.MOLD.get());
         event.register(GTMaterialItemColors::getCastingItemColor, GTItems.FAUCET.get());
     }
@@ -56,6 +61,14 @@ public final class GTMaterialItemColors {
         event.register(
             GTMaterialItemColors::getSmallCrucibleBlockColor,
             GTBlocks.SMALL_CRUCIBLE.get()
+        );
+        event.register(
+            GTMaterialItemColors::getLargeBoilerBlockColor,
+            GTBlocks.LARGE_BOILER.get()
+        );
+        event.register(
+            GTMaterialItemColors::getLargeBoilerWallBlockColor,
+            GTBlocks.LARGE_BOILER_WALL.get()
         );
         event.register(GTMaterialItemColors::getMoldBlockColor, GTBlocks.MOLD.get());
         event.register(GTMaterialItemColors::getFaucetBlockColor, GTBlocks.FAUCET.get());
@@ -115,6 +128,34 @@ public final class GTMaterialItemColors {
             return crucible.contentColor();
         }
         GTMaterial material = GTMaterialRegistry.material(crucible.wallMaterial());
+        return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
+    }
+
+    private static int getLargeBoilerBlockColor(
+        BlockState state,
+        BlockAndTintGetter level,
+        BlockPos pos,
+        int tintIndex
+    ) {
+        if (tintIndex != 0 || pos == null
+            || !(level.getBlockEntity(pos) instanceof gregtech.neo.block.LargeBoilerBlockEntity boiler)) {
+            return 0xFFFFFFFF;
+        }
+        GTMaterial material = GTMaterialRegistry.material(boiler.material());
+        return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
+    }
+
+    private static int getLargeBoilerWallBlockColor(
+        BlockState state,
+        BlockAndTintGetter level,
+        BlockPos pos,
+        int tintIndex
+    ) {
+        if (tintIndex != 0 || pos == null
+            || !(level.getBlockEntity(pos) instanceof gregtech.neo.block.LargeBoilerWallBlockEntity wall)) {
+            return 0xFFFFFFFF;
+        }
+        GTMaterial material = GTMaterialRegistry.material(wall.material());
         return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
     }
 

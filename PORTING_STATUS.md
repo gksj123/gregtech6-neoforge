@@ -61,6 +61,8 @@
 - All-material primary-form and material-block creative catalogs
 - In-game GUI-free demo guide item and detailed source/material tooltips
 - Steam Boiler Tank with 26 material variants, HU + water→Steam fluid conversion, calcification and explosion rules
+- Large Steam Boiler with 5 source tiers, 3x3 Heat Transmitter base, dense-wall shell, water/steam shell ports, calcification and explosion rules
+- Large dense boiler walls with material-preserving drops for Stainless Steel, Invar, Titanium, Tungstensteel and Adamantium
 - Steam Engine with 28 material variants, Steam fluid→KU conversion and reciprocal output
 - Steam Turbine with 15 variants, Steam fluid→RU conversion
 - Steam Pipe fluid handlers and actual Steam/Distilled Water capabilities
@@ -72,12 +74,14 @@
 ## Acceptance Evidence
 
 ```text
-GT6 creative catalog: demo=34 materials=10768 blocks=12232 machines=251 multiblocks=61 tools=62 small_crucibles=41 casting=110 small_crucible_heat_data=39
+GT6 creative catalog: demo=37 materials=10768 blocks=12232 machines=251 multiblocks=72 tools=62 small_crucibles=41 casting=110 small_crucible_heat_data=39
 GT6 runtime self-test: casting recipes=107 pass=true
 GT6 isolated client: loaded existing save and rendered molds without BufferBuilder vertex errors
 GT6 runtime self-test: large RU structure at BlockPos{x=0, y=40, z=2}, EU/KU chain at BlockPos{x=10, y=40, z=0}, RU/KU chain crank at BlockPos{x=14, y=40, z=-3}
 GT6 runtime self-test: controller formed=true
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true MOLD_INTERACTION=true MOLD_AUTO=true STEAM_FLOW=true STEAM_NO_VOID=true STEAM_TURBINE=true CASTING_RECIPES=true MOLD_RIGHT_CLICK=true LARGE_WALL_MOLD=true MOLD_SHAPES=true
+GT6 large boiler test: formed=true output=8192 heatCap=81920000 wallInput=128000 water=128000 steam=41587712 efficiency=10000 barometer=15 engineKU=15999 condensate=2432 pass=true
+GT6 large boiler explosion test: filled=81920000 capacity=81920000 formed=true destroyed=true pass=true
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=2145K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true MOLD_INTERACTION=true MOLD_AUTO=true STEAM_FLOW=true STEAM_NO_VOID=true STEAM_TURBINE=true STEAM_LARGE_BOILER=true STEAM_LARGE_EXPLOSION=true CASTING_RECIPES=true MOLD_RIGHT_CLICK=true LARGE_WALL_MOLD=true MOLD_SHAPES=true
 ```
 
 Material bootstrap evidence:
