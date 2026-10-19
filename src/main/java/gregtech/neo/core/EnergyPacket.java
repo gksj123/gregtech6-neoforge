@@ -6,7 +6,11 @@ import java.util.Objects;
  * A packet has a size (voltage for EU) and a count of packets (amperage for EU).
  * Energy cannot be represented correctly by a single "EU" number alone.
  */
-public record EnergyPacket(EnergyKind kind, long size, long amount) {
+public record EnergyPacket(EnergyKind kind, long size, long amount, boolean reversed) {
+    public EnergyPacket(EnergyKind kind, long size, long amount) {
+        this(kind, size, amount, false);
+    }
+
     public EnergyPacket {
         Objects.requireNonNull(kind, "kind");
         if (size <= 0) {
@@ -26,11 +30,19 @@ public record EnergyPacket(EnergyKind kind, long size, long amount) {
     }
 
     public EnergyPacket withSize(long newSize) {
-        return new EnergyPacket(kind, newSize, amount);
+        return new EnergyPacket(kind, newSize, amount, reversed);
     }
 
     public EnergyPacket withAmount(long newAmount) {
-        return new EnergyPacket(kind, size, newAmount);
+        return new EnergyPacket(kind, size, newAmount, reversed);
+    }
+
+    public EnergyPacket withDirection(boolean reversed) {
+        return new EnergyPacket(kind, size, amount, reversed);
+    }
+
+    public long signedSize() {
+        return reversed ? -size : size;
     }
 
     public static long saturatedMultiply(long left, long right) {

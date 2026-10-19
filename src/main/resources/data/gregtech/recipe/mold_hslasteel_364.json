@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "type": "neoforge:components",
+      "items": "gregtech:meta_plate",
+      "components": {
+        "gregtech:material_part": {
+          "material": "hslasteel",
+          "prefix": "plate"
+        }
+      }
+    }
+  },
+  "pattern": [
+    "M M",
+    "MMM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gregtech:mold",
+    "components": {
+      "gregtech:casting_part": {
+        "wall_material": "hslasteel",
+        "source_line": 364,
+        "shape_mask": 0,
+        "acid_proof": false
+      }
+    }
+  }
+}

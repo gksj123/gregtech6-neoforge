@@ -42,6 +42,15 @@ NUMERIC_PROPERTY = {
     "parallel": r"NBT_PARALLEL\s*,\s*(\d+)",
     "output": r"NBT_OUTPUT\s*,\s*(\d+)",
 }
+EVALUATED_NUMERIC_PROPERTY = {
+    "input_value": r"NBT_INPUT\s*,\s*([^,)]+)",
+    "input_min_value": r"NBT_INPUT_MIN\s*,\s*([^,)]+)",
+    "input_max_value": r"NBT_INPUT_MAX\s*,\s*([^,)]+)",
+    "output_value": r"NBT_OUTPUT\s*,\s*([^,)]+)",
+    "capacity": r"NBT_CAPACITY\s*,\s*([^,)]+)",
+    "output_su": r"NBT_OUTPUT_SU\s*,\s*([^,)]+)",
+    "capacity_su": r"NBT_CAPACITY_SU\s*,\s*([^,)]+)",
+}
 BOOLEAN_PROPERTY = {
     "parallel_duration": r"NBT_PARALLEL_DURATION\s*,\s*([TF])",
     "cheap_overclocking": r"NBT_CHEAP_OVERCLOCKING\s*,\s*([TF])",
@@ -62,6 +71,11 @@ U_CONSTANTS = {
     for index in range(1, 1441)
 }
 U_CONSTANTS["U"] = 648648000
+JAVA_INTEGER_CONSTANTS = {
+    **U_CONSTANTS,
+    "STEAM_PER_EU": 2,
+    "STEAM_PER_WATER": 160,
+}
 
 
 def git_value(*args: str) -> str:
@@ -169,8 +183,8 @@ def evaluate_java_integer(expression: str, default: int | None = None) -> int | 
             return evaluate(node.body)
         if isinstance(node, ast.Constant) and isinstance(node.value, int):
             return node.value
-        if isinstance(node, ast.Name) and node.id in U_CONSTANTS:
-            return U_CONSTANTS[node.id]
+        if isinstance(node, ast.Name) and node.id in JAVA_INTEGER_CONSTANTS:
+            return JAVA_INTEGER_CONSTANTS[node.id]
         if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
             value = evaluate(node.operand)
             return value if isinstance(node.op, ast.UAdd) else -value
@@ -216,7 +230,7 @@ def extract_machine_registrations() -> tuple[list[dict[str, object]], dict[str, 
         registry_id_expression = arguments[2].strip() if len(arguments) > 2 else ""
         class_match = CLASS_REFERENCE.search(raw)
         if not class_match:
-            previous_window = text[max(0, start - 8000) : start]
+            previous_window = text[max(0, start - 50_000) : start]
             previous_classes = CLASS_ASSIGNMENT.findall(previous_window)
             if previous_classes:
                 class_name = previous_classes[-1]
@@ -232,7 +246,7 @@ def extract_machine_registrations() -> tuple[list[dict[str, object]], dict[str, 
         if material_assignment:
             material_expression = material_assignment.group(1).strip()
         else:
-            previous_window = text[max(0, start - 8000) : start]
+            previous_window = text[max(0, start - 50_000) : start]
             previous_materials = list(MATERIAL_ASSIGNMENT.finditer(previous_window))
             material_expression = previous_materials[-1].group(1).strip() if previous_materials else ""
         material_name = resolve_material_expression(material_expression)
@@ -240,6 +254,14 @@ def extract_machine_registrations() -> tuple[list[dict[str, object]], dict[str, 
         numeric = {
             key: int(match.group(1)) if (match := re.search(pattern, raw)) else 0
             for key, pattern in NUMERIC_PROPERTY.items()
+        }
+        evaluated_numeric = {
+            key: (
+                evaluate_java_integer(match.group(1), default=0)
+                if (match := re.search(pattern, raw))
+                else 0
+            )
+            for key, pattern in EVALUATED_NUMERIC_PROPERTY.items()
         }
         boolean = {
             key: bool(match and match.group(1) == "T")
@@ -266,6 +288,7 @@ def extract_machine_registrations() -> tuple[list[dict[str, object]], dict[str, 
                 "material_slug": material_slug(material_name),
                 "display_name": display_name,
                 **numeric,
+                **evaluated_numeric,
                 **boolean,
             }
         )
@@ -361,15 +384,19 @@ VOLTAGE_NAMES = [
 
 def resolve_machine_name(name_expression: str, material_expression: str) -> str:
     material = resolve_material_expression(material_expression)
+    name_expression = re.sub(r"\s+\.", ".", name_expression)
     pieces: list[str] = []
     token_pattern = re.compile(
-        r"\"([^\"]*)\"|aMat\.getLocal\(\)|aMat\.mNameLocal|VN\[(\d+)\]"
+        r"\"([^\"]*)\"|((?:MT|ANY)\.[A-Za-z0-9_.\[\]]+)\.getLocal\(\)|"
+        r"aMat\.getLocal\(\)|aMat\.mNameLocal|VN\[(\d+)\]"
     )
     for match in token_pattern.finditer(name_expression):
         if match.group(1) is not None:
             pieces.append(match.group(1))
         elif match.group(2) is not None:
-            index = int(match.group(2))
+            pieces.append(resolve_material_expression(match.group(2)))
+        elif match.group(3) is not None:
+            index = int(match.group(3))
             pieces.append(VOLTAGE_NAMES[index] if 0 <= index < len(VOLTAGE_NAMES) else "")
         else:
             pieces.append(material)

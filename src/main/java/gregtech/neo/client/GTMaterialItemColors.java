@@ -123,7 +123,8 @@ public final class GTMaterialItemColors {
             return 0xFFFFFFFF;
         }
         CastingPart part = stack.get(GTDataComponents.CASTING_PART.get());
-        GTMaterial material = part == null ? null : GTMaterialRegistry.material(part.wallMaterial());
+        String wall = part == null || part.wallMaterial() == null ? "" : part.wallMaterial();
+        GTMaterial material = GTMaterialRegistry.material(wall);
         return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
     }
 
@@ -137,7 +138,8 @@ public final class GTMaterialItemColors {
             || !(level.getBlockEntity(pos) instanceof gregtech.neo.block.MoldBlockEntity mold)) {
             return 0xFFFFFFFF;
         }
-        GTMaterial material = GTMaterialRegistry.material(mold.wallMaterial());
+        String wall = mold.wallMaterial() == null ? "" : mold.wallMaterial();
+        GTMaterial material = GTMaterialRegistry.material(wall);
         return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
     }
 
@@ -151,7 +153,8 @@ public final class GTMaterialItemColors {
             || !(level.getBlockEntity(pos) instanceof gregtech.neo.block.FaucetBlockEntity faucet)) {
             return 0xFFFFFFFF;
         }
-        GTMaterial material = GTMaterialRegistry.material(faucet.wallMaterial());
+        String wall = faucet.wallMaterial() == null ? "" : faucet.wallMaterial();
+        GTMaterial material = GTMaterialRegistry.material(wall);
         return 0xFF000000 | (material == null ? 0x808080 : material.provisionalColor());
     }
 }

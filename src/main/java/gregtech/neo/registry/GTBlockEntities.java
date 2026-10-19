@@ -15,6 +15,10 @@ import gregtech.neo.block.MachinePortBlockEntity;
 import gregtech.neo.block.MaterialStorageBlockEntity;
 import gregtech.neo.block.MoldBlockEntity;
 import gregtech.neo.block.SmallCrucibleBlockEntity;
+import gregtech.neo.block.SteamBoilerBlockEntity;
+import gregtech.neo.block.SteamEngineBlockEntity;
+import gregtech.neo.block.SteamPipeBlockEntity;
+import gregtech.neo.block.SteamTurbineBlockEntity;
 import gregtech.neo.block.TemperatureSensorBlockEntity;
 import gregtech.neo.material.GTMaterialBlocks;
 import net.minecraft.core.registries.Registries;
@@ -126,5 +130,29 @@ public final class GTBlockEntities {
         BLOCK_ENTITIES.register("faucet", () -> BlockEntityType.Builder.of(
             FaucetBlockEntity::new,
             GTBlocks.FAUCET.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SteamBoilerBlockEntity>> STEAM_BOILER =
+        BLOCK_ENTITIES.register("steam_boiler", () -> BlockEntityType.Builder.of(
+            SteamBoilerBlockEntity::new,
+            GTBlocks.STEAM_BOILER.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SteamEngineBlockEntity>> STEAM_ENGINE =
+        BLOCK_ENTITIES.register("steam_engine", () -> BlockEntityType.Builder.of(
+            SteamEngineBlockEntity::new,
+            GTBlocks.STEAM_ENGINE.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SteamTurbineBlockEntity>> STEAM_TURBINE =
+        BLOCK_ENTITIES.register("steam_turbine", () -> BlockEntityType.Builder.of(
+            SteamTurbineBlockEntity::new,
+            GTBlocks.STEAM_TURBINE.get()
+        ).build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<SteamPipeBlockEntity>> STEAM_PIPE =
+        BLOCK_ENTITIES.register("steam_pipe", () -> BlockEntityType.Builder.of(
+            SteamPipeBlockEntity::new,
+            GTBlocks.STEAM_PIPE.get()
         ).build(null));
 }

@@ -49,6 +49,9 @@ DEFAULT_MATERIAL = {
     "tool_durability": 0,
     "tool_quality": 0,
     "density_g_cm3": 1.0,
+    "acidic": False,
+    "solidifying_material": "",
+    "solidifying_amount": 0,
 }
 
 
@@ -136,6 +139,21 @@ def validate_extraction(
                 raise AssertionError(
                     f"{name}: expected {values}, got {actual}"
                 )
+    water = by_name["Water"]
+    lava = by_name["Lava"]
+    acid = by_name["Sulfuric Acid"]
+    if (water["solidifying_material"], water["solidifying_amount"]) != (
+        "ice",
+        648_648_000,
+    ):
+        raise AssertionError("Water solidifying target extraction regressed")
+    if (lava["solidifying_material"], lava["solidifying_amount"]) != (
+        "obsidian",
+        648_648_000,
+    ):
+        raise AssertionError("Lava solidifying target extraction regressed")
+    if not acid["acidic"] or water["acidic"]:
+        raise AssertionError("Acid property extraction regressed")
 
     crusher = next(
         row for row in machines
@@ -160,6 +178,7 @@ def extract_material_gameplay(
     }
     parsed_by_key: dict[tuple[int, str], dict[str, object]] = {}
     symbol_stats: dict[str, dict[str, object]] = {}
+    field_to_key: dict[str, tuple[int, str]] = {}
 
     for match in source_calls:
         constructor, material_id, name, symbol = match.groups()
@@ -172,8 +191,12 @@ def extract_material_gameplay(
         chain_end = find_expression_end(text, chain_start)
         chain = text[chain_start:chain_end]
         field_name = declaration_field(text, match.start())
+        source_chain = text[match.start():chain_end]
 
         stats = dict(DEFAULT_MATERIAL)
+        stats["acidic"] = constructor.startswith(("gasacid", "lqudacid")) or bool(
+            re.search(r"\bACID\b", source_chain)
+        )
         heat_confidence = "default_unverified"
         tool_confidence = "default_unverified"
         density_confidence = "default_unverified"
@@ -229,6 +252,8 @@ def extract_material_gameplay(
         )
 
         key = (int(material_id), name)
+        if field_name:
+            field_to_key[field_name] = key
         if key in material_by_key:
             row = {
                 "id": int(material_id),
@@ -265,6 +290,7 @@ def extract_material_gameplay(
         parsed_by_key,
         symbol_stats,
     )
+    apply_explicit_solidifying(text, field_to_key, parsed_by_key)
 
     results: list[dict[str, object]] = []
     for material in existing_materials:
@@ -291,6 +317,31 @@ def extract_material_gameplay(
             }
         )
     return results
+
+
+def apply_explicit_solidifying(
+    text: str,
+    field_to_key: dict[str, tuple[int, str]],
+    rows: dict[tuple[int, str], dict[str, object]],
+) -> None:
+    """Apply source setSolidifying(...) calls without guessing dynamic targets."""
+    pattern = re.compile(
+        r"\b([A-Za-z_][A-Za-z0-9_]*)\s*\.setSolidifying\s*\(\s*"
+        r"([A-Za-z_][A-Za-z0-9_]*)\s*,\s*([^)]+)\)"
+    )
+    for match in pattern.finditer(text):
+        source_field, target_field, amount_expression = match.groups()
+        source_key = field_to_key.get(source_field)
+        target_key = field_to_key.get(target_field)
+        if source_key is None or target_key is None:
+            continue
+        row = rows.get(source_key)
+        target = rows.get(target_key)
+        if row is None or target is None:
+            continue
+        amount = evaluate_java_integer(amount_expression.strip(), default=0)
+        row["solidifying_material"] = target["slug"]
+        row["solidifying_amount"] = int(amount or 0)
 
 
 def extract_constructor_heat_parameters(text: str) -> dict[str, tuple[int, int]]:

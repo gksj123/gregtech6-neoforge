@@ -142,6 +142,20 @@ def main() -> int:
     extra_jvm_args = os.environ.get("GT6_JVM_ARGS", "").strip()
     if extra_jvm_args:
         command[1:1] = extra_jvm_args.split()
+    runtime_world = os.environ.get("GT6_RUNTIME_WORLD", "").strip()
+    if not runtime_world:
+        saves = RUN_DIR / "saves"
+        default_world = saves / "world"
+        if (default_world / "level.dat").is_file():
+            runtime_world = "world"
+        else:
+            valid_worlds = sorted(
+                path.name
+                for path in saves.iterdir()
+                if path.is_dir() and (path / "level.dat").is_file()
+            ) if saves.is_dir() else []
+            runtime_world = valid_worlds[0] if len(valid_worlds) == 1 else "world"
+    command[1:1] = [f"-Dgregtech.runtimeSelfTestWorld={runtime_world}"]
     quick_play = os.environ.get("GT6_QUICK_PLAY", "").strip()
     if quick_play:
         fml_index = command.index("--fml.neoForgeVersion")

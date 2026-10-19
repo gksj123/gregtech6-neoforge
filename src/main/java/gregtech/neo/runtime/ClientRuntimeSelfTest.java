@@ -11,6 +11,10 @@ import net.neoforged.neoforge.common.NeoForge;
  */
 public final class ClientRuntimeSelfTest {
     private static final boolean ENABLED = Boolean.getBoolean("gregtech.runtimeSelfTest");
+    private static final String WORLD_NAME = System.getProperty(
+        "gregtech.runtimeSelfTestWorld",
+        "world"
+    );
     private static boolean opened;
     private static int waitTicks;
 
@@ -43,9 +47,12 @@ public final class ClientRuntimeSelfTest {
         }
         if (minecraft.screen instanceof TitleScreen) {
             opened = true;
-            GT6Neo.LOGGER.info("GT6 runtime self-test: opening save 'world'");
-            minecraft.createWorldOpenFlows().openWorld("world", () -> {
-                GT6Neo.LOGGER.error("GT6 runtime self-test: failed to open save 'world'");
+            GT6Neo.LOGGER.info("GT6 runtime self-test: opening save '{}'", WORLD_NAME);
+            minecraft.createWorldOpenFlows().openWorld(WORLD_NAME, () -> {
+                GT6Neo.LOGGER.error(
+                    "GT6 runtime self-test: failed to open save '{}'",
+                    WORLD_NAME
+                );
             });
         }
     }

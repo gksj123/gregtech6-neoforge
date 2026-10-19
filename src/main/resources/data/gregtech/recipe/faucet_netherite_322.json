@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "type": "neoforge:components",
+      "items": "gregtech:meta_plate",
+      "components": {
+        "gregtech:material_part": {
+          "material": "netherite",
+          "prefix": "plate"
+        }
+      }
+    }
+  },
+  "pattern": [
+    "F F",
+    " F "
+  ],
+  "result": {
+    "count": 1,
+    "id": "gregtech:faucet",
+    "components": {
+      "gregtech:casting_part": {
+        "wall_material": "netherite",
+        "source_line": 322,
+        "shape_mask": 0,
+        "acid_proof": true
+      }
+    }
+  }
+}

@@ -526,28 +526,32 @@ public final class CrucibleBlockEntity extends BlockEntity
         return temperature;
     }
 
+    /**
+     * GT6 1.7.10: MultiTileEntityCrucible.java:547-556. The multiblock must be
+     * formed before it can pour, and the mold returns the consumed amount.
+     */
     @Override
-    public boolean pourInto(MoldBlockEntity mold) {
-        if (mold == null || !mold.canAccept(mold.shapeMask())) {
-            return false;
-        }
-        long required = mold.requiredUnits();
-        if (required <= 0) {
+    public boolean pourInto(MoldBlockEntity mold, Direction moldSide) {
+        if (mold == null || !isFormed() || !mold.canAccept(mold.shapeMask())) {
             return false;
         }
         for (Content content : contents) {
             GTMaterialGameplayRegistry.MaterialGameplay gameplay =
                 GTMaterialGameplayRegistry.material(content.material);
-            if (gameplay == null || content.units < required
-                || temperature < gameplay.meltingKelvin()
-                || !mold.canAcceptTemperature(temperature)
-                || !mold.canAcceptMaterial(content.material)) {
+            if (gameplay == null || content.units <= 0
+                || temperature < gameplay.meltingKelvin()) {
                 continue;
             }
-            if (!mold.fillMold(content.material, required, temperature)) {
+            long consumed = mold.fillMold(
+                content.material,
+                content.units,
+                temperature,
+                moldSide
+            );
+            if (consumed <= 0) {
                 continue;
             }
-            content.units -= required;
+            content.units -= consumed;
             contents.removeIf(entry -> entry.units <= 0);
             setChanged();
             return true;

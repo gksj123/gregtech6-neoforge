@@ -151,20 +151,28 @@ public final class GTMoldRegistry {
         return prefix.amount();
     }
 
+    /**
+     * GT6 1.7.10: MultiTileEntityMold.java:375-405. The source bit layout is
+     * {@code row * 5 + column}: source (x,z) maps to result (z, 4-x).
+     */
     public static int rotateClockwise(int mask) {
         int result = 0;
-        for (int y = 0; y < 5; y++) {
+        for (int z = 0; z < 5; z++) {
             for (int x = 0; x < 5; x++) {
-                int sourceX = y;
-                int sourceY = 4 - x;
-                if ((mask & (1 << (sourceX + sourceY * 5))) != 0) {
-                    result |= 1 << (x + y * 5);
+                int sourceX = 4 - z;
+                int sourceZ = x;
+                if ((mask & (1 << (sourceX * 5 + sourceZ))) != 0) {
+                    result |= 1 << (x * 5 + z);
                 }
             }
         }
         return result;
     }
 
+    /**
+     * GT6 1.7.10: MultiTileEntityMold.java:328-336. localX selects the row and
+     * localZ the column, so the new bit is {@code row * 5 + column}.
+     */
     public static int carve(int mask, double localX, double localZ) {
         if (localX < 2.0 / 16.0 || localX >= 14.0 / 16.0
             || localZ < 2.0 / 16.0 || localZ >= 14.0 / 16.0) {

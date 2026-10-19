@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "type": "neoforge:components",
+      "items": "gregtech:meta_plate",
+      "components": {
+        "gregtech:material_part": {
+          "material": "meteoriciron",
+          "prefix": "plate"
+        }
+      }
+    }
+  },
+  "pattern": [
+    "M M",
+    "MMM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gregtech:mold",
+    "components": {
+      "gregtech:casting_part": {
+        "wall_material": "meteoriciron",
+        "source_line": 367,
+        "shape_mask": 0,
+        "acid_proof": false
+      }
+    }
+  }
+}

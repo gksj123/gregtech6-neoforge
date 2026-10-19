@@ -15,6 +15,10 @@ import gregtech.neo.block.ManualCrankBlock;
 import gregtech.neo.block.MachinePortBlock;
 import gregtech.neo.block.MoldBlock;
 import gregtech.neo.block.SmallCrucibleBlock;
+import gregtech.neo.block.SteamBoilerBlock;
+import gregtech.neo.block.SteamEngineBlock;
+import gregtech.neo.block.SteamPipeBlock;
+import gregtech.neo.block.SteamTurbineBlock;
 import gregtech.neo.block.TemperatureSensorBlock;
 import gregtech.neo.item.GTBlockInfoItem;
 import net.minecraft.world.item.Item;
@@ -158,6 +162,27 @@ public final class GTBlocks {
         "copper_cable",
         () -> CableBlock.copper(machineProperties(MapColor.TERRACOTTA_ORANGE, 1.8F, 3.5F).noOcclusion()),
         MapColor.TERRACOTTA_ORANGE
+    );
+
+    public static final DeferredBlock<SteamBoilerBlock> STEAM_BOILER = BLOCKS.register(
+        "steam_boiler",
+        () -> new SteamBoilerBlock(machineProperties(MapColor.METAL, 6.0F, 8.0F))
+    );
+
+    public static final DeferredBlock<SteamEngineBlock> STEAM_ENGINE = BLOCKS.register(
+        "steam_engine",
+        () -> new SteamEngineBlock(machineProperties(MapColor.METAL, 5.0F, 8.0F))
+    );
+
+    public static final DeferredBlock<SteamTurbineBlock> STEAM_TURBINE = BLOCKS.register(
+        "steam_turbine",
+        () -> new SteamTurbineBlock(machineProperties(MapColor.METAL, 5.0F, 8.0F))
+    );
+
+    public static final DeferredBlock<SteamPipeBlock> STEAM_PIPE = registerBlock(
+        "steam_pipe",
+        () -> new SteamPipeBlock(machineProperties(MapColor.COLOR_GRAY, 2.0F, 4.0F).noOcclusion()),
+        MapColor.COLOR_GRAY
     );
 
     private static BlockBehaviour.Properties machineProperties(MapColor color, float hardness, float resistance) {

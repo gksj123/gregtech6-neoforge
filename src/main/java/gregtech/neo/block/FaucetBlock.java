@@ -179,6 +179,19 @@ public final class FaucetBlock extends BaseEntityBlock {
     }
 
     @Override
+    public void wasExploded(Level level, BlockPos pos, net.minecraft.world.level.Explosion explosion) {
+        if (!level.isClientSide()
+            && level instanceof ServerLevel serverLevel
+            && level.getBlockEntity(pos) instanceof FaucetBlockEntity faucet) {
+            Block.popResource(serverLevel, pos, FaucetItem.create(
+                GTItems.FAUCET.get(),
+                new CastingPart(faucet.wallMaterial(), faucet.sourceLine(), 0, faucet.acidProof())
+            ));
+        }
+        super.wasExploded(level, pos, explosion);
+    }
+
+    @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
         Level level,
         BlockState state,

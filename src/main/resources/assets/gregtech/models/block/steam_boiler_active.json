@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "gregtech:block/basic_machine",
+    "down": "gregtech:block/basic_machine",
+    "up": "gregtech:block/burning_box_active_top",
+    "north": "gregtech:block/basic_machine",
+    "south": "gregtech:block/basic_machine",
+    "west": "gregtech:block/basic_machine",
+    "east": "gregtech:block/basic_machine"
+  }
+}

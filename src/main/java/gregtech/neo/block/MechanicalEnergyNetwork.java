@@ -38,25 +38,29 @@ public final class MechanicalEnergyNetwork {
             return Result.NONE;
         }
 
-        Queue<BlockPos> queue = new ArrayDeque<>();
         Set<BlockPos> visitedAxles = new HashSet<>();
         Set<BlockPos> receiverPositions = new HashSet<>();
         Set<ReceiverPath> receivers = new HashSet<>();
-        queue.add(source.relative(outputSide));
+        Queue<PathNode> paths = new ArrayDeque<>();
+        paths.add(new PathNode(source.relative(outputSide), outputSide.getOpposite()));
 
-        while (!queue.isEmpty()) {
-            BlockPos pos = queue.remove();
+        while (!paths.isEmpty()) {
+            PathNode node = paths.remove();
+            BlockPos pos = node.pos();
             if (pos.equals(source) || !level.isLoaded(pos) || !visitedAxles.add(pos)) {
                 continue;
             }
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity instanceof AxleBlockEntity) {
                 for (Direction direction : Direction.values()) {
-                    queue.add(pos.relative(direction));
+                    paths.add(new PathNode(
+                        pos.relative(direction),
+                        direction.getOpposite()
+                    ));
                 }
             } else if (blockEntity instanceof EnergyReceiver receiver && receiverPositions.add(pos)) {
-                if (receiver.receivePacket(packet.withAmount(1), Direction.UP, true) > 0) {
-                    receivers.add(new ReceiverPath(pos, receiver));
+                if (receiver.receivePacket(packet.withAmount(1), node.side(), true) > 0) {
+                    receivers.add(new ReceiverPath(pos, node.side(), receiver));
                 }
             }
         }
@@ -67,7 +71,11 @@ public final class MechanicalEnergyNetwork {
         for (long ampere = 0; ampere < packet.amount(); ampere++) {
             boolean acceptedAnywhere = false;
             for (ReceiverPath path : receivers) {
-                long response = path.receiver().receivePacket(packet.withAmount(1), Direction.UP, simulate);
+                long response = path.receiver().receivePacket(
+                    packet.withAmount(1),
+                    path.side(),
+                    simulate
+                );
                 if (response > 0) {
                     accepted++;
                     deliveredEnergy = EnergyPacket.saturatedAdd(deliveredEnergy, packet.size());
@@ -106,6 +114,9 @@ public final class MechanicalEnergyNetwork {
         return new Result(accepted, delivered, accepted > 0 ? 1 : 0);
     }
 
-    private record ReceiverPath(BlockPos pos, EnergyReceiver receiver) {
+    private record PathNode(BlockPos pos, Direction side) {
+    }
+
+    private record ReceiverPath(BlockPos pos, Direction side, EnergyReceiver receiver) {
     }
 }

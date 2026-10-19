@@ -21,9 +21,16 @@ public final class GTMaterialItems {
     );
     private static final Set<String> CORE_PREFIXES = Set.of(
         "dust", "dustSmall", "dustTiny", "crushed", "gem", "nugget", "ingot",
-        "ingotHot", "plate", "plateDouble", "plateDense", "stick", "stickLong",
+        "ingotHot", "billet", "chunkGt", "plate", "plateTiny", "plateDouble", "plateDense",
+        "stick", "stickLong",
         "gearGt", "gearGtSmall", "rotor", "screw", "bolt", "ring", "foil",
-        "wireFine", "casingSmall", "lens", "plateGem", "plateGemTiny"
+        "wireFine", "casingSmall", "lens", "plateGem", "plateGemTiny",
+        "toolHeadRawSword", "toolHeadRawPickaxe", "toolHeadRawSpade",
+        "toolHeadRawShovel", "toolHeadRawUniversalSpade", "toolHeadRawAxe",
+        "toolHeadRawAxeDouble", "toolHeadRawSaw", "toolHeadHammer",
+        "toolHeadFile", "toolHeadScrewdriver", "toolHeadRawChisel",
+        "toolHeadRawArrow", "toolHeadRawHoe", "toolHeadRawSense",
+        "toolHeadRawPlow", "toolHeadBuilderwand"
     );
     private static final Set<String> PRIMARY_DISPLAY_PREFIXES = Set.of(
         "dust", "ingot", "plate", "gem", "rawOreChunk", "crushed",
@@ -82,6 +89,13 @@ public final class GTMaterialItems {
         if (seen.add(key)) {
             stacks.put(key, MaterialPartItem.create(entry.getValue().get(), material, prefix, 1));
         }
+    }
+
+    public static boolean canCreate(String material, String prefix) {
+        return PREFIX_ITEMS.containsKey(prefix)
+            && GTMaterialRegistry.material(material) != null
+            && GTMaterialRegistry.prefix(prefix) != null
+            && GTMaterialRegistry.prefix(prefix).amount() > 0;
     }
 
     public static ItemStack createPart(String material, String prefix, int count) {

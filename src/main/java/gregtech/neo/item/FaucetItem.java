@@ -20,6 +20,10 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
+/**
+ * GT6 1.7.10: gregtech/loaders/b/Loader_MultiTileEntities.java:299-341 and
+ * gregtech/tileentity/tools/MultiTileEntityFaucet.java:72-78.
+ */
 public final class FaucetItem extends BlockItem {
     public FaucetItem(Block block, Properties properties) {
         super(block, properties);
@@ -62,13 +66,21 @@ public final class FaucetItem extends BlockItem {
     @Override
     public Component getName(ItemStack stack) {
         CastingPart part = stack.get(GTDataComponents.CASTING_PART.get());
-        GTMaterial material = part == null ? null : GTMaterialRegistry.material(part.wallMaterial());
-        String wall = material == null
-            ? part == null ? "Unassigned" : part.wallMaterial()
-            : material.prettyName();
+        String wallMaterial = part == null || part.wallMaterial() == null
+            ? ""
+            : part.wallMaterial();
+        if (wallMaterial.isBlank()) {
+            return Component.literal("Crucible Faucet (Unassigned)");
+        }
+        GTMaterial material = GTMaterialRegistry.material(wallMaterial);
+        String wall = material == null ? wallMaterial : material.prettyName();
         return Component.literal("Crucible Faucet (" + wall + ")");
     }
 
+    /**
+     * GT6 1.7.10: MultiTileEntityFaucet.java:72-78. Keep the source order:
+     * no-GUI hint, acid-proof hint, meltdown limit, monkey-wrench hint.
+     */
     @Override
     public void appendHoverText(
         ItemStack stack,
@@ -81,23 +93,22 @@ public final class FaucetItem extends BlockItem {
         if (part == null) {
             return;
         }
+        String wallMaterial = part.wallMaterial() == null ? "" : part.wallMaterial();
         GTMaterialGameplayRegistry.MaterialGameplay gameplay =
-            GTMaterialGameplayRegistry.material(part.wallMaterial());
-        long limit = gameplay == null ? 1250 : (long) (gameplay.meltingKelvin() * 1.25D);
-        GT6Tooltip.header(tooltip, "CRUCIBLE FAUCET");
-        GT6Tooltip.source(tooltip, "Crucibles Faucets", part.sourceLine());
-        GT6Tooltip.line(tooltip, ChatFormatting.AQUA,
-            "WALL: " + part.wallMaterial() + " // LIMIT: " + limit + "K");
+            GTMaterialGameplayRegistry.material(wallMaterial);
+        long limit = gameplay == null ? 1250L : (long) (gameplay.meltingKelvin() * 1.25D);
+
+        tooltip.add(Component.literal(
+            "No GUI, click to interact"
+        ).withStyle(ChatFormatting.GOLD));
         if (part.acidProof()) {
-            GT6Tooltip.line(tooltip, ChatFormatting.GOLD, "ACID: PROOF");
+            tooltip.add(Component.literal("Can handle Acids").withStyle(ChatFormatting.GOLD));
         }
-        GT6Tooltip.line(tooltip, ChatFormatting.GREEN,
-            "CTRL: empty hand pour // redstone pulse pour");
-        GT6Tooltip.line(tooltip, ChatFormatting.GRAY,
-            "TOOL: monkey wrench automatic // soft hammer redstone");
-        GT6Tooltip.nbt(tooltip,
-            "gregtech:casting_part={wall:\"" + part.wallMaterial()
-                + "\",line:" + part.sourceLine()
-                + ",acid:" + part.acidProof() + "}, mode:\"REDSTONE\"");
+        tooltip.add(Component.literal(
+            "Melts down when stored Heat is too much! (" + limit + " K)"
+        ).withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.literal(
+            "Use Monkey Wrench to toggle Auto-Inputs"
+        ).withStyle(ChatFormatting.DARK_GRAY));
     }
 }

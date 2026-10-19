@@ -11,235 +11,391 @@
       "display_name": "Mold (Stone)",
       "material": "stone",
       "source_line": 347,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "minecraft:stone",
+      "ingredient_material": "",
+      "ingredient_prefix": "",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Basalt)",
       "material": "basalt",
       "source_line": 348,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_stone",
+      "ingredient_material": "basalt",
+      "ingredient_prefix": "stone",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Granite Black)",
       "material": "graniteblack",
       "source_line": 349,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_stone",
+      "ingredient_material": "graniteblack",
+      "ingredient_prefix": "stone",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Granite Red)",
       "material": "granitered",
       "source_line": 350,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_stone",
+      "ingredient_material": "granitered",
+      "ingredient_prefix": "stone",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Nether Brick)",
       "material": "netherbrick",
       "source_line": 351,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_stone",
+      "ingredient_material": "netherbrick",
+      "ingredient_prefix": "stone",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Ceramic)",
       "material": "ceramic",
       "source_line": 352,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "",
+      "ingredient_material": "",
+      "ingredient_prefix": "",
+      "ingredient_count": 0
     },
     {
       "display_name": "Mold (Umber)",
       "material": "umber",
       "source_line": 353,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_stone",
+      "ingredient_material": "umber",
+      "ingredient_prefix": "stone",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Livingrock)",
       "material": "livingrock",
       "source_line": 354,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_stone",
+      "ingredient_material": "livingrock",
+      "ingredient_prefix": "stone",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Holystone)",
       "material": "holystone",
       "source_line": 355,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_stone",
+      "ingredient_material": "holystone",
+      "ingredient_prefix": "stone",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Betweenstone)",
       "material": "betweenstone",
       "source_line": 356,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_stone",
+      "ingredient_material": "betweenstone",
+      "ingredient_prefix": "stone",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Quartz)",
       "material": "milkyquartz",
       "source_line": 358,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_gem",
+      "ingredient_material": "milkyquartz",
+      "ingredient_prefix": "gem",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Carbon)",
       "material": "carbon",
       "source_line": 359,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "graphene",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Bronze)",
       "material": "bronze",
       "source_line": 361,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "bronze",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Invar)",
       "material": "invar",
       "source_line": 362,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "invar",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Steel)",
       "material": "steel",
       "source_line": 363,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "steel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (HSLA-Steel)",
       "material": "hslasteel",
       "source_line": 364,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "hslasteel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Stainless Steel)",
       "material": "stainlesssteel",
       "source_line": 365,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "stainlesssteel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Dark Iron)",
       "material": "darkiron",
       "source_line": 366,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "darkiron",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Meteoric Iron)",
       "material": "meteoriciron",
       "source_line": 367,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "meteoriciron",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Meteoric Steel)",
       "material": "meteoricsteel",
       "source_line": 368,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "meteoricsteel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Netherite)",
       "material": "netherite",
       "source_line": 369,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "netherite",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Knightmetal)",
       "material": "knightmetal",
       "source_line": 370,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "knightmetal",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Fiery Steel)",
       "material": "fierysteel",
       "source_line": 371,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "fierysteel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Octine)",
       "material": "octine",
       "source_line": 372,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "octine",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Thaumium)",
       "material": "thaumium",
       "source_line": 373,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "thaumium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Titanium)",
       "material": "titanium",
       "source_line": 374,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "titanium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Chromium)",
       "material": "chromium",
       "source_line": 375,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "chromium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Molybdenum)",
       "material": "molybdenum",
       "source_line": 376,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "molybdenum",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Niobium)",
       "material": "niobium",
       "source_line": 377,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "niobium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Tantalum)",
       "material": "tantalum",
       "source_line": 378,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "tantalum",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Osmium)",
       "material": "osmiumelemental",
       "source_line": 379,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "osmiumelemental",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Iridium)",
       "material": "iridium",
       "source_line": 380,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "iridium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Niobium Titanium)",
       "material": "niobiumtitanium",
       "source_line": 381,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "niobiumtitanium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Vanadium)",
       "material": "vanadium",
       "source_line": 382,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "vanadium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Tungsten)",
       "material": "tungsten",
       "source_line": 383,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "tungsten",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Tantalum Hafnium Carbide)",
       "material": "tantalumhafniumcarbide",
       "source_line": 384,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "tantalumhafniumcarbide",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Void Metal)",
       "material": "voidmetal",
       "source_line": 385,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "voidmetal",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Bedrock HSLA Alloy)",
       "material": "bedrockhslaalloy",
       "source_line": 387,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "bedrockhslaalloy",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     },
     {
       "display_name": "Mold (Adamantium)",
       "material": "adamantium",
       "source_line": 388,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "adamantium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 5
     }
   ],
   "faucet_variants": [
@@ -247,235 +403,391 @@
       "display_name": "Crucible Faucet (Stone)",
       "material": "stone",
       "source_line": 300,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "stone",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Basalt)",
       "material": "basalt",
       "source_line": 301,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "basalt",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Granite Black)",
       "material": "graniteblack",
       "source_line": 302,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "graniteblack",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Granite Red)",
       "material": "granitered",
       "source_line": 303,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "granitered",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Nether Brick)",
       "material": "netherbrick",
       "source_line": 304,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "netherbrick",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Ceramic)",
       "material": "ceramic",
       "source_line": 305,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "ceramic",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Umber)",
       "material": "umber",
       "source_line": 306,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "umber",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Livingrock)",
       "material": "livingrock",
       "source_line": 307,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "livingrock",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Holystone)",
       "material": "holystone",
       "source_line": 308,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "holystone",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Betweenstone)",
       "material": "betweenstone",
       "source_line": 309,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "betweenstone",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Quartz)",
       "material": "milkyquartz",
       "source_line": 311,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "milkyquartz",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Carbon)",
       "material": "carbon",
       "source_line": 312,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "carbon",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Bronze)",
       "material": "bronze",
       "source_line": 314,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "bronze",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Invar)",
       "material": "invar",
       "source_line": 315,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "invar",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Steel)",
       "material": "steel",
       "source_line": 316,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "steel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (HSLA-Steel)",
       "material": "hslasteel",
       "source_line": 317,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "hslasteel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Stainless Steel)",
       "material": "stainlesssteel",
       "source_line": 318,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "stainlesssteel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Dark Iron)",
       "material": "darkiron",
       "source_line": 319,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "darkiron",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Meteoric Iron)",
       "material": "meteoriciron",
       "source_line": 320,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "meteoriciron",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Meteoric Steel)",
       "material": "meteoricsteel",
       "source_line": 321,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "meteoricsteel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Netherite)",
       "material": "netherite",
       "source_line": 322,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "netherite",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Knightmetal)",
       "material": "knightmetal",
       "source_line": 323,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "knightmetal",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Fiery Steel)",
       "material": "fierysteel",
       "source_line": 324,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "fierysteel",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Octine)",
       "material": "octine",
       "source_line": 325,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "octine",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Thaumium)",
       "material": "thaumium",
       "source_line": 326,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "thaumium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Titanium)",
       "material": "titanium",
       "source_line": 327,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "titanium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Chromium)",
       "material": "chromium",
       "source_line": 328,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "chromium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Molybdenum)",
       "material": "molybdenum",
       "source_line": 329,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "molybdenum",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Niobium)",
       "material": "niobium",
       "source_line": 330,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "niobium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Tantalum)",
       "material": "tantalum",
       "source_line": 331,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "tantalum",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Osmium)",
       "material": "osmiumelemental",
       "source_line": 332,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "osmiumelemental",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Iridium)",
       "material": "iridium",
       "source_line": 333,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "iridium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Niobium Titanium)",
       "material": "niobiumtitanium",
       "source_line": 334,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "niobiumtitanium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Vanadium)",
       "material": "vanadium",
       "source_line": 335,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "vanadium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Tungsten)",
       "material": "tungsten",
       "source_line": 336,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "tungsten",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Tantalum Hafnium Carbide)",
       "material": "tantalumhafniumcarbide",
       "source_line": 337,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "tantalumhafniumcarbide",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Void Metal)",
       "material": "voidmetal",
       "source_line": 338,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "voidmetal",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Bedrock HSLA Alloy)",
       "material": "bedrockhslaalloy",
       "source_line": 340,
-      "acid_proof": false
+      "acid_proof": false,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "bedrockhslaalloy",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     },
     {
       "display_name": "Crucible Faucet (Adamantium)",
       "material": "adamantium",
       "source_line": 341,
-      "acid_proof": true
+      "acid_proof": true,
+      "ingredient_item": "gregtech:meta_plate",
+      "ingredient_material": "adamantium",
+      "ingredient_prefix": "plate",
+      "ingredient_count": 3
     }
   ],
   "canonical_shapes": [

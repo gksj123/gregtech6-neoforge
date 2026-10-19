@@ -13,6 +13,7 @@ import gregtech.neo.machine.GTMachineRegistry;
 import gregtech.neo.recipe.GTRecipeEngine;
 import gregtech.neo.recipe.GTAlloyRegistry;
 import gregtech.neo.casting.GTMoldRegistry;
+import gregtech.neo.fluid.GTFluids;
 import gregtech.neo.client.GTMaterialItemColors;
 import gregtech.neo.client.GTCrucibleRenderer;
 import gregtech.neo.client.GTCastingRenderer;
@@ -36,6 +37,7 @@ public final class GT6Neo {
         GTRecipeEngine.bootstrap();
         GTAlloyRegistry.bootstrap();
         GTMoldRegistry.bootstrap();
+        GTFluids.register(modEventBus);
         GTDataComponents.DATA_COMPONENTS.register(modEventBus);
         GTBlocks.BLOCKS.register(modEventBus);
         GTItems.ITEMS.register(modEventBus);

@@ -16,6 +16,7 @@ public final class KineticConverterBlockEntity extends BlockEntity implements En
     private final KineticConverterKind kind;
     private final EnergyBuffer inputBuffer;
     private long lastAccepted;
+    private boolean inputReversed;
 
     public KineticConverterBlockEntity(BlockPos pos, BlockState state) {
         super(GTBlockEntities.KINETIC_CONVERTER.get(), pos, state);
@@ -38,7 +39,8 @@ public final class KineticConverterBlockEntity extends BlockEntity implements En
             return;
         }
         Direction output = getBlockState().getValue(KineticConverterBlock.FACING);
-        EnergyPacket outputPacket = new EnergyPacket(kind.outputKind(), kind.outputSize(), 1);
+        EnergyPacket outputPacket = new EnergyPacket(kind.outputKind(), kind.outputSize(), 1)
+            .withDirection(inputReversed);
         MechanicalEnergyNetwork.Result simulation = MechanicalEnergyNetwork.distribute(
             level,
             worldPosition,
@@ -90,6 +92,7 @@ public final class KineticConverterBlockEntity extends BlockEntity implements En
             return acceptedAmperes;
         }
         long acceptedEnergy = inputBuffer.accept(packet.withAmount(acceptedAmperes));
+        inputReversed = packet.reversed();
         setChanged();
         return acceptedEnergy / packet.size();
     }
@@ -107,6 +110,7 @@ public final class KineticConverterBlockEntity extends BlockEntity implements En
         super.loadAdditional(tag, registries);
         inputBuffer.restore(tag.getLong("energy"));
         lastAccepted = tag.getLong("last_accepted");
+        inputReversed = tag.getBoolean("input_reversed");
     }
 
     @Override
@@ -114,5 +118,6 @@ public final class KineticConverterBlockEntity extends BlockEntity implements En
         super.saveAdditional(tag, registries);
         tag.putLong("energy", inputBuffer.stored());
         tag.putLong("last_accepted", lastAccepted);
+        tag.putBoolean("input_reversed", inputReversed);
     }
 }

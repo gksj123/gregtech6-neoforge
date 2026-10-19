@@ -40,6 +40,13 @@
   "block.gregtech.copper_cable": "Copper Cable",
   "block.gregtech.mold": "GT Casting Mold",
   "block.gregtech.faucet": "GT Crucible Faucet",
+  "block.gregtech.steam_boiler": "GT Steam Boiler Tank",
+  "block.gregtech.steam_boiler.unassigned": "Unassigned GT Steam Boiler Tank",
+  "block.gregtech.steam_engine": "GT Steam Engine",
+  "block.gregtech.steam_engine.unassigned": "Unassigned GT Steam Engine",
+  "block.gregtech.steam_turbine": "GT Steam Turbine",
+  "block.gregtech.steam_turbine.unassigned": "Unassigned GT Steam Turbine",
+  "block.gregtech.steam_pipe": "GT Steam Pipe",
 
   "item.gregtech.wrench": "GT Wrench",
   "item.gregtech.screwdriver": "GT Screwdriver",
@@ -49,6 +56,9 @@
   "item.gregtech.electrometer": "GT Electrometer",
   "item.gregtech.thermometer": "Quicksilver Thermometer",
   "item.gregtech.chisel": "GT Chisel",
+  "item.gregtech.pincers": "GT Pincers",
+  "fluid.gregtech.steam": "Steam",
+  "fluid.gregtech.distilled_water": "Distilled Water",
   "item.gregtech.mold": "GT Casting Mold",
   "item.gregtech.faucet": "GT Crucible Faucet",
   "item.gregtech.gt6_demo_guide": "GT6 NeoForge Demo Guide",
@@ -102,6 +112,7 @@
   "item.gregtech.tool.usage.electrometer": "Electrometer: inspect energy family, size, amount, buffered energy and transfer state.",
   "item.gregtech.tool.usage.thermometer": "Thermometer: right-click crucibles or temperature sensors to measure Kelvin.",
   "item.gregtech.tool.usage.chisel": "Chisel: carve individual cells of the 5x5 casting-mold matrix.",
+  "item.gregtech.tool.usage.pincers": "Pincers: remove castings from molds without temperature damage.",
   "message.gregtech.generator.enabled": "Generator enabled",
   "message.gregtech.generator.disabled": "Generator disabled",
   "message.gregtech.energy.accepts": "Energy input: %1$s, size %2$s to %3$s",
@@ -115,5 +126,9 @@
   "message.gregtech.cable.status": "Cable: %1$s | Max %2$s V / %3$s A | Loss %4$s V/block | Last %5$s V, %6$s A | Overloads: %7$s",
   "message.gregtech.generator.status": "Enabled: %1$s | Fuel ticks: %2$s | Packet: %3$s V × %4$s A | Generated: %5$s EU/t | Delivered: %6$s EU | Receivers: %7$s",
   "message.gregtech.crusher.status": "Enabled: %1$s | Formed: %2$s | Energy: %3$s | Buffer: %4$s | Progress: %5$s / %6$s",
-  "message.gregtech.crusher.detail": "Enabled: %1$s | Formed: %2$s | Energy: %3$s | Buffer: %4$s / %5$s | Progress: %6$s / %7$s | Last size: %8$s (range %9$s-%10$s, max %11$s packets) | Input: %12$s | Output: %13$s"
+  "message.gregtech.crusher.detail": "Enabled: %1$s | Formed: %2$s | Energy: %3$s | Buffer: %4$s / %5$s | Progress: %6$s / %7$s | Last size: %8$s (range %9$s-%10$s, max %11$s packets) | Input: %12$s | Output: %13$s",
+  "message.gregtech.steam_boiler.status": "%1$s | Output: %2$s L Steam/t | Efficiency: %3$s | Heat: %4$s / %5$s HU | Water: %6$s L | Steam: %7$s L | Barometer: %8$s",
+  "message.gregtech.steam_engine.status": "%1$s | Base: %2$s KU | Efficiency: %3$s | Steam: %4$s | Energy: %5$s | Stopped: %6$s | Active: %7$s",
+  "message.gregtech.steam_turbine.status": "%1$s | Output: %2$s RU/t | Steam: %3$s / %4$s | Active: %5$s",
+  "message.gregtech.steam_pipe.status": "Steam pipe: transports Steam fluid between boilers and engines/turbines"
 }

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.0,
+  "ingredient": {
+    "type": "neoforge:components",
+    "items": "gregtech:ceramic_mold_raw",
+    "components": {
+      "gregtech:casting_part": {
+        "wall_material": "ceramic",
+        "source_line": 394,
+        "shape_mask": 33554431,
+        "acid_proof": false
+      }
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "gregtech:mold",
+    "components": {
+      "gregtech:casting_part": {
+        "wall_material": "ceramic",
+        "source_line": 394,
+        "shape_mask": 33554431,
+        "acid_proof": false
+      }
+    }
+  }
+}

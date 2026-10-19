@@ -17,7 +17,8 @@ public final class GT6ToolItem extends Item {
         MONKEY_WRENCH,
         ELECTROMETER,
         THERMOMETER,
-        CHISEL
+        CHISEL,
+        PINCERS
     }
 
     private final ToolKind kind;
@@ -47,6 +48,7 @@ public final class GT6ToolItem extends Item {
             case ELECTROMETER -> "CTRL: inspect energy family, size and amperage";
             case THERMOMETER -> "CTRL: read temperature in Kelvin";
             case CHISEL -> "CTRL: carve one 5x5 cell into a casting mold";
+            case PINCERS -> "CTRL: remove a casting from a mold without heat damage";
         };
         tooltip.add(Component.literal(usage).withStyle(ChatFormatting.GRAY));
         GT6Tooltip.nbt(tooltip, "tool:\"" + kind.name().toLowerCase() + "\"");

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "M": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "M M",
+    "MMM"
+  ],
+  "result": {
+    "count": 1,
+    "id": "gregtech:mold",
+    "components": {
+      "gregtech:casting_part": {
+        "wall_material": "stone",
+        "source_line": 347,
+        "shape_mask": 0,
+        "acid_proof": false
+      }
+    }
+  }
+}

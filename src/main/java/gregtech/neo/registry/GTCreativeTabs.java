@@ -6,6 +6,10 @@ import gregtech.neo.item.BurningBoxItem;
 import gregtech.neo.item.SmallCrucibleItem;
 import gregtech.neo.item.MoldItem;
 import gregtech.neo.item.FaucetItem;
+import gregtech.neo.item.CeramicMoldRawItem;
+import gregtech.neo.item.SteamBoilerItem;
+import gregtech.neo.item.SteamEngineItem;
+import gregtech.neo.item.SteamTurbineItem;
 import gregtech.neo.casting.CastingPart;
 import gregtech.neo.casting.GTMoldRegistry;
 import gregtech.neo.machine.GTMachineRegistry;
@@ -40,6 +44,7 @@ public final class GTCreativeTabs {
                 output.accept(GTItems.ELECTROMETER.get());
                 output.accept(GTItems.THERMOMETER.get());
                 output.accept(GTItems.CHISEL.get());
+                output.accept(GTItems.PINCERS.get());
                 output.accept(GTBlocks.BASIC_CRUSHER.get());
                 output.accept(GTBlocks.LARGE_CRUSHER.get());
                 output.accept(GTBlocks.CRUCIBLE.get());
@@ -50,7 +55,7 @@ public final class GTCreativeTabs {
                 output.accept(GTBlocks.TEMPERATURE_SENSOR.get());
                 output.accept(MoldItem.create(
                     GTItems.MOLD.get(),
-                    new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false)
+                    new CastingPart("steel", 1072, 0, false)
                 ));
                 output.accept(FaucetItem.create(
                     GTItems.FAUCET.get(),
@@ -69,6 +74,10 @@ public final class GTCreativeTabs {
                 output.accept(BurningBoxItem.create(
                     GTItems.BURNING_BOX.get(),
                     new MachinePart(528, "Burning Boxes")
+                ));
+                output.accept(SteamBoilerItem.create(
+                    GTItems.STEAM_BOILER.get(),
+                    new MachinePart(555, "Steam Boilers")
                 ));
                 output.accept(GTMaterialItems.createPart("iron", "ingot", 1));
                 output.accept(GTMaterialItems.createPart("copper", "ingot", 1));
@@ -135,6 +144,12 @@ public final class GTCreativeTabs {
                         GTItems.BURNING_BOX.get(),
                         new MachinePart(machine.line(), machine.category())
                     )));
+                GTMachineRegistry.machines().stream()
+                    .filter(machine -> "Steam Boilers".equals(machine.category()))
+                    .forEach(machine -> output.accept(SteamBoilerItem.create(
+                        GTItems.STEAM_BOILER.get(),
+                        new MachinePart(machine.line(), machine.category())
+                    )));
             })
             .build()
     );
@@ -154,6 +169,7 @@ public final class GTCreativeTabs {
                 output.accept(GTItems.ELECTROMETER.get());
                 output.accept(GTItems.THERMOMETER.get());
                 output.accept(GTItems.CHISEL.get());
+                output.accept(GTItems.PINCERS.get());
                 output.accept(GTBlocks.LV_GENERATOR.get());
                 output.accept(GTBlocks.MANUAL_CRANK.get());
                 output.accept(GTBlocks.ELECTRIC_MOTOR.get());
@@ -162,6 +178,19 @@ public final class GTCreativeTabs {
                 output.accept(GTBlocks.AXLE.get());
                 output.accept(GTBlocks.TIN_CABLE.get());
                 output.accept(GTBlocks.COPPER_CABLE.get());
+                GTMachineRegistry.machines().stream()
+                    .filter(machine -> "MultiTileEntityEngineSteam".equals(machine.machine_class()))
+                    .forEach(machine -> output.accept(SteamEngineItem.create(
+                        GTItems.STEAM_ENGINE.get(),
+                        new MachinePart(machine.line(), machine.category())
+                    )));
+                GTMachineRegistry.machines().stream()
+                    .filter(machine -> "MultiTileEntityTurbineSteam".equals(machine.machine_class()))
+                    .forEach(machine -> output.accept(SteamTurbineItem.create(
+                        GTItems.STEAM_TURBINE.get(),
+                        new MachinePart(machine.line(), machine.category())
+                    )));
+                output.accept(GTBlocks.STEAM_PIPE.get());
             })
             .build()
     );
@@ -193,23 +222,30 @@ public final class GTCreativeTabs {
             .title(Component.translatable("itemGroup.gregtech.casting"))
             .icon(() -> MoldItem.create(
                 GTItems.MOLD.get(),
-                new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false)
+                new CastingPart("steel", 1072, 0, false)
             ))
             .displayItems((parameters, output) -> {
                 output.accept(GTItems.CHISEL.get());
                 output.accept(GTItems.THERMOMETER.get());
+                for (GTMoldRegistry.MoldShape shape : GTMoldRegistry.canonicalShapes()) {
+                    output.accept(CeramicMoldRawItem.create(
+                        GTItems.CERAMIC_MOLD_RAW.get(),
+                        shape.mask(),
+                        shape.sourceLine()
+                    ));
+                }
+                // GT6 1.7.10: the mold table contains blank molds only. The
+                // 5x5 shape is carved in-world, never pre-selected in the table.
                 for (GTMoldRegistry.MoldVariant variant : GTMoldRegistry.molds()) {
-                    for (GTMoldRegistry.MoldShape shape : GTMoldRegistry.canonicalShapes()) {
-                        output.accept(MoldItem.create(
-                            GTItems.MOLD.get(),
-                            new CastingPart(
-                                variant.material(),
-                                variant.sourceLine(),
-                                shape.mask(),
-                                variant.acidProof()
-                            )
-                        ));
-                    }
+                    output.accept(MoldItem.create(
+                        GTItems.MOLD.get(),
+                        new CastingPart(
+                            variant.material(),
+                            variant.sourceLine(),
+                            0,
+                            variant.acidProof()
+                        )
+                    ));
                 }
                 for (GTMoldRegistry.MoldVariant variant : GTMoldRegistry.faucets()) {
                     output.accept(FaucetItem.create(

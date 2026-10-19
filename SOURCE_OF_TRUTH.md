@@ -79,6 +79,16 @@ is a literal:
 Density carries a parallel confidence field and feeds GT6's crucible thermal
 mass calculation.
 
+The material extractor also records `TD.Properties.ACID` membership and explicit
+`setSolidifying(...)` targets. The latter currently covers Water→Ice and
+Lava→Obsidian; all other materials default to their own material at one Unit.
+
+Machine records retain the historical first-integer fields for compatibility and
+also include `input_value`, `output_value`, `capacity`, `output_su`, and
+`capacity_su`. These exact fields evaluate source arithmetic such as
+`24*STEAM_PER_EU` and `16/STEAM_PER_EU`; steam balance logic uses only the exact
+fields.
+
 Machine sound extraction separates the block step sound from emitted sound
 events. GT6 does not store a universal per-machine loudness scalar in the
 multitile registration, so fabricating one would be incorrect.
@@ -92,5 +102,9 @@ does not fabricate their components.
 Mold and faucet data are extracted by `tools/export_molds.py`. The script
 evaluates the source `TEMP_MOLD_RECIPES` table, reads the ceramic canonical
 shape masks, and applies the same rotation and mirror transformations as
-`MultiTileEntityMold`. It also exports all resolved mold/faucet registration
-materials and source lines.
+`MultiTileEntityMold`, using the source row*5+column bit layout. The block
+model and renderer also follow the source's flat tray dimensions (1 px base,
+4 px walls, 3 px cell grid, 12x12x2 px collision). It also exports all resolved
+mold/faucet registration materials and source lines. It additionally generates
+38 source-material mold recipes, 39 faucet recipes and 30 raw ceramic mold
+smelting recipes.

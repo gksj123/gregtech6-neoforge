@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gregtech:item/material_base"
+    "layer0": "gregtech:item/material/sticklong"
   }
 }

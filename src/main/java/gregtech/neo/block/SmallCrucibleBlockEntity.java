@@ -550,28 +550,32 @@ public final class SmallCrucibleBlockEntity extends BlockEntity
         return temperature;
     }
 
+    /**
+     * GT6 1.7.10: MultiTileEntitySmeltery.java:498-507. The mold returns the
+     * amount it consumed; the crucible subtracts exactly that amount.
+     */
     @Override
-    public boolean pourInto(MoldBlockEntity mold) {
+    public boolean pourInto(MoldBlockEntity mold, Direction moldSide) {
         if (mold == null || !mold.canAccept(mold.shapeMask())) {
-            return false;
-        }
-        long required = mold.requiredUnits();
-        if (required <= 0) {
             return false;
         }
         for (Content content : contents) {
             GTMaterialGameplayRegistry.MaterialGameplay gameplay =
                 GTMaterialGameplayRegistry.material(content.material);
-            if (gameplay == null || content.units < required
-                || temperature < gameplay.meltingKelvin()
-                || !mold.canAcceptTemperature(temperature)
-                || !mold.canAcceptMaterial(content.material)) {
+            if (gameplay == null || content.units <= 0
+                || temperature < gameplay.meltingKelvin()) {
                 continue;
             }
-            if (!mold.fillMold(content.material, required, temperature)) {
+            long consumed = mold.fillMold(
+                content.material,
+                content.units,
+                temperature,
+                moldSide
+            );
+            if (consumed <= 0) {
                 continue;
             }
-            content.units -= required;
+            content.units -= consumed;
             contents.removeIf(entry -> entry.units <= 0);
             setChanged();
             return true;

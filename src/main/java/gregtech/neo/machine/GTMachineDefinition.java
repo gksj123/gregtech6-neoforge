@@ -20,6 +20,13 @@ public record GTMachineDefinition(
     int efficiency,
     int parallel,
     int output,
+    long inputValue,
+    long inputMinValue,
+    long inputMaxValue,
+    long outputValue,
+    long capacity,
+    long outputSu,
+    long capacitySu,
     boolean parallel_duration,
     boolean cheap_overclocking,
     boolean no_constant_power

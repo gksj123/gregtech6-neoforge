@@ -9,6 +9,7 @@ import gregtech.neo.block.CrucibleBlockEntity;
 import gregtech.neo.block.GeneratorBlockEntity;
 import gregtech.neo.block.BasicCrusherBlockEntity;
 import gregtech.neo.block.KineticConverterBlock;
+import gregtech.neo.block.KineticConverterBlockEntity;
 import gregtech.neo.block.LargeCrusherBlock;
 import gregtech.neo.block.LargeCrusherBlockEntity;
 import gregtech.neo.block.MachinePortBlock;
@@ -16,6 +17,12 @@ import gregtech.neo.block.MachinePortMode;
 import gregtech.neo.block.MechanicalEnergyNetwork;
 import gregtech.neo.block.SmallCrucibleBlockEntity;
 import gregtech.neo.block.SmallCrucibleBlock;
+import gregtech.neo.block.SteamBoilerBlockEntity;
+import gregtech.neo.block.SteamEngineBlock;
+import gregtech.neo.block.SteamEngineBlockEntity;
+import gregtech.neo.block.SteamPipeBlockEntity;
+import gregtech.neo.block.SteamTurbineBlock;
+import gregtech.neo.block.SteamTurbineBlockEntity;
 import gregtech.neo.block.TemperatureSensorBlockEntity;
 import gregtech.neo.block.MoldBlockEntity;
 import gregtech.neo.block.FaucetBlock;
@@ -28,15 +35,20 @@ import gregtech.neo.material.GTMaterialItems;
 import gregtech.neo.material.GTMaterialGameplayRegistry;
 import gregtech.neo.material.MaterialPart;
 import gregtech.neo.registry.GTDataComponents;
+import gregtech.neo.registry.GTItems;
 import gregtech.neo.registry.GTBlocks;
 import gregtech.neo.recipe.GTAlloyRegistry;
+import gregtech.neo.fluid.GTFluidUtil;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -47,9 +59,11 @@ import gregtech.neo.core.EnergyKind;
 import gregtech.neo.core.EnergyPacket;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import net.neoforged.neoforge.event.server.ServerStartedEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 
 /**
  * Opt-in integration test used by the isolated development client.
@@ -72,6 +86,13 @@ public final class RuntimeSelfTest {
     private static BlockPos faucetPos;
     private static BlockPos faucetMoldPos;
     private static BlockPos temperatureSensorPos;
+    private static BlockPos interactionMoldPos;
+    private static BlockPos autoMoldPos;
+    private static BlockPos autoCruciblePos;
+    private static BlockPos steamTestPos;
+    private static BlockPos turbineTestPos;
+    private static BlockPos rightClickMoldPos;
+    private static BlockPos largeWallMoldPos;
     private static boolean genericCapabilityInserted;
     private static boolean burningHeatObserved;
     private static boolean burningBoxLitObserved;
@@ -83,6 +104,15 @@ public final class RuntimeSelfTest {
     private static boolean smallDropObserved;
     private static boolean faucetPoured;
     private static boolean faucetOutputPass;
+    private static boolean moldInteractionPass;
+    private static boolean moldAutoPullPass;
+    private static boolean steamFlowPass;
+    private static boolean steamNoVoidPass;
+    private static boolean steamTurbinePass;
+    private static boolean castingRecipePass;
+    private static boolean rightClickMoldPass;
+    private static boolean largeWallMoldPass;
+    private static boolean moldShapeOutputPass;
 
     private RuntimeSelfTest() {
     }
@@ -115,6 +145,15 @@ public final class RuntimeSelfTest {
         smallDropObserved = false;
         faucetPoured = false;
         faucetOutputPass = false;
+        moldInteractionPass = false;
+        moldAutoPullPass = false;
+        steamFlowPass = false;
+        steamNoVoidPass = false;
+        steamTurbinePass = false;
+        castingRecipePass = false;
+        rightClickMoldPass = false;
+        largeWallMoldPass = false;
+        moldShapeOutputPass = false;
         MinecraftServer server = event.getServer();
         ServerLevel level = server.overworld();
         BlockPos spawn = level.getSharedSpawnPos();
@@ -127,6 +166,13 @@ public final class RuntimeSelfTest {
         burningBoxPos = cruciblePos.below();
         smallCruciblePos = controllerPos.offset(-20, 0, 5);
         temperatureSensorPos = smallCruciblePos.east();
+        interactionMoldPos = controllerPos.offset(30, 0, 0);
+        autoCruciblePos = controllerPos.offset(40, 0, 0);
+        autoMoldPos = autoCruciblePos.north();
+        steamTestPos = controllerPos.offset(-35, 0, -15);
+        turbineTestPos = steamTestPos.offset(20, 0, 0);
+        rightClickMoldPos = controllerPos.offset(50, 0, 10);
+        largeWallMoldPos = cruciblePos.offset(-2, 1, 0);
         moldPos = smallCruciblePos.north();
         faucetPos = smallCruciblePos.south();
         faucetMoldPos = faucetPos.below();
@@ -137,6 +183,18 @@ public final class RuntimeSelfTest {
         buildSmallCrucible(level);
         buildCastingMold(level);
         creativeCatalogPass = validateCreativeCatalog(server);
+        long castingRecipes = server.getRecipeManager().getRecipeIds()
+            .filter(id -> id.getNamespace().equals(GT6Neo.MOD_ID))
+            .filter(id -> id.getPath().startsWith("mold_")
+                || id.getPath().startsWith("faucet_")
+                || id.getPath().startsWith("ceramic_mold_"))
+            .count();
+        castingRecipePass = castingRecipes == 107;
+        GT6Neo.LOGGER.info(
+            "GT6 runtime self-test: casting recipes={} pass={}",
+            castingRecipes,
+            castingRecipePass
+        );
         GT6Neo.LOGGER.info(
             "GT6 runtime self-test: large RU structure at {}, EU/KU chain at {}, RU/KU chain crank at {}",
             controllerPos,
@@ -152,6 +210,18 @@ public final class RuntimeSelfTest {
         ticks++;
         if (ticks == 1) {
             spawnCrucibleDropTests(event.getServer().overworld());
+            moldInteractionPass = runMoldInteractionTest(event.getServer().overworld());
+            moldAutoPullPass = runMoldAutoPullTest(event.getServer().overworld());
+            boolean[] steamResults = runSteamTests(event.getServer().overworld());
+            steamFlowPass = steamResults[0];
+            steamNoVoidPass = steamResults[1];
+            steamTurbinePass = steamResults[2];
+            rightClickMoldPass = runMoldRightClickPourTest(
+                event.getServer().overworld()
+            );
+            moldShapeOutputPass = runAllMoldShapeOutputTest(
+                event.getServer().overworld()
+            );
             if (event.getServer().overworld().getBlockEntity(controllerPos) instanceof LargeCrusherBlockEntity crusher) {
                 crusher.forceStructureCheck();
                 GT6Neo.LOGGER.info("GT6 runtime self-test: controller formed={}", crusher.isFormed());
@@ -239,7 +309,7 @@ public final class RuntimeSelfTest {
             ServerLevel level = event.getServer().overworld();
             if (level.getBlockEntity(smallCruciblePos) instanceof SmallCrucibleBlockEntity crucible
                 && level.getBlockEntity(moldPos) instanceof MoldBlockEntity mold) {
-                castingPoured = crucible.pourInto(mold);
+                castingPoured = crucible.pourInto(mold, Direction.SOUTH);
                 if (castingPoured) {
                     long before = mold.contentTemperature();
                     mold.receivePacket(
@@ -250,6 +320,27 @@ public final class RuntimeSelfTest {
                     castingCooled = mold.contentTemperature() < before;
                     mold.forceSolidifyForTesting();
                 }
+            }
+            if (level.getBlockEntity(cruciblePos) instanceof CrucibleBlockEntity crucible
+                && level.getBlockEntity(largeWallMoldPos) instanceof MoldBlockEntity mold) {
+                Player player = FakePlayerFactory.getMinecraft(level);
+                player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+                BlockHitResult wallMoldHit = new BlockHitResult(
+                    new Vec3(
+                        largeWallMoldPos.getX() + 0.9,
+                        largeWallMoldPos.getY() + 0.2,
+                        largeWallMoldPos.getZ() + 0.5
+                    ),
+                    Direction.UP,
+                    largeWallMoldPos,
+                    false
+                );
+                level.getBlockState(largeWallMoldPos)
+                    .useWithoutItem(level, player, wallMoldHit);
+                largeWallMoldPass = mold.contentUnits() > 0;
+                mold.forceSolidifyForTesting();
+                largeWallMoldPass = largeWallMoldPass && mold.outputCount() > 0;
+                mold.takeOutputForTesting();
             }
         }
         if (ticks == 121) {
@@ -364,9 +455,13 @@ public final class RuntimeSelfTest {
                 && smallCruciblePass && smallDropAbsorbed
                 && smallSteelmakingPass && sensorPass && creativeCatalogPass
                 && castingPoured && castingCooled && castingOutputPass
-                && faucetPoured && faucetOutputPass && alloyCatalogPass) {
+                && faucetPoured && faucetOutputPass && alloyCatalogPass
+                && moldInteractionPass && moldAutoPullPass
+                && steamFlowPass && steamNoVoidPass && steamTurbinePass
+                && castingRecipePass && rightClickMoldPass
+                && largeWallMoldPass && moldShapeOutputPass) {
                 GT6Neo.LOGGER.info(
-                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{} FILL={}/{} STEELMAKING={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={}",
+                    "GT6_RUNTIME_SELFTEST_PASS RU={} EU_KU={} CRANK_KU={} GENERIC_KU={} CRUCIBLE={}K SMALL_CRUCIBLE={}K CRUCIBLE_DROPS={}/{} FILL={}/{} STEELMAKING={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={} MOLD_INTERACTION={} MOLD_AUTO={} STEAM_FLOW={} STEAM_NO_VOID={} STEAM_TURBINE={} CASTING_RECIPES={} MOLD_RIGHT_CLICK={} LARGE_WALL_MOLD={} MOLD_SHAPES={}",
                     output.getCount(),
                     basicCount,
                     crankCount,
@@ -384,11 +479,20 @@ public final class RuntimeSelfTest {
                     faucetPoured,
                     faucetOutputPass,
                     GTAlloyRegistry.resolvedRecipeCount(),
-                    burningBoxLitObserved
+                    burningBoxLitObserved,
+                    moldInteractionPass,
+                    moldAutoPullPass,
+                    steamFlowPass,
+                    steamNoVoidPass,
+                    steamTurbinePass,
+                    castingRecipePass,
+                    rightClickMoldPass,
+                    largeWallMoldPass,
+                    moldShapeOutputPass
                 );
             } else {
                 GT6Neo.LOGGER.error(
-                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} LARGE_FILL={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SMALL_FILL={} STEELMAKING={} SENSOR pass={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={} CREATIVE_CATALOG={}",
+                    "GT6_RUNTIME_SELFTEST_FAIL formed={} RU output={} EU/KU pass={} CRANK/KU pass={} GENERIC/KU pass={} GENERIC_CAPABILITY={} CRUCIBLE pass={} temperature={} LARGE_DROP={} LARGE_FILL={} SMALL_CRUCIBLE pass={} temperature={} SMALL_DROP={} SMALL_FILL={} STEELMAKING={} SENSOR pass={} CASTING={}/{}/{} FAUCET={}/{} ALLOYS={} BURNING_BOX_LIT={} CREATIVE_CATALOG={} MOLD_INTERACTION={} MOLD_AUTO={} STEAM_FLOW={} STEAM_NO_VOID={} STEAM_TURBINE={} CASTING_RECIPES={} MOLD_RIGHT_CLICK={} LARGE_WALL_MOLD={} MOLD_SHAPES={}",
                     crusher.isFormed(),
                     output,
                     basicPass,
@@ -412,7 +516,16 @@ public final class RuntimeSelfTest {
                     faucetOutputPass,
                     alloyCatalogPass,
                     burningBoxLitObserved,
-                    creativeCatalogPass
+                    creativeCatalogPass,
+                    moldInteractionPass,
+                    moldAutoPullPass,
+                    steamFlowPass,
+                    steamNoVoidPass,
+                    steamTurbinePass,
+                    castingRecipePass,
+                    rightClickMoldPass,
+                    largeWallMoldPass,
+                    moldShapeOutputPass
                 );
             }
         } else {
@@ -420,6 +533,569 @@ public final class RuntimeSelfTest {
         }
         armed = false;
         event.getServer().halt(false);
+    }
+
+    private static boolean runMoldInteractionTest(ServerLevel level) {
+        level.removeBlock(interactionMoldPos, false);
+        level.setBlockAndUpdate(interactionMoldPos, GTBlocks.MOLD.get().defaultBlockState());
+        if (!(level.getBlockEntity(interactionMoldPos) instanceof MoldBlockEntity mold)) {
+            GT6Neo.LOGGER.error("GT6 mold interaction test: missing mold block entity");
+            return false;
+        }
+        mold.configure(new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false));
+        long down = mold.fillMold(
+            "iron",
+            mold.requiredUnits(),
+            1800,
+            Direction.DOWN
+        );
+        long filled = mold.fillMold(
+            "iron",
+            mold.requiredUnits(),
+            1800,
+            Direction.UP
+        );
+        Player player = FakePlayerFactory.getMinecraft(level);
+        BlockHitResult hit = new BlockHitResult(
+            Vec3.atCenterOf(interactionMoldPos).add(0, 0.5, 0),
+            Direction.UP,
+            interactionMoldPos,
+            false
+        );
+        mold.forceSolidifyForTesting();
+        GT6Neo.LOGGER.info(
+            "GT6 mold interaction test: filled={} required={} mask=0x{} solid={} output={}",
+            filled,
+            mold.requiredUnits(),
+            Integer.toHexString(mold.shapeMask()),
+            mold.solidPrefix(),
+            mold.outputCount()
+        );
+        level.getBlockState(interactionMoldPos).useWithoutItem(level, player, hit);
+        GT6Neo.LOGGER.info(
+            "GT6 mold interaction test: player inventory count={}",
+            player.getInventory().getItem(0)
+        );
+        GT6Neo.LOGGER.info(
+            "GT6 mold interaction test: after empty-hand content={} output={} temp={}",
+            mold.contentUnits(),
+            mold.outputCount(),
+            mold.contentTemperature()
+        );
+        ItemStack chisel = new ItemStack(GTItems.CHISEL.get());
+        level.getBlockState(interactionMoldPos).useItemOn(
+            chisel,
+            level,
+            player,
+            InteractionHand.MAIN_HAND,
+            hit
+        );
+        ItemStack wrench = new ItemStack(GTItems.WRENCH.get());
+        level.getBlockState(interactionMoldPos).useItemOn(
+            wrench,
+            level,
+            player,
+            InteractionHand.MAIN_HAND,
+            hit
+        );
+        ItemStack monkey = new ItemStack(GTItems.MONKEY_WRENCH.get());
+        level.getBlockState(interactionMoldPos).useItemOn(
+            monkey,
+            level,
+            player,
+            InteractionHand.MAIN_HAND,
+            hit
+        );
+        level.getBlockState(interactionMoldPos).useItemOn(
+            new ItemStack(GTItems.SOFT_HAMMER.get()),
+            level,
+            player,
+            InteractionHand.MAIN_HAND,
+            hit
+        );
+        level.getBlockState(interactionMoldPos).useItemOn(
+            new ItemStack(GTItems.THERMOMETER.get()),
+            level,
+            player,
+            InteractionHand.MAIN_HAND,
+            hit
+        );
+        boolean picked = mold.outputCount() == 0
+            && !player.getMainHandItem().isEmpty();
+
+        // Non-tool side click still picks up a solidified output.
+        mold.configure(new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false));
+        mold.fillMold("iron", mold.requiredUnits(), 1800, Direction.UP);
+        mold.forceSolidifyForTesting();
+        BlockHitResult sideHit = new BlockHitResult(
+            Vec3.atCenterOf(interactionMoldPos).add(0, 0.1, 0.45),
+            Direction.SOUTH,
+            interactionMoldPos,
+            false
+        );
+        level.getBlockState(interactionMoldPos).useItemOn(
+            new ItemStack(Items.STICK),
+            level,
+            player,
+            InteractionHand.MAIN_HAND,
+            sideHit
+        );
+        boolean sidePicked = mold.outputCount() == 0;
+
+        // Blank mold -> one chisel cell -> fallback nugget recipe.
+        mold.configure(new CastingPart("steel", 1072, 0, false));
+        boolean blank = mold.shapeMask() == 0;
+        level.getBlockState(interactionMoldPos).useItemOn(
+            chisel,
+            level,
+            player,
+            InteractionHand.MAIN_HAND,
+            hit
+        );
+        boolean carved = mold.shapeMask() != 0;
+        long carvedRequired = mold.requiredUnits();
+        long carvedFill = carvedRequired > 0
+            ? mold.fillMold("iron", carvedRequired, 1800, Direction.UP)
+            : 0;
+        mold.forceSolidifyForTesting();
+        boolean carvedOutput = mold.outputCount() > 0;
+        mold.takeOutputForTesting();
+
+        mold.configure(new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false));
+        long solidifyingFill = mold.fillMold(
+            "water",
+            mold.requiredUnits(),
+            300,
+            Direction.UP
+        );
+        mold.forceSolidifyForTesting();
+        boolean solidifyingTarget = "ice".equals(mold.solidMaterial());
+        mold.takeOutputForTesting();
+
+        mold.configure(new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false));
+        boolean acidRejected = mold.fillMold(
+            "sulfuricacid",
+            mold.requiredUnits(),
+            1800,
+            Direction.UP
+        ) == 0;
+
+        mold.fillMold("iron", mold.requiredUnits(), 1800, Direction.UP);
+        mold.forceSolidifyForTesting();
+        mold.receivePacket(
+            new EnergyPacket(EnergyKind.CRYO, 2048, 1),
+            Direction.UP,
+            false
+        );
+        IItemHandler moldOutput = level.getCapability(
+            Capabilities.ItemHandler.BLOCK,
+            interactionMoldPos,
+            Direction.NORTH
+        );
+        ItemStack simulatedOutput = moldOutput == null
+            ? ItemStack.EMPTY
+            : moldOutput.extractItem(0, 1, true);
+        ItemStack extractedOutput = moldOutput == null
+            ? ItemStack.EMPTY
+            : moldOutput.extractItem(0, 1, false);
+        boolean automationOutput = !simulatedOutput.isEmpty()
+            && !extractedOutput.isEmpty()
+            && mold.outputCount() == 0;
+        GT6Neo.LOGGER.info(
+            "GT6 mold interaction test: completed mask=0x{} content={} output={} picked={} sidePicked={} downRejected={} blank={} carved={} carvedFill={} carvedOutput={} solidifying={} acidRejected={} automation={}",
+            Integer.toHexString(mold.shapeMask()),
+            mold.contentUnits(),
+            mold.outputCount(),
+            picked,
+            sidePicked,
+            down == 0,
+            blank,
+            carved,
+            carvedFill,
+            carvedOutput,
+            solidifyingTarget,
+            acidRejected,
+            automationOutput
+        );
+        return filled > 0 && down == 0 && picked && sidePicked
+            && blank && carved && carvedOutput
+            && solidifyingFill > 0 && solidifyingTarget
+            && acidRejected && automationOutput;
+    }
+
+    private static boolean runMoldAutoPullTest(ServerLevel level) {
+        for (int x = -3; x <= 3; x++) {
+            for (int y = -2; y <= 3; y++) {
+                for (int z = -3; z <= 3; z++) {
+                    level.setBlockAndUpdate(autoCruciblePos.offset(x, y, z), Blocks.AIR.defaultBlockState());
+                }
+            }
+        }
+        level.setBlockAndUpdate(autoCruciblePos, GTBlocks.SMALL_CRUCIBLE.get().defaultBlockState());
+        if (!(level.getBlockEntity(autoCruciblePos) instanceof SmallCrucibleBlockEntity crucible)) {
+            GT6Neo.LOGGER.error("GT6 mold auto-pull test: missing crucible");
+            return false;
+        }
+        crucible.setPart(new MachinePart(267, "Smelting Crucibles"));
+        crucible.addMaterial("iron", "ingot", 3);
+        long target = Math.min(2000, crucible.maximumTemperature() - 50);
+        long required = Math.max(0, target - crucible.temperature())
+            * crucible.requiredHeatPerKelvin();
+        long packetSize = 512;
+        long packets = Math.max(1, (required + packetSize - 1) / packetSize);
+        crucible.receivePacket(
+            new EnergyPacket(EnergyKind.HEAT, packetSize, packets),
+            Direction.UP,
+            false
+        );
+        crucible.tick();
+
+        level.setBlockAndUpdate(autoMoldPos, GTBlocks.MOLD.get().defaultBlockState());
+        if (!(level.getBlockEntity(autoMoldPos) instanceof MoldBlockEntity mold)) {
+            GT6Neo.LOGGER.error("GT6 mold auto-pull test: missing mold");
+            return false;
+        }
+        mold.configure(new CastingPart("steel", 1072, GTMoldRegistry.ingotMask(), false));
+        Player player = FakePlayerFactory.getMinecraft(level);
+        BlockHitResult hit = new BlockHitResult(
+            new Vec3(autoMoldPos.getX() + 0.5, autoMoldPos.getY() + 0.2, autoMoldPos.getZ() + 0.9),
+            Direction.UP,
+            autoMoldPos,
+            false
+        );
+        level.getBlockState(autoMoldPos).useItemOn(
+            new ItemStack(GTItems.MONKEY_WRENCH.get()),
+            level,
+            player,
+            InteractionHand.MAIN_HAND,
+            hit
+        );
+        mold.tick();
+        boolean pass = mold.contentUnits() > 0 || mold.outputCount() > 0;
+        GT6Neo.LOGGER.info(
+            "GT6 mold auto-pull test: temp={} directions={} content={} output={} pass={}",
+            crucible.temperature(),
+            Integer.toBinaryString(mold.autoPullDirections()),
+            mold.contentUnits(),
+            mold.outputCount(),
+            pass
+        );
+        level.setBlockAndUpdate(autoMoldPos, Blocks.AIR.defaultBlockState());
+        level.setBlockAndUpdate(autoCruciblePos, Blocks.AIR.defaultBlockState());
+        return pass;
+    }
+
+    private static boolean runMoldRightClickPourTest(ServerLevel level) {
+        clearTestVolume(level, rightClickMoldPos, 4, 5, 4);
+        BlockPos cruciblePos = rightClickMoldPos.south();
+        level.setBlockAndUpdate(
+            cruciblePos,
+            GTBlocks.SMALL_CRUCIBLE.get().defaultBlockState()
+        );
+        level.setBlockAndUpdate(
+            rightClickMoldPos,
+            GTBlocks.MOLD.get().defaultBlockState()
+        );
+        if (!(level.getBlockEntity(cruciblePos) instanceof SmallCrucibleBlockEntity crucible)
+            || !(level.getBlockEntity(rightClickMoldPos) instanceof MoldBlockEntity mold)) {
+            return false;
+        }
+        crucible.setPart(new MachinePart(267, "Smelting Crucibles"));
+        crucible.addMaterial("iron", "ingot", 3);
+        long requiredHeat = Math.max(
+            0,
+            2000 - crucible.temperature()
+        ) * crucible.requiredHeatPerKelvin();
+        long packetSize = 512;
+        long packets = Math.max(1, (requiredHeat + packetSize - 1) / packetSize);
+        crucible.receivePacket(
+            new EnergyPacket(EnergyKind.HEAT, packetSize, packets),
+            Direction.UP,
+            false
+        );
+        crucible.tick();
+        mold.configure(new CastingPart(
+            "steel",
+            1072,
+            GTMoldRegistry.ingotMask(),
+            false
+        ));
+        Player player = FakePlayerFactory.getMinecraft(level);
+        player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+        BlockHitResult hit = new BlockHitResult(
+            new Vec3(
+                rightClickMoldPos.getX() + 0.5,
+                rightClickMoldPos.getY() + 0.2,
+                rightClickMoldPos.getZ() + 0.9
+            ),
+            Direction.UP,
+            rightClickMoldPos,
+            false
+        );
+        level.getBlockState(rightClickMoldPos).useWithoutItem(level, player, hit);
+        boolean poured = mold.contentUnits() > 0;
+        if (poured) {
+            mold.receivePacket(
+                new EnergyPacket(EnergyKind.CRYO, 2048, 1),
+                Direction.UP,
+                false
+            );
+            mold.tick();
+        }
+        boolean solidified = mold.outputCount() > 0;
+        GT6Neo.LOGGER.info(
+            "GT6 mold right-click test: crucibleTemp={} poured={} moldTemp={} output={} pass={}",
+            crucible.temperature(),
+            poured,
+            mold.contentTemperature(),
+            mold.outputCount(),
+            poured && solidified
+        );
+        mold.takeOutputForTesting();
+        clearTestVolume(level, rightClickMoldPos, 4, 5, 4);
+        return poured && solidified;
+    }
+
+    private static boolean runAllMoldShapeOutputTest(ServerLevel level) {
+        BlockPos pos = controllerPos.offset(60, 0, 0);
+        clearTestVolume(level, pos, 3, 3, 3);
+        level.setBlockAndUpdate(pos, GTBlocks.MOLD.get().defaultBlockState());
+        if (!(level.getBlockEntity(pos) instanceof MoldBlockEntity mold)) {
+            return false;
+        }
+        boolean pass = true;
+        int checked = 0;
+        for (GTMoldRegistry.MoldShape shape : GTMoldRegistry.canonicalShapes()) {
+            mold.configure(new CastingPart(
+                "steel",
+                1072,
+                shape.mask(),
+                false
+            ));
+            long required = mold.requiredUnits();
+            long fill = mold.fillMold("iron", required, 1800, Direction.UP);
+            mold.forceSolidifyForTesting();
+            ItemStack output = mold.takeOutputForTesting();
+            MaterialPart part = output.get(GTDataComponents.MATERIAL_PART.get());
+            boolean valid = fill > 0
+                && part != null
+                && "iron".equals(part.material())
+                && shape.prefix().equals(part.prefix())
+                && output.getCount() > 0;
+            if (!valid) {
+                GT6Neo.LOGGER.error(
+                    "GT6 mold shape output failed: shape={} mask=0x{} expectedPrefix={} fill={} output={} part={}",
+                    shape.name(),
+                    Integer.toHexString(shape.mask()),
+                    shape.prefix(),
+                    fill,
+                    output,
+                    part
+                );
+                pass = false;
+            }
+            checked++;
+        }
+        clearTestVolume(level, pos, 3, 3, 3);
+        GT6Neo.LOGGER.info(
+            "GT6 mold shape output test: checked={} pass={}",
+            checked,
+            pass
+        );
+        return pass && checked == 30;
+    }
+
+    private static boolean[] runSteamTests(ServerLevel level) {
+        clearTestVolume(level, steamTestPos, 8, 6, 8);
+        BlockPos boilerPos = steamTestPos;
+        BlockPos pipePos = boilerPos.above();
+        BlockPos enginePos = pipePos.above();
+        BlockPos crusherPos = enginePos.above();
+        BlockPos engineWaterSinkPos = enginePos.east();
+
+        level.setBlockAndUpdate(boilerPos, GTBlocks.STEAM_BOILER.get().defaultBlockState());
+        level.setBlockAndUpdate(pipePos, GTBlocks.STEAM_PIPE.get().defaultBlockState());
+        level.setBlockAndUpdate(
+            enginePos,
+            GTBlocks.STEAM_ENGINE.get().defaultBlockState()
+                .setValue(SteamEngineBlock.FACING, Direction.UP)
+        );
+        level.setBlockAndUpdate(crusherPos, GTBlocks.BASIC_CRUSHER.get().defaultBlockState());
+        level.setBlockAndUpdate(
+            engineWaterSinkPos,
+            GTBlocks.STEAM_BOILER.get().defaultBlockState()
+        );
+
+        SteamBoilerBlockEntity boiler = level.getBlockEntity(boilerPos)
+            instanceof SteamBoilerBlockEntity entity ? entity : null;
+        SteamPipeBlockEntity pipe = level.getBlockEntity(pipePos)
+            instanceof SteamPipeBlockEntity entity ? entity : null;
+        SteamEngineBlockEntity engine = level.getBlockEntity(enginePos)
+            instanceof SteamEngineBlockEntity entity ? entity : null;
+        SteamBoilerBlockEntity waterSink = level.getBlockEntity(engineWaterSinkPos)
+            instanceof SteamBoilerBlockEntity entity ? entity : null;
+        if (boiler == null || pipe == null || engine == null || waterSink == null) {
+            GT6Neo.LOGGER.error("GT6 steam flow test: missing block entity");
+            return new boolean[] {false, false, false};
+        }
+
+        boiler.setPart(new MachinePart(553, "Steam Boilers"));
+        engine.setPart(new MachinePart(584, "Engines"));
+        waterSink.setPart(new MachinePart(553, "Steam Boilers"));
+        boiler.addWater(2000);
+        boiler.receivePacket(
+            new EnergyPacket(EnergyKind.HEAT, 1024, 200),
+            Direction.WEST,
+            false
+        );
+        for (int tick = 0; tick < 80; tick++) {
+            boiler.tick();
+            pipe.tick();
+            engine.tick();
+        }
+        boolean steamFlowPass = (engine.energyStored() > 0 || waterSink.waterAmount() > 0)
+            && engine.outputBase() == 8
+            && engine.energyCapacity() == 16000
+            && engine.steamCapacity() == 3200;
+        GT6Neo.LOGGER.info(
+            "GT6 steam flow test: pipe={} engineSteam={} engineEnergy={} distilled={} pass={}",
+            pipe.fluidAmount(),
+            engine.steamAmount(),
+            engine.energyStored(),
+            waterSink.waterAmount(),
+            steamFlowPass
+        );
+
+        BlockPos isolatedBoilerPos = steamTestPos.offset(0, 0, 5);
+        level.setBlockAndUpdate(
+            isolatedBoilerPos,
+            GTBlocks.STEAM_BOILER.get().defaultBlockState()
+        );
+        SteamBoilerBlockEntity isolated = level.getBlockEntity(isolatedBoilerPos)
+            instanceof SteamBoilerBlockEntity entity ? entity : null;
+        boolean steamNoVoidPass = false;
+        if (isolated != null) {
+            isolated.setPart(new MachinePart(553, "Steam Boilers"));
+            isolated.addWater(1100);
+            isolated.receivePacket(
+                new EnergyPacket(EnergyKind.HEAT, 1024, 100),
+                Direction.WEST,
+                false
+            );
+            for (int tick = 0; tick < 40; tick++) {
+                isolated.tick();
+            }
+            long before = isolated.steamAmount();
+            isolated.tick();
+            long after = isolated.steamAmount();
+            steamNoVoidPass = before > 0 && after >= before;
+            GT6Neo.LOGGER.info(
+                "GT6 steam no-void test: before={} after={} pass={}",
+                before,
+                after,
+                steamNoVoidPass
+            );
+        }
+
+        clearTestVolume(level, turbineTestPos, 6, 5, 6);
+        BlockPos turbinePos = turbineTestPos;
+        BlockPos rotationPos = turbinePos.above();
+        BlockPos turbineWaterSinkPos = turbinePos.east();
+        level.setBlockAndUpdate(
+            turbinePos,
+            GTBlocks.STEAM_TURBINE.get().defaultBlockState()
+                .setValue(SteamTurbineBlock.FACING, Direction.UP)
+        );
+        level.setBlockAndUpdate(
+            rotationPos,
+            GTBlocks.ROTATION_ENGINE.get().defaultBlockState()
+                .setValue(KineticConverterBlock.FACING, Direction.NORTH)
+        );
+        level.setBlockAndUpdate(
+            turbineWaterSinkPos,
+            GTBlocks.STEAM_BOILER.get().defaultBlockState()
+        );
+        SteamTurbineBlockEntity turbine = level.getBlockEntity(turbinePos)
+            instanceof SteamTurbineBlockEntity entity ? entity : null;
+        KineticConverterBlockEntity rotation = level.getBlockEntity(rotationPos)
+            instanceof KineticConverterBlockEntity entity ? entity : null;
+        SteamBoilerBlockEntity turbineWaterSink = level.getBlockEntity(turbineWaterSinkPos)
+            instanceof SteamBoilerBlockEntity entity ? entity : null;
+        boolean steamTurbinePass = false;
+        if (turbine != null && rotation != null && turbineWaterSink != null) {
+            turbine.setPart(new MachinePart(794, "Turbines"));
+            turbineWaterSink.setPart(new MachinePart(553, "Steam Boilers"));
+            IFluidHandler input = level.getCapability(
+                Capabilities.FluidHandler.BLOCK,
+                turbinePos,
+                Direction.DOWN
+            );
+            IFluidHandler wrongSide = level.getCapability(
+                Capabilities.FluidHandler.BLOCK,
+                turbinePos,
+                Direction.UP
+            );
+            int accepted = input == null
+                ? 0
+                : input.fill(
+                    GTFluidUtil.steam(48),
+                    IFluidHandler.FluidAction.EXECUTE
+                );
+            int wrongAccepted = wrongSide == null
+                ? 0
+                : wrongSide.fill(
+                    GTFluidUtil.steam(1),
+                    IFluidHandler.FluidAction.SIMULATE
+                );
+            turbine.tick();
+            turbine.tick();
+            if (input != null) {
+                input.fill(
+                    GTFluidUtil.steam(200),
+                    IFluidHandler.FluidAction.EXECUTE
+                );
+            }
+            turbine.tick();
+            steamTurbinePass = accepted == 48
+                && wrongAccepted == 0
+                && turbine.steamCapacity() == 384
+                && turbine.inputSize() == 48
+                && rotation.storedEnergy() > 0
+                && turbineWaterSink.waterAmount() > 0;
+            GT6Neo.LOGGER.info(
+                "GT6 steam turbine test: accepted={} wrongSide={} capacity={} input={} RU={} distilled={} pass={}",
+                accepted,
+                wrongAccepted,
+                turbine.steamCapacity(),
+                turbine.inputSize(),
+                rotation.storedEnergy(),
+                turbineWaterSink.waterAmount(),
+                steamTurbinePass
+            );
+        }
+
+        clearTestVolume(level, steamTestPos, 8, 6, 10);
+        clearTestVolume(level, turbineTestPos, 6, 5, 6);
+        return new boolean[] {steamFlowPass, steamNoVoidPass, steamTurbinePass};
+    }
+
+    private static void clearTestVolume(
+        ServerLevel level,
+        BlockPos center,
+        int radiusX,
+        int radiusY,
+        int radiusZ
+    ) {
+        for (int x = -radiusX; x <= radiusX; x++) {
+            for (int y = -1; y <= radiusY; y++) {
+                for (int z = -radiusZ; z <= radiusZ; z++) {
+                    level.setBlockAndUpdate(
+                        center.offset(x, y, z),
+                        Blocks.AIR.defaultBlockState()
+                    );
+                }
+            }
+        }
     }
 
     private static boolean validateCreativeCatalog(MinecraftServer server) {
@@ -452,14 +1128,14 @@ public final class RuntimeSelfTest {
             casting,
             smallCrucibleHeatData
         );
-        return demo >= 25
+        return demo >= 34
             && materials >= 10_000
             && blocks >= 12_000
             && machines >= 251
-            && multiblocks >= 30
-            && tools >= 10
+            && multiblocks >= 61
+            && tools >= 62
             && smallCrucibles >= 40
-            && casting >= 1_200
+            && casting >= 110
             && smallCrucibleHeatData == 39;
     }
 
@@ -667,6 +1343,15 @@ public final class RuntimeSelfTest {
         }
         level.setBlockAndUpdate(faucetMoldPos, GTBlocks.MOLD.get().defaultBlockState());
         if (level.getBlockEntity(faucetMoldPos) instanceof MoldBlockEntity mold) {
+            mold.configure(new CastingPart(
+                "steel",
+                1072,
+                GTMoldRegistry.ingotMask(),
+                false
+            ));
+        }
+        level.setBlockAndUpdate(largeWallMoldPos, GTBlocks.MOLD.get().defaultBlockState());
+        if (level.getBlockEntity(largeWallMoldPos) instanceof MoldBlockEntity mold) {
             mold.configure(new CastingPart(
                 "steel",
                 1072,

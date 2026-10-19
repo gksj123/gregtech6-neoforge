@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import os
+import json
 import shutil
 from pathlib import Path
 
@@ -16,6 +17,20 @@ LEGACY = Path(
 ).expanduser().resolve()
 SOURCE = LEGACY / "src/main/resources/assets/gregtech/textures/blocks"
 OUTPUT = PORT / "src/main/resources/assets/gregtech/textures/block"
+ITEM_SOURCE = LEGACY / "src/main/resources/assets/gregtech/textures/items/materialicons/METALLIC"
+ITEM_OUTPUT = PORT / "src/main/resources/assets/gregtech/textures/item/material"
+ITEM_MODEL_OUTPUT = PORT / "src/main/resources/assets/gregtech/models/item"
+
+MOLD_OUTPUT_PREFIXES = (
+    "ingot", "billet", "chunkGt", "plate", "plateTiny", "bolt", "stick",
+    "stickLong", "casingSmall", "ring", "gearGt", "gearGtSmall",
+    "toolHeadRawSword", "toolHeadRawPickaxe", "toolHeadRawSpade",
+    "toolHeadRawShovel", "toolHeadRawUniversalSpade", "toolHeadRawAxe",
+    "toolHeadRawAxeDouble", "toolHeadRawSaw", "toolHeadHammer",
+    "toolHeadFile", "toolHeadScrewdriver", "toolHeadRawChisel",
+    "toolHeadRawArrow", "toolHeadRawHoe", "toolHeadRawSense",
+    "toolHeadRawPlow", "toolHeadBuilderwand", "nugget",
+)
 
 
 def compose(
@@ -37,6 +52,46 @@ def compose(
         if overlay_image.size == image.size:
             image = Image.alpha_composite(image, overlay_image)
     image.save(OUTPUT / output, optimize=True)
+
+
+def compose_item(base: Path, overlay: Path | None, output: str) -> None:
+    image = Image.open(base).convert("RGBA")
+    if overlay is not None and overlay.is_file():
+        overlay_image = Image.open(overlay).convert("RGBA")
+        if overlay_image.size == image.size:
+            image = Image.alpha_composite(image, overlay_image)
+    ITEM_OUTPUT.mkdir(parents=True, exist_ok=True)
+    image.save(ITEM_OUTPUT / output, optimize=True)
+
+
+def import_material_form_icons() -> None:
+    if ITEM_OUTPUT.is_dir():
+        for stale in ITEM_OUTPUT.glob("*.png"):
+            if stale.stem != "".join(
+                char for char in stale.stem.lower() if char.isalnum()
+            ):
+                stale.unlink()
+    for prefix in MOLD_OUTPUT_PREFIXES:
+        base = ITEM_SOURCE / f"{prefix}.png"
+        if not base.is_file():
+            raise FileNotFoundError(f"Missing GT6 material icon: {base}")
+        slug = "".join(char for char in prefix.lower() if char.isalnum())
+        compose_item(
+            base,
+            ITEM_SOURCE / f"{prefix}_OVERLAY.png",
+            f"{slug}.png",
+        )
+        model_path = ITEM_MODEL_OUTPUT / f"meta_{slug}.json"
+        model = {
+            "parent": "minecraft:item/generated",
+            "textures": {
+                "layer0": f"gregtech:item/material/{slug}"
+            },
+        }
+        model_path.write_text(
+            json.dumps(model, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
 
 
 def faces(
@@ -62,6 +117,7 @@ def copy_asset(relative: str, output: str) -> None:
 
 def main() -> None:
     OUTPUT.mkdir(parents=True, exist_ok=True)
+    import_material_form_icons()
 
     compose(
         SOURCE / "materialicons/METALLIC/casingMachine.png",

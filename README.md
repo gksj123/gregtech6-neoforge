@@ -4,6 +4,13 @@ This directory is the modern NeoForge 1.21.1 port workspace for GregTech 6. The
 legacy 1.7.10 source is kept in the separate sibling directory
 `../gregtech6-legacy` and remains the gameplay reference.
 
+> **Contributors (human or AI): read [AGENTS.md](AGENTS.md) first.** The port's
+> governing rule is a complete, lossless replication of GT6 1.7.10 — no
+> rebalancing, redesign, or "improvements". The legacy feature index at
+> [`../gregtech6-legacy/FEATURE_INDEX/INDEX.md`](../gregtech6-legacy/FEATURE_INDEX/INDEX.md)
+> maps every legacy package and file to the content it defines, with source line
+> references, and is the required entry point before porting any feature.
+
 ## Current Status
 
 This is a runnable **vertical slice**, not a complete GregTech 6 port. It deliberately prioritizes the three defining systems requested for the modern version:
@@ -21,6 +28,8 @@ The first playable machines are:
 - A **Thermometer** tool and analog-redstone **Thermometer Sensor**.
 - GUI-free solid-fuel **Burning Boxes** that emit HU.
 - Ignited Burning Box animation, particles, contact damage and water extinguishing.
+- Source-shaped **casting molds**, faucets and 5x5 carved shape masks.
+- Steam boiler tanks, reciprocal steam engines and steam turbines using real fluid handlers.
 
 GT6's energy families are kept separate. RU, KU, EU, and LU are not interchangeable scalar values. Converters explicitly transform one family into another and apply their own losses.
 
@@ -41,6 +50,8 @@ The port now loads a generated inventory of the legacy source at startup:
 Material items use one modern data component to store the original material and prefix instead of reviving 1.7.10 metadata. Material blocks use a block entity so the same block family can represent many materials without thousands of Java classes.
 
 The generated migration inventory is documented in [SOURCE_OF_TRUTH.md](SOURCE_OF_TRUTH.md) and produced by `tools/inventory_gt6.py`.
+Platform-forced differences from the 1.7.10 source are listed in
+[DEVIATIONS.md](DEVIATIONS.md).
 The source interaction audit is documented in
 [GAMEPLAY_INTERACTIONS.md](GAMEPLAY_INTERACTIONS.md).
 
@@ -67,7 +78,9 @@ The gameplay extractor currently resolves:
 - Block sound classification for all 1366 registrations.
 - Event sound profiles for 78 source classes.
 - 135 resolved crucible alloy configurations, with 2 dynamic source loops marked unresolved.
-- 39 mold and 39 faucet material variants, 30 named 5x5 shapes, and 549 source-transformed masks.
+- 39 blank mold and 39 faucet material variants, 30 named 5x5 shapes, and 549 source-transformed masks.
+- 107 casting recipes: 38 material molds, 39 faucets, and 30 raw ceramic mold smelting recipes.
+- Actual Steam and Distilled Water fluids, boiler/engine/turbine fluid capabilities, and dimensional steam-pipe routing.
 
 Unresolved computed or default values remain marked in JSON instead of being
 silently guessed.
@@ -118,19 +131,23 @@ python3 tools/run_client.py
 
 ## Runtime Self-Test
 
-The automation opens the prepared save named `world`, builds a complete machine, fuels the generator, inserts cobblestone, and expects gravel:
+The automation opens the prepared save named `world` by default, builds a complete machine, fuels the generator, inserts cobblestone, and expects gravel:
 
 ```sh
 GT6_JVM_ARGS='-Dgregtech.runtimeSelfTest=true' python3 tools/run_client.py
 ```
 
+If `world` has no `level.dat`, the launcher automatically selects the only valid
+save in `run-client/saves`. Set `GT6_RUNTIME_WORLD` explicitly when multiple
+saves are present.
+
 A successful run ends with:
 
 ```text
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true MOLD_INTERACTION=true MOLD_AUTO=true STEAM_FLOW=true STEAM_NO_VOID=true STEAM_TURBINE=true CASTING_RECIPES=true MOLD_RIGHT_CLICK=true LARGE_WALL_MOLD=true MOLD_SHAPES=true
 ```
 
-The runtime test requires `run-client/saves/world`. A flat test world can be generated using the vanilla 1.21.1 server jar; the copied world should be placed in that location.
+The runtime test requires the configured save under `run-client/saves/`. A flat test world can be generated using the vanilla 1.21.1 server jar and copied there.
 
 On a machine without a usable OpenGL display, install the matching NeoForge
 dedicated server into `run-server` once, then run the same test headlessly:
@@ -151,6 +168,10 @@ No machine menu is opened.
 | Wrench on a controller | Rotate the facing and request a structure check |
 | Soft hammer | Reset a port or force a structure check |
 | Magnifying glass or electrometer | Print machine, cable, and energy diagnostics |
+| Chisel on a mold's top face | Carve one cell of the 5x5 shape |
+| Pincers on a mold | Remove a casting without temperature damage |
+| Water bucket on a steam boiler | Insert 1000 L of water |
+| Soft hammer on an engine or turbine | Toggle the machine on/off |
 | Right-click an `ITEM_IN` port with an item | Insert into the controller input bus |
 | Right-click an `ITEM_OUT` port with an empty hand | Extract from the controller output bus |
 | Right-click the generator with fuel | Insert solid fuel |
@@ -163,14 +184,14 @@ The demo exposes eight source-oriented creative tabs:
 
 | Tab | Current entries | Contents |
 | --- | ---: | --- |
-| Demo Kit | 32 | tools, controllers, crucible, mold, faucet, sensor, structure materials, starter ingots and fuel |
-| Material Forms | 10368 | all materials in nine primary forms, plus all forms for core materials |
+| Demo Kit | 34 | tools, controllers, crucible, mold, faucet, sensor, steam starter, structure materials, ingots and fuel |
+| Material Forms | 10768 | all materials in nine primary forms, plus all 30 mold-output forms for core materials |
 | Material Blocks | 12232 | all 11 current material block families across the material registry |
 | Machines | 251 | all GT6 Basic Machine registrations |
-| Multiblocks & Heat | 35 | crushers, crucible, thermometer sensor, walls, ports, wheels and Furnace-map Burning Boxes |
-| Tools & Energy | 17 | tools, generators, converters, axles and cables |
+| Multiblocks & Heat | 61 | crushers, crucible, thermometer sensor, walls, ports, wheels, Burning Boxes and all boiler tanks |
+| Tools & Energy | 62 | tools, generators, converters, axles, cables, all steam engines and turbines |
 | Smelting Crucibles | 41 | 39 material crucibles, the quicksilver thermometer and the thermometer sensor |
-| Molds & Casting | 1211 | 39 wall materials × 30 named shapes, 39 faucets, chisel and thermometer |
+| Molds & Casting | 110 | 30 raw ceramic shapes, 39 blank wall-material molds, 39 faucets, chisel, pincers and thermometer |
 
 The **GT6 NeoForge Demo Guide** item prints the interaction sequence in chat.
 Material and material-block tooltips include the original inventory category,
@@ -200,7 +221,7 @@ The controller checks its structure every second. The soft hammer forces an imme
 
 GT6 energy is not a single scalar. `EnergyPacket` stores:
 
-- `kind`: EU, RU, KU, HU, CU, LU, MU, NU, QU, TU, or SU.
+- `kind`: EU, RU, KU, HU, CU, LU, MU, NU, QU, or TU.
 - `size`: voltage for electricity, speed for rotation, pressure for air, and so on.
 - `amount`: amperage for electricity or the corresponding packet count for another type.
 
@@ -210,6 +231,7 @@ All energy packets follow GT6's core size/amount convention. The family-specific
 - RU: size is rotational speed, amount is packet count. RU travels through axles.
 - KU: size is push/pull, amount is packet count. KU is delivered directly to the facing block and cannot travel through electric cable.
 - LU: size is beam size and amount is frequency. LU is reserved for laser machines and is not accepted by crushers.
+- Steam is not an energy family in GT6: it is a fluid moved through fluid capabilities and pipes.
 
 The original machine mapping is preserved:
 
@@ -330,20 +352,37 @@ other alloy.
 
 `tools/export_molds.py` reads the mold and faucet registrations, evaluates the
 source 5×5 mask table, and applies GT6's rotation/mirror transformations.
-The resulting 549 masks map to the original item prefixes. A mold:
+The resulting 549 masks map to the original item prefixes. A mold is a flat
+5×5 tray, not a deep box: the source uses a 1 px base, 4 px walls, twelve small
+side handles and a 3 px grid of 25 cells. The block model and block-entity
+renderer reproduce those dimensions, and the collision box is the source's
+12×12×2 px footprint. A mold:
 
-1. pulls one complete casting amount from an adjacent molten crucible;
-2. stores the pouring material and temperature;
-3. cools at up to 5K/tick, or accepts CU for faster cooling;
-4. solidifies below the material melting point into its configured prefix;
-5. returns the correctly component-tagged item when clicked with an empty hand;
-6. melts into lava above the wall limit or content boiling point.
+1. starts blank in the creative table; a chisel removes individual cells and
+   wrench/screwdriver/rotator rotates the 25-bit mask;
+2. accepts material from the top or any horizontal face (never the bottom),
+   and pulls one complete casting amount from an adjacent molten crucible;
+3. stores the pouring material and temperature;
+4. cools at up to 5K/tick, or accepts CU for faster cooling;
+5. solidifies below the material melting point into its configured prefix,
+   including the source's COOL2CRYSTAL plate→gem substitution;
+6. returns the correctly component-tagged item when clicked with an empty hand
+   or a non-tool item;
+7. melts into lava above the wall limit or content boiling point.
+
+Automatic input uses the source's per-face connection mask
+(`gt.connection`) and redstone mode (`gt.mode`). A monkey wrench on the top
+face selects one horizontal face near an edge, or toggles the redstone
+requirement on the centre; a soft hammer clears both. The source phase is
+`SERVER_TIME % 20 == 5`.
+
 
 The faucet can pull from a crucible behind it and pour into a mold below it in
-redstone or automatic mode. Molds use source-shaped hollow collision, a
-material-tinted animated casting surface, a chisel for individual 5×5 cells,
-and wrench rotation. Item tooltips include colored `MAT`, `SHAPE`, `REQ`,
-`THERM`, `CTRL`, `SRC` and component-NBT entries.
+redstone or automatic mode. Molds use the source's flat 12×12×2 px collision,
+a material-tinted animated casting surface, a chisel for individual 5×5 cells,
+and wrench rotation. Material and machine item tooltips keep colored `MAT`,
+`SHAPE`, `REQ`, `THERM`, `CTRL`, `SRC` and component-NBT entries; the
+mold and faucet tooltips use the original GT6 wording and line order.
 
 ## Current Port Limits
 
@@ -353,6 +392,7 @@ and wrench rotation. Item tooltips include colored `MAT`, `SHAPE`, `REQ`,
 - Item ports support direct player insertion/extraction.
 - Fluid port modes are represented in the UI-free state machine but fluid-network transfer is not implemented yet.
 - Hoppers and other mods cannot yet discover item ports through a NeoForge capability.
+- Mold material crafting recipes and the pincer tool are not ported yet; blank molds are available in the creative table and the current recipe produces a stone mold.
 - Recipe values are currently built into `CrusherRecipe`; GT6's full recipe map has not been migrated.
 
 ## Next Porting Phases

@@ -1,0 +1,32 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "F": {
+      "type": "neoforge:components",
+      "items": "gregtech:meta_plate",
+      "components": {
+        "gregtech:material_part": {
+          "material": "meteoriciron",
+          "prefix": "plate"
+        }
+      }
+    }
+  },
+  "pattern": [
+    "F F",
+    " F "
+  ],
+  "result": {
+    "count": 1,
+    "id": "gregtech:faucet",
+    "components": {
+      "gregtech:casting_part": {
+        "wall_material": "meteoriciron",
+        "source_line": 320,
+        "shape_mask": 0,
+        "acid_proof": false
+      }
+    }
+  }
+}

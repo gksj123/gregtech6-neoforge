@@ -28,6 +28,7 @@ INVENTORY = PORT / "migration/materials.json"
 PREFIXES = PORT / "migration/prefixes.json"
 OUTPUT = PORT / "migration/molds.json"
 PORT_DATA = PORT / "src/main/resources/data/gregtech/gt6/molds.json"
+RECIPE_DATA = PORT / "src/main/resources/data/gregtech/recipe"
 
 CERAMIC_SHAPE = re.compile(
     r"IL\.Ceramic_([A-Za-z0-9_]+)_Mold_Raw"
@@ -81,25 +82,27 @@ def git_value(*args: str) -> str:
         return ""
 
 
-def bit(mask: int, x: int, y: int, variant: int = 0) -> int:
-    if variant == 0:
-        return x, y
-    if variant == 1:
-        return 4 - y, x
-    if variant == 2:
-        return 4 - x, 4 - y
-    return y, 4 - x
-
-
 def transform(mask: int, variant: int, mirror: bool) -> int:
+    """Apply the source's bit layout (row * 5 + column).
+
+    GT6 1.7.10: MultiTileEntityMold.java:375-405 rotates source (x,z) to
+    (z, 4-x). The original static table also expands the mirrored variants.
+    """
     result = 0
-    for y in range(5):
+    for z in range(5):
         for x in range(5):
-            source_x, source_y = bit(mask, x, y, variant)
+            if variant == 0:
+                source_x, source_z = x, z
+            elif variant == 1:
+                source_x, source_z = 4 - z, x
+            elif variant == 2:
+                source_x, source_z = 4 - x, 4 - z
+            else:
+                source_x, source_z = z, 4 - x
             if mirror:
                 source_x = 4 - source_x
-            if mask & (1 << (source_x + source_y * 5)):
-                result |= 1 << (x + y * 5)
+            if mask & (1 << (source_x * 5 + source_z)):
+                result |= 1 << (x * 5 + z)
     return result
 
 
@@ -301,15 +304,72 @@ def extract_variants(
             continue
         source_line = int(row["line"])
         line_text = text.splitlines()[source_line - 1]
+        recipe = casting_recipe_spec(category, line_text, str(row["material_slug"]))
         result.append(
             {
                 "display_name": row["display_name"],
                 "material": row["material_slug"],
                 "source_line": source_line,
                 "acid_proof": "NBT_ACIDPROOF, T" in line_text,
+                **recipe,
             }
         )
     return result
+
+
+def casting_recipe_spec(
+    category: str,
+    line_text: str,
+    material: str,
+) -> dict[str, object]:
+    if category == "Crucibles Faucets":
+        return {
+            "ingredient_item": "gregtech:meta_plate",
+            "ingredient_material": material,
+            "ingredient_prefix": "plate",
+            "ingredient_count": 3,
+        }
+    if "'B', Blocks.stone" in line_text:
+        return {
+            "ingredient_item": "minecraft:stone",
+            "ingredient_material": "",
+            "ingredient_prefix": "",
+            "ingredient_count": 5,
+        }
+    if "OP.plate.dat(MT.Graphene)" in line_text:
+        return {
+            "ingredient_item": "gregtech:meta_plate",
+            "ingredient_material": "graphene",
+            "ingredient_prefix": "plate",
+            "ingredient_count": 5,
+        }
+    if "OP.gem.dat(ANY.Quartz)" in line_text:
+        return {
+            "ingredient_item": "gregtech:meta_gem",
+            "ingredient_material": "milkyquartz",
+            "ingredient_prefix": "gem",
+            "ingredient_count": 5,
+        }
+    if "OP.stone.dat(aMat)" in line_text:
+        return {
+            "ingredient_item": "gregtech:meta_stone",
+            "ingredient_material": material,
+            "ingredient_prefix": "stone",
+            "ingredient_count": 5,
+        }
+    if "OP.plate.dat(aMat)" in line_text:
+        return {
+            "ingredient_item": "gregtech:meta_plate",
+            "ingredient_material": material,
+            "ingredient_prefix": "plate",
+            "ingredient_count": 5,
+        }
+    return {
+        "ingredient_item": "",
+        "ingredient_material": "",
+        "ingredient_prefix": "",
+        "ingredient_count": 0,
+    }
 
 
 def validate(
@@ -329,6 +389,104 @@ def validate(
         raise AssertionError("Steel mold variant was not extracted")
     if len(faucets) < 30:
         raise AssertionError(f"Too few faucet material variants: {len(faucets)}")
+    recipe_rows = sum(int(row["ingredient_count"]) > 0 for row in molds + faucets)
+    if recipe_rows != 77:
+        raise AssertionError(f"Expected 77 casting recipes, got {recipe_rows}")
+
+
+def write_casting_recipes(
+    molds: list[dict[str, object]],
+    faucets: list[dict[str, object]],
+) -> int:
+    RECIPE_DATA.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for kind, rows, result_item, pattern in (
+        ("mold", molds, "gregtech:mold", ["M M", "MMM"]),
+        ("faucet", faucets, "gregtech:faucet", ["F F", " F "]),
+    ):
+        for row in rows:
+            if int(row["ingredient_count"]) <= 0:
+                continue
+            material = str(row["ingredient_material"])
+            ingredient: dict[str, object]
+            if material:
+                ingredient = {
+                    "type": "neoforge:components",
+                    "items": row["ingredient_item"],
+                    "components": {
+                        "gregtech:material_part": {
+                            "material": material,
+                            "prefix": row["ingredient_prefix"],
+                        }
+                    },
+                }
+            else:
+                ingredient = {"item": row["ingredient_item"]}
+            key = "M" if kind == "mold" else "F"
+            recipe = {
+                "type": "minecraft:crafting_shaped",
+                "category": "misc",
+                "key": {key: ingredient},
+                "pattern": pattern,
+                "result": {
+                    "count": 1,
+                    "id": result_item,
+                    "components": {
+                        "gregtech:casting_part": {
+                            "wall_material": row["material"],
+                            "source_line": row["source_line"],
+                            "shape_mask": 0,
+                            "acid_proof": row["acid_proof"],
+                        }
+                    },
+                },
+            }
+            target = RECIPE_DATA / f"{kind}_{row['material']}_{row['source_line']}.json"
+            target.write_text(
+                json.dumps(recipe, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            written += 1
+    return written
+
+
+def write_ceramic_mold_recipes(
+    canonical: list[dict[str, object]],
+) -> int:
+    RECIPE_DATA.mkdir(parents=True, exist_ok=True)
+    written = 0
+    for row in canonical:
+        mask = int(row["mask"])
+        source_line = int(row["source_line"])
+        part = {
+            "wall_material": "ceramic",
+            "source_line": source_line,
+            "shape_mask": mask,
+            "acid_proof": False,
+        }
+        recipe = {
+            "type": "minecraft:smelting",
+            "category": "misc",
+            "cookingtime": 200,
+            "experience": 0.0,
+            "ingredient": {
+                "type": "neoforge:components",
+                "items": "gregtech:ceramic_mold_raw",
+                "components": {"gregtech:casting_part": part},
+            },
+            "result": {
+                "count": 1,
+                "id": "gregtech:mold",
+                "components": {"gregtech:casting_part": part},
+            },
+        }
+        target = RECIPE_DATA / f"ceramic_mold_{row['name']}.json"
+        target.write_text(
+            json.dumps(recipe, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        written += 1
+    return written
 
 
 def main() -> None:
@@ -344,6 +502,8 @@ def main() -> None:
     faucets = extract_variants(registrations, "Crucibles Faucets", text, 1700, 1799)
     canonical, masks = extract_shapes()
     validate(canonical, molds, faucets)
+    recipes_written = write_casting_recipes(molds, faucets)
+    ceramic_recipes_written = write_ceramic_mold_recipes(canonical)
     payload = {
         "format": 1,
         "source_repository": "gregtech6-legacy",
@@ -370,6 +530,8 @@ def main() -> None:
                 "faucet_variants": len(faucets),
                 "canonical_shapes": len(canonical),
                 "mask_lookup": len(masks),
+                "generated_recipes": recipes_written,
+                "generated_ceramic_recipes": ceramic_recipes_written,
                 "output": str(OUTPUT),
             },
             indent=2,

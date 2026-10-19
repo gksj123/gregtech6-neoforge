@@ -63,24 +63,28 @@ public final class GTCrucibleRenderer implements BlockEntityRenderer<CrucibleBlo
                 float x1 = x + 1.0F;
                 float z0 = z;
                 float z1 = z + 1.0F;
-                consumer.addVertex(pose.last().pose(), x0, y, z0)
+                consumer.addVertex(pose.last(), x0, y, z1)
+                    .setNormal(pose.last(), 0.0F, 1.0F, 0.0F)
                     .setColor(red, green, blue, alpha / 255.0F)
-                    .setUv(sprite.getU0(), sprite.getV0())
+                    .setUv(sprite.getU0(), sprite.getV1())
                     .setLight(packedLight)
                     .setOverlay(packedOverlay);
-                consumer.addVertex(pose.last().pose(), x1, y, z0)
-                    .setColor(red, green, blue, alpha / 255.0F)
-                    .setUv(sprite.getU1(), sprite.getV0())
-                    .setLight(packedLight)
-                    .setOverlay(packedOverlay);
-                consumer.addVertex(pose.last().pose(), x1, y, z1)
+                consumer.addVertex(pose.last(), x1, y, z1)
+                    .setNormal(pose.last(), 0.0F, 1.0F, 0.0F)
                     .setColor(red, green, blue, alpha / 255.0F)
                     .setUv(sprite.getU1(), sprite.getV1())
                     .setLight(packedLight)
                     .setOverlay(packedOverlay);
-                consumer.addVertex(pose.last().pose(), x0, y, z1)
+                consumer.addVertex(pose.last(), x1, y, z0)
+                    .setNormal(pose.last(), 0.0F, 1.0F, 0.0F)
                     .setColor(red, green, blue, alpha / 255.0F)
-                    .setUv(sprite.getU0(), sprite.getV1())
+                    .setUv(sprite.getU1(), sprite.getV0())
+                    .setLight(packedLight)
+                    .setOverlay(packedOverlay);
+                consumer.addVertex(pose.last(), x0, y, z0)
+                    .setNormal(pose.last(), 0.0F, 1.0F, 0.0F)
+                    .setColor(red, green, blue, alpha / 255.0F)
+                    .setUv(sprite.getU0(), sprite.getV0())
                     .setLight(packedLight)
                     .setOverlay(packedOverlay);
             }

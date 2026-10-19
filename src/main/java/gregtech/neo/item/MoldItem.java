@@ -22,6 +22,16 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
+/**
+ * GT6 1.7.10: gregtech/loaders/b/Loader_MultiTileEntities.java:345-388 and
+ * gregtech/tileentity/tools/MultiTileEntityMold.java:121-134.
+ *
+ * <p>The source item is a blank mold. Its shape is carved in-world with a
+ * chisel and stored in "gt.mold"; the table never contains pre-carved molds.
+ * The modern port stores the wall material, source line and carved mask in a
+ * data component, but keeps the same blank default and the same tooltip text
+ * and colour order.</p>
+ */
 public final class MoldItem extends BlockItem {
     public MoldItem(Block block, Properties properties) {
         super(block, properties);
@@ -64,18 +74,19 @@ public final class MoldItem extends BlockItem {
     @Override
     public Component getName(ItemStack stack) {
         CastingPart part = stack.get(GTDataComponents.CASTING_PART.get());
-        if (part == null) {
+        if (part == null || part.wallMaterial() == null || part.wallMaterial().isBlank()) {
             return Component.literal("Mold (Unassigned)");
         }
         GTMaterial material = GTMaterialRegistry.material(part.wallMaterial());
         String wall = material == null ? part.wallMaterial() : material.prettyName();
-        if (part.shapeMask() == 0) {
-            return Component.literal("Mold (" + wall + ")");
-        }
-        GTMoldRegistry.MaskLookup shape = GTMoldRegistry.lookup(part.shapeMask());
-        return Component.literal("Mold (" + wall + ") [" + prettyForm(shape.prefix()) + "]");
+        return Component.literal("Mold (" + wall + ")");
     }
 
+    /**
+     * GT6 1.7.10: MultiTileEntityMold.java:121-134. Keep the source order:
+     * recipe/shape line, no-GUI hint, acid-proof hint, meltdown limit, contact
+     * hazard, pincer hint, monkey-wrench hint, soft-hammer hint.
+     */
     @Override
     public void appendHoverText(
         ItemStack stack,
@@ -88,63 +99,46 @@ public final class MoldItem extends BlockItem {
         if (part == null) {
             return;
         }
-        GTMoldRegistry.MaskLookup shape = GTMoldRegistry.lookup(part.shapeMask());
-        GTMaterial material = GTMaterialRegistry.material(part.wallMaterial());
-        GTMaterialGameplayRegistry.MaterialGameplay gameplay =
-            GTMaterialGameplayRegistry.material(part.wallMaterial());
-        GTMaterialPrefix prefix = GTMaterialRegistry.prefix(shape.prefix());
-        long required = GTMoldRegistry.requiredUnits(part.shapeMask());
-        long limit = gameplay == null ? 1250 : (long) (gameplay.meltingKelvin() * 1.25D);
+        int mask = part.shapeMask() & MoldBlockEntity.MAX_MASK;
+        String wallMaterial = part.wallMaterial() == null ? "" : part.wallMaterial();
+        GTMaterialGameplayRegistry.MaterialGameplay wall =
+            GTMaterialGameplayRegistry.material(wallMaterial);
+        long limit = wall == null ? 1250L : (long) (wall.meltingKelvin() * 1.25D);
 
-        GT6Tooltip.header(tooltip, "CASTING MOLD");
-        GT6Tooltip.source(tooltip, "Molds", part.sourceLine());
-        GT6Tooltip.line(tooltip, ChatFormatting.AQUA,
-            "WALL: " + part.wallMaterial()
-                + " // MP " + (gameplay == null ? "?" : format(gameplay.meltingKelvin())) + "K"
-                + " // LIMIT " + limit + "K");
-        GT6Tooltip.line(tooltip, ChatFormatting.LIGHT_PURPLE,
-            "SHAPE: " + shape.sourceShape() + " // PREFIX " + shape.prefix()
-                + " // MASK 0x" + Integer.toHexString(part.shapeMask()));
-        GT6Tooltip.line(tooltip, ChatFormatting.YELLOW,
-            "REQ: " + displayUnits(required) + "U"
-                + " // OUTPUT: " + (prefix == null ? shape.prefix() : prefix.prettyCategory()));
-        if (part.acidProof()) {
-            GT6Tooltip.line(tooltip, ChatFormatting.GOLD, "ACID: PROOF");
+        if (mask == 0) {
+            tooltip.add(Component.literal(
+                "Use a Chisel in order to select the Shape of the Mold"
+            ).withStyle(ChatFormatting.AQUA));
+        } else {
+            String prefixId = GTMoldRegistry.prefixForMask(mask);
+            GTMaterialPrefix prefix = GTMaterialRegistry.prefix(prefixId);
+            String name = prefix == null ? prefixId : prefix.prettyCategory();
+            tooltip.add(Component.literal(
+                "This Mold produces " + name + " "
+                    + displayUnits(GTMoldRegistry.requiredUnits(mask)) + " Units"
+            ).withStyle(ChatFormatting.AQUA));
         }
-        GT6Tooltip.line(tooltip, ChatFormatting.GREEN,
-            "CTRL: TOP empty hand -> pull/pick up // CU -> cool");
-        GT6Tooltip.line(tooltip, ChatFormatting.GRAY,
-            "TOOL: chisel carve // wrench rotate // thermometer read");
-        GT6Tooltip.nbt(tooltip,
-            "gregtech:casting_part={wall:\"" + part.wallMaterial()
-                + "\",line:" + part.sourceLine()
-                + ",shape:" + part.shapeMask()
-                + ",acid:" + part.acidProof() + "}"
-                + ", state:\"EMPTY\"");
-    }
-
-    private static String prettyForm(String prefix) {
-        return switch (prefix) {
-            case "chunkGt" -> "Chunk";
-            case "casingSmall" -> "Small Casing";
-            case "gearGt" -> "Gear";
-            case "gearGtSmall" -> "Small Gear";
-            case "stick" -> "Rod";
-            case "stickLong" -> "Long Rod";
-            case "plateTiny" -> "Tiny Plate";
-            default -> {
-                String value = prefix.replace("toolHeadRaw", "")
-                    .replace("toolHead", "")
-                    .replace("Gt", "");
-                yield value.isBlank()
-                    ? prefix
-                    : Character.toUpperCase(value.charAt(0)) + value.substring(1);
-            }
-        };
-    }
-
-    private static String format(double value) {
-        return Long.toString(Math.round(value));
+        tooltip.add(Component.literal(
+            "No GUI, click to interact (Top)"
+        ).withStyle(ChatFormatting.GOLD));
+        if (part.acidProof()) {
+            tooltip.add(Component.literal("Can handle Acids").withStyle(ChatFormatting.GOLD));
+        }
+        tooltip.add(Component.literal(
+            "Melts down when stored Heat is too much! (" + limit + " K)"
+        ).withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.literal(
+            "Causes Damage when touched while active!"
+        ).withStyle(ChatFormatting.DARK_RED));
+        tooltip.add(Component.literal(
+            "Use Pincers or an empty hand to take out the Casting"
+        ).withStyle(ChatFormatting.DARK_GRAY));
+        tooltip.add(Component.literal(
+            "Use Monkey Wrench to toggle Auto-Inputs"
+        ).withStyle(ChatFormatting.DARK_GRAY));
+        tooltip.add(Component.literal(
+            "Use Soft Hammer to reset Auto-Inputs"
+        ).withStyle(ChatFormatting.DARK_GRAY));
     }
 
     private static String displayUnits(long amount) {

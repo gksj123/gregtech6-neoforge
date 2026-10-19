@@ -46,23 +46,38 @@
 - KU oxygen generation, CU cooling, rainwater collection and source steelmaking conversion
 - Data-driven crucible alloy selection from 135 resolved source configurations
 - 2 unresolved dynamic source alloy loops retained in migration output
-- 39 source mold material variants and 30 named 5x5 mold shapes
-- 549 source rotation/mirror mold masks with chisel carving
-- Hollow mold collision, molten and solid content rendering, passive and CU cooling
+- 39 blank source mold material variants and 30 named 5x5 mold shapes
+- 30 raw ceramic mold items with shape-preserving smelting recipes
+- 549 source rotation/mirror mold masks using the source row*5+column bit layout
+- Source-shaped flat mold collision (12x12x2 px), 5x5 cell renderer and content plate
+- Top/horizontal-only mold input, per-face auto-input connection mask and redstone mode
+- Chisel carving, wrench rotation, empty-hand output pickup and side-hit rejection
 - Mold solidification, component-preserving output extraction and overheat meltdown
+- Mold and crucible fluid-surface renderers with complete transformed vertex normals
+- Mold regression coverage: input-side rejection, pickup and automatic pull
 - 39 crucible faucet variants with redstone and automatic pouring
 - English abbreviated GT tooltips with color-coded source, energy, thermal and NBT sections
 - Eight source-oriented creative inventory tabs covering all current content
 - All-material primary-form and material-block creative catalogs
 - In-game GUI-free demo guide item and detailed source/material tooltips
+- Steam Boiler Tank with 26 material variants, HU + water→Steam fluid conversion, calcification and explosion rules
+- Steam Engine with 28 material variants, Steam fluid→KU conversion and reciprocal output
+- Steam Turbine with 15 variants, Steam fluid→RU conversion
+- Steam Pipe fluid handlers and actual Steam/Distilled Water capabilities
+- Source solidifying targets and acid-property checks for casting molds
+- Mold output item capability and built-in pincer extraction
+- 107 casting recipes: 38 material molds, 39 faucets, and 30 raw ceramic mold smelting recipes
+- Source METALLIC icons for all 30 mold output forms
 
 ## Acceptance Evidence
 
 ```text
-GT6 creative catalog: demo=32 materials=10368 blocks=12232 machines=251 multiblocks=35 tools=17 small_crucibles=41 casting=1211 small_crucible_heat_data=39
+GT6 creative catalog: demo=34 materials=10768 blocks=12232 machines=251 multiblocks=61 tools=62 small_crucibles=41 casting=110 small_crucible_heat_data=39
+GT6 runtime self-test: casting recipes=107 pass=true
+GT6 isolated client: loaded existing save and rendered molds without BufferBuilder vertex errors
 GT6 runtime self-test: large RU structure at BlockPos{x=0, y=40, z=2}, EU/KU chain at BlockPos{x=10, y=40, z=0}, RU/KU chain crank at BlockPos{x=14, y=40, z=-3}
 GT6 runtime self-test: controller formed=true
-GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true
+GT6_RUNTIME_SELFTEST_PASS RU=3 EU_KU=3 CRANK_KU=3 GENERIC_KU=9 CRUCIBLE=1996K SMALL_CRUCIBLE=2094K CRUCIBLE_DROPS=true/true FILL=true/true STEELMAKING=true CASTING=true/true/true FAUCET=true/true ALLOYS=135 BURNING_BOX_LIT=true MOLD_INTERACTION=true MOLD_AUTO=true STEAM_FLOW=true STEAM_NO_VOID=true STEAM_TURBINE=true CASTING_RECIPES=true MOLD_RIGHT_CLICK=true LARGE_WALL_MOLD=true MOLD_SHAPES=true
 ```
 
 Material bootstrap evidence:
@@ -81,11 +96,12 @@ Loaded GT6 source inventory: 1112 materials, 326 material prefixes
 - Full GT6 recipe map migration
 - Material property/condition evaluation for conditional source handlers
 - Covers and complete side automation
-- Fluids, tanks, and fluid recipe inputs/outputs
+- Generic GT6 fluid transportation/recipes beyond the current Steam and Distilled Water implementation
 - Gas and fluidized-bed Burning Box fuel maps
 - Dynamic `ANY.Glowstone.mToThis` alloy loop entries (2 source-derived configurations remain unresolved)
-- Acid, flammable, explosive and radioactive material-property gates for casting
+- Flammable, explosive and radioactive material-property gates for casting
 - External fluid-container and fluid-network integration with crucible contents
+- Survival crafting recipes for steam boilers, engines and turbines
 - Heat, laser, quantum, and remaining specialized energy transfer networks
 - A survival RU source capable of reaching the Large Crusher's original 512 speed threshold
 - WAILA/Jade, JEI/EMI, and other mod integrations
